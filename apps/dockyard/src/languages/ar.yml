@@ -1,0 +1,27 @@
+tip-index: الرئيسية
+tip-switch-theme: تغيير الثيم
+tip-status-done: مكتمل
+tip-status-doing: قيد التنفيذ
+tip-status-todo: قيد الانتظار
+tip-status-other: مكرر
+tip-status-default: افتراضي
+tip-filter: فلتر الحالة
+tip-top: الأعلى
+tip-prev-page: الصفحة السابقة
+tip-next-page: الصفحة التالية
+tip-collapse: طي
+tip-expand: توسيع
+
+text-select: اختر
+text-move: حركة
+text-esc: إغلاق
+text-post-count-prev: مجموع
+text-post-count-next: منشورات
+text-timeline: الجدول الزمني
+text-search: بحث...
+text-category: الفئة
+text-author: المؤلف
+text-pub-time: نشر في
+text-license: الترخيص
+text-post-link: رابط المنشور
+text-catalog: الفهرس

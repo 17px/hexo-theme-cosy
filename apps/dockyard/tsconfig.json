@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+    },
+    "target": "es2017", // 指定 ECMAScript 目标版本
+    "module": "esnext", // 指定生成哪个模块系统代码
+    "outDir": "dist", // 输出目录
+    "rootDir": "./src", // 输入目录
+    "strict": true, // 启用所有严格类型检查选项
+    "moduleResolution": "node", // 模块解析策略
+    "esModuleInterop": true, // 启用 ES6 模块和 CommonJS 模块之间的互操作性
+    "skipLibCheck": true, // 跳过声明文件的类型检查
+    "forceConsistentCasingInFileNames": true // 强制文件名一致性
+  },
+  "include": [
+    "src/**/*.ts" // 包含的文件
+  ],
+  "exclude": [
+    "node_modules" // 排除的文件
+  ]
+}

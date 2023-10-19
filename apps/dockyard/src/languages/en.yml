@@ -1,0 +1,28 @@
+# tip
+tip-index: Home
+tip-switch-theme: Switch Theme
+tip-status-done: Done
+tip-status-doing: In Progress
+tip-status-todo: Todo
+tip-status-other: Duplicate
+tip-status-default: Default
+tip-filter: Status Filter
+tip-top: Top
+tip-prev-page: Prev Page
+tip-next-page: Next Page
+tip-collapse: Collapse
+tip-expand: Expand
+# text
+text-select: select
+text-move: movement
+text-esc: close
+text-post-count-prev: Total of
+text-post-count-next: Posts
+text-timeline: Timeline
+text-search: Search...
+text-category: Category
+text-author: Author
+text-pub-time: Published on
+text-license: License
+text-post-link: Post Url
+text-catalog: Catalog

@@ -1,0 +1,6 @@
+{
+  "watch": [
+    "themes"
+  ],
+  "exec": "hexo server"
+}

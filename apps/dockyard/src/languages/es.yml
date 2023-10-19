@@ -1,0 +1,27 @@
+tip-index: Inicio
+tip-switch-theme: Cambiar Tema
+tip-status-done: Hecho
+tip-status-doing: En Progreso
+tip-status-todo: Pendiente
+tip-status-other: Duplicado
+tip-status-default: Predeterminado
+tip-filter: Filtro de Estado
+tip-top: Arriba
+tip-prev-page: Página Anterior
+tip-next-page: Página Siguiente
+tip-collapse: Colapsar
+tip-expand: Expandir
+
+text-select: seleccionar
+text-move: movimiento
+text-esc: cerrar
+text-post-count-prev: Total de
+text-post-count-next: Publicaciones
+text-timeline: Cronología
+text-search: Buscar...
+text-category: Categoría
+text-author: Autor
+text-pub-time: Publicado en
+text-license: Licencia
+text-post-link: URL de la Publicación
+text-catalog: Catálogo

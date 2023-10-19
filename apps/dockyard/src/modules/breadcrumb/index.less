@@ -1,0 +1,31 @@
+.breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  font-size: 13px;
+
+  a {
+    color: var(--color-font-3);
+    text-decoration: none;
+    margin-left: -3px;
+
+    &:hover {
+      color: var(--color-font-2);
+    }
+  }
+
+  em {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 5px;
+    color: var(--color-font-3);
+
+    svg {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  .ellipsis {
+    max-width: 50vw;
+  }
+}

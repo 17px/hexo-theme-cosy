@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    <%= page.title || config.title %>
+  </title>
+  <meta name="description" content="<%= page.description || config.description %>">
+  <meta name="keywords" content="<%= page.keywords || config.keywords %>">
+  <meta name="author" content="<%= config.author %>">
+  <link rel="canonical" href="<%= page.permalink || config.url %>">
+  <% if(theme.favicon !==undefined){ %>
+  <% if(theme.favicon.startsWith('<svg')){ %>
+  <link rel="icon" type="image/svg" href='data:image/svg+xml,<%- theme.favicon %>'>
+  <% } else { %>
+  <link rel="icon" href='<%- theme.favicon %>'>
+  <% } %>
+  <% } %>
+
+  <!-- inject:css -->
+</head>
+
+<body id="app">
+  <!-- 响应式布局按钮 -->
+  <a class="side-navigation btn-hover btn-hover-bg tip left" data-tip="<%- __('tip-expand') %>">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+        <path d="M9 4v16"></path>
+      </g>
+    </svg>
+  </a>
+  <aside>
+    <div>
+      <%- partial('homebar') %>
+      <!-- search -->
+      <%- partial('search') %>
+      <!-- navigation -->
+      <%- partial('navigation') %>
+      <!-- icp -->
+      <% if(theme.icp !==undefined){ %>
+      <div class="icp">
+        <a href="http://beian.miit.gov.cn/"><%- theme.icp %></a>
+      </div>
+      <% } %>
+    </div>
+  </aside>
+  <main>
+    <%- body %>
+  </main>
+</body>
+<script>
+  window.i18n = {
+    "tip-collapse": "<%- __('tip-collapse') %>",
+    "tip-expand": "<%- __('tip-expand') %>",
+    "text-select": "<%- __('text-select') %>",
+    "text-move": "<%- __('text-move') %>",
+    "text-esc": "<%- __('text-esc') %>",
+    "tip-status-done": "<%- __('tip-status-done') %>",
+    "tip-status-doing": "<%- __('tip-status-doing') %>",
+    "tip-status-todo": "<%- __('tip-status-todo') %>",
+    "tip-status-other": "<%- __('tip-status-other') %>",
+    "tip-status-default": "<%- __('tip-status-default') %>",
+    "text-search": "<%- __('text-search') %>"
+  }
+</script>
+<!-- inject:js -->
+
+</html>

@@ -1,0 +1,145 @@
+article {
+  height: 100%;
+  overflow-y: auto;
+
+  hr {
+    border: none;
+    height: 1.5px;
+    background: repeating-linear-gradient(to right,
+        var(--color-border),
+        var(--color-border) 5px,
+        /* 线的长度 */
+        #fff 5px,
+        /* 间隙的起始位置 */
+        #fff 10px
+        /* 间隙的结束位置 */
+      );
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--color-primary);
+  }
+
+  >pre {
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar {
+      width: var(--scrollbar-width);
+      height: var(--scrollbar-width);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--scrollbar-color);
+      opacity: 0.2;
+      border-radius: var(--scrollbar-width);
+      border: 3px solid transparent;
+      background-clip: content-box;
+    }
+
+    position: relative;
+
+    &::after {
+      content: attr(data-language);
+      position: absolute;
+      right: 6px;
+      top: 6px;
+      color: var(--color-font-3);
+      font-size: 12px;
+      line-height: 1;
+    }
+  }
+
+  blockquote {
+    margin: 10px 0;
+    background: var(--color-bg-4);
+    font-family: var(--font-monospace);
+    border-radius: 4px;
+    display: block;
+    padding: 1em;
+    color: var(--color-font);
+
+    p {
+      margin: 0;
+      line-height: 1.5;
+    }
+  }
+
+  p {
+    line-height: 2;
+    color: var(--font-color-2);
+
+    img {
+      max-width: 100%;
+    }
+
+    code {
+      padding: 4px 6px;
+      margin-bottom: 1px;
+      background: var(--color-bg-3);
+      color: var(--color-font);
+      border-radius: var(--radius);
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 600;
+    padding-top: 12px;
+    margin-top: 24px;
+    margin-bottom: 12px;
+    color: var(--color-font);
+  }
+
+  ul {
+    margin: 0px 0px 10px;
+    padding-left: 27px;
+
+    li {
+      line-height: 24px;
+      color: var(--color-font);
+    }
+  }
+
+  table {
+    margin-bottom: 24px;
+    border-collapse: collapse;
+    overflow: hidden;
+    border: 0;
+    width: 100%;
+
+    thead tr th {
+      background: var(--color-primary-2);
+      text-align: left;
+      padding: 12px;
+      font-size: 13px;
+
+      &:nth-of-type(1) {
+        border-radius: var(--radius) 0 0 0;
+      }
+
+      &:last-of-type {
+        border-radius: 0 var(--radius) 0 0
+      }
+    }
+
+    tbody tr {
+      &:hover {
+        background: var(--color-tiny-hover);
+      }
+
+      td {
+        text-align: left;
+        padding: 12px;
+        border-bottom: 1px solid var(--color-border-2)
+      }
+    }
+  }
+
+}

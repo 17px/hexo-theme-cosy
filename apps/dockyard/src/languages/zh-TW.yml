@@ -1,0 +1,27 @@
+tip-index: 主頁
+tip-switch-theme: 切換主題
+tip-status-done: 已完成
+tip-status-doing: 進行中
+tip-status-todo: 待辦
+tip-status-other: 重覆
+tip-status-default: 預設
+tip-filter: 狀態篩選
+tip-top: 頂部
+tip-prev-page: 上一頁
+tip-next-page: 下一頁
+tip-collapse: 折疊
+tip-expand: 展開
+
+text-select: 選擇
+text-move: 移動
+text-esc: 關閉
+text-post-count-prev: 總共
+text-post-count-next: 篇文章
+text-timeline: 時間線
+text-search: 搜尋...
+text-category: 分類
+text-author: 作者
+text-pub-time: 發布於
+text-license: 授權
+text-post-link: 文章連結
+text-catalog: 目錄

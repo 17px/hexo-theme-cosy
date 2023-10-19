@@ -1,0 +1,94 @@
+/* < 768px */
+@media only screen and (max-width: 767px) {
+
+  .side-navigation {
+    display: flex !important;
+  }
+
+  .search-mask {
+    >div {
+      width: auto !important;
+      left: 20px !important;
+      right: 20px !important;
+      transform: inherit !important;
+    }
+  }
+
+  #app {
+    grid-template-columns: 0 1fr !important;
+
+    &.equip {
+      grid-template-columns: 220px auto !important;
+
+      main {
+        position: relative;
+        min-width: 430px;
+
+        &::after {
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          background: var(--color-bg-mask);
+          backdrop-filter: blur(3px);
+          -webkit-backdrop-filter: blur(3px);
+          content: '';
+          position: absolute;
+          z-index: 1000;
+        }
+      }
+    }
+  }
+
+  .archive {
+    >ul {
+      padding-right: 20px;
+    }
+  }
+
+  .dropdown-menu {
+    background: var(--color-bg-2) !important;
+  }
+
+  .article-container {
+    width: 100% !important;
+    margin: 0;
+    padding: 0 30px;
+  }
+
+  .copyright {
+    ul {
+      flex-direction: column !important;
+
+      li {
+        margin-right: 0 !important;
+        margin-bottom: 20px !important;
+      }
+    }
+
+  }
+
+  .meta-container {
+    display: none !important;
+  }
+
+  .welcome {
+
+    .circles {
+      margin: 0;
+      padding: 0;
+    }
+
+    .weather {
+      min-width: 300px !important;
+      width: auto !important;
+      left: 20px !important;
+      right: 20px !important;
+      top: 60px !important;
+    }
+
+    .slogan {
+      left: 20px !important;
+    }
+  }
+}

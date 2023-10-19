@@ -1,0 +1,22 @@
+{
+  "name": "hexo-theme-linear",
+  "author": "himozzie@foxmail.com",
+  "license": "LGPL-3.0-or-later",
+  "description": "A Hexo theme of document orientation and pursuit of ultimate loading speed",
+  "version": "1.0.0",
+  "homepage": "https://github.com/17px/hexo-theme-linear",
+  "repository": "https://github.com/17px/hexo-theme-linear.git",
+  "keywords": [
+    "hexo",
+    "theme",
+    "linear"
+  ],
+  "engines": {
+    "node": ">=16.19.1"
+  },
+  "scripts": {
+    "dev": "pnpm run --filter @ornn/dockyard dev",
+    "build": "pnpm run --filter @ornn/dockyard build",
+    "dev:hexo": "pnpm run --filter @ornn/hexo-test dev"
+  }
+}

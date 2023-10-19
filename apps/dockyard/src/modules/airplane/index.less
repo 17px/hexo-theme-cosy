@@ -1,0 +1,509 @@
+.plane-bg {
+  position: absolute;
+  left: 50%;
+  right: 0;
+  top: 0;
+  bottom: 0;
+
+  @border-color-primary: rgba(96, 138, 177, 0.7);
+  // @border-color-primary: var(--color-border);
+  @background_color_1: transparent;
+  @background_color_2: transparent;
+  @border_top_color_1: transparent;
+  @border_bottom_color_1: transparent;
+  @border_left_color_1: transparent;
+
+  @keyframes airplane-wrap-anim {
+    0% {
+      transform: rotateX(0deg) rotateY(-5deg) rotateZ(0deg);
+    }
+
+    40% {
+      transform: rotateX(0deg) rotateY(-10deg) rotateZ(0deg);
+    }
+
+    60% {
+      transform: rotateX(5deg) rotateY(15deg) rotateZ(-18deg);
+    }
+
+    80% {
+      transform: rotateX(2deg) rotateY(5deg) rotateZ(-10deg);
+    }
+
+    100% {
+      transform: rotateX(0deg) rotateY(-5deg) rotateZ(0deg);
+    }
+  }
+
+  @keyframes airplane {
+    0% {
+      transform: rotateY(-17deg) rotateZ(21deg) rotateX(-23deg) translateX(0);
+    }
+
+    25% {
+      transform: rotateY(-13deg) rotateZ(13deg) rotateX(-19deg) translateX(100px);
+    }
+
+    50% {
+      transform: rotateY(-10deg) rotateZ(19deg) rotateX(-15deg) translateX(-70px);
+    }
+
+    75% {
+      transform: rotateY(-13deg) rotateZ(13deg) rotateX(-19deg) translateX(40px);
+    }
+
+    100% {
+      transform: rotateY(-17deg) rotateZ(21deg) rotateX(-23deg) translateX(0);
+    }
+  }
+
+  @keyframes airplane-pos-anim {
+    0% {
+      left: 50%;
+    }
+
+    40% {
+      left: 40%;
+    }
+
+    70% {
+      left: 70%;
+    }
+
+    100% {
+      left: 50%;
+    }
+  }
+
+  @keyframes propeller {
+    from {
+      transform: translate3d(50px, 60px, 300px) rotateZ(0deg);
+    }
+
+    to {
+      transform: translate3d(50px, 60px, 300px) rotateZ(-360deg);
+    }
+  }
+
+  .airplane-wrap {
+    transform-style: preserve-3d;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    transform: rotateX(0deg) rotateY(-5deg) rotateZ(0deg);
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 16s;
+    animation-name: airplane-wrap-anim;
+  }
+
+  .airplane {
+    position: absolute;
+    right: 50%;
+    top: 36%;
+    transform: rotateY(-17deg) rotateZ(21deg) rotateX(-23deg) translateX(0);
+    transform-style: preserve-3d;
+    animation-name: airplane, airplane-pos-anim;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 16s;
+  }
+
+  .grp {
+    position: absolute;
+    width: 0;
+    transform-origin: center;
+    transform-style: preserve-3d;
+  }
+
+  .bordered {
+    position: absolute;
+    border: 2px solid @border-color-primary;
+  }
+
+  .bordered-thin {
+    position: absolute;
+    border: 1px solid @border-color-primary;
+  }
+
+  .plate {
+    position: absolute;
+    border: 2px solid @border-color-primary;
+    background-color: @background_color_1;
+  }
+
+  .plate-no-border {
+    position: absolute;
+    background-color: @background_color_1;
+  }
+
+  .front-cover {
+    transform: translate3d(0px, 0px, 250px);
+
+    >div {
+      transform-origin: bottom;
+    }
+  }
+
+  .front-cover-inner {
+    width: 100px;
+    height: 80px;
+    transform: translate3d(0px, 20px, 0px);
+  }
+
+  .front-cover-center {
+    width: 60px;
+    height: 50px;
+    transform: translate3d(20px, 35px, 45px);
+  }
+
+  .trapezoid {
+    position: absolute;
+    border-bottom-style: solid;
+    border-bottom-color: @border_bottom_color_1;
+  }
+
+  .front-cover-top {
+    transform: translate3d(0px, -24px, 2px) rotateX(-108deg);
+    border-bottom-width: 45px;
+    border-left: 21px solid transparent;
+    border-right: 21px solid transparent;
+    height: 0;
+    width: 60px;
+  }
+
+  .front-cover-bottom {
+    transform: translate3d(0px, 57px, 2px) rotateX(-72deg);
+    border-bottom-width: 45px;
+    border-left: 21px solid transparent;
+    border-right: 21px solid transparent;
+    height: 0;
+    width: 60px;
+  }
+
+  .front-cover-left {
+    transform: translate3d(62px, 14px, 0px) rotateX(0deg) rotateY(68deg) rotateZ(-90deg);
+    border-bottom-width: 48px;
+    border-left: 14px solid transparent;
+    border-right: 14px solid transparent;
+    height: 0;
+    width: 53px;
+  }
+
+  .front-cover-right {
+    transform: translate3d(-38px, 14px, 0px) rotateX(0deg) rotateY(112deg) rotateZ(-90deg);
+    border-bottom-width: 48px;
+    border-left: 14px solid transparent;
+    border-right: 14px solid transparent;
+    height: 0;
+    width: 53px;
+  }
+
+  .front-cover-top-left {
+    transform: translate3d(68px, 27px, 24px) rotateY(63deg) rotateZ(-18deg) rotateX(45deg);
+    height: 0;
+    width: 48px;
+  }
+
+  .front-cover-top-right {
+    transform: translate3d(-15px, 27px, 24px) rotateY(118deg) rotateZ(-18deg) rotateX(-45deg);
+    height: 0;
+    width: 48px;
+  }
+
+  .front-cover-bottom-left {
+    transform: translate3d(67px, 94px, 24px) rotateY(64deg) rotateZ(17deg) rotateX(-45deg);
+    height: 0;
+    width: 48px;
+  }
+
+  .front-cover-bottom-right {
+    transform: translate3d(-13px, 94px, 24px) rotateY(115deg) rotateZ(16deg) rotateX(45deg);
+    height: 0;
+    width: 48px;
+  }
+
+  .left-cover {
+    width: 500px;
+    height: 80px;
+    transform: rotateY(90deg) translate3d(0, 20px, -148px);
+  }
+
+  .right-cover {
+    width: 500px;
+    height: 80px;
+    transform: rotateY(90deg) translate3d(0, 20px, -252px);
+  }
+
+  .top-cover-front {
+    transform: rotateY(90deg) rotateX(90deg) translate3d(-162px, -38px, 30px);
+    width: 175px;
+    height: 100px;
+  }
+
+  .top-cover-back {
+    transform: rotateY(90deg) rotateX(90deg) translate3d(160px, -40px, 31px);
+    width: 180px;
+    height: 100px;
+  }
+
+  .roof {
+    transform: rotateY(90deg) rotateX(90deg) translate3d(4px, 0px, 94px);
+    width: 100px;
+    height: 100px;
+  }
+
+  .front-window {
+    transform: rotateX(23deg) translate3d(0px, -17px, 74px);
+    width: 100px;
+    height: 65px;
+  }
+
+  .window-fill {
+    background-color: @background_color_2;
+  }
+
+  .window {
+    border-bottom: 60px solid transparent;
+    border-left: 25px solid transparent;
+    border-right: 10px solid transparent;
+    height: 0;
+    width: 100px;
+    position: absolute;
+  }
+
+  .left-window {
+    transform: rotateY(90deg) translate3d(-5px, -40px, 35px);
+  }
+
+  .right-window {
+    transform: rotateY(90deg) translate3d(-5px, -40px, -65px);
+  }
+
+  .rear-window {
+    transform: rotateX(-11deg) translate3d(0px, -30px, -69px);
+    width: 100px;
+    height: 62px;
+  }
+
+  .bottom-cover {
+    transform: rotateY(90deg) rotateX(90deg) translate3d(0, -200px, -50px);
+    width: 500px;
+    height: 100px;
+  }
+
+  .back-cover {
+    width: 100px;
+    height: 80px;
+    transform: translate3d(0px, 20px, -250px);
+  }
+
+  .top-tail {
+    transform: translate3d(0, 14px, -190px);
+  }
+
+  .left-tail {
+    transform: translate3d(2px, -100px, -190px) rotateZ(90deg);
+  }
+
+  .right-tail {
+    transform: translate3d(102px, 4px, -190px) rotateZ(-90deg);
+  }
+
+  .tail-top {
+    transform: rotateY(90deg) rotateX(90deg) translate3d(55px, 20px, 80px);
+    width: 60px;
+    height: 10px;
+  }
+
+  .tail-front {
+    transform: rotateX(45deg) translate3d(45px, -53px, 75px);
+    width: 10px;
+    height: 110px;
+  }
+
+  .tail-back {
+    transform: rotateX(21deg) translate3d(45px, -96px, -39px);
+    width: 10px;
+    height: 82px;
+  }
+
+  .tail-left-rect {
+    transform: rotateY(90deg) rotateZ(90deg) translate3d(-48px, -39px, 19px);
+    width: 77px;
+    height: 30px;
+  }
+
+  .tail-right-rect {
+    transform: rotateY(90deg) rotateZ(90deg) translate3d(-158px, -39px, 9px);
+    width: 77px;
+    height: 30px;
+  }
+
+  .triangle {
+    width: 0;
+    height: 0;
+    border-top-style: solid;
+    border-top-color: @border_top_color_1;
+    border-left-style: solid;
+    border-left-color: @border_left_color_1;
+  }
+
+  .tail-triangle-left-bottom {
+    transform: rotateY(90deg) rotateZ(90deg) translate3d(-74px, 14px, 18px);
+    border-top-width: 80px;
+    border-left-width: 80px;
+  }
+
+  .tail-triangle-left-top {
+    transform: rotateY(90deg) rotateZ(-90deg) translate3d(126px, 68px, 18px);
+    border-top-width: 30px;
+    border-left-width: 80px;
+  }
+
+  .tail-triangle-right-bottom {
+    transform: rotateY(90deg) rotateZ(90deg) translate3d(-182px, 12px, 8px);
+    border-top-width: 80px;
+    border-left-width: 80px;
+  }
+
+  .tail-triangle-right-top {
+    transform: rotateY(90deg) rotateZ(-90deg) translate3d(236px, 70px, 9px);
+    border-top-width: 30px;
+    border-left-width: 80px;
+  }
+
+  .tail-connector {
+    transform: rotateY(90deg) rotateX(90deg) translate3d(1px, -6px, 222px);
+    width: 112px;
+    height: 12px;
+  }
+
+  .wing {
+    width: 700px;
+    height: 200px;
+    border-top-right-radius: 20%;
+    border-top-left-radius: 20%;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-width: 5px;
+    transform: rotateX(90deg) translate3d(-300px, 70px, 30px);
+  }
+
+  .wing-right {
+    width: 293px;
+    height: 200px;
+    border-width: 5px;
+    border-top-right-radius: 0%;
+    border-top-left-radius: 35%;
+    border-bottom-right-radius: 0%;
+    border-bottom-left-radius: 90%;
+    border-right-width: 1px;
+  }
+
+  .wing-left {
+    width: 293px;
+    height: 200px;
+    border-width: 5px;
+    border-top-right-radius: 35%;
+    border-top-left-radius: 0%;
+    border-bottom-right-radius: 90%;
+    border-bottom-left-radius: 0%;
+    transform: translate3d(405px, 0px, 0px);
+    border-left-width: 1px;
+  }
+
+  .wing.bottom {
+    transform: translate3d(0px, 0px, -4px);
+  }
+
+  .wing-right.bottom {
+    transform: translate3d(0px, 0px, -4px);
+  }
+
+  .wing-left.bottom {
+    transform: translate3d(405px, 0px, -4px);
+  }
+
+  .conector {
+    width: 208px;
+    height: 2px;
+  }
+
+  .conector.right {
+    transform: rotateX(90deg) rotateY(90deg) translate3d(102px, -2px, 193px);
+  }
+
+  .conector.left {
+    transform: rotateX(90deg) rotateY(90deg) translate3d(102px, -2px, 301px);
+  }
+
+  .propeller {
+    width: 0;
+    height: 0;
+    transform: translate3d(50px, 60px, 300px) rotateZ(0deg);
+    transform-origin: 1px 1px;
+  }
+
+  .propeller-center {
+    width: 18px;
+    height: 18px;
+    transform: translate3d(-10px, -10px, 0px);
+    border-radius: 50%;
+    webkit-border-radius: 50%;
+  }
+
+  .propeller-center.top {
+    transform: translate3d(-10px, -10px, 4px);
+  }
+
+  .p-w {
+    width: 25px;
+    height: 70px;
+    border-top-right-radius: 18%;
+    border-top-left-radius: 90%;
+    border-bottom-right-radius: 100%;
+    border-bottom-left-radius: 11%;
+    border-width: 3px;
+  }
+
+  .propeller-wing-1 {
+    transform: translate3d(34px, -33px, 0px) rotateZ(90deg);
+  }
+
+  .propeller-wing-2 {
+    transform: translate3d(-20px, 12px, 0px) rotateZ(180deg);
+  }
+
+  .propeller-wing-3 {
+    transform: translate3d(-63px, -40px, 0px) rotateZ(270deg);
+  }
+
+  .propeller-wing-4 {
+    transform: translate3d(-9px, -86px, 0px) rotateZ(0deg);
+  }
+
+  .propeller-wing-5 {
+    transform: translate3d(34px, -33px, 4px) rotateZ(90deg);
+  }
+
+  .propeller-wing-6 {
+    transform: translate3d(-20px, 12px, 4px) rotateZ(180deg);
+  }
+
+  .propeller-wing-7 {
+    transform: translate3d(-63px, -40px, 4px) rotateZ(270deg);
+  }
+
+  .propeller-wing-8 {
+    transform: translate3d(-9px, -86px, 4px) rotateZ(0deg);
+  }
+
+  .rotate-propeller {
+    animation-name: propeller;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 0.8s;
+  }
+
+}

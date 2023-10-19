@@ -1,0 +1,16 @@
+/* 放大动画 */
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.weather {
+  animation: zoomIn 0.5s ease-out 1s forwards;
+}

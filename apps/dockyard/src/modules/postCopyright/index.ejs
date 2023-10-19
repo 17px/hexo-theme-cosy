@@ -1,0 +1,24 @@
+<!-- inject:css -->
+<% if (theme.postCopyright.enable) { %>
+<div class="copyright">
+  <a target="_blank" href="<%- page.permalink %>">
+    <span><%- __('text-post-link') %>：</span>
+    <span><%- page.permalink %></span>
+  </a>
+  <ul>
+    <li>
+      <span><%- __('text-author') %></span>
+      <p> <%- config.author %></p>
+    </li>
+    <li>
+      <span><%- __('text-pub-time') %></span>
+      <p><%- page.date.format("YYYY-MM-DD") %></p>
+    </li>
+    <li>
+      <span><%- __('text-license') %></span>
+      <p><a href="<%- theme.postCopyright.license_url %>"><%- theme.postCopyright.license %></a></p>
+    </li>
+  </ul>
+</div>
+<% } %>
+<!-- inject:js -->

@@ -1,0 +1,27 @@
+tip-index: Startseite
+tip-switch-theme: Thema wechseln
+tip-status-done: Erledigt
+tip-status-doing: In Bearbeitung
+tip-status-todo: Zu erledigen
+tip-status-other: Duplikat
+tip-status-default: Standard
+tip-filter: Statusfilter
+tip-top: Nach oben
+tip-prev-page: Vorherige Seite
+tip-next-page: Nächste Seite
+tip-collapse: Einklappen
+tip-expand: Ausklappen
+
+text-select: auswählen
+text-move: Bewegung
+text-esc: schließen
+text-post-count-prev: Insgesamt
+text-post-count-next: Beiträge
+text-timeline: Zeitleiste
+text-search: Suchen...
+text-category: Kategorie
+text-author: Autor
+text-pub-time: Veröffentlicht am
+text-license: Lizenz
+text-post-link: Beitrag URL
+text-catalog: Katalog
