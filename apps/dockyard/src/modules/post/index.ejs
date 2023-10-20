@@ -10,10 +10,9 @@
         <!-- 文章tags -->
         <% if (page.tags.length > 0) { %>
         <ul class="tags">
-          <li>#</li>
           <% page.tags.each(function(tag){ %>
           <li>
-            <a><%- tag.name %></a>
+            <a># <%- tag.name %></a>
           </li>
           <% }) %>
         </ul>

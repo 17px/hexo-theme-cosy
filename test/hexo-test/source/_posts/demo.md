@@ -6,6 +6,21 @@ tags:
   - blog
   - Hexo
   - example
+  - blog1
+  - Hexo2
+  - example3
+  - blog4
+  - Hexo56
+  - example7
+  - blog8
+  - Hexo9
+  - example0
+  - blog111
+  - Hexo22
+  - example33
+  - blog444
+  - Hexo555
+  - example66
 author: "John Doe"
 color: 2
 top: 3

@@ -38,25 +38,27 @@
 
         .tags {
           display: flex;
+          align-items: center;
           color: var(--color-font-2);
+          flex-wrap: wrap;
           margin: 0 auto;
           max-width: 860px;
-          width: calc(100% - 120px);
           margin: 20px 0;
           padding: 0;
 
           li {
             margin-right: 6px;
-            font-size: 13px;
+            font-size: 12px;
             list-style: none;
+            margin-bottom: 8px;
 
             a {
+              padding: 2px 4px;
+              display: inline-block;
+              border-radius: var(--radius);
+              background: var(--color-primary-2);
               color: var(--color-font-2);
               text-decoration: none;
-
-              &:hover {
-                color: var(--color-primary);
-              }
             }
 
           }
