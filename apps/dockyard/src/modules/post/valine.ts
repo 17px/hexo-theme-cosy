@@ -21,6 +21,7 @@ interface ValineConfig {
   appKey: string;
   avatar: string;
   cdn: string;
+  serverURLs: string;
 }
 
 export const useValine = (config: ValineConfig) => {
