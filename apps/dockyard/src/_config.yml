@@ -37,23 +37,6 @@ valine:
   avatar: monsterid
   cdn: //unpkg.com/valine@latest/dist/Valine.min.js
 
-# search service
-algolia:
-  appId: yourAlgoliaAppId
-  apiKey: yourAlgoliaApiKey
-  adminApiKey: yourAlgoliaAdminApiKey
-  SearchOnlyAPIKey: yourAlgoliaSearchOnlyAPIKey
-  chunkSize: 5000
-  indexName: hex-blog
-  fields:
-    - content:strip
-    - categories
-    - date
-    - permalink
-    - slug
-    - tags
-    - title
-
 # qweather for index weather widget, u must register api first
 # api register: https://id.qweather.com/#/register
 weather:
