@@ -3,8 +3,8 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo-Theme-Linear
-subtitle: Linear
+title: Hexo-Theme-Cosy
+subtitle: Cosy
 description: description
 keywords: keywords1,keywords2,keywords3
 author: John Doe
@@ -99,7 +99,7 @@ ignore:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 # theme: landscape
-theme: hexo-theme-linear
+theme: hexo-theme-cosy
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment

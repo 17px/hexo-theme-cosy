@@ -5,6 +5,7 @@ import { useMermaid } from "./mermaid";
 import { useValine } from "./valine";
 import { restoreScrollHeight, saveScrollHeight } from "@/util";
 import "./selection";
+import { useCodeHelper } from "./code.helper";
 
 const themeCodeLessMap = {
   light: "prism-one-light",
@@ -44,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
   useKatex(katex);
   useMermaid(mermaid);
   useValine(valine);
+  useCodeHelper();
   // 加载prism样式
   import(`./prism/${themeCodeLessMap[getThemeMode()]}.less`);
   // 监听主题切换

@@ -1,81 +1,18 @@
 ---
-title: demo2
+title: Markdown Sample
 description: A very simple way to add structured data to a page.
-keywords: "awesome, post, hexo"
-tags:
-  - blog
-  - Hexo
-  - example
-  - blog1
-  - Hexo2
-  - example3
-  - blog4
-  - Hexo56
-  - example7
-  - blog8
-  - Hexo9
-  - example0
-  - blog111
-  - Hexo22
-  - example33
-  - blog444
-  - Hexo555
-  - example66
-author: "John Doe"
-color: 2
-top: 3
+status: done
+top: 0
 categories: 
-- Tech
+- Hexo
+keywords: "Markdown, 代码高亮 (Codes), 引用 (Blockquotes), 列表 (Lists), 图片 (Images), 表格 (Tables), Emoji, TeX(KaTeX), 流程图 (mermaid)"
 ---
 
-# Editor.md
+# Linear Markdown Sample
+
+![markdown](https://pandao.github.io/editor.md/images/logos/editormd-logo-180x180.png)
 
 
-<a href="https://oschina.net">hhh</a>
-
-<img src="https://pandao.github.io/editor.md/images/logos/editormd-logo-180x180.png">
-
-# 换行TEST
-
-1
-2
-3
-
-a  
-b
-
----
-
-q\
-d
-
-#HEAD TEST
-
-# Smart Test
-
-...
-
----
-
---
-
-
-![](https://pandao.github.io/editor.md/images/logos/editormd-logo-180x180.png)
-
-![](https://img.shields.io/github/stars/pandao/editor.md.svg) ![](https://img.shields.io/github/forks/pandao/editor.md.svg) ![](https://img.shields.io/github/tag/pandao/editor.md.svg) ![](https://img.shields.io/github/release/pandao/editor.md.svg) ![](https://img.shields.io/github/issues/pandao/editor.md.svg) ![](https://img.shields.io/bower/v/editor.md.svg)
-
-**目录 (Table of Contents)**
-
-[TOCM]
-
-[TOC]
-
-# Heading 1
-## Heading 2               
-### Heading 3
-#### Heading 4
-##### Heading 5
-###### Heading 6
 # Heading 1 link [Heading link](https://github.com/pandao/editor.md "Heading link")
 ## Heading 2 link [Heading link](https://github.com/pandao/editor.md "Heading link")
 ### Heading 3 link [Heading link](https://github.com/pandao/editor.md "Heading link")
@@ -83,15 +20,9 @@ d
 ##### Heading 5 link [Heading link](https://github.com/pandao/editor.md "Heading link")
 ###### Heading 6 link [Heading link](https://github.com/pandao/editor.md "Heading link")
 
-#### 标题（用底线的形式）Heading (underline)
 
-This is an H1
-=============
 
-This is an H2
--------------
-
-### 字符效果和横线等
+# 字符效果和横线等
                 
 ----
 
@@ -108,7 +39,7 @@ This is an H2
 
 The <abbr title="Hyper Text Markup Language">HTML</abbr> specification is maintained by the <abbr title="World Wide Web Consortium">W3C</abbr>.
 
-### 引用 Blockquotes
+# 引用 Blockquotes
 
 > 引用文本 Blockquotes
 
@@ -116,7 +47,7 @@ The <abbr title="Hyper Text Markup Language">HTML</abbr> specification is mainta
                     
 > 引用：如果想要插入空白换行`即<br />标签`，在插入处先键入两个以上的空格然后回车即可，[普通链接](http://localhost/)。
 
-### 锚点与链接 Links
+# 锚点与链接 Links
 
 [普通链接](http://localhost/)
 
@@ -136,28 +67,13 @@ GFM a-tail link [@pandao](https://my.oschina.net/u/3691274)  邮箱地址自动�
 
 > @pandao
 
-### 多语言代码高亮 Codes
+# 多语言代码高亮 Codes
 
-#### 行内代码 Inline code
+## 行内代码 Inline code
 
 执行命令：`npm install marked`
 
-#### 缩进风格
-
-即缩进四个空格，也做为实现类似 `<pre>` 预格式化文本 ( Preformatted Text ) 的功能。
-
-    <?php
-        echo "Hello world!";
-    ?>
-    
-预格式化文本：
-
-    | First Header | Second Header |
-    | ------------ | ------------- |
-    | Content Cell | Content Cell  |
-    | Content Cell | Content Cell  |
-
-#### JS代码　
+## JS代码　
 
 ```javascript
 function test() {
@@ -198,7 +114,7 @@ var testBox = box();
 testBox.add("jQuery").remove("jQuery");
 ```
 
-#### HTML 代码 HTML codes
+## HTML 代码 HTML codes
 
 ```html
 <!DOCTYPE html>
@@ -220,7 +136,7 @@ testBox.add("jQuery").remove("jQuery");
 </html>
 ```
 
-### 图片 Images
+# 图片 Images
 
 Image:
 
@@ -240,21 +156,21 @@ Image:
                 
 ----
 
-### 列表 Lists
+# 列表 Lists
 
-#### 无序列表（减号）Unordered Lists (-)
+## 无序列表（减号）Unordered Lists (-)
                 
 - 列表一
 - 列表二
 - 列表三
      
-#### 无序列表（星号）Unordered Lists (*)
+## 无序列表（星号）Unordered Lists (*)
 
 * 列表一
 * 列表二
 * 列表三
 
-#### 无序列表（加号和嵌套）Unordered Lists (+)
+## 无序列表（加号和嵌套）Unordered Lists (+)
                 
 + 列表一
 + 列表二
@@ -266,13 +182,13 @@ Image:
     * 列表二
     * 列表三
 
-#### 有序列表 Ordered Lists (-)
+## 有序列表 Ordered Lists (-)
                 
 1. 第一行
 2. 第二行
 3. 第三行
 
-#### GFM task list
+## GFM task list
 
 - [x] GFM task list 1
 - [x] GFM task list 2
@@ -286,7 +202,7 @@ Image:
                 
 ----
                     
-### 绘制表格 Tables
+# 绘制表格 Tables
 
 | 项目   |  价格 | 数量  |
 | ------ | ----: | :---: |
@@ -320,45 +236,10 @@ Image:
 | Computer | $1600 |
 | Phone    |   $12 |
 | Pipe     |    $1 |
-                
-----
-
-#### 特殊符号 HTML Entities Codes
-
-&copy; &  &uml; &trade; &iexcl; &pound;
-&amp; &lt; &gt; &yen; &euro; &reg; &plusmn; &para; &sect; &brvbar; &macr; &laquo; &middot; 
-
-X&sup2; Y&sup3; &frac34; &frac14;  &times;  &divide;   &raquo;
-
-18&ordm;C  &quot;  &apos;
-
-[========]
-
-### Emoji表情 :smiley:
-
-> Blockquotes :star:
-
-#### GFM task lists & Emoji & fontAwesome icon emoji & editormd logo emoji :editormd-logo-5x:
-
-- [x] :smiley: @mentions, :smiley: #refs, [links](), **formatting**, and <del>tags</del> supported :editormd-logo:;
-- [x] list syntax required (any unordered or ordered list supported) :editormd-logo-3x:;
-- [x] [ ] :smiley: this is a complete item :smiley:;
-- [ ] []this is an incomplete item [test link](#) :fa-star: @pandao; 
-- [ ] [ ]this is an incomplete item :fa-star: :fa-gear:;
-    - [ ] :smiley: this is an incomplete item [test link](#) :fa-star: :fa-gear:;
-    - [ ] :smiley: this is  :fa-star: :fa-gear: an incomplete item [test link](#);
- 
-#### 反斜杠 Escape
-
-\*literal asterisks\*
-
-[========]
             
-### 科学公式 TeX(KaTeX)
+# 科学公式 TeX(KaTeX)
 
 $$E=mc^2$$
-
-行内的公式$$E=mc^2$$行内的公式，行内的$$E=mc^2$$公式。
 
 $$x > y$$
 
@@ -366,67 +247,18 @@ $$\(\sqrt{3x-1}+(1+x)^2\)$$
                     
 $$\sin(\alpha)^{\theta}=\sum_{i=0}^{n}(x^i + \cos(f))$$
 
-多行公式：
 
-```math
-\displaystyle
-\left( \sum\_{k=1}^n a\_k b\_k \right)^2
-\leq
-\left( \sum\_{k=1}^n a\_k^2 \right)
-\left( \sum\_{k=1}^n b\_k^2 \right)
-```
-
-```katex
-\displaystyle 
-    \frac{1}{
-        \Bigl(\sqrt{\phi \sqrt{5}}-\phi\Bigr) e^{
-        \frac25 \pi}} = 1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {
-        1+\frac{e^{-6\pi}}
-        {1+\frac{e^{-8\pi}}
-         {1+\cdots} }
-        } 
-    }
-```
-
-```latex
-f(x) = \int_{-\infty}^\infty
-    \hat f(\xi)\,e^{2 \pi i \xi x}
-    \,d\xi
-```
-
-### 分页符 Page break
-
-> Print Test: Ctrl + P
-
-[========]
-
-### 绘制流程图 mermaid
+# 绘制流程图 mermaid
 
 {% mermaid %}
+
 graph TD;
     A --> B;
     A --> C;
     B --> D;
     C --> D;
+
 {% endmermaid %}
 
-[========]
                     
-### 绘制序列图 Sequence Diagram
-                    
-{% mermaid %}
-sequenceDiagram
-    participant Alice
-    participant Bob
-    Alice->>John: Hello John, how are you?
-    loop Healthcheck
-        John->>John: Fight against hypochondria
-    end
-    Note right of John: Rational thoughts <br/>prevail!
-    John-->>Alice: Great!
-    John->>Bob: How about you?
-    Bob-->>John: Jolly good!
-{% endmermaid %}
-
-
-### End
+End

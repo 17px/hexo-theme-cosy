@@ -1,4 +1,4 @@
-# Linear
+# Cosy
 
 文档向、追求极致加载速度的hexo主题，js 大小为 `66.28 KB`,  `gzip` 压缩之后，仅 `20.78 KB`
 
@@ -14,7 +14,7 @@
 
 ## 配置
 
-有关更多配置信息，请参阅 "[Linear 入门](https://mozzie.cn/2023/10/20/Linear入门)"。
+有关更多配置信息，请参阅 "[Cosy 入门](https://mozzie.cn/2023/10/20/Cosy入门)"。
 
 ## 特性
 

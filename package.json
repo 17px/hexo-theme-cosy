@@ -1,5 +1,5 @@
 {
-  "name": "hexo-theme-linear",
+  "name": "hexo-theme-cosy",
   "author": "himozzie@foxmail.com",
   "license": "LGPL-3.0-or-later",
   "description": "A Hexo theme of document orientation and pursuit of ultimate loading speed",
@@ -17,6 +17,11 @@
   "scripts": {
     "dev": "pnpm run --filter @ornn/dockyard dev",
     "build": "pnpm run --filter @ornn/dockyard build",
-    "dev:hexo": "pnpm run --filter @ornn/hexo-test dev"
+    "dev:hexo": "pnpm run --filter @ornn/hexo-test dev",
+    "c": "pnpm run --filter @ornn/hexo-test clean",
+    "g": "pnpm run --filter @ornn/hexo-test build"
+  },
+  "devDependencies": {
+    "hexo-cli": "4.3.1"
   }
 }
