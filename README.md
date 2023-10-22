@@ -14,7 +14,7 @@ Minimalist, pursuing the ultimate loading speed for a Hexo theme. JS size is `66
 
 ## Configuration
 
-For more configuration details, please refer to the "[Cosy Starter Guide](https://mozzie.cn/2023/10/20/Cosy-Starter-Guide)"
+For more configuration details, please refer to the "[Cosy Starter Guide](https://mozzie.cn/2023/10/21/Cosy-Starter-Guide/)"
 
 ## Features
 

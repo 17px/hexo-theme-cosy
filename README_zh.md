@@ -14,7 +14,7 @@
 
 ## 配置
 
-有关更多配置信息，请参阅 "[Cosy 入门](https://mozzie.cn/2023/10/20/Cosy入门)"。
+有关更多配置信息，请参阅 "[Cosy 入门](https://mozzie.cn/2023/10/21/Cosy%20%E5%85%A5%E9%97%A8/)"。
 
 ## 特性
 
@@ -103,7 +103,7 @@ import './index.less'
 // your stylesheet here
 ```
 
-当添加新的模块时，请重新运行下面的命令
+当添加gi新的模块时，请重新运行下面的命令
 
 ```bash
 # 重启启动webpack
