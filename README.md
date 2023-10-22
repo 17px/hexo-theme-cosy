@@ -2,7 +2,7 @@
 
 Minimalist, pursuing the ultimate loading speed for a Hexo theme. JS size is `66.28 KB`, after `gzip` compression, it's only `20.78 KB`.
 
-[中文](README_zh.md)
+[中文文档](README_zh.md)
 
 ## Preview
 

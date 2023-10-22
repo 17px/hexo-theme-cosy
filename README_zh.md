@@ -103,7 +103,7 @@ import './index.less'
 // your stylesheet here
 ```
 
-请不要忘记，重新运行下面的命令
+当添加新的模块时，请重新运行下面的命令
 
 ```bash
 # 重启启动webpack
