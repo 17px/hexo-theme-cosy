@@ -18,7 +18,11 @@ document.addEventListener("DOMContentLoaded", () => {
       start: new Date("2023-01-04"),
       end: new Date("2023-01-10"),
     },
-    // ... 其他任务
+    {
+      name: "任务3",
+      start: new Date("2023-10-03"),
+      end: new Date("2023-10-08"),
+    },
   ];
 
   const myGantt = new Gantt("#gantt-chart", tasks);

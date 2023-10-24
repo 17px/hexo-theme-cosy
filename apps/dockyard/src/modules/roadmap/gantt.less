@@ -3,6 +3,7 @@
 
   #gantt-container {
     overflow-x: scroll;
+    height: 100%;
     scrollbar-width: none;
 
     &::-webkit-scrollbar {
@@ -10,53 +11,55 @@
     }
 
     #gantt-chart {
+      display: flex;
+      flex-direction: column;
       width: 100%;
+      height: 100%;
       overflow: hidden;
 
-      .task-bar {
-        height: 30px;
-        margin-bottom: 5px;
-        background-color: blue;
+      &.limited-days {
+        justify-content: space-evenly;
+
+        .gantt-month {
+          min-width: 20%;
+
+          .gantt-days {
+            justify-content: space-evenly;
+          }
+        }
       }
 
-      .gantt-header {
-        display: flex;
-      }
+      .task-container {
+        flex: 1;
 
-      .gantt-month {
-        flex-grow: 1;
-        text-align: center;
-      }
-
-      .gantt-days {
-        font-size: 12px;
-        white-space: nowrap;
-        display: flex;
-        align-items: center;
-
-        .gantt-day {
-          margin: 0 2px;
+        .task-bar {
+          height: 30px;
+          margin-bottom: 5px;
+          background-color: var(--color-primary);
         }
       }
 
 
+      .gantt-header {
+        display: flex;
 
-    }
-
-    .limited-days {
-      justify-content: space-evenly;
-
-      .gantt-month {
-        min-width: 20%;
+        .gantt-month {
+          flex-grow: 1;
+          text-align: center;
+        }
 
         .gantt-days {
-          justify-content: space-evenly;
+          font-size: 12px;
+          white-space: nowrap;
+          display: flex;
+          align-items: center;
+          color: var(--color-font);
+
+          .gantt-day {
+            margin: 0 2px;
+          }
         }
       }
     }
   }
-
-
-
-
 }

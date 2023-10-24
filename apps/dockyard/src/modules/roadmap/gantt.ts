@@ -57,9 +57,6 @@ export class Gantt {
     this.isDragging = false;
     container.className = this.showLimitedDays ? "limited-days" : "all-days";
 
-
-    const ganttEl = document.createElement("div");
-
     const headerEl = document.createElement("div");
     headerEl.classList.add("gantt-header");
 
@@ -87,9 +84,11 @@ export class Gantt {
       monthEl.appendChild(daysEl);
       headerEl.appendChild(monthEl);
     }
-    ganttEl.appendChild(headerEl);
+    container.appendChild(headerEl);
 
     // 添加任务条
+    const ganttEl = document.createElement("div");
+    ganttEl.classList.add('task-container')
     this.tasks.forEach((task) => {
       const taskEl = document.createElement("div");
       const duration =
