@@ -7,108 +7,124 @@ export interface Task {
 }
 
 export class Gantt {
-  selector: string;
+  year: number;
+  container: HTMLElement;
   tasks: Task[];
-  showLimitedDays: boolean = false;
   isDragging: boolean = false;
   lastX: number = 0;
-  container: any;
 
-  constructor(selector: string, tasks: Task[]) {
-    this.selector = selector;
+  constructor(year: number, containerSelector: string, tasks: Task[]) {
+    this.year = year;
     this.tasks = tasks;
-    this.render();
-  }
-
-  toggleLimitedDays() {
-    this.showLimitedDays = !this.showLimitedDays;
-    this.render();
-  }
-
-  clear() {
-    this.container = document.querySelector(this.selector);
-    if (this.container) {
-      this.container.innerHTML = "";
+    this.container = document.querySelector(containerSelector) as HTMLElement;
+    if (!this.container) {
+      throw new Error(`Container with selector ${containerSelector} not found`);
     }
+    this.render();
   }
 
-  handleMouseDown(e: MouseEvent) {
+  private getDaysInMonth(year: number, month: number): number {
+    return new Date(year, month + 1, 0).getDate();
+  }
+
+  private handleMouseDown = (e: MouseEvent) => {
     this.isDragging = true;
     this.lastX = e.clientX;
-  }
+  };
 
-  handleMouseMove(e: MouseEvent) {
+  private handleMouseMove = (e: MouseEvent) => {
     if (this.isDragging) {
-      const dx = this.lastX - e.clientX;
-      this.container.scrollBy(dx, 0);
+      const dx = e.clientX - this.lastX;
+      this.container.scrollBy(-dx, 0);
       this.lastX = e.clientX;
     }
-  }
+  };
 
-  handleMouseUp() {
+  private handleMouseUp = () => {
     this.isDragging = false;
-  }
+  };
 
-  render() {
-    this.clear(); // 清空之前的内容
-    const container = document.querySelector(this.selector);
-    if (!container) return;
+  private render(): void {
+    this.container.innerHTML = ""; // 清空已有内容
 
-    this.isDragging = false;
-    container.className = this.showLimitedDays ? "limited-days" : "all-days";
+    // 创建时间轴的主容器
+    const timelineContainer = document.createElement("div");
+    timelineContainer.className = "timeline-container";
 
-    const headerEl = document.createElement("div");
-    headerEl.classList.add("gantt-header");
+    // 绑定拖拽事件
+    this.container.addEventListener("mousedown", this.handleMouseDown);
+    document.addEventListener("mousemove", this.handleMouseMove);
+    document.addEventListener("mouseup", this.handleMouseUp);
 
-    // 创建时间轴 header（这里只是一个简单的示例，具体实现可能需要更多逻辑）
-    for (let month = 1; month <= 12; month++) {
-      const monthEl = document.createElement("div");
-      monthEl.classList.add("gantt-month");
-      monthEl.innerText = `2023年${month}月`;
+    // 创建月份行
+    const monthsRow = document.createElement("div");
+    monthsRow.className = "months-row";
 
-      const days = new Array(30).fill(null).map((_, day) => day + 1); // 假设每个月都有30天
-      const daysToShow = this.showLimitedDays
-        ? days.filter((_, i) => i % 7 === 0)
-        : days;
+    // 创建天数行
+    const daysRow = document.createElement("div");
+    daysRow.className = "days-row";
 
-      const daysEl = document.createElement("div");
-      daysEl.classList.add("gantt-days");
+    let currentLeft = 0;
+    const dayWidth = 30; // 每天的宽度，单位像素
 
-      daysToShow.forEach((day) => {
-        const dayEl = document.createElement("span");
-        dayEl.classList.add("gantt-day");
-        dayEl.innerText = `${day}`;
-        daysEl.appendChild(dayEl);
-      });
+    for (let month = 0; month < 12; month++) {
+      // 月份显示
+      const monthDiv = document.createElement("div");
+      monthDiv.className = "month";
+      monthDiv.textContent = `${this.year}年${month + 1}月`;
+      monthDiv.style.left = `${currentLeft}px`;
+      monthsRow.appendChild(monthDiv);
 
-      monthEl.appendChild(daysEl);
-      headerEl.appendChild(monthEl);
+      // 天数显示
+      const daysInMonth = this.getDaysInMonth(this.year, month);
+      for (let day = 1; day <= daysInMonth; day++) {
+        const dayDiv = document.createElement("div");
+        dayDiv.className = "day";
+        dayDiv.textContent = `${day}`;
+        dayDiv.style.position = "absolute";
+        dayDiv.style.left = `${currentLeft}px`;
+        daysRow.appendChild(dayDiv);
+
+        currentLeft += dayWidth;
+      }
     }
-    container.appendChild(headerEl);
 
-    // 添加任务条
-    const ganttEl = document.createElement("div");
-    ganttEl.classList.add('task-container')
-    this.tasks.forEach((task) => {
+    // 将月份和天数行添加到主容器
+    timelineContainer.appendChild(monthsRow);
+    timelineContainer.appendChild(daysRow);
+
+    // 将主容器添加到页面
+    this.container.appendChild(timelineContainer);
+
+    // 创建任务容器
+    const taskContainer = document.createElement("div");
+    taskContainer.className = "task-container";
+
+    this.tasks.forEach((task, index) => {
       const taskEl = document.createElement("div");
-      const duration =
-        (task.end.getTime() - task.start.getTime()) / (1000 * 60 * 60 * 24);
-      taskEl.classList.add("task-bar");
-      taskEl.style.width = `${duration * 20}px`;
-      taskEl.style.marginLeft = `${
-        ((task.start.getTime() - this.tasks[0].start.getTime()) /
-          (1000 * 60 * 60 * 24)) *
-        20
-      }px`;
-      taskEl.innerText = task.name;
-      ganttEl.appendChild(taskEl);
+      taskEl.className = "task-bar";
+      taskEl.style.position = "absolute";
+
+      const startDate = task.start;
+      const endDate = task.end;
+      const startDayOfYear =
+        (startDate.getTime() - new Date(this.year, 0, 1).getTime()) /
+        (1000 * 60 * 60 * 24);
+      const endDayOfYear =
+        (endDate.getTime() - new Date(this.year, 0, 1).getTime()) /
+        (1000 * 60 * 60 * 24);
+
+      taskEl.style.left = `${startDayOfYear * 30}px`;
+      taskEl.style.height = "30px";
+      taskEl.style.lineHeight = "30px";
+      taskEl.style.top = index * 30 + "px";
+      taskEl.style.width = `${(endDayOfYear - startDayOfYear) * 30}px`;
+      taskEl.textContent = task.name;
+
+      taskContainer.appendChild(taskEl);
     });
 
-    // 绑定拖拽事件到 headerEl
-    headerEl.addEventListener("mousedown", this.handleMouseDown.bind(this));
-    document.addEventListener("mousemove", this.handleMouseMove.bind(this));
-    document.addEventListener("mouseup", this.handleMouseUp.bind(this));
-
-    container.appendChild(ganttEl);
+    // 将任务容器添加到主容器
+    this.container.appendChild(taskContainer);
   }
 }

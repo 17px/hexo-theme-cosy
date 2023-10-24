@@ -1,33 +1,22 @@
 // import { Gantt } from "./gantt";
 // import "./gantt";
-import { Gantt, Task } from "./gantt";
+import { Gantt } from "./gantt";
 import "./index.less";
 
 // 使用Gantt组件
 document.addEventListener("DOMContentLoaded", () => {
   // new Gantt("#timeline");
 
-  const tasks: Task[] = [
+  const myGantt = new Gantt(2023, "#gantt-container", [
     {
-      name: "任务1",
+      name: "test1",
       start: new Date("2023-01-01"),
-      end: new Date("2023-01-05"),
+      end: new Date("2023-01-09"),
     },
     {
-      name: "任务2",
-      start: new Date("2023-01-04"),
-      end: new Date("2023-01-10"),
+      name: "test2",
+      start: new Date("2023-02-01"),
+      end: new Date("2023-02-23"),
     },
-    {
-      name: "任务3",
-      start: new Date("2023-10-03"),
-      end: new Date("2023-10-08"),
-    },
-  ];
-
-  const myGantt = new Gantt("#gantt-chart", tasks);
-
-  document.querySelector("#toggle-days")?.addEventListener("click", () => {
-    myGantt.toggleLimitedDays();
-  });
+  ]);
 });

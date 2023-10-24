@@ -2,63 +2,45 @@
   height: 100%;
 
   #gantt-container {
-    overflow-x: scroll;
+    overflow-x: auto;
+    overflow-y: hidden;
     height: 100%;
-    scrollbar-width: none;
+    display: flex;
+    flex-direction: column;
 
     &::-webkit-scrollbar {
       display: none;
     }
 
-    #gantt-chart {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
+    .timeline-container {
+      white-space: nowrap;
+      cursor: grab;
+      position: relative;
+      height: auto;
+      user-select: none;
 
-      &.limited-days {
-        justify-content: space-evenly;
-
-        .gantt-month {
-          min-width: 20%;
-
-          .gantt-days {
-            justify-content: space-evenly;
-          }
-        }
+      .months-row,
+      .days-row {
+        position: relative;
+        height: 30px;
       }
 
-      .task-container {
-        flex: 1;
-
-        .task-bar {
-          height: 30px;
-          margin-bottom: 5px;
-          background-color: var(--color-primary);
-        }
+      .month,
+      .day {
+        position: absolute;
+        height: 30px;
+        line-height: 30px;
       }
+    }
 
 
-      .gantt-header {
-        display: flex;
 
-        .gantt-month {
-          flex-grow: 1;
-          text-align: center;
-        }
+    .task-container {
+      flex: 1;
+      position: relative;
 
-        .gantt-days {
-          font-size: 12px;
-          white-space: nowrap;
-          display: flex;
-          align-items: center;
-          color: var(--color-font);
-
-          .gantt-day {
-            margin: 0 2px;
-          }
-        }
+      .task-bar {
+        background: var(--color-primary);
       }
     }
   }
