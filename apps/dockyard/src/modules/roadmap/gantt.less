@@ -1,0 +1,62 @@
+.roadmap {
+  height: 100%;
+
+  #gantt-container {
+    overflow-x: scroll;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    #gantt-chart {
+      width: 100%;
+      overflow: hidden;
+
+      .task-bar {
+        height: 30px;
+        margin-bottom: 5px;
+        background-color: blue;
+      }
+
+      .gantt-header {
+        display: flex;
+      }
+
+      .gantt-month {
+        flex-grow: 1;
+        text-align: center;
+      }
+
+      .gantt-days {
+        font-size: 12px;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+
+        .gantt-day {
+          margin: 0 2px;
+        }
+      }
+
+
+
+    }
+
+    .limited-days {
+      justify-content: space-evenly;
+
+      .gantt-month {
+        min-width: 20%;
+
+        .gantt-days {
+          justify-content: space-evenly;
+        }
+      }
+    }
+  }
+
+
+
+
+}

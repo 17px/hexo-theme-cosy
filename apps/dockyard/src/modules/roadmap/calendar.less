@@ -1,0 +1,45 @@
+#calendar {
+  font-family: Arial, sans-serif;
+  text-align: center;
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
+
+  .today {
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 8px;
+      height: 8px;
+      background-color: red;
+      position: absolute;
+      bottom: 2px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 50%;
+    }
+  }
+
+  .weekdays,
+  .days {
+    display: flex;
+    flex-wrap: wrap;
+    width: 280px; // 7天 x 40px（每个day或weekday的宽度）
+
+    .weekday,
+    .day {
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+
+    .empty {
+      background-color: #eee;
+    }
+  }
+}
