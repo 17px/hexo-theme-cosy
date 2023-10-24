@@ -13,6 +13,7 @@
     }
 
     .timeline-container {
+      padding-left: 5px;
       white-space: nowrap;
       cursor: grab;
       position: relative;
@@ -28,8 +29,15 @@
       .month,
       .day {
         position: absolute;
+        text-align: center;
         height: 30px;
+        width: 30px;
         line-height: 30px;
+
+        &.today {
+          background-color: var(--color-primary); // 你想要的颜色
+          border-radius: 50%; // 使其成为一个圆圈
+        }
       }
     }
 
@@ -40,7 +48,9 @@
       position: relative;
 
       .task-bar {
+        padding: 0 10px;
         background: var(--color-primary);
+        border-radius: var(--radius);
       }
     }
   }

@@ -18,5 +18,10 @@ document.addEventListener("DOMContentLoaded", () => {
       start: new Date("2023-02-01"),
       end: new Date("2023-02-23"),
     },
+    {
+      name: "test2",
+      start: new Date("2023-10-24"),
+      end: new Date("2023-10-30"),
+    },
   ]);
 });

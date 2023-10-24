@@ -77,14 +77,28 @@ export class Gantt {
 
       // 天数显示
       const daysInMonth = this.getDaysInMonth(this.year, month);
+      const currentDate = new Date();
+      const currentYear = currentDate.getFullYear();
+      const currentMonth = currentDate.getMonth();
+      const currentDay = currentDate.getDate();
+
       for (let day = 1; day <= daysInMonth; day++) {
         const dayDiv = document.createElement("div");
         dayDiv.className = "day";
         dayDiv.textContent = `${day}`;
         dayDiv.style.position = "absolute";
         dayDiv.style.left = `${currentLeft}px`;
-        daysRow.appendChild(dayDiv);
 
+        // 检查今天的日期，并添加标识
+        if (
+          this.year === currentYear &&
+          month === currentMonth &&
+          day === currentDay
+        ) {
+          dayDiv.classList.add("today");
+        }
+
+        daysRow.appendChild(dayDiv);
         currentLeft += dayWidth;
       }
     }
@@ -126,5 +140,31 @@ export class Gantt {
 
     // 将任务容器添加到主容器
     this.container.appendChild(taskContainer);
+
+    // 获取当前日期
+    const currentDate = new Date();
+    const currentYear = currentDate.getFullYear();
+    const currentMonth = currentDate.getMonth();
+    const currentDay = currentDate.getDate();
+
+    // 如果当前年份是这个 Gantt 图的年份
+    if (this.year === currentYear) {
+      // 计算当前日期距离年初的天数
+      let daysFromStartOfYear = 0;
+      for (let i = 0; i < currentMonth; i++) {
+        daysFromStartOfYear += this.getDaysInMonth(currentYear, i);
+      }
+      daysFromStartOfYear += currentDay;
+
+      // 计算这些天数对应的像素值
+      const currentLeftPosition = daysFromStartOfYear * dayWidth;
+
+      // 计算要滚动的像素量以便将当前日期居中
+      const halfContainerWidth = this.container.offsetWidth / 2;
+      const scrollToPosition = currentLeftPosition - halfContainerWidth;
+
+      // 执行滚动
+      this.container.scrollLeft = scrollToPosition;
+    }
   }
 }
