@@ -1,7 +1,6 @@
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CopyPlugin = require('./scripts/plugin/CopyPlugin.js');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const baseConfig = require('./webpack.config.js');
 const { merge } = require('webpack-merge');
@@ -11,12 +10,13 @@ const path = require('path');
 module.exports = merge(baseConfig, {
   mode: 'production',
   optimization: {
+    minimize: true,
     minimizer: [
       new TerserPlugin({
         terserOptions: {
           compress: {
             drop_console: true
-          }
+          },
         }
       }),
       new OptimizeCSSAssetsPlugin({
@@ -29,9 +29,6 @@ module.exports = merge(baseConfig, {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin({
-      cleanOnceBeforeBuildPatterns: [`./build/*`]
-    }),
     new BundleAnalyzerPlugin(),
     new CopyPlugin({
       patterns: [

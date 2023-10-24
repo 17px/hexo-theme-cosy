@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack --config webpack.dev.js",
-    "build": "cross-env NODE_ENV=production webpack --config webpack.prod.js"
+    "build": "rimraf ./build && cross-env NODE_ENV=production webpack --config webpack.prod.js"
   },
   "devDependencies": {
     "@types/mathjax": "0.0.38",
@@ -26,7 +26,8 @@
     "webpack-cli": "^5.1.4",
     "webpack-merge": "^5.9.0",
     "webpack-bundle-analyzer": "4.9.1",
-    "copy-webpack-plugin": "11.0.0"
+    "copy-webpack-plugin": "11.0.0",
+    "rimraf": "5.0.5"
   },
   "dependencies": {
     "algoliasearch": "^4.20.0",
