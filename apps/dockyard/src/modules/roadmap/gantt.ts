@@ -85,7 +85,7 @@ export class GanttChart {
       // 月份显示
       const monthDiv = document.createElement("div");
       monthDiv.className = "month";
-      monthDiv.textContent = `${this.currentYear}年${month + 1}月`;
+      monthDiv.textContent = `${month + 1} / ${this.currentYear}`;
       monthDiv.style.left = `${currentLeft}px`;
       monthsRow.appendChild(monthDiv);
 

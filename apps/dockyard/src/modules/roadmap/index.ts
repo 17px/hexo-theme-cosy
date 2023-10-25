@@ -20,6 +20,13 @@ const processData = (year: string | number, yearDataList: YearItem[]) =>
 // 使用Gantt组件
 document.addEventListener("DOMContentLoaded", () => {
   const { roadmapYears = null, initYear } = window;
+
+  const todayButton = document.querySelector(
+    "#tody-button"
+  ) as HTMLButtonElement;
+  if (initYear === dayjs().year().toString() && todayButton) {
+    todayButton.style.display = "block";
+  }
   if (roadmapYears) {
     const yearOptions = Object.keys(roadmapYears).map((year) => ({
       value: String(Number(year)),
@@ -29,6 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
     new Dropdown("#year-dropdown", yearOptions, {
       onClickItem: (year) => {
         document.querySelector("#year-dropdown")!.textContent = year;
+        todayButton.style.display =
+          year === dayjs().year().toString() ? "block" : "none";
         const yearsData = processData(year, roadmapYears[year]);
         gantt.updateTasks(yearsData, Number(year));
       },
@@ -36,6 +45,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const yearsData = processData(initYear, roadmapYears[initYear]);
     const gantt = new GanttChart("#gantt-container", yearsData);
+
+    todayButton?.addEventListener("click", () => gantt.centerOnCurrentDay());
   }
 
   // const onSelectionChange = (selected: string, index: number) => {

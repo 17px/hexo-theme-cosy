@@ -12,6 +12,7 @@ tip-prev-page: 上一页
 tip-next-page: 下一页
 tip-collapse: 折叠
 tip-expand: 展开
+tip-roadmap-today: 定位今天
 # text
 text-select: 选择
 text-move: 移动
@@ -27,3 +28,4 @@ text-pub-time: 发布于
 text-license: 许可
 text-post-link: 本文链接
 text-catalog: 目录
+text-today: 今天
