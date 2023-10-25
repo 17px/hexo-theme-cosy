@@ -1,0 +1,33 @@
+// 容器样式
+#segmented-control-container {
+  position: relative;
+  display: inline-flex;
+  overflow: hidden;
+  background: var(--color-bg-segment);
+  border-radius: 8px;
+  height: 24px;
+
+  // 按钮样式
+  .segmented-control-button {
+    font-size: 14px;
+    border: 1px solid;
+    border-color: transparent;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: var(--color-font);
+
+    // 非选中状态下的鼠标悬停效果
+    &:hover {
+      color: var(--color-font-2);
+    }
+
+    // 选中状态
+    &.selected {
+      border-color: var(--color-seg-border);
+      border-radius: 8px;
+      box-shadow: rgba(0, 0, 0, 0.09) 0px 1px 4px;
+      background-color: var(--color-seg-selected);
+    }
+  }
+}

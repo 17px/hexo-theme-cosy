@@ -6,10 +6,41 @@
   .timeline-bar {
     padding: 6px 24px;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     height: 45px;
     border-bottom: 1px solid var(--color-border-2);
+
+    section {
+      display: flex;
+      align-items: center;
+
+      button {
+        margin-left: 8px;
+        padding: 2px 8px;
+        background: var(--color-seg-selected);
+        color: var(--color-font);
+        border: 1px solid var(--color-seg-border);
+        border-radius: var(--radius);
+        cursor: pointer;
+        transition: all 0.3s;
+        box-shadow: rgba(0, 0, 0, 0.09) 0px 1px 4px;
+
+        &:hover {
+          color: var(--color-font-2);
+        }
+
+        &:active {
+          color: var(--color-font-3);
+        }
+
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+    }
+
+
   }
 
   #gantt-container {

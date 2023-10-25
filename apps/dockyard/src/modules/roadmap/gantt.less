@@ -1,4 +1,5 @@
 #gantt-container {
+  cursor: grab;
 
   &::before {
     content: '';
@@ -16,7 +17,6 @@
 
   .timeline-container {
     white-space: nowrap;
-    cursor: grab;
     position: relative;
     user-select: none;
 
@@ -32,7 +32,7 @@
       text-align: center;
       height: 30px;
       line-height: 30px;
-      color: var(--color-font);
+      color: var(--color-font-2);
 
       &.today {
         position: relative;
@@ -42,8 +42,9 @@
           content: '';
           left: 50%;
           transform: translateX(-50%);
-          width: 4px;
-          height: 4px;
+          width: 8px;
+          height: 8px;
+          top: -4px;
           border-radius: 50%;
           background-color: var(--color-primary); // 你想要的颜色
         }
@@ -59,8 +60,10 @@
 
     .task-bar {
       padding: 0 10px;
-      background: var(--color-primary);
       border-radius: var(--radius);
+      z-index: 10;
+      cursor: pointer;
+      background: linear-gradient(to right, var(--color-primary-2), var(--color-primary-3));
     }
   }
 }

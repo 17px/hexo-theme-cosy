@@ -1,6 +1,6 @@
 export type DropdownOption = {
   value: string;
-  label: string;
+  label: string | number
   icon?: string; // 可选的图标URL
 };
 

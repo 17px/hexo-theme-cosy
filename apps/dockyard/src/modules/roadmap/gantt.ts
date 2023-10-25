@@ -7,7 +7,7 @@ export interface GanttTask {
   end: string;
 }
 
-export class Gantt {
+export class GanttChart {
   currentYear: number;
   chartContainer: HTMLElement;
   taskList: GanttTask[];
@@ -15,8 +15,8 @@ export class Gantt {
   lastMouseX: number = 0;
   currentDayWidth: number = 30;
 
-  constructor(year: number, containerSelector: string, tasks: GanttTask[]) {
-    this.currentYear = year;
+  constructor(containerSelector: string, tasks: GanttTask[]) {
+    this.currentYear = dayjs().year();
     this.taskList = tasks;
     this.chartContainer = document.querySelector(
       containerSelector
@@ -87,50 +87,32 @@ export class Gantt {
 
       // 天数显示
       const daysInMonth = this.getDaysOfMonth(this.currentYear, month);
-      const currentDate = new Date();
-      const currentYear = currentDate.getFullYear();
-      const currentMonth = currentDate.getMonth();
-      const currentDay = currentDate.getDate();
 
-      // 创建竖线
-      const verticalLine = document.createElement("div");
-      verticalLine.style.position = "absolute";
-      verticalLine.style.height = "100%"; // 你可以根据需要调整高度
-      verticalLine.style.width = "0"; // 设置宽度为0，因为我们将使用border来显示线
-      verticalLine.style.borderLeft = "1px dashed var(--color-border-2)"; // 使用虚线
-      verticalLine.style.left = `${currentLeft}px`; // 与 .month 的 left 值相同
+      // 创建竖线，第一条不创建
+      if (currentLeft > 0) {
+        const verticalLine = document.createElement("div");
+        verticalLine.style.position = "absolute";
+        verticalLine.style.height = "100%"; // 你可以根据需要调整高度
+        verticalLine.style.width = "0"; // 设置宽度为0，因为我们将使用border来显示线
+        verticalLine.style.borderLeft = "1px dashed var(--color-border)"; // 使用虚线
+        verticalLine.style.left = `${currentLeft}px`; // 与 .month 的 left 值相同
 
-      // 将竖线添加到 taskContainer 中
-      taskDiv.appendChild(verticalLine);
+        // 将月份分割竖线添加到 taskContainer 中
+        taskDiv.appendChild(verticalLine);
+      }
 
       for (let day = 1; day <= daysInMonth; day++) {
         const dayDiv = document.createElement("div");
         dayDiv.className = "day";
-        const ymd = `${this.currentYear}-${
-          month + 1 > 9 ? month + 1 : "0" + (month + 1)
-        }-${day > 9 ? day : "0" + day}`;
-        dayDiv.setAttribute("data-ymd", String(ymd));
+        const ymd = `${this.currentYear}-${month + 1}-${day}`;
+        dayDiv.setAttribute("data-ymd", dayjs(ymd).format("YYYY-MM-DD"));
         dayDiv.textContent = `${day}`;
         dayDiv.style.position = "absolute";
         dayDiv.style.left = `${currentLeft}px`;
-
-        // 检查今天的日期，并添加标识
-        if (
-          this.currentYear === currentYear &&
-          month === currentMonth &&
-          day === currentDay
-        ) {
-          dayDiv.classList.add("today");
-        }
-
         daysRow.appendChild(dayDiv);
         currentLeft += this.currentDayWidth;
       }
     }
-
-    // 将月份和天数行添加到主容器
-    timelineDiv.appendChild(monthsRow);
-    timelineDiv.appendChild(daysRow);
 
     this.taskList.forEach((task, index) => {
       const taskEl = document.createElement("div");
@@ -145,11 +127,16 @@ export class Gantt {
       taskDiv.appendChild(taskEl);
     });
 
+    // 将月份和天数行添加到主容器
+    timelineDiv.appendChild(monthsRow);
+    timelineDiv.appendChild(daysRow);
     this.chartContainer.appendChild(timelineDiv);
     this.chartContainer.appendChild(taskDiv);
 
+    this.renderTodayVerticalLine();
     this.updateTaskBars();
   }
+
   /**
    * 当天聚焦到屏幕中心
    */
@@ -186,6 +173,14 @@ export class Gantt {
    */
   handleMouseWheelInView(): void {
     this.chartContainer.addEventListener("wheel", (e: WheelEvent) => {
+      // 计算图表和容器的宽度
+      const chartWidth = this.chartContainer.scrollWidth;
+      const containerWidth = this.chartContainer.offsetWidth;
+
+      // 判断是否需要阻止缩小
+      const shouldPreventZoomOut = e.deltaY > 0 && chartWidth <= containerWidth;
+      if (shouldPreventZoomOut) return;
+
       this.currentDayWidth *= e.deltaY > 0 ? 0.9 : 1.1;
       this.renderChart();
       // this.todayFocusCenter();
@@ -194,6 +189,9 @@ export class Gantt {
     });
   }
 
+  /**
+   * 更新days-row
+   */
   updateDayWidthOnScroll(): void {
     const dayElements = [
       ...this.chartContainer.querySelectorAll(".day"),
@@ -247,5 +245,36 @@ export class Gantt {
         taskBar.style.width = `${width}px`;
       }
     });
+  }
+
+  /**
+   * 当天的竖线
+   */
+  private renderTodayVerticalLine(): void {
+    const today = dayjs().format("YYYY-MM-DD");
+    // 从DOM中找到今天的.day元素
+    const todayElement = this.chartContainer.querySelector(
+      `.day[data-ymd="${today}"]`
+    ) as HTMLElement;
+    if (!todayElement) return;
+    todayElement.classList.add("today");
+    // 获取其left值，考虑当天日期.day的宽度
+    const currentLeft =
+      +todayElement.style.left.replace("px", "") + todayElement.offsetWidth / 2;
+    // 创建今天的竖线
+    const todayVerticalLine = document.createElement("div");
+    todayVerticalLine.className = "today-vertical-line";
+    todayVerticalLine.style.position = "absolute";
+    todayVerticalLine.style.height = "100%";
+    todayVerticalLine.style.width = "0";
+    todayVerticalLine.style.borderLeft = "2px dashed var(--color-primary)"; // 可以根据需要更改样式
+    todayVerticalLine.style.left = `${currentLeft}px`;
+    // 获取 task-container
+    const taskDiv = this.chartContainer.querySelector(
+      ".task-container"
+    ) as HTMLElement;
+
+    // 将竖线添加到task-container中
+    taskDiv.appendChild(todayVerticalLine);
   }
 }
