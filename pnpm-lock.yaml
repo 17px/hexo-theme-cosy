@@ -17,6 +17,9 @@ importers:
       algoliasearch:
         specifier: ^4.20.0
         version: 4.20.0
+      dayjs:
+        specifier: 1.11.10
+        version: 1.11.10
       three:
         specifier: 0.157.0
         version: 0.157.0
@@ -1193,6 +1196,10 @@ packages:
       abab: 2.0.6
       whatwg-mimetype: 3.0.0
       whatwg-url: 11.0.0
+    dev: false
+
+  /dayjs@1.11.10:
+    resolution: {integrity: sha512-vjAczensTgRcqDERK0SR2XMwsF/tSvnvlv6VcF2GIhg6Sx4yOIt/irsr1RDJsKiIyBzJDpCoXiWWq28MqH2cnQ==}
     dev: false
 
   /debug@2.6.9:

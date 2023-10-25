@@ -10,18 +10,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const myGantt = new Gantt(2023, "#gantt-container", [
     {
       name: "test1",
-      start: new Date("2023-01-01"),
-      end: new Date("2023-01-09"),
+      start: '"2023-01-01"',
+      end: "2023-01-09",
     },
     {
       name: "test2",
-      start: new Date("2023-02-01"),
-      end: new Date("2023-02-23"),
+      start: "2023-02-01",
+      end: "2023-02-23",
     },
     {
       name: "test2",
-      start: new Date("2023-10-24"),
-      end: new Date("2023-10-30"),
+      start: "2023-10-24",
+      end: "2023-11-1",
     },
   ]);
 });
