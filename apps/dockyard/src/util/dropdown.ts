@@ -1,6 +1,6 @@
 export type DropdownOption = {
   value: string;
-  label: string | number
+  label: string | number;
   icon?: string; // 可选的图标URL
 };
 
@@ -125,7 +125,7 @@ export class Dropdown {
         item.appendChild(span);
       }
 
-      const labelText = document.createTextNode(option.label);
+      const labelText = document.createTextNode(String(option.label));
       item.appendChild(labelText);
 
       item.addEventListener("click", () => {

@@ -1,58 +1,51 @@
 import { Dropdown, DropdownOption } from "@/util/dropdown";
 import { SegmentedControl } from "./SegmentedControl";
 import { GanttChart } from "./gantt";
+import dayjs from "dayjs";
 import "./index.less";
+
+type YearItem = {
+  name: string;
+  start: string;
+  end: string;
+};
+
+const processData = (year: string | number, yearDataList: YearItem[]) =>
+  yearDataList.map((i: YearItem) => ({
+    ...i,
+    start: dayjs(`${year}-${i.start}`).toString(),
+    end: dayjs(`${year}-${i.end}`).toString(),
+  }));
 
 // 使用Gantt组件
 document.addEventListener("DOMContentLoaded", () => {
-  const gantt = new GanttChart("#gantt-container", [
-    {
-      name: "test1",
-      start: '"2023-01-01"',
-      end: "2023-01-09",
-    },
-    {
-      name: "test2",
-      start: "2023-02-01",
-      end: "2023-02-23",
-    },
-    {
-      name: "test2",
-      start: "2023-10-24",
-      end: "2023-11-1",
-    },
-  ]);
+  const { roadmapYears = null, initYear } = window;
+  if (roadmapYears) {
+    const yearOptions = Object.keys(roadmapYears).map((year) => ({
+      value: String(Number(year)),
+      label: Number(year),
+    }));
 
-  // 使用方法
-  const onSelectionChange = (selected: string, index: number) => {
-    console.log(`Selected: ${selected}, Index: ${index}`);
-  };
+    new Dropdown("#year-dropdown", yearOptions, {
+      onClickItem: (year) => {
+        document.querySelector("#year-dropdown")!.textContent = year;
+        const yearsData = processData(year, roadmapYears[year]);
+        gantt.updateTasks(yearsData, Number(year));
+      },
+    });
 
-  new SegmentedControl(
-    "segmented-control-container",
-    ["All", "Active", "Closed"],
-    0,
-    onSelectionChange
-  );
+    const yearsData = processData(initYear, roadmapYears[initYear]);
+    const gantt = new GanttChart("#gantt-container", yearsData);
+  }
 
-  const options: DropdownOption[] = [
-    {
-      value: "2022",
-      label: 2022,
-    },
-    {
-      value: "2023",
-      label: 2023,
-    },
-    {
-      value: "2024",
-      label: 2024,
-    },
-  ];
+  // const onSelectionChange = (selected: string, index: number) => {
+  //   console.log(`Selected: ${selected}, Index: ${index}`);
+  // };
 
-  new Dropdown("#year-dropdown", options, {
-    onClickItem: (status) => {
-      console.log(status);
-    },
-  });
+  // new SegmentedControl(
+  //   "segmented-control-container",
+  //   ["All", "Active", "Closed"],
+  //   0,
+  //   onSelectionChange
+  // );
 });

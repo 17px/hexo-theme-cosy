@@ -6,4 +6,6 @@ interface Window {
   Valine: any;
   weather: any;
   algolia: Record<string, string>;
+  roadmapYears: Record<string, any>;
+  initYear: string | number;
 }

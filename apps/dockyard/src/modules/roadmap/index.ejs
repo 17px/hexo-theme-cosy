@@ -4,11 +4,18 @@
   <div class="timeline-bar">
     <div id="segmented-control-container"></div>
     <section>
-      <button id="year-dropdown">选择年份</button>
+      <button id="year-dropdown"><%= page.initYear %></button>
       <button id="tody-button">今天</button>
     </section>
   </div>
   <div id="gantt-container" class="scrollbar-obtrusive"></div>
 </div>
+
+
+<script>
+  window.roadmapYears = JSON.parse('<%- road_to_json(page.years) %>')
+  window.initYear = '<%= page.initYear %>'
+</script>
+
 
 <!-- inject:js -->

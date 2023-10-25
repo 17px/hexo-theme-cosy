@@ -15,8 +15,12 @@ export class GanttChart {
   lastMouseX: number = 0;
   currentDayWidth: number = 30;
 
-  constructor(containerSelector: string, tasks: GanttTask[]) {
-    this.currentYear = dayjs().year();
+  constructor(
+    containerSelector: string,
+    tasks: GanttTask[],
+    currentYear = dayjs().year()
+  ) {
+    this.currentYear = currentYear;
     this.taskList = tasks;
     this.chartContainer = document.querySelector(
       containerSelector
@@ -276,5 +280,12 @@ export class GanttChart {
 
     // 将竖线添加到task-container中
     taskDiv.appendChild(todayVerticalLine);
+  }
+
+  public updateTasks(newTasks: GanttTask[], currentYear: number): void {
+    this.currentDayWidth = 30;
+    this.currentYear = currentYear;
+    this.taskList = newTasks;
+    this.renderChart(); // 重新渲染图表
   }
 }
