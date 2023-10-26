@@ -11,6 +11,7 @@ tip-prev-page: 前のページ
 tip-next-page: 次のページ
 tip-collapse: 折りたたむ
 tip-expand: 展開する
+tip-roadmap-today: 今日への位置づけ
 
 text-select: 選択
 text-move: 移動
@@ -25,3 +26,17 @@ text-pub-time: 公開日
 text-license: ライセンス
 text-post-link: 投稿URL
 text-catalog: カタログ
+text-today: 今日
+
+January: 1月
+February: 2月
+March: 3月
+April: 4月
+May: 5月
+June: 6月
+July: 7月
+August: 8月
+September: 9月
+October: 10月
+November: 11月
+December: 12月

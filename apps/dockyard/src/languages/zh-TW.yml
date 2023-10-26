@@ -11,6 +11,7 @@ tip-prev-page: 上一頁
 tip-next-page: 下一頁
 tip-collapse: 折疊
 tip-expand: 展開
+text-today: 今天
 
 text-select: 選擇
 text-move: 移動
@@ -25,3 +26,17 @@ text-pub-time: 發布於
 text-license: 授權
 text-post-link: 文章連結
 text-catalog: 目錄
+tip-roadmap-today: 定位至今天
+
+January: 一月
+February: 二月
+March: 三月
+April: 四月
+May: 五月
+June: 六月
+July: 七月
+August: 八月
+September: 九月
+October: 十月
+November: 十一月
+December: 十二月

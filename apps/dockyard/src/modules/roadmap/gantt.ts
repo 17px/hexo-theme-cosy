@@ -1,11 +1,31 @@
+import { Popover } from "@/util/popover";
 import "./gantt.less";
 import dayjs from "dayjs";
 
 export interface GanttTask {
-  name: string;
+  title: string;
+  content?: string;
   start: string;
   end: string;
 }
+
+const mapNumberToMonth = (monthNumber: number): string => {
+  const monthMap: { [key: number]: string } = {
+    1: "January",
+    2: "February",
+    3: "March",
+    4: "April",
+    5: "May",
+    6: "June",
+    7: "July",
+    8: "August",
+    9: "September",
+    10: "October",
+    11: "November",
+    12: "December",
+  };
+  return monthMap[monthNumber];
+};
 
 export class GanttChart {
   currentYear: number;
@@ -85,7 +105,7 @@ export class GanttChart {
       // 月份显示
       const monthDiv = document.createElement("div");
       monthDiv.className = "month";
-      monthDiv.textContent = `${month + 1} / ${this.currentYear}`;
+      monthDiv.textContent = `${window.i18n[mapNumberToMonth(month + 1)]}`;
       monthDiv.style.left = `${currentLeft}px`;
       monthsRow.appendChild(monthDiv);
 
@@ -120,15 +140,39 @@ export class GanttChart {
 
     this.taskList.forEach((task, index) => {
       const taskEl = document.createElement("div");
-      taskEl.className = "task-bar";
+
+      const now = dayjs();
+      const start = dayjs(task.start);
+      const end = dayjs(task.end);
+      const status = end.isBefore(now)
+        ? "expired"
+        : start.isBefore(now) && end.isAfter(now)
+        ? "doing"
+        : "todo";
+      taskEl.classList.add("task-bar", "ellipsis", status);
       taskEl.setAttribute("data-start", dayjs(task.start).format("YYYY-MM-DD"));
       taskEl.setAttribute("data-end", dayjs(task.end).format("YYYY-MM-DD"));
       taskEl.style.position = "absolute";
       taskEl.style.height = "30px";
       taskEl.style.lineHeight = "30px";
-      taskEl.style.top = index * 30 + "px";
-      taskEl.textContent = task.name;
+      taskEl.style.top = index * 34 + "px";
+      taskEl.textContent = task.title;
       taskDiv.appendChild(taskEl);
+      new Popover(taskEl, {
+        title: `${dayjs(task.start).format("DD/MM/YYYY")} - ${dayjs(
+          task.end
+        ).format("DD/MM/YYYY")}`,
+        content: task.content ?? task.title,
+        styles: {
+          maxHeight: "30%",
+          maxWidth: "80%",
+          transform: "translateX(-50%)",
+          bottom: "24px",
+          left: "50%",
+          position: "fixed",
+        },
+        classNames: ["task-bar-popover"],
+      });
     });
 
     // 将月份和天数行添加到主容器
@@ -177,14 +221,8 @@ export class GanttChart {
    */
   handleMouseWheelInView(): void {
     this.chartContainer.addEventListener("wheel", (e: WheelEvent) => {
-      // 计算图表和容器的宽度
-      const chartWidth = this.chartContainer.scrollWidth;
-      const containerWidth = this.chartContainer.offsetWidth;
-
-      // 判断是否需要阻止缩小
-      const shouldPreventZoomOut = e.deltaY > 0 && chartWidth <= containerWidth;
-      if (shouldPreventZoomOut) return;
-
+      // 屏幕缩小，导致了文字变形，给定一个最小的天数间隔
+      if (e.deltaY > 0 && this.currentDayWidth < 5) return;
       this.currentDayWidth *= e.deltaY > 0 ? 0.9 : 1.1;
       this.renderChart();
       // this.todayFocusCenter();
@@ -282,6 +320,9 @@ export class GanttChart {
     taskDiv.appendChild(todayVerticalLine);
   }
 
+  /**
+   * 实例外部切换数据源重新渲染人物
+   */
   public updateTasks(newTasks: GanttTask[], currentYear: number): void {
     this.currentDayWidth = 30;
     this.currentYear = currentYear;

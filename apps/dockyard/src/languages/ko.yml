@@ -11,6 +11,7 @@ tip-prev-page: 이전 페이지
 tip-next-page: 다음 페이지
 tip-collapse: 접기
 tip-expand: 펼치기
+tip-roadmap-today: 오늘로 이동
 
 text-select: 선택
 text-move: 이동
@@ -25,3 +26,17 @@ text-pub-time: 게시 일자
 text-license: 라이선스
 text-post-link: 게시글 URL
 text-catalog: 목록
+text-today: 오늘
+
+January: 1월
+February: 2월
+March: 3월
+April: 4월
+May: 5월
+June: 6월
+July: 7월
+August: 8월
+September: 9월
+October: 10월
+November: 11월
+December: 12월

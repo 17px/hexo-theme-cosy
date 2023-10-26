@@ -191,3 +191,38 @@
     }
   }
 }
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  background: var(--color-bg-button);
+  color: var(--color-font);
+  border: var(--border-button);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: var(--shadow-button);
+
+  &:hover {
+    color: var(--color-font-2);
+  }
+
+  &:active {
+    color: var(--color-font-3);
+  }
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  >svg {
+    color: var(--color-font-2);
+    width: 16px;
+    height: 16px;
+  }
+
+  >span {
+    padding: 0 2px 0 6px;
+  }
+}

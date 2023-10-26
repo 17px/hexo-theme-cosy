@@ -3,9 +3,11 @@ import { SegmentedControl } from "./SegmentedControl";
 import { GanttChart } from "./gantt";
 import dayjs from "dayjs";
 import "./index.less";
+import { Popover } from "@/util/popover";
 
 type YearItem = {
-  name: string;
+  title: string;
+  content?: string;
   start: string;
   end: string;
 };
@@ -25,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "#tody-button"
   ) as HTMLButtonElement;
   if (initYear === dayjs().year().toString() && todayButton) {
-    todayButton.style.display = "block";
+    todayButton.style.display = "inherit";
   }
   if (roadmapYears) {
     const yearOptions = Object.keys(roadmapYears).map((year) => ({
@@ -35,9 +37,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     new Dropdown("#year-dropdown", yearOptions, {
       onClickItem: (year) => {
-        document.querySelector("#year-dropdown")!.textContent = year;
+        document.querySelector("#year-dropdown span")!.textContent = year;
         todayButton.style.display =
-          year === dayjs().year().toString() ? "block" : "none";
+          year === dayjs().year().toString() ? "inherit" : "none";
         const yearsData = processData(year, roadmapYears[year]);
         gantt.updateTasks(yearsData, Number(year));
       },

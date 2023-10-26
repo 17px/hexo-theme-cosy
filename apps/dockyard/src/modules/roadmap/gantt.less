@@ -26,6 +26,14 @@
       height: 30px;
     }
 
+    .month {
+      font-size: 12px;
+    }
+
+    .day {
+      font-size: 13px;
+    }
+
     .month,
     .day {
       position: absolute;
@@ -59,11 +67,25 @@
     position: relative;
 
     .task-bar {
+      position: relative;
       padding: 0 10px;
       border-radius: var(--radius);
       z-index: 10;
       cursor: pointer;
       background: linear-gradient(to right, var(--color-primary-2), var(--color-primary-3));
+      transition: all .3s ease-in-out;
+
+      &.expired {
+        color: var(--color-font-3);
+      }
+
+      &.doing {
+        color: var(--color-font);
+      }
+
+      &.todo {
+        color: var(--color-font-2);
+      }
     }
   }
 }

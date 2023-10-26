@@ -11,6 +11,7 @@ tip-prev-page: Предыдущая страница
 tip-next-page: Следующая страница
 tip-collapse: Свернуть
 tip-expand: Развернуть
+text-today: Сегодня
 
 text-select: выбрать
 text-move: движение
@@ -25,3 +26,17 @@ text-pub-time: Опубликовано
 text-license: Лицензия
 text-post-link: Ссылка на публикацию
 text-catalog: Каталог
+tip-roadmap-today: Позиционирование на сегодня
+
+January: Январь
+February: Февраль
+March: Март
+April: Апрель
+May: Май
+June: Июнь
+July: Июль
+August: Август
+September: Сентябрь
+October: Октябрь
+November: Ноябрь
+December: Декабрь

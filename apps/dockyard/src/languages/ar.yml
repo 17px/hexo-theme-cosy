@@ -11,6 +11,7 @@ tip-prev-page: الصفحة السابقة
 tip-next-page: الصفحة التالية
 tip-collapse: طي
 tip-expand: توسيع
+tip-roadmap-today: التوجيه إلى اليوم
 
 text-select: اختر
 text-move: حركة
@@ -25,3 +26,17 @@ text-pub-time: نشر في
 text-license: الترخيص
 text-post-link: رابط المنشور
 text-catalog: الفهرس
+text-today: اليوم
+
+January: يناير
+February: فبراير
+March: مارس
+April: إبريل
+May: مايو
+June: يونيو
+July: يوليو
+August: أغسطس
+September: سبتمبر
+October: أكتوبر
+November: نوفمبر
+December: ديسمبر

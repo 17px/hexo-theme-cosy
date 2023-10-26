@@ -11,6 +11,7 @@ tip-prev-page: Vorherige Seite
 tip-next-page: Nächste Seite
 tip-collapse: Einklappen
 tip-expand: Ausklappen
+tip-roadmap-today: Positionierung auf heute
 
 text-select: auswählen
 text-move: Bewegung
@@ -25,3 +26,17 @@ text-pub-time: Veröffentlicht am
 text-license: Lizenz
 text-post-link: Beitrag URL
 text-catalog: Katalog
+text-today: Heute
+
+January: Januar
+February: Februar
+March: März
+April: April
+May: Mai
+June: Juni
+July: Juli
+August: August
+September: September
+October: Oktober
+November: November
+December: Dezember
