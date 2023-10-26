@@ -1,0 +1,36 @@
+.resume {
+  height: 100%;
+  padding: 24px 0;
+  overflow-y: auto;
+
+  /* 打印设置 */
+  @media print {
+
+    /* A4 纸张大小设置 */
+    @page {
+      size: 210mm 297mm;
+      margin: 0;
+    }
+
+    /* 确保 .resume 容器适应 A4 纸张大小 */
+    .a4 {
+      width: 210mm;
+      height: 297mm;
+      page-break-after: always;
+    }
+  }
+
+  /* 屏幕显示设置 */
+  @media screen {
+
+    /* 为了可视化 A4 纸张大小，设置合适的宽高 */
+    .a4 {
+      width: 210mm;
+      height: 297mm;
+      background: var(--color-bg);
+      margin: 0 auto;
+      box-shadow: var(--shadow-box);
+      border-radius: var(--radius);
+    }
+  }
+}

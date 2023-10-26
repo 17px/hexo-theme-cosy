@@ -8,7 +8,7 @@
     <main class="scrollbar-obtrusive">
       <div class="article-container">
         <!-- 文章tags -->
-        <% if (page.tags.length > 0) { %>
+        <% if (page.tags && page.tags.length > 0) { %>
         <ul class="tags">
           <% page.tags.each(function(tag){ %>
           <li>
