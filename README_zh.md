@@ -1,6 +1,6 @@
 # Cosy
 
-文档向、追求极致加载速度的hexo主题，js 大小为 `66.28 KB`,  `gzip` 压缩之后，仅 `20.78 KB`
+文档向、追求极致加载速度的hexo主题，js 大小为 `86.73 KB`,  `gzip` 压缩之后，仅 `27.41 KB`
 
 [English](README.md)
 
