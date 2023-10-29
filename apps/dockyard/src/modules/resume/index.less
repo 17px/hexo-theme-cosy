@@ -1,14 +1,17 @@
+@import '../welcome/linear.less';
+
 .resume {
+  position: relative;
   height: 100%;
   padding: 24px 0;
   overflow-y: auto;
   // background: linear-gradient(to right, #80808012 1px, transparent 1px), linear-gradient(to bottom, #80808012 1px, transparent 1px);
-  background: linear-gradient(90deg, var(--color-bg) 21px, transparent 3%) center, linear-gradient(var(--color-bg) 21px, transparent 4%) center, var(--color-font-2);
+  background: linear-gradient(90deg, var(--color-bg) 21px, transparent 3%) center, linear-gradient(var(--color-bg) 21px, transparent 4%) center, var(--color-font-3);
   background-size: 22.5px 22.5px;
 
   .container {
     margin: 0 auto;
-    width: 1280px;
+    width: 960px;
     display: grid;
     grid-template-columns: 1fr 4fr;
     column-gap: 24px;
@@ -21,16 +24,20 @@
         background: var(--color-bg-2);
 
         figure {
-          width: 174px;
-          height: 174px;
+          margin: 0;
           border-radius: 32px;
           background: var(--color-bg-3);
+
+          img {
+            width: 100%;
+            border-radius: 32px;
+          }
         }
 
         h3 {
           font-size: 24px;
           font-weight: 500;
-          margin-top: 0;
+          margin: 2rem 0;
           text-align: center;
           text-transform: capitalize;
         }
@@ -40,8 +47,7 @@
 
           >span {
             padding: 0.5rem 1rem;
-            font-weight: 300;
-            font-size: 12px;
+            color: var(--color-font);
             background: var(--color-bg-3);
             border-radius: var(--radius);
           }
@@ -70,8 +76,13 @@
               justify-content: center;
               width: 42px;
               height: 42px;
-              background: var(--color-bg-3);
               border-radius: var(--radius);
+              color: var(--color-primary);
+
+              svg {
+                width: 20px;
+                height: 20px;
+              }
             }
 
             >div {
@@ -96,6 +107,26 @@
                 font-size: 14px;
                 color: var(--color-font);
               }
+            }
+          }
+        }
+
+        .social {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+          column-gap: 12px;
+
+          a {
+            padding: 4px;
+            display: inline-flex;
+            width: 32px;
+            height: 32px;
+            border-radius: var(--radius);
+            color: var(--color-font-2);
+            transition: all .3s ease;
+
+            &:hover {
+              background: var(--color-bg-3);
             }
           }
         }
@@ -130,12 +161,23 @@
       }
 
       .about-me {
-        padding-bottom: 2rem;
 
         p {
-          font-size: 15px;
           line-height: 1.5;
+          font-weight: 400;
+          color: var(--color-font-2);
+        }
+      }
+
+      .skill {
+        list-style: disc;
+        padding-left: 16px;
+        padding-bottom: 3rem;
+
+        li {
+          line-height: 2;
           font-weight: 300;
+          color: var(--color-font-2);
         }
       }
 
@@ -158,18 +200,20 @@
             display: inline-flex;
             justify-content: center;
             align-items: center;
-            width: 46px;
-            height: 46px;
-            background: var(--color-bg-3);
+            width: 42px;
+            height: 42px;
+            // background: var(--color-bg-3);
             border-radius: var(--radius);
             z-index: 10;
+            color: var(--color-primary);
 
-            &::before {
+
+            &::after {
               content: '';
               position: absolute;
-              left: 50%;
-              transform: translateX(-50%);
-              width: .5px;
+              left: 49%;
+              transform: translateX(-47%);
+              width: 1px;
               background: var(--color-border);
               top: 100%;
               bottom: -2.5rem;
@@ -193,9 +237,10 @@
           }
         }
 
+
         .item {
-          margin-left: 23px;
-          padding-bottom: 1rem;
+          margin-left: 20px;
+          padding-bottom: 2rem;
           position: relative;
           padding-left: 2.5rem;
           border-left: 1px solid var(--color-border);
@@ -208,7 +253,7 @@
           &::before {
             content: '';
             background: var(--color-primary);
-            box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 0 0.25rem var(--color-primary-4);
             border-radius: 50%;
             position: absolute;
             top: 0.0625rem;
@@ -223,15 +268,33 @@
           }
 
           .period {
-            padding: 1rem 0;
+            padding-top: 1rem;
             line-height: 1;
             font-weight: 400;
             font-size: 15px;
+            color: var(--color-font-2);
           }
 
           .content {
             margin: 0;
             padding: 0 0 1rem 0;
+            color: var(--color-font-2);
+          }
+
+          .desc {
+            margin: 0;
+            padding: 1rem 0 1rem 0;
+            color: var(--color-font-2);
+          }
+
+          .list {
+            list-style: decimal;
+            padding-left: 16px;
+
+            li {
+              line-height: 1.5;
+              margin-bottom: .5rem;
+            }
           }
         }
       }
