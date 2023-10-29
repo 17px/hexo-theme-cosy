@@ -14,85 +14,88 @@
     column-gap: 24px;
 
     aside {
-      padding: 24px;
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius);
-      background: var(--color-bg-2);
+      .base {
+        padding: 24px;
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius);
+        background: var(--color-bg-2);
 
-      figure {
-        width: 174px;
-        height: 174px;
-        border-radius: 32px;
-        background: var(--color-bg-3);
-      }
-
-      h3 {
-        font-size: 24px;
-        font-weight: 500;
-        margin-top: 0;
-        text-align: center;
-        margin-bottom: 1rem;
-      }
-
-      .badge {
-        text-align: center;
-
-        >span {
-          padding: 0.5rem 1rem;
-          font-weight: 300;
-          font-size: 12px;
+        figure {
+          width: 174px;
+          height: 174px;
+          border-radius: 32px;
           background: var(--color-bg-3);
-          border-radius: var(--radius);
         }
-      }
 
-      .seperation {
-        margin: 2rem 0;
-        background: var(--color-border);
-        height: 1px;
-      }
+        h3 {
+          font-size: 24px;
+          font-weight: 500;
+          margin-top: 0;
+          text-align: center;
+          text-transform: capitalize;
+        }
 
-      ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
+        .badge {
+          text-align: center;
 
-        li {
-          display: flex;
-          align-items: center;
-          margin-bottom: 1rem;
-
-          .icon {
-            padding: 8px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 42px;
-            height: 42px;
+          >span {
+            padding: 0.5rem 1rem;
+            font-weight: 300;
+            font-size: 12px;
             background: var(--color-bg-3);
             border-radius: var(--radius);
           }
+        }
 
-          >div {
+        .seperation {
+          margin: 2.5rem 0;
+          background: var(--color-border);
+          height: 1px;
+        }
+
+        >ul {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+
+          li {
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding-left: 1rem;
-            flex: 1;
+            align-items: center;
+            margin-bottom: 2rem;
 
-            p {
-              margin: 0;
-              line-height: 1;
-              font-size: 12px;
-              color: var(--color-font-2);
+            .icon {
+              padding: 8px;
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              width: 42px;
+              height: 42px;
+              background: var(--color-bg-3);
+              border-radius: var(--radius);
             }
 
-            h4 {
-              padding-top: 0.5rem;
-              margin: 0;
-              font-weight: 400;
-              font-size: 14px;
-              color: var(--color-font);
+            >div {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              padding-left: 1rem;
+              flex: 1;
+
+              p {
+                margin: 0;
+                line-height: 1;
+                font-size: 12px;
+                color: var(--color-font-2);
+                text-transform: uppercase;
+              }
+
+              h4 {
+                padding-top: 0.5rem;
+                margin: 0;
+                font-weight: 400;
+                font-size: 14px;
+                color: var(--color-font);
+              }
             }
           }
         }
@@ -104,6 +107,134 @@
       border: 1px solid var(--color-border);
       border-radius: var(--radius);
       background: var(--color-bg-2);
+
+      >h2 {
+        margin-top: 0;
+        margin-bottom: 2rem;
+        position: relative;
+        font-weight: 600;
+        font-size: 2rem;
+        font-family: 'linear';
+
+        &::before {
+          position: absolute;
+          content: '';
+          background: var(--color-primary);
+          border-radius: 0.5rem;
+          height: 0.3125rem;
+          bottom: -1.0625rem;
+          left: 0;
+          width: 2.5rem;
+          z-index: 1;
+        }
+      }
+
+      .about-me {
+        padding-bottom: 2rem;
+
+        p {
+          font-size: 15px;
+          line-height: 1.5;
+          font-weight: 300;
+        }
+      }
+
+      ul {
+        margin: 0;
+        padding: 0 0 1rem 0;
+        list-style: none;
+
+        &:last-of-type {
+          padding-bottom: 0;
+        }
+
+        .title {
+          display: flex;
+          align-items: center;
+          margin-bottom: 2.5rem;
+
+          >span {
+            position: relative;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 46px;
+            height: 46px;
+            background: var(--color-bg-3);
+            border-radius: var(--radius);
+            z-index: 10;
+
+            &::before {
+              content: '';
+              position: absolute;
+              left: 50%;
+              transform: translateX(-50%);
+              width: .5px;
+              background: var(--color-border);
+              top: 100%;
+              bottom: -2.5rem;
+              z-index: 1;
+            }
+
+            svg {
+              width: 20px;
+              height: 20px;
+            }
+          }
+
+          h4 {
+            margin: 0;
+            padding-left: 1rem;
+            flex: 1;
+            margin-top: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+            line-height: 1.3;
+          }
+        }
+
+        .item {
+          margin-left: 23px;
+          padding-bottom: 1rem;
+          position: relative;
+          padding-left: 2.5rem;
+          border-left: 1px solid var(--color-border);
+          z-index: 10;
+
+          &:last-of-type {
+            border-left: 0;
+          }
+
+          &::before {
+            content: '';
+            background: var(--color-primary);
+            box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            position: absolute;
+            top: 0.0625rem;
+            left: -0.3125rem;
+            height: 0.5625rem;
+            width: 0.5625rem;
+          }
+
+          .name {
+            margin: 0;
+            font-size: 1rem;
+          }
+
+          .period {
+            padding: 1rem 0;
+            line-height: 1;
+            font-weight: 400;
+            font-size: 15px;
+          }
+
+          .content {
+            margin: 0;
+            padding: 0 0 1rem 0;
+          }
+        }
+      }
     }
   }
 }
