@@ -1,6 +1,7 @@
 ---
 title: resume
 layout: resume
+avatar: /img/avatar.png
 name: Hi! Mozzie
 role: Full Stack
 email: himozzie@gmail.com
