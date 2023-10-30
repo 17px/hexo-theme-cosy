@@ -30,6 +30,12 @@ text-post-link: Post Url
 text-catalog: Catalog
 text-today: Today
 text-resume: Resume
+text-skill: Skill
+text-education: Educational
+text-workExp: Work Experience
+text-project: Project
+text-project-name: Project Name
+text-project-desc: Project Description
 
 January: January
 February: February

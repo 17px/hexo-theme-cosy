@@ -92,7 +92,28 @@
     }
   }
 
+
+
   .task-bar-popover {
     width: 80% !important;
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  .resume {
+
+    .container {
+      grid-template-columns: auto !important;
+      column-gap: 0 !important;
+
+      >aside {
+        display: none;
+      }
+
+      >main {
+        margin: 0 auto;
+        max-width: 860px;
+      }
+    }
   }
 }

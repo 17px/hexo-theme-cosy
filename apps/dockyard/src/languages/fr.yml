@@ -27,6 +27,13 @@ text-license: Licence
 text-post-link: URL de l'Article
 text-catalog: Catalogue
 text-today: Aujourd'hui
+text-resume: CV
+text-skill: Compétence
+text-education: Éducation
+text-workExp: Expérience professionnelle
+text-project: Projet
+text-project-name: Nom du projet
+text-project-desc: Description du projet
 
 January: Janvier
 February: Février

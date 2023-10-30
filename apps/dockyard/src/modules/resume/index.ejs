@@ -80,7 +80,7 @@
       </div>
     </aside>
     <main>
-      <h2>简历</h2>
+      <h2><%- __('text-resume') %></h2>
       <!-- introduction -->
       <div class="about-me">
         <% if (page.about) { %>
@@ -89,6 +89,7 @@
         <% }) %>
         <% } %>
       </div>
+      <h4><%- __('text-skill') %></h4>
       <ul class="skill">
         <% if (page.skill) { %>
         <% page.skill.forEach(function(text) { %>
@@ -107,7 +108,7 @@
               </g>
             </svg>
           </span>
-          <h4>教育经历</h4>
+          <h4><%- __('text-education') %></h4>
         </li>
         <li class="item">
           <% if (page.education) { %>
@@ -132,7 +133,7 @@
               </g>
             </svg>
           </span>
-          <h4>工作经历</h4>
+          <h4><%- __('text-workExp') %></h4>
         </li>
         <% if (page.workExp) { %>
         <% page.workExp.forEach(function(item) { %>
@@ -155,12 +156,22 @@
               </g>
             </svg>
           </span>
-          <h4>项目经验</h4>
+          <h4><%- __('text-project') %></h4>
         </li>
         <% if (page.projectExp) { %>
         <% page.projectExp.forEach(function(item) { %>
         <li class="item">
-          <p class="name"><%- item.name %></p>
+          <p class="name">
+            <label class="tip left" data-tip="<%- __('text-project-name') %>"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+                <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 15H5.5a2.5 2.5 0 1 1 0-5H6"></path>
+                  <path d="M15 12v6.5a2.5 2.5 0 1 1-5 0V18"></path>
+                  <path d="M12 9h6.5a2.5 2.5 0 1 1 0 5H18"></path>
+                  <path d="M9 12V5.5a2.5 2.5 0 0 1 5 0V6"></path>
+                </g>
+              </svg>
+            </label><%- item.name %>
+          </p>
           <div class="desc"><%- item.desc %></div>
           <ul class="list">
             <% if (item.list) { %>

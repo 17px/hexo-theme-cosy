@@ -3,15 +3,16 @@
 .resume {
   position: relative;
   height: 100%;
-  padding: 24px 0;
+  padding: 60px 0 24px 0;
   overflow-y: auto;
   // background: linear-gradient(to right, #80808012 1px, transparent 1px), linear-gradient(to bottom, #80808012 1px, transparent 1px);
   background: linear-gradient(90deg, var(--color-bg) 21px, transparent 3%) center, linear-gradient(var(--color-bg) 21px, transparent 4%) center, var(--color-font-3);
   background-size: 22.5px 22.5px;
 
   .container {
+    padding: 0 24px;
     margin: 0 auto;
-    width: 960px;
+    max-width: 960px;
     display: grid;
     grid-template-columns: 1fr 4fr;
     column-gap: 24px;
@@ -74,8 +75,8 @@
               display: inline-flex;
               align-items: center;
               justify-content: center;
-              width: 42px;
-              height: 42px;
+              width: 36px;
+              height: 36px;
               border-radius: var(--radius);
               color: var(--color-primary);
 
@@ -200,8 +201,8 @@
             display: inline-flex;
             justify-content: center;
             align-items: center;
-            width: 42px;
-            height: 42px;
+            width: 36px;
+            height: 36px;
             // background: var(--color-bg-3);
             border-radius: var(--radius);
             z-index: 10;
@@ -237,9 +238,8 @@
           }
         }
 
-
         .item {
-          margin-left: 20px;
+          margin-left: 17px;
           padding-bottom: 2rem;
           position: relative;
           padding-left: 2.5rem;
@@ -265,6 +265,14 @@
           .name {
             margin: 0;
             font-size: 1rem;
+
+            >label {
+              margin-right: 12px;
+              vertical-align: middle;
+              display: inline-block;
+              width: 20px;
+              height: 20px;
+            }
           }
 
           .period {
@@ -283,7 +291,8 @@
 
           .desc {
             margin: 0;
-            padding: 1rem 0 1rem 0;
+            line-height: 1.2;
+            padding: .5rem 0 1rem 0;
             color: var(--color-font-2);
           }
 
@@ -297,6 +306,13 @@
             }
           }
         }
+      }
+
+      .project .name {
+        transform: translateY(-6px);
+        padding: 2px;
+        border-radius: var(--radius) 0 0 var(--radius);
+        background: linear-gradient(45deg, var(--color-primary-2), transparent);
       }
     }
   }

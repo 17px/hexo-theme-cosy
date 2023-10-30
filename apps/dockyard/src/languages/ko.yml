@@ -27,6 +27,13 @@ text-license: 라이선스
 text-post-link: 게시글 URL
 text-catalog: 목록
 text-today: 오늘
+text-resume: 이력서
+text-skill: 기술
+text-education: 교육
+text-workExp: 경력
+text-project: 프로젝트
+text-project-name: 프로젝트 이름
+text-project-desc: 프로젝트 설명
 
 January: 1월
 February: 2월

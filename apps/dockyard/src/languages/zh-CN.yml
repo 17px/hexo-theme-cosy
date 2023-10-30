@@ -30,6 +30,12 @@ text-post-link: 本文链接
 text-catalog: 目录
 text-today: 今天
 text-resume: 简历
+text-skill: 技能
+text-education: 教育经历
+text-workExp: 工作经历
+text-project: 项目经验
+text-project-name: 项目名称
+text-project-desc: 项目描述
 
 January: 一月
 February: 二月

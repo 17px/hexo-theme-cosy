@@ -11,7 +11,7 @@ tip-prev-page: Предыдущая страница
 tip-next-page: Следующая страница
 tip-collapse: Свернуть
 tip-expand: Развернуть
-text-today: Сегодня
+tip-roadmap-today: Позиционирование на сегодн
 
 text-select: выбрать
 text-move: движение
@@ -26,7 +26,14 @@ text-pub-time: Опубликовано
 text-license: Лицензия
 text-post-link: Ссылка на публикацию
 text-catalog: Каталог
-tip-roadmap-today: Позиционирование на сегодня
+text-today: Сегодня
+text-resume: Резюме
+text-skill: Навыки
+text-education: Образование
+text-workExp: Опыт работы
+text-project: Проект
+text-project-name: Название проекта
+text-project-desc: Описание проекта
 
 January: Январь
 February: Февраль

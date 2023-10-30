@@ -11,7 +11,7 @@ tip-prev-page: 上一頁
 tip-next-page: 下一頁
 tip-collapse: 折疊
 tip-expand: 展開
-text-today: 今天
+tip-roadmap-today: 定位至今天
 
 text-select: 選擇
 text-move: 移動
@@ -26,7 +26,14 @@ text-pub-time: 發布於
 text-license: 授權
 text-post-link: 文章連結
 text-catalog: 目錄
-tip-roadmap-today: 定位至今天
+text-today: 今天
+text-resume: 履歷
+text-skill: 技能
+text-education: 教育背景
+text-workExp: 工作經驗
+text-project: 專案
+text-project-name: 專案名稱
+text-project-desc: 專案描述
 
 January: 一月
 February: 二月
