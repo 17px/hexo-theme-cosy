@@ -45,4 +45,23 @@ projectExp:
       - Using pnpm workspace to manage multiple code repositories in Monorepo, supporting the coexistence of multiple frameworks, and sharing common component libraries and capabilities
       - Use Rollup to package some functional capabilities (such as a b) on your own, which can be used for both browsers and node.js to achieve code isomorphism
       - Develop the system server using Nest.js and use it for the microservice system of the project
+
+portfolio:
+  - name: Web Page
+    desc: A responsive modern website built using React
+    cover: /img/avatar.png
+    link: https://www.google.com
+  - name: Web Page
+    desc: A responsive modern website built using React
+    cover: /img/avatar
+    link: https://www.google.com
+  - name: Web Page
+    desc: A responsive modern website built using React
+    cover: /img/avatar
+    link: https://www.google.com
+  - name: Web Page
+    desc: A responsive modern website built using React
+    cover: /img/avatar
+    link: https://www.google.com
+    
 ---

@@ -101,7 +101,6 @@
 
 @media only screen and (max-width: 1280px) {
   .resume {
-
     .container {
       grid-template-columns: auto !important;
       column-gap: 0 !important;
@@ -113,6 +112,38 @@
       >main {
         margin: 0 auto;
         max-width: 860px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 512px) {
+  main {
+    border: 0 !important;
+  }
+
+  .resume {
+
+    .container {
+      >main {
+        .project {
+          .title {
+            .girdle-box::after {
+              content: none;
+            }
+          }
+
+          .item {
+            margin-left: 0 !important;
+            border-left: 0 !important;
+            padding-left: 0 !important;
+
+            &::before {
+              content: none;
+            }
+
+          }
+        }
       }
     }
   }
