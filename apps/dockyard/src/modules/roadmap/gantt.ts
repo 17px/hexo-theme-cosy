@@ -143,7 +143,7 @@ export class GanttChart {
 
       const now = dayjs();
       const start = dayjs(task.start);
-      const end = dayjs(task.end);
+      const end = dayjs(task.end).add(1, "day");
       const status = end.isBefore(now)
         ? "expired"
         : start.isBefore(now) && end.isAfter(now)

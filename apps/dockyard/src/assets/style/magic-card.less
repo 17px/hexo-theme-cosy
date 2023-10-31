@@ -1,0 +1,98 @@
+@cardBgColor: var(--color-border);
+@cardColor: var(--color-bg-2);
+@cardHeight: 220px;
+@cardWidth: 300px;
+@textColor: var(--color-font);
+@radialGradientStart: rgba(255, 255, 255, .06);
+@radialGradientEnd: transparent 40%;
+@zIndex3: 3;
+@zIndex2: 2;
+@zIndex1: 1;
+@transitionDuration: 500ms;
+
+
+.magic-cards {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, @cardWidth);
+  gap: 24px;
+
+  &:hover {
+    .card::after {
+      opacity: 1;
+    }
+  }
+
+  .card {
+    background-color: @cardBgColor;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    height: @cardHeight;
+    flex-direction: column;
+    position: relative;
+    width: @cardWidth;
+    color: @textColor;
+
+    &:hover::before {
+      opacity: 1;
+    }
+
+    &::before,
+    &::after {
+      .pseudoElementStyles(@radialGradientStart, @zIndex3);
+    }
+
+    &::after {
+      .pseudoElementStyles(rgba(255, 255, 255, 0.4), @zIndex1);
+    }
+
+    &>.card-content {
+      background-color: @cardColor;
+      border-radius: inherit;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      inset: 1px;
+      padding: 10px;
+      position: absolute;
+      z-index: @zIndex2;
+    }
+
+    .card-image {
+      .flexCenter();
+      height: 140px;
+      overflow: hidden;
+    }
+
+    .card-info-wrapper {
+      flex: 1;
+    }
+  }
+}
+
+.pseudoElementStyles(@gradientStartColor, @zIndex) {
+  border-radius: inherit;
+  content: "";
+  height: 100%;
+  left: 0px;
+  opacity: 0;
+  position: absolute;
+  top: 0px;
+  transition: opacity @transitionDuration;
+  width: 100%;
+  background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), @gradientStartColor, @radialGradientEnd);
+  z-index: @zIndex;
+}
+
+.flexCenter() {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+@media(max-width: 1000px) {}
+
+@media(max-width: 500px) {}
+
+@media(max-width: 320px) {}

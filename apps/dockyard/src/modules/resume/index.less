@@ -1,28 +1,26 @@
-@import '../welcome/linear.less';
+@import '../../assets/style/magic-card.less';
+
+main {
+  border: 0 !important;
+}
 
 .resume {
   position: relative;
   height: 100%;
-  padding: 60px 0 24px 0;
   overflow-y: auto;
-  // background: linear-gradient(to right, #80808012 1px, transparent 1px), linear-gradient(to bottom, #80808012 1px, transparent 1px);
-  background: linear-gradient(90deg, var(--color-bg) 21px, transparent 3%) center, linear-gradient(var(--color-bg) 21px, transparent 4%) center, var(--color-font-3);
   background-size: 22.5px 22.5px;
 
   .container {
-    padding: 0 24px;
     margin: 0 auto;
-    max-width: 960px;
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1fr 5fr;
     column-gap: 24px;
 
     aside {
+      border-right: 1px solid var(--color-border);
+
       .base {
         padding: 24px;
-        border: 1px solid var(--color-border);
-        border-radius: var(--radius);
-        background: var(--color-bg-2);
 
         figure {
           margin: 0;
@@ -138,27 +136,45 @@
       padding: 24px;
       border: 1px solid var(--color-border);
       border-radius: var(--radius);
-      background: var(--color-bg-2);
+      // background: var(--color-bg-2);
 
       >h2 {
         margin-top: 0;
         margin-bottom: 2rem;
-        position: relative;
         font-weight: 600;
         font-size: 2rem;
         font-family: 'linear';
 
-        &::before {
-          position: absolute;
-          content: '';
-          background: var(--color-primary);
-          border-radius: 0.5rem;
-          height: 0.3125rem;
-          bottom: -1.0625rem;
-          left: 0;
-          width: 2.5rem;
-          z-index: 1;
+        span {
+          position: relative;
+
+          &::before {
+            position: absolute;
+            content: '';
+            background: var(--color-primary);
+            border-radius: 0.5rem;
+            height: 0.3125rem;
+            bottom: -1.0625rem;
+            left: 0;
+            width: 50%;
+            z-index: 1;
+          }
         }
+
+
+      }
+
+      .portfolio-title {
+        text-align: center;
+        margin: 2rem 0 4rem 0;
+
+        span {
+          &::before {
+            left: 50%;
+            transform: translateX(-50%);
+          }
+        }
+
       }
 
       .about-me {
@@ -176,7 +192,7 @@
         padding-bottom: 3rem;
 
         li {
-          line-height: 2;
+          line-height: 1.5;
           font-weight: 300;
           color: var(--color-font-2);
         }
@@ -291,7 +307,7 @@
 
           .desc {
             margin: 0;
-            line-height: 1.2;
+            line-height: 1.5;
             padding: .5rem 0 1rem 0;
             color: var(--color-font-2);
           }
@@ -309,10 +325,86 @@
       }
 
       .project .name {
-        transform: translateY(-6px);
-        padding: 2px;
+        transform: translateY(-.6rem);
+        padding: .5rem;
         border-radius: var(--radius) 0 0 var(--radius);
         background: linear-gradient(45deg, var(--color-primary-2), transparent);
+      }
+
+      .portfolio {
+        .magic-cards {
+          .card {
+            &:hover {
+              .card-image {
+                background-size: 120% 120%;
+                >span {
+                  width: 100%;
+                  height: 100%;
+                  opacity: .5;
+                  visibility: inherit;
+                }
+              }
+            }
+
+            .card-image {
+              background-size: 100% 100%;
+              background-repeat: no-repeat;
+              background-position: center;
+              transition: background-size 0.3s ease-in-out;
+              border-radius: var(--radius);
+
+              >span {
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                width: 0;
+                height: 0;
+                padding: 8px;
+                border-radius: var(--radius);
+                visibility: hidden;
+                opacity: 0;
+                background: var(--color-bg);
+                color: var(--color-font);
+                transition: all .3s ease;
+
+                >svg {
+                  width: 24px;
+                  height: 24px;
+                }
+              }
+            }
+
+            .card-info-wrapper {
+              padding: 12px 12px 0 0;
+
+              .card-info {
+                >svg {
+                  width: 24px;
+                  height: 24px;
+                  color: var(--color-font-2);
+                }
+
+                .card-info-title {
+
+                  h3,
+                  h4 {
+                    margin: 0;
+                  }
+
+                  h3 {
+                    line-height: 2;
+                  }
+
+                  h4 {
+                    font-weight: 400;
+                    color: var(--color-font-2)
+                  }
+                }
+              }
+            }
+
+          }
+        }
       }
     }
   }
