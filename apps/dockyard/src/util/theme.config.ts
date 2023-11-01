@@ -52,7 +52,7 @@ export const dark = {
   "--color-bg-segment": "#1f2023",
   "--color-seg-selected": "rgb(57 57 57)",
   "--color-seg-border": "rgb(49, 50, 72)",
-  "--color-bg-mask": "rgba(0, 0, 0, .2)",
+  "--color-bg-mask": "rgba(0, 0, 0, .6)",
   "--color-bg-button": "rgb(48, 50, 54)",
   "--shadow-button": "rgba(255, 255, 255, 0.05) 0px -1px 4px",
   "--shadow-box": "rgb(0 0 0 / 77%) 0px -16px 70px",

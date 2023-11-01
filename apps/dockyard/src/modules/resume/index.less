@@ -23,7 +23,9 @@ main {
         padding: 24px;
 
         figure {
-          margin: 0;
+          width: 128px;
+          height: 128px;
+          margin: 0 auto;
           border-radius: 32px;
           background: var(--color-bg-3);
 
@@ -337,9 +339,9 @@ main {
             &:hover {
               .card-image {
                 background-size: 120% 120%;
+
                 >span {
-                  width: 100%;
-                  height: 100%;
+ 
                   opacity: .5;
                   visibility: inherit;
                 }
@@ -357,8 +359,8 @@ main {
                 display: inline-flex;
                 justify-content: center;
                 align-items: center;
-                width: 0;
-                height: 0;
+                width: 100%;
+                height: 100%;
                 padding: 8px;
                 border-radius: var(--radius);
                 visibility: hidden;
