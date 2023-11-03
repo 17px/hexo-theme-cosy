@@ -336,42 +336,11 @@ main {
       .portfolio {
         .magic-cards {
           .card {
-            &:hover {
-              .card-image {
-                background-size: 120% 120%;
-
-                >span {
- 
-                  opacity: .5;
-                  visibility: inherit;
-                }
-              }
-            }
-
             .card-image {
-              background-size: 100% 100%;
-              background-repeat: no-repeat;
-              background-position: center;
-              transition: background-size 0.3s ease-in-out;
-              border-radius: var(--radius);
-
-              >span {
-                display: inline-flex;
-                justify-content: center;
-                align-items: center;
-                width: 100%;
-                height: 100%;
-                padding: 8px;
-                border-radius: var(--radius);
-                visibility: hidden;
-                opacity: 0;
-                background: var(--color-bg);
-                color: var(--color-font);
-                transition: all .3s ease;
-
-                >svg {
-                  width: 24px;
-                  height: 24px;
+              h2 {
+                svg {
+                  width: 6rem;
+                  height: 6rem;
                 }
               }
             }
