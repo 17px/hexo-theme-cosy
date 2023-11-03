@@ -36,7 +36,9 @@
     <div>
       <%- partial('homebar') %>
       <!-- search -->
+      <% if(theme.search.enable){ %>
       <%- partial('search') %>
+      <% } %>
       <!-- navigation -->
       <%- partial('navigation') %>
       <!-- icp -->

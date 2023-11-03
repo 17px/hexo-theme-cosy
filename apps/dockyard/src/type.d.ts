@@ -8,4 +8,5 @@ interface Window {
   algolia: Record<string, string>;
   roadmapYears: Record<string, any>;
   initYear: string | number;
+  search: any;
 }

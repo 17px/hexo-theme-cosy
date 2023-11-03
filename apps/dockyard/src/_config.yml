@@ -43,3 +43,7 @@ weather:
   enable: true
   cityCode: yourWeatherCityCode
   appKey: yourWeatherAppKey
+
+# search use
+search:
+  enable: true
