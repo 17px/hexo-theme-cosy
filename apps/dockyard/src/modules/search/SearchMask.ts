@@ -287,7 +287,10 @@ export class SearchMask {
       textOverflow: "ellipsis",
       fontSize: "12px",
     });
-    contentPreview.innerHTML = this.highlightKeyword(hit.contentStrip, query);
+    contentPreview.innerHTML = this.highlightKeyword(
+      hit.contentStrip ?? hit.contentStripTruncate,
+      query
+    );
 
     titleElement.append(categoryTitle, contentPreview);
     resultLink.append(titleElement);

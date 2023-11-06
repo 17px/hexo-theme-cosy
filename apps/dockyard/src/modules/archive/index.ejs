@@ -1,16 +1,11 @@
 <!-- inject:css -->
 
 <% var archive = {}; %>
-<% site.posts.forEach(function(post){ %>
-<% var year = post.date.year(); %>
-
-<% if(!archive[year]) { %>
-<% archive[year] = []; %>
-<% } %>
-
-<% archive[year].push(post); %>
-<% }); %>
-
+<% site.posts.sort('-date').forEach(function(post){
+   var year = post.date.year();
+   if (!archive[year]) archive[year] = []
+   archive[year].push(post);
+}); %>
 
 <div class="archive scrollbar-obtrusive">
   <ul>
@@ -41,8 +36,6 @@
     </li>
     <% } %>
   </ul>
-
-
 </div>
 
 <!-- inject:js -->
