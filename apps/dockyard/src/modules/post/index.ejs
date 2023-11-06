@@ -27,6 +27,7 @@
       </div>
     </main>
   </div>
+  <% if (!!toc(page.content)) { %>
   <div class="meta-container">
     <div class="toc-wrapper content-dialog">
       <p class="catalog">
@@ -43,6 +44,7 @@
       <%- toc(page.content,{max_depth:3}) %>
     </div>
   </div>
+  <% } %>
 </div>
 
 <script>
