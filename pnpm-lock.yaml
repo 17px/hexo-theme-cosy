@@ -20,10 +20,16 @@ importers:
       dayjs:
         specifier: 1.11.10
         version: 1.11.10
+      dompurify:
+        specifier: 3.0.6
+        version: 3.0.6
       three:
         specifier: 0.157.0
         version: 0.157.0
     devDependencies:
+      '@types/dompurify':
+        specifier: 3.0.5
+        version: 3.0.5
       '@types/katex':
         specifier: ^0.16.3
         version: 0.16.3
@@ -317,6 +323,12 @@ packages:
     engines: {node: '>=10.13.0'}
     dev: true
 
+  /@types/dompurify@3.0.5:
+    resolution: {integrity: sha512-1Wg0g3BtQF7sSb27fJQAKck1HECM6zV1EB66j8JH9i3LCjYabJa0FSdiSgsD5K/RbrsR0SiraKacLB+T8ZVYAg==}
+    dependencies:
+      '@types/trusted-types': 2.0.5
+    dev: true
+
   /@types/eslint-scope@3.7.5:
     resolution: {integrity: sha512-JNvhIEyxVW6EoMIFIvj93ZOywYFatlpu9deeH6eSx6PE3WHYvHaQtmHmQeNw7aA81bYGBPPQqdtBm6b1SsQMmA==}
     dependencies:
@@ -373,6 +385,10 @@ packages:
       '@types/webxr': 0.5.5
       fflate: 0.6.10
       meshoptimizer: 0.18.1
+    dev: true
+
+  /@types/trusted-types@2.0.5:
+    resolution: {integrity: sha512-I3pkr8j/6tmQtKV/ZzHtuaqYSQvyjGRKH4go60Rr0IDLlFxuRT5V32uvB1mecM5G1EVAUyF/4r4QZ1GHgz+mxA==}
     dev: true
 
   /@types/webxr@0.5.5:
@@ -1325,6 +1341,10 @@ packages:
 
   /dompurify@2.4.7:
     resolution: {integrity: sha512-kxxKlPEDa6Nc5WJi+qRgPbOAbgTpSULL+vI3NUXsZMlkJxTqYI9wg5ZTay2sFrdZRWHPWNi+EdAhcJf81WtoMQ==}
+    dev: false
+
+  /dompurify@3.0.6:
+    resolution: {integrity: sha512-ilkD8YEnnGh1zJ240uJsW7AzE+2qpbOUYjacomn3AvJ6J4JhKGSZ2nh4wUIXPZrEPppaCLx5jFe8T89Rk8tQ7w==}
     dev: false
 
   /domutils@2.8.0:

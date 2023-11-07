@@ -115,10 +115,11 @@ algolia:
   chunkSize: 5000
   indexName: hex-blog
   fields:
-    - content:strip
+    - content
     - categories
     - date
     - permalink
     - slug
     - tags
     - title
+

@@ -1,4 +1,5 @@
 import algoliasearch from "algoliasearch";
+import DOMPurify from "dompurify";
 
 export class SearchMask {
   private client: any;
@@ -288,7 +289,7 @@ export class SearchMask {
       fontSize: "12px",
     });
     contentPreview.innerHTML = this.highlightKeyword(
-      hit.contentStrip ?? hit.contentStripTruncate,
+      hit.content ?? hit.contentStrip ?? hit.contentStripTruncate,
       query
     );
 
@@ -309,11 +310,13 @@ export class SearchMask {
   }
 
   private highlightKeyword(text: string, query: string) {
-    const regex = new RegExp(`(.{0,20})(${query})(.{0,20})`, "i");
-    const match = text.match(regex);
-    return match
-      ? `${match[1]}<mark style="margin:0 3px;background:transparent;color:var(--color-primary);text-decoration:underline">${match[2]}</mark>${match[3]}`
-      : text;
+    const clean = DOMPurify.sanitize(text, {
+      ALLOWED_TAGS: ["em", "strong", "b", "i"], // 允许这些标签
+    });
+    return clean.replace(
+      new RegExp(query, "g"),
+      `<mark style="margin:0 3px;background:transparent;color:var(--color-primary);text-decoration:underline">${query}</mark>`
+    );
   }
 
   private updateCurrentSelectedIndex(newIndex: number) {
