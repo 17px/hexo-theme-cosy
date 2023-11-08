@@ -16,7 +16,7 @@ const appendCommentDiv = (
 };
 
 interface ValineConfig {
-  enable: string;
+  enable: boolean;
   appId: string;
   appKey: string;
   avatar: string;
@@ -26,7 +26,7 @@ interface ValineConfig {
 
 export const useValine = (config: ValineConfig) => {
   const { enable, cdn, ...rest } = config;
-  if (enable === "true") {
+  if (enable) {
     loadFromCDN([
       {
         type: "js",

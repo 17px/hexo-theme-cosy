@@ -2,13 +2,13 @@ import { eventBus, loadFromCDN } from "@/util";
 import { getThemeMode } from "@/util/theme";
 
 interface mermaidConfig {
-  enable: string;
+  enable: boolean;
   cdn: string;
 }
 
 export const useMermaid = (config: mermaidConfig) => {
   const { enable, cdn } = config;
-  if (enable === "true") {
+  if (enable) {
     loadFromCDN([
       {
         type: "js",

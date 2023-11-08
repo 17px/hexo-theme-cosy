@@ -1,14 +1,14 @@
 import { loadFromCDN, renderMathInElement } from "@/util";
 
 interface katexConfig {
-  enable: string;
+  enable: boolean;
   jsCdn: string;
   cssCdn: string;
 }
 
 export const useKatex = (config: katexConfig) => {
   const { enable, jsCdn, cssCdn } = config;
-  if (enable === "true") {
+  if (enable) {
     loadFromCDN([
       {
         type: "css",

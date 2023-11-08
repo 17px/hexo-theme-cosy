@@ -41,13 +41,17 @@ document.addEventListener("DOMContentLoaded", function () {
   // 页面加载时根据URL哈希高亮TOC项
   const { hash } = window.location;
   if (hash) highlightTOCItem(hash);
+
+  // 文章启动插件判断
   const { mermaid, katex, valine } = window;
-  useKatex(katex);
-  useMermaid(mermaid);
-  useValine(valine);
+  useKatex({ ...katex, enable: window.page.use.indexOf("katex") > -1 });
+  useMermaid({ ...mermaid, enable: window.page.use.indexOf("mermaid") > -1 });
+  useValine({ ...valine, enable: window.page.use.indexOf("valine") > -1 });
   useCodeHelper();
+
   // 加载prism样式
   import(`./prism/${themeCodeLessMap[getThemeMode()]}.less`);
+  
   // 监听主题切换
   const toggleTheme = document.getElementById("toggle-theme");
   toggleTheme?.addEventListener("click", () => {

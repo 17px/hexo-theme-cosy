@@ -20,18 +20,15 @@ postCategoryIcons:
 
 # katex
 katex:
-  enable: true
   jsCdn: //cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js
   cssCdn: //cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css
 
 # mermaid
 mermaid:
-  enable: true
   cdn: //cdn.jsdelivr.net/npm/mermaid@10.4.0/dist/mermaid.min.js
 
 # post comments
 valine:
-  enable: true
   appId: yourValineAppId
   appKey: yourValineAppKey
   avatar: monsterid
