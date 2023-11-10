@@ -1,60 +1,9 @@
 <!-- inject:css -->
 
 <section class="category-nav scrollbar-obtrusive">
-  <ul class="nav-items">
-    <li data-path="archives">
-      <a href="/archives">
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
-          <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 7v14"></path>
-            <path d="M9 18l3 3l3-3"></path>
-            <circle cx="12" cy="5" r="2"></circle>
-          </g>
-        </svg>
-        <div class="ellipsis"><%- __('text-timeline') %></div>
-      </a>
-    </li>
-    <li data-path="roadmap">
-      <a href="/roadmap">
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
-          <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M10.5 20.4l-6.9-6.9c-.781-.781-.781-2.219 0-3l6.9-6.9c.781-.781 2.219-.781 3 0l6.9 6.9c.781.781.781 2.219 0 3l-6.9 6.9c-.781.781-2.219.781-3 0z"></path>
-            <path d="M9 14v-2c0-.59.414-1 1-1h5"></path>
-            <path d="M13 9l2 2l-2 2"></path>
-          </g>
-        </svg>
-        <div class="ellipsis"><%- __('text-roadmap') %></div>
-      </a>
-    </li>
-    <li data-path="resume">
-      <a href="/resume">
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
-          <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M14 3v4a1 1 0 0 0 1 1h4"></path>
-            <path d="M5 8V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2h-5"></path>
-            <circle cx="6" cy="14" r="3"></circle>
-            <path d="M4.5 17L3 22l3-1.5L9 22l-1.5-5"></path>
-          </g>
-        </svg>
-        <div class="ellipsis"><%- __('text-resume') %></div>
-      </a>
-    </li>
-  </ul>
+  <%- generate_nav() %>
   <p><%- __('text-category') %></p>
-  <ul>
-    <% site.categories.each(function(category,index){ %>
-    <li class="<% if ((page.category && page.category === category.name) || (page.categories && page.categories.some(cat => cat.name === category.name))) { %>active<% } %>">
-      <a href="<%- url_for(category.path) %>">
-        <%- theme.postCategoryIcons[index] %>
-        <div class="ellipsis">
-          <span>
-            <%= category.name %>
-          </span>
-        </div>
-      </a>
-    </li>
-    <% }) %>
-  </ul>
+  <%- generate_category(site.categories) %>
 </section>
 
 <!-- inject:js -->
