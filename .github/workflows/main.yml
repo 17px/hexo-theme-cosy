@@ -1,7 +1,9 @@
 name: Publish to NPM
 
 on: 
-  push: 
+  push:
+    branches:    
+      - main
     tags:
       - 'v1.*'
 
