@@ -18,10 +18,12 @@
     "dev": "pnpm run --filter @ornn/dockyard dev",
     "build": "pnpm run --filter @ornn/dockyard build",
     "dev:hexo": "pnpm run --filter @ornn/hexo-test dev",
+    "cp:assets": "rm -rf hexo-theme-cosy && node ./publish.js",
     "c": "pnpm run --filter @ornn/hexo-test clean",
     "g": "pnpm run --filter @ornn/hexo-test build"
   },
   "devDependencies": {
-    "hexo-cli": "4.3.1"
+    "hexo-cli": "4.3.1",
+    "fs-extra": "11.1.1"
   }
 }
