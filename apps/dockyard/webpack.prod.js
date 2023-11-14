@@ -29,7 +29,7 @@ module.exports = merge(baseConfig, {
     ]
   },
   plugins: [
-    new BundleAnalyzerPlugin(),
+    process.env['ANALYZE'] === 'TRUE' && new BundleAnalyzerPlugin(),
     new CopyPlugin({
       patterns: [
         {

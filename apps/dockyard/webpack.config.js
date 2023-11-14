@@ -31,7 +31,6 @@ const modules = getModules(path.resolve(__dirname, 'src/modules'))
 
 module.exports = {
   entry: generateEntries(modules),
-  watch: true,
   output: {
     path: path.resolve(__dirname, 'dist/source'),
     filename: 'js/[contenthash:8].js'
