@@ -30,7 +30,7 @@ jobs:
         run: pnpm run build
 
       - name: Copy Assets
-        run: npm run cp:asset
+        run: npm run cp:assets
 
       - name: Publish to NPM
         run: npm publish
