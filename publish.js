@@ -1,24 +1,8 @@
 const fs = require('fs-extra');
 const path = require('path');
-const { execSync } = require('child_process');
-
-function getCurrentGitTag() {
-  try {
-    // 获取最近的标签名
-    const tag = execSync('git tag --sort=-creatordate | head -n 1').toString().trim().replace(/[^0-9.]/g, '')
-    return tag;
-  } catch (error) {
-    console.error('Error getting current git tag:', error);
-    return null;
-  }
-}
+const { version } = require('./package.json')
 
 async function main() {
-  const version = getCurrentGitTag();
-  if (!version) {
-    console.error('No git tag found. Exiting...');
-    process.exit(1);
-  }
 
   const sourceDir = path.join(__dirname, 'apps/dockyard/build/hexo-theme-cosy');
   const targetDir = path.join(__dirname, 'release/hexo-theme-cosy');
