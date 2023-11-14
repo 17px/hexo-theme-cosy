@@ -21,21 +21,13 @@ async function main() {
       "theme",
       "cosy"
     ],
-    license: "LGPL-3.0-or-later",
-    scripts: {
-      postinstall: "node ./checker.js"
-    }
+    license: "LGPL-3.0-or-later"
   };
   // touch package.json
   await fs.writeJson(path.join(targetDir, 'package.json'), packageJson, { spaces: 2 });
 
   // touch README.md
   await fs.copy(path.join(__dirname, 'README.md'), path.join(targetDir, 'README.md'));
-
-  // touch postinstall script
-  const checkerPath = path.join(targetDir, 'checker.js');
-  const checkerContent = `console.log('Hello, World!');`;
-  fs.writeFile(checkerPath, checkerContent, (err) => err ? console.error(err) : console.log(`touch checker successfully`));
 }
 
 main().catch(err => console.error(err));
