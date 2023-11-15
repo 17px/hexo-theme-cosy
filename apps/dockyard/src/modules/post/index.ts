@@ -4,13 +4,8 @@ import { useKatex } from "./katex";
 import { useMermaid } from "./mermaid";
 import { useValine } from "./valine";
 import { restoreScrollHeight, saveScrollHeight } from "@/util";
-import "./selection";
+import { useTextEnhancer } from "./selection";
 import { useCodeHelper } from "./code.helper";
-
-const themeCodeLessMap = {
-  light: "prism-one-light",
-  dark: "prism-one-dark",
-};
 
 /**
  * 高亮TOC项
@@ -48,6 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
   useMermaid({ ...mermaid, enable: window.page.use.indexOf("mermaid") > -1 });
   useValine({ ...valine, enable: window.page.use.indexOf("valine") > -1 });
   useCodeHelper();
+  useTextEnhancer()
 
   // 加载prism样式
   loadPrismThemeStyle();
