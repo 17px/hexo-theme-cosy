@@ -3,6 +3,7 @@ import { EventBus } from "./event";
 type CDNResource = {
   type: "css" | "js";
   url: string;
+  id?: string;
 };
 
 export const eventBus = new EventBus();
@@ -25,6 +26,7 @@ export const loadFromCDN = (resources: CDNResource[]): Promise<void[]> => {
         } else if (resource.type === "js") {
           const script = document.createElement("script");
           script.src = resource.url;
+          if (resource.id) script.id = resource.id;
           script.onload = () => resolve();
           script.onerror = () =>
             reject(new Error(`Failed to load JS from ${resource.url}`));

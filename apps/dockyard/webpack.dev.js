@@ -32,6 +32,10 @@ module.exports = merge(baseConfig, {
           to: path.resolve(__dirname, `../../test/hexo-test/themes/${themeName}/source/font`)
         },
         {
+          from: path.resolve(__dirname, 'src/assets/lib'),
+          to: path.resolve(__dirname, `../../test/hexo-test/themes/${themeName}/source/lib`)
+        },
+        {
           from: path.resolve(__dirname, 'src/extend'),
           to: path.resolve(__dirname, `../../test/hexo-test/themes/${themeName}/scripts`)
         },

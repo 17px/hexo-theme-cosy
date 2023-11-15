@@ -56,6 +56,7 @@ katex:
 
 # mermaid
 mermaid:
+  # Available themes: default | dark | forest | neutral，default theme is neutral
   cdn: //cdn.jsdelivr.net/npm/mermaid@10.4.0/dist/mermaid.min.js
 
 # post comments

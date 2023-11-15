@@ -38,9 +38,9 @@ document.addEventListener("click", function (event) {
 // 页面初始化
 document.addEventListener("DOMContentLoaded", function () {
   restoreScrollHeight("main.scrollbar-obtrusive");
+
   // 页面加载时根据URL哈希高亮TOC项
-  const { hash } = window.location;
-  if (hash) highlightTOCItem(hash);
+  window.location.hash && highlightTOCItem(window.location.hash);
 
   // 文章启动插件判断
   const { mermaid, katex, valine } = window;
@@ -50,20 +50,31 @@ document.addEventListener("DOMContentLoaded", function () {
   useCodeHelper();
 
   // 加载prism样式
-  import(`./prism/${themeCodeLessMap[getThemeMode()]}.less`);
-  
+  loadPrismThemeStyle();
+
   // 监听主题切换
   const toggleTheme = document.getElementById("toggle-theme");
   toggleTheme?.addEventListener("click", () => {
-    saveScrollHeight("main.scrollbar-obtrusive");
-    window.location.reload();
+    const prismLink = document.querySelector("#prism-theme");
+    prismLink
+      ? prismLink.setAttribute("href", `/lib/prism/one-${getThemeMode()}.css`)
+      : loadPrismThemeStyle();
   });
 });
 
 document.addEventListener("DOMContentLoaded", function () {
   const articleDom = document.querySelector("main.scrollbar-obtrusive");
   articleDom &&
-    articleDom.addEventListener("scroll", () => {
-      saveScrollHeight("main.scrollbar-obtrusive");
-    });
+    articleDom.addEventListener("scroll", () =>
+      saveScrollHeight("main.scrollbar-obtrusive")
+    );
 });
+
+const loadPrismThemeStyle = () => {
+  const link = document.createElement("link");
+  link.setAttribute("id", "prism-theme");
+  link.rel = "stylesheet";
+  link.type = "text/css";
+  link.href = `/lib/prism/one-${getThemeMode()}.css`;
+  document.head.append(link);
+};
