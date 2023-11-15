@@ -23,6 +23,7 @@ text-search: 검색...
 text-category: 카테고리
 text-author: 작성자
 text-pub-time: 게시 일자
+text-updated-time: 업데이트 시간
 text-license: 라이선스
 text-post-link: 게시글 URL
 text-catalog: 목록

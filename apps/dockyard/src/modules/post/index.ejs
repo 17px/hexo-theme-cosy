@@ -20,6 +20,7 @@
         <!-- 渲染文章内容 -->
         <article>
           <h1><%- page.title %></h1>
+          <p class="post-info"><%- __('text-updated-time') %>: <%- page.updated.format('YYYY-MM-DD HH:mm:ss') %></p>
           <%- page.content %>
         </article>
         <% if(theme.postCopyright !==undefined){ %>
