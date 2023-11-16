@@ -1,6 +1,25 @@
 article {
+  padding: 0 2rem;
   height: 100%;
   overflow-y: auto;
+
+  .flag-paragraph {
+    position: relative;
+
+    .flag {
+      display: inline-flex;
+      align-items: center;
+      position: absolute;
+      right: 100%;
+      top: 50%;
+      transform: translate(-10px, -50%);
+
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
 
   hr {
     border: none;
@@ -144,7 +163,6 @@ article {
   h5,
   h6 {
     font-weight: 600;
-    padding-top: 12px;
     margin: 2.5rem 0 1rem 0;
     color: var(--color-font);
   }
