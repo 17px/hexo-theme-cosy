@@ -5,6 +5,8 @@ article {
 
   .flag-paragraph {
     position: relative;
+    background: var(--color-blue);
+    border-radius: var(--radius);
 
     .flag {
       display: inline-flex;
@@ -54,6 +56,10 @@ article {
       margin: 0;
       font-size: 12.8px;
 
+      .line-numbers-rows {
+        border-right: 0 !important;
+      }
+
       &::-webkit-scrollbar-track {
         background: transparent;
       }
@@ -72,8 +78,6 @@ article {
       }
 
     }
-
-
 
     .btn-wrapper {
       position: absolute;
@@ -165,6 +169,7 @@ article {
     font-weight: 600;
     margin: 2.5rem 0 1rem 0;
     color: var(--color-font);
+    padding: .5rem 0;
   }
 
   ul,

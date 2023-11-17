@@ -47,10 +47,7 @@ const renderTextTab = (parentNode: HTMLElement, range: Range) => {
     li.innerHTML = `${item.icon}`;
     li.classList.add("tip", "right");
     li.setAttribute("data-tip", item.value);
-    li.addEventListener("click", (event) => {
-      event.stopPropagation();
-      tabItemHandler(parentNode, item);
-    });
+    li.addEventListener("click", () => tabItemHandler(parentNode, item));
     ul.appendChild(li);
   });
 
