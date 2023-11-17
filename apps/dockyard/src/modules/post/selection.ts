@@ -1,10 +1,5 @@
 import "./selection.less";
-import {
-  EffectiveElements,
-  calculateHorizontalOffset,
-  items,
-  effectiveHtmlTags,
-} from "./selection.util";
+import { items } from "./selection.config";
 
 const container = document.querySelector(".article-container article")!;
 
