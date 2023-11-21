@@ -6,6 +6,7 @@ import { useValine } from "./valine";
 import { restoreScrollHeight, saveScrollHeight } from "@/util";
 import { useTextEnhancer } from "./selection";
 import { useCodeHelper } from "./code.helper";
+import { useSplitPanel } from "@/util/split.panel";
 
 /**
  * 高亮TOC项
@@ -30,6 +31,8 @@ document.addEventListener("click", function (event) {
   }
 });
 
+useSplitPanel();
+
 // 页面初始化
 document.addEventListener("DOMContentLoaded", function () {
   restoreScrollHeight("main.scrollbar-obtrusive");
@@ -43,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
   useMermaid({ ...mermaid, enable: window.page.use.indexOf("mermaid") > -1 });
   useValine({ ...valine, enable: window.page.use.indexOf("valine") > -1 });
   useCodeHelper();
-  useTextEnhancer()
+  useTextEnhancer();
 
   // 加载prism样式
   loadPrismThemeStyle();
