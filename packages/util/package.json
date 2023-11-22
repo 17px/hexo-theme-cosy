@@ -1,0 +1,20 @@
+{
+  "name": "@cosy/util",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^11.1.5",
+    "rollup": "^4.5.1",
+    "rollup-plugin-postcss": "^4.0.2",
+    "typescript": "^5.2.2",
+    "rollup-plugin-delete": "2.0.0"
+  }
+}

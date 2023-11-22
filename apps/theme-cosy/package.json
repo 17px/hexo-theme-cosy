@@ -36,6 +36,7 @@
     "@babel/core": "^7.23.3",
     "@babel/preset-env": "^7.23.3",
     "@cosy/ui": "workspace:*",
+    "@cosy/util": "workspace:*",
     "algoliasearch": "^4.20.0",
     "babel-loader": "^9.1.3",
     "dayjs": "1.11.10",

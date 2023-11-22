@@ -24,8 +24,9 @@ class CosyButton extends LitElement {
   }
 
   handleClick() {
-    console.log("Button clicked 222");
-    // 可以在这里添加更多的点击事件处理逻辑
+    console.log(
+      "通常只处理内部的事件，外部js点击，声明 #id，在通过事件委托执行吧"
+    );
   }
 }
 

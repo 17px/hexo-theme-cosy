@@ -26,6 +26,9 @@ importers:
       '@cosy/ui':
         specifier: workspace:*
         version: link:../../packages/ui
+      '@cosy/util':
+        specifier: workspace:*
+        version: link:../../packages/util
       algoliasearch:
         specifier: ^4.20.0
         version: 4.20.0
@@ -135,6 +138,24 @@ importers:
       rollup-plugin-scss:
         specifier: ^4.0.0
         version: 4.0.0
+      typescript:
+        specifier: ^5.2.2
+        version: 5.2.2
+
+  packages/util:
+    devDependencies:
+      '@rollup/plugin-typescript':
+        specifier: ^11.1.5
+        version: 11.1.5(rollup@4.5.1)(typescript@5.2.2)
+      rollup:
+        specifier: ^4.5.1
+        version: 4.5.1
+      rollup-plugin-delete:
+        specifier: 2.0.0
+        version: 2.0.0
+      rollup-plugin-postcss:
+        specifier: ^4.0.2
+        version: 4.0.2(postcss@8.4.30)
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
