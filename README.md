@@ -1,129 +1,33 @@
-# Cosy
+# v2.0版本目标
 
-Minimalist, pursuing the ultimate loading speed for a Hexo theme. JS size is `107.73 KB`, after `gzip` compression, it's only `33.41 KB`.
-
-[中文文档](README_zh.md)
-
-## Preview
-
-![Dark Mode](https://raw.githubusercontent.com/17px/assets-storage/main/hexo-theme-linear-dark.png)
-
-![Light Mode](https://raw.githubusercontent.com/17px/assets-storage/main/hexo-theme-linear-light.png)
-
-![Search](https://raw.githubusercontent.com/17px/assets-storage/main/hexo-theme-linear-search.gif)
-
-## Configuration
-
-For more configuration information on theme usage or installation, please refer to the "[Cosy Starter Guide](https://mozzie.cn/2023/10/21/Cosy-Starter-Guide/)"
-
-## Features
-
-| Feature                   | Disable Option |
-| ------------------------- | -------------- |
-| Theme Switching           |                |
-| Prism Syntax Highlighting |                |
-| Algolia Search            |                |
-| HeFeng Weather Widget     | ✅              |
-| Katex Formulae            | ✅              |
-| Mermaid Flowcharts        | ✅              |
-| Valine Comments           | ✅              |
+- hexo7.0版本适配
+- 提高工程化程度，优化开发阶段体验
+- 分离项目ui组件为web-component，ui组件库尽可能做出 linear-design的设计风格
+- 进步减少构建体积
 
 
-# DIY
+# 启动开发环境
 
-A Hexo theme managed by pnpm workspace, built with webpack5, and developed using typescript, less, and ejs.
-
-Basic Workflow:
-
-1. `webpack` listens for changes to specified files in the `/dockyard/src` directory.
-2. Each file modification triggers `webpack` to rebuild.
-3. Built assets are copied to the `hexo-test/themes` directory.
-4. `nodemon` monitors `hexo-test`, restarting `nodemon` to update the Hexo view.
-
-## Install Development Dependencies
-
-1. Install dependencies:
-
+安装依赖
 ```bash
-pnpm install
+pnpm i
 ```
 
-2. Configure theme name:
-
-Set theme name in `ornn.json`
-
-3. Start development:
-
+新建一个终端，执行
 ```bash
-# webpack multi-page build
 pnpm dev
-# hexo server
+```
+
+热更新hexo-test新建一个终端，执行
+```bash
 pnpm dev:hexo
 ```
 
-
-## Create a New Module
-
-Create a folder with the module name under `apps/dockyard/src/modules`, take `yourModule` as an example:
-
-```
-├── ...
-├── ...
-├── yourModule
-│   ├── index.ejs
-│   ├── index.ts
-└── └── index.less
-```
-
-1. index.ejs
-
-`<!-- inject:css -->`:  Marker for injecting separated CSS by webpack.
-
-`<!-- inject:js -->`:  Marker for injecting separated JS by webpack.
-
-```ejs
-<!-- inject:css -->
-
-<div>your module content here</div>
-
-<!-- inject:js -->
-```
-
-2. index.ts
-
-```ts
-import './index.less'
-
-// your script here
-```
-
-3. index.less
-
-```less
-// your stylesheet here
-```
-
-Don't forget to restart the following command:
-
+热更新web-component，新建一个终端，执行
 ```bash
-# Restart webpack
-pnpm dev
+pnpm dev:ui
 ```
 
-## Use the New Module
+浏览器访问 `localhost:3000`
 
-```ejs
-<%- partial('yourModule') %>
-<!-- or -->
-<%- include('yourModule') %>
-```
-
-## Build Hexo Theme
-
-Build command:
-
-```bash
-pnpm build
-```
-
-After building, the complete Hexo theme assets are output to the `dockyard/build` directory.
+# 开发构建流程

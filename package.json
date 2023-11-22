@@ -18,6 +18,7 @@
     "dev": "pnpm run --filter @cosy/theme dev",
     "build": "pnpm run --filter @cosy/theme build",
     "build:ui": "pnpm run --filter @cosy/ui build",
+    "dev:ui": "pnpm run --filter @cosy/ui dev",
     "dev:hexo": "pnpm run --filter @cosy/hexo-test dev",
     "cp:assets": "rm -rf release/hexo-theme-cosy && node ./publish.js",
     "c": "pnpm run --filter @cosy/hexo-test clean",

@@ -1,1 +1,3 @@
-export { CosyButton } from "./components/Button";
+import "./components/Button";
+import "./styles/normalize.less";
+import "./styles/var.less";

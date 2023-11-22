@@ -1,9 +1,9 @@
 import { LitElement, html, css } from "lit";
 
-export class CosyButton extends LitElement {
+class CosyButton extends LitElement {
   static styles = css`
     button {
-      background-color: #4caf50; /* Green */
+      background-color: var(--color-pp);
       border: none;
       color: white;
       padding: 15px 32px;
@@ -14,6 +14,9 @@ export class CosyButton extends LitElement {
       margin: 4px 2px;
       cursor: pointer;
     }
+    button:hover {
+      background-color: var(--color-pp-2);
+    }
   `;
 
   render() {
@@ -21,7 +24,7 @@ export class CosyButton extends LitElement {
   }
 
   handleClick() {
-    console.log("Button clicked");
+    console.log("Button clicked 222");
     // 可以在这里添加更多的点击事件处理逻辑
   }
 }
