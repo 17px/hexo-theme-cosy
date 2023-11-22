@@ -4,7 +4,7 @@ const CopyPlugin = require('./scripts/plugin/CopyPlugin.js');
 const TerserPlugin = require('terser-webpack-plugin');
 const baseConfig = require('./webpack.config.js');
 const { merge } = require('webpack-merge');
-const { themeName } = require('./ornn')
+const { themeName } = require('./config')
 const path = require('path');
 
 module.exports = merge(baseConfig, {

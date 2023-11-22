@@ -2,13 +2,21 @@ const ExtraWatchWebpackPlugin = require('extra-watch-webpack-plugin');
 const CopyPlugin = require('./scripts/plugin/CopyPlugin.js');
 const baseConfig = require('./webpack.config.js');
 const { merge } = require('webpack-merge');
-const { themeName } = require('./ornn')
+const { themeName } = require('./config')
 const path = require('path');
 
 
 module.exports = merge(baseConfig, {
   mode: 'development',
-  watch: true,
+  devServer: {
+    static: {
+      directory: path.join(__dirname, '../../test/hexo-test/public'), // Hexo 生成的静态文件目录
+      watch: true
+    },
+    hot: true,
+    open: true,
+    port: 3000
+  },
   plugins: [
     new ExtraWatchWebpackPlugin({
       files: ['src/**/*.ejs', 'src/**/*.less', "src/_config.yml", 'src/extend/**/*.js', 'src/assets/**', 'src/languages/*.yml']

@@ -15,12 +15,13 @@
     "node": ">=16.19.1"
   },
   "scripts": {
-    "dev": "pnpm run --filter @ornn/dockyard dev",
-    "build": "pnpm run --filter @ornn/dockyard build",
-    "dev:hexo": "pnpm run --filter @ornn/hexo-test dev",
+    "dev": "pnpm run --filter @cosy/theme dev",
+    "build": "pnpm run --filter @cosy/theme build",
+    "build:ui": "pnpm run --filter @cosy/ui build",
+    "dev:hexo": "pnpm run --filter @cosy/hexo-test dev",
     "cp:assets": "rm -rf release/hexo-theme-cosy && node ./publish.js",
-    "c": "pnpm run --filter @ornn/hexo-test clean",
-    "g": "pnpm run --filter @ornn/hexo-test build"
+    "c": "pnpm run --filter @cosy/hexo-test clean",
+    "g": "pnpm run --filter @cosy/hexo-test build"
   },
   "devDependencies": {
     "hexo-cli": "4.3.1",

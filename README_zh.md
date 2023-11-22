@@ -1,3 +1,10 @@
+# 2.0 的设计目标
+
+- hexo7.0版本适配
+- 工程化程度提高，进一步使用 pnpm monorepo 组织代码
+- 优化项目体积，改用rollup打包分离部分页面复用代码
+- UI `Linear design` 风格进步提高，使用 `web-components` 设计主题ui组件库，为了极致的体积
+
 # Cosy
 
 文档向、追求极致加载速度的hexo主题，js 大小为 `107.73 KB`,  `gzip` 压缩之后，仅 `33.41 KB`

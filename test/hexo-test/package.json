@@ -1,5 +1,5 @@
 {
-  "name": "@ornn/hexo-test",
+  "name": "@cosy/hexo-test",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -7,7 +7,7 @@
     "clean": "hexo clean",
     "deploy": "hexo deploy",
     "server": "hexo server",
-    "dev": "nodemon"
+    "dev": "hexo generate --watch"
   },
   "hexo": {
     "version": "6.3.0"
@@ -23,8 +23,5 @@
     "hexo-renderer-stylus": "^3.0.0",
     "hexo-server": "^3.0.0",
     "hexo-theme-landscape": "^1.0.0"
-  },
-  "devDependencies": {
-    "nodemon": "3.0.1"
   }
 }
