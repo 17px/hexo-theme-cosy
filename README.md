@@ -31,3 +31,7 @@ pnpm dev:ui
 浏览器访问 `localhost:3000`
 
 # 开发构建流程
+
+## 更舒服的使用 litElement 开发 web-component
+
+- 安装vscode插件

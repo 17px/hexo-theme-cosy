@@ -20,6 +20,7 @@
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-scss": "^4.0.0",
     "typescript": "^5.2.2",
-    "rollup-plugin-delete": "2.0.0"
+    "rollup-plugin-delete": "2.0.0",
+    "tslib": "2.6.2"
   }
 }
