@@ -1,8 +1,10 @@
-import { Dropdown, DropdownOption } from "@/util/dropdown";
+// import { Dropdown, DropdownOption } from "@/util/dropdown";
+import { CosyDropdown, CosyDropdownOption } from "@cosy/ui";
+import { onMounted } from "@cosy/util";
 import "./index.less";
 
-document.addEventListener("DOMContentLoaded", () => {
-  const options: DropdownOption[] = [
+onMounted(() => {
+  const options: CosyDropdownOption[] = [
     {
       value: "all",
       label: window.i18n["tip-status-default"],
@@ -30,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   ];
 
-  new Dropdown("#filter-button", options, {
+  new CosyDropdown("#filter-button", options, {
     onClickItem: (status) => {
       [...document.querySelectorAll(".category .table li")].forEach((li) => {
         const liElement = li as HTMLLIElement;

@@ -1,15 +1,19 @@
 import { LitElement, html, css } from "lit";
-import { customElement } from "lit/decorators.js";
+import { property } from "lit/decorators.js";
 
-@customElement("cosy-button")
 export class CosyButton extends LitElement {
+  @property({ type: String }) size: "sm" | "md" | "lg" = "md";
+  @property({ type: String }) type: "solid" | "dashed" = "solid";
+
   static styles = css`
+    :host {
+      --button-type: "solid";
+    }
     button {
       transition: all 0.3s ease;
       background-color: var(--color-button-bg);
-      border: 1px solid var(--color-button-border);
+      border: 1px var(--button-type) var(--color-button-border);
       color: var(--color-button-font);
-      padding: 8px 14px;
       text-align: center;
       text-decoration: none;
       border-radius: var(--radius-base, 4px);
@@ -18,8 +22,18 @@ export class CosyButton extends LitElement {
       font-size: 14px;
       cursor: pointer;
     }
+    .size-sm {
+      padding: 2px 6px;
+    }
+    .size-md {
+      padding: 5px 10px;
+    }
+    .size-lg {
+      padding: 8px 14px;
+    }
     button:hover {
       background-color: var(--color-button-bg-hover);
+      border-color: var(--color-button-border-hover);
     }
     button ::slotted([slot="prefix"]) {
       margin-right: 4px;
@@ -35,8 +49,16 @@ export class CosyButton extends LitElement {
     }
   `;
 
+  updated(changedProperties) {
+    changedProperties.forEach((oldValue, propName) => {
+      if (["type"].includes(propName)) {
+        this.style.setProperty(`--button-${propName}`, this[propName]);
+      }
+    });
+  }
+
   render() {
-    return html`<button @click="${this.handleClick}">
+    return html`<button class="size-${this.size}" @click="${this.handleClick}">
       <!-- prefix图标插槽 -->
       <slot name="prefix"></slot>
       <!-- 文本插槽 -->
@@ -52,3 +74,6 @@ export class CosyButton extends LitElement {
     );
   }
 }
+
+if (!customElements.get("cosy-button"))
+  customElements.define("cosy-button", CosyButton);

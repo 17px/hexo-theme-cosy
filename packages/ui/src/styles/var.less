@@ -31,17 +31,57 @@
 @color-grey-19: #1D1E2B;
 @color-grey-20: #191A23;
 
+@yellow: #f2c94c;
+@orange: #f2994a;
+@green: #4cb782;
+@teal: #00b2bf;
+@red: #eb5757;
+@red-light: #fa6563;
+@blue: #4ea7fc;
+@grey: #95a2b3;
+
+@shadow-dark: rgba(0, 0, 0, 0.2) 0px 4px 24px;
 
 :root {
   --color-primary: @color-purple-6;
+  --color-bg: @color-grey-20;
+  --color-body-bg: linear-gradient(@color-grey-18 0%, @color-grey-20 50%);
+  --color-frost-bg: blur(10px) saturate(190%) contrast(70%) brightness(80%);
 
   // button
   --color-button-font: @color-grey-2;
-  --color-button-border: @color-grey-11;
-  --color-button-bg: @color-grey-18;
+  --color-button-border: @color-grey-13;
+  --color-button-border-hover: @color-grey-8;
+  --color-button-bg: @color-grey-17;
   --color-button-bg-hover: @color-grey-15;
 
   // short-key
-  --color-short-key-bg: @color-grey-18;
+  --color-short-key-bg: @color-grey-10;
   --color-short-key-font: @color-grey-2;
+
+  // search
+  --color-search-bg: @color-grey-15; // @color-grey-17
+  --color-search-bg-hover: @color-grey-15;
+  --color-search-font: @color-grey-2;
+  --color-search-border: @color-grey-13;
+  --color-search-border-hover: @color-grey-8;
+
+  // switch
+  --color-switch-bg: @color-grey-10;
+  --color-switch-bg-checked: @color-grey-10;
+  --color-switch-font-checked: @orange;
+  --color-switch-border: @color-grey-13;
+  --color-switch-border-hover: @color-grey-8;
+  --color-switch-track-bg: @color-grey-17;
+  --color-switch-track-bg-checked: @color-grey-17;
+
+  // dropdown
+  --color-dropdown-hover: @color-grey-10;
+  --color-dropdown-bg: fade(@color-grey-15, .9);
+  --color-dropdown-border: @color-grey-10;
+  --color-dropdown-shadow: @shadow-dark;
+
+  // tooltip
+  --color-tooltip-bg: fade(@color-grey-15, .9);
+  --color-tooltip-border: @color-grey-10;
 }

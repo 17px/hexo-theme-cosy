@@ -1,7 +1,6 @@
 import { LitElement, html, css } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
-@customElement("cosy-icon")
 export class CosyIcon extends LitElement {
   @property({ type: String }) color: string = "black";
   @property({ type: String }) hoverColor: string = "#ccc";
@@ -40,3 +39,6 @@ export class CosyIcon extends LitElement {
     `;
   }
 }
+
+if (!customElements.get("cosy-icon"))
+  customElements.define("cosy-icon", CosyIcon);
