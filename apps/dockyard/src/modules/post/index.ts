@@ -31,7 +31,7 @@ document.addEventListener("click", function (event) {
   }
 });
 
-useSplitPanel();
+// useSplitPanel();
 
 // 页面初始化
 document.addEventListener("DOMContentLoaded", function () {

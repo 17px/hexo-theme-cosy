@@ -3,6 +3,10 @@ article {
   height: 100%;
   overflow-y: auto;
 
+  .post-title {
+    line-height: 1.5;
+  }
+
   .flag-paragraph {
     position: relative;
     background: var(--color-blue);
@@ -26,15 +30,13 @@ article {
   hr {
     border: none;
     height: 1.5px;
-    background: repeating-linear-gradient(to right,
-        var(--color-border),
-        var(--color-border) 5px,
-        /* 线的长度 */
-        #fff 5px,
-        /* 间隙的起始位置 */
-        #fff 10px
-        /* 间隙的结束位置 */
-      );
+    background: repeating-linear-gradient(
+      to right,
+      var(--color-border),
+      var(--color-border) 5px,
+      /* 线的长度 */ #fff 5px,
+      /* 间隙的起始位置 */ #fff 10px /* 间隙的结束位置 */
+    );
   }
 
   a {
@@ -76,7 +78,6 @@ article {
         border: 3px solid transparent;
         background-clip: content-box;
       }
-
     }
 
     .btn-wrapper {
@@ -128,7 +129,7 @@ article {
   blockquote {
     margin: 10px 0;
     background: var(--color-primary-4);
-    font-family: var(--font-monospace);
+    font-family: var(--font-regular);
     border-radius: 4px;
     display: block;
     padding: 1em;
@@ -140,7 +141,7 @@ article {
     }
   }
 
-  >p {
+  > p {
     line-height: 2;
     padding: 1.2rem 0;
     margin: 0;
@@ -157,7 +158,7 @@ article {
       background: var(--color-bg-3);
       color: var(--color-font);
       border-radius: var(--radius);
-      font-family: var(--font-monospace);
+      font-family: var(--font-regular);
     }
   }
 
@@ -170,7 +171,7 @@ article {
     font-weight: 600;
     margin: 2.5rem 0 1rem 0;
     color: var(--color-font);
-    padding: .5rem 0;
+    padding: 0.5rem 0;
   }
 
   ul,
@@ -206,7 +207,7 @@ article {
       }
 
       &:last-of-type {
-        border-radius: 0 var(--radius) 0 0
+        border-radius: 0 var(--radius) 0 0;
       }
     }
 
@@ -223,5 +224,4 @@ article {
       }
     }
   }
-
 }
