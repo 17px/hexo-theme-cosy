@@ -1,9 +1,8 @@
 .category-nav {
   flex: 1;
-  margin: 24px 0 0 0;
-  overflow: auto;
+  padding: 0 13px;
 
-  >ul {
+  > ul {
     margin: 0 0 20px 0;
     padding: 0;
 
@@ -12,15 +11,14 @@
       margin-bottom: 1px;
       border-radius: var(--radius);
       list-style: none;
-      transition: all .25s ease;
+      transition: all 0.25s ease;
 
       &.active {
-        // background: var(--color-menu-hover);
         background: var(--color-primary-2);
       }
 
       &:hover {
-        background: var(--color-menu-hover);
+        background: var(--color-hover);
       }
 
       a {
@@ -35,9 +33,10 @@
           color: var(--color-font-2);
         }
 
-        >div {
+        > div {
           flex: 1;
           padding-left: 10px;
+          font-weight: 500;
           font-size: 13px;
           max-width: 100%;
         }
@@ -46,7 +45,7 @@
   }
 
   p {
-    font-size: 12px;
+    font-size: 0.75rem;
     color: var(--color-font-2);
     padding-left: 6px;
   }
@@ -54,5 +53,4 @@
   .nav-items li a div {
     font-size: 14px;
   }
-
 }

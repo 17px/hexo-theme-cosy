@@ -7,7 +7,6 @@ export class CosySearch extends LitElement {
     form {
       display: flex;
       align-items: center;
-      margin-top: 16px;
       padding: 0 6px;
       height: 32px;
       border-radius: var(--radius-base, 4px);

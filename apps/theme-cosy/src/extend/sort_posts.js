@@ -1,5 +1,4 @@
-hexo.extend.helper.register('sort_posts_by_top', function (posts) {
-
+hexo.extend.helper.register("sort_posts_by_top", function (posts) {
   return posts.slice().sort(function (a, b) {
     var topA = a.top !== undefined ? a.top : Number.MAX_SAFE_INTEGER;
     var topB = b.top !== undefined ? b.top : Number.MAX_SAFE_INTEGER;

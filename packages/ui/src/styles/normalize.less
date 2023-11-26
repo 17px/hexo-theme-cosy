@@ -1,3 +1,37 @@
 * {
   box-sizing: border-box;
 }
+
+html,
+body {
+  font-size: 15px;
+}
+
+::selection {
+  background: var(--color-selection-bg);
+}
+
+.cosy-scrollbar {
+  overflow-y: auto;
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--color-scrollbar);
+    opacity: 0.2;
+    border-radius: 12px;
+    border: 3px solid transparent;
+    background-clip: content-box;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-scrollbar-hover);
+  }
+}

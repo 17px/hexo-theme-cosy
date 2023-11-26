@@ -23,66 +23,27 @@
 </head>
 
 <body id="app">
-  <!-- 响应式布局按钮 -->
-  <a class="side-navigation btn-hover btn-hover-bg tip left" data-tip="<%- __('tip-expand') %>">
-    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
-      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="4" y="4" width="16" height="16" rx="2"></rect>
-        <path d="M9 4v16"></path>
-      </g>
-    </svg>
-  </a>
-  <aside>
-    <div>
-      <%- partial('homebar') %>
-      <!-- search -->
-      <% if(theme.search){ %>
-      <%- partial('search') %>
-      <% } %>
-      <!-- navigation -->
-      <%- partial('navigation') %>
-      <!-- icp -->
-      <% if(theme.icp !==undefined){ %>
-      <div class="icp">
-        <a href="http://beian.miit.gov.cn/"><%- theme.icp %></a>
+  <cosy-drag-box dragRight minWidth="220" hideThreshold="180">
+    <aside>
+      <div class="header">
+        <cosy-search>
+          <div slot="short-key">
+            <cosy-short-key>⌘</cosy-short-key>
+            <cosy-short-key>K</cosy-short-key>
+          </div>
+        </cosy-search>
       </div>
-      <% } %>
-    </div>
-  </aside>
+      <div class="content">
+        <%- partial('navigation') %>
+        <div class="icp">苏苏苏苏苏</div>
+      </div>
+    </aside>
+  </cosy-drag-box>
   <main>
     <%- body %>
   </main>
 </body>
-<script>
-  window.i18n = {
-    "tip-collapse": "<%- __('tip-collapse') %>",
-    "tip-expand": "<%- __('tip-expand') %>",
-    "text-select": "<%- __('text-select') %>",
-    "text-move": "<%- __('text-move') %>",
-    "text-esc": "<%- __('text-esc') %>",
-    "tip-status-done": "<%- __('tip-status-done') %>",
-    "tip-status-doing": "<%- __('tip-status-doing') %>",
-    "tip-status-todo": "<%- __('tip-status-todo') %>",
-    "tip-status-other": "<%- __('tip-status-other') %>",
-    "tip-status-default": "<%- __('tip-status-default') %>",
-    "tip-roadmap-today": "<%- __('tip-roadmap-today') %>",
-    "text-search": "<%- __('text-search') %>",
-    "text-today": "<%- __('text-today') %>",
-    // month
-    "January": "<%- __('January') %>",
-    "February": "<%- __('February') %>",
-    "March": "<%- __('March') %>",
-    "April": "<%- __('April') %>",
-    "May": "<%- __('May') %>",
-    "June": "<%- __('June') %>",
-    "July": "<%- __('July') %>",
-    "August": "<%- __('August') %>",
-    "September": "<%- __('September') %>",
-    "October": "<%- __('October') %>",
-    "November": "<%- __('November') %>",
-    "December": "<%- __('December') %>",
-  }
-</script>
+
 <!-- inject:js -->
 
 </html>

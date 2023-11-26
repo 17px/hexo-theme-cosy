@@ -116,6 +116,10 @@ importers:
         version: 5.9.0
 
   packages/ui:
+    dependencies:
+      '@cosy/util':
+        specifier: workspace:*
+        version: link:../util
     devDependencies:
       '@rollup/plugin-node-resolve':
         specifier: ^15.2.3

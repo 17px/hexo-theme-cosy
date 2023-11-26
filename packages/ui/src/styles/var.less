@@ -1,35 +1,35 @@
-@color-purple-0: #6C79FF;
-@color-purple-1: #7477F0;
-@color-purple-2: #6E79D6;
-@color-purple-3: #5E6AD2;
-@color-purple-4: #666BE2;
-@color-purple-5: #5C67C7;
-@color-purple-6: #575BC7;
-@color-purple-7: #37466C;
-@color-purple-8: #2A2B51;
+@color-purple-0: #6c79ff;
+@color-purple-1: #7477f0;
+@color-purple-2: #6e79d6;
+@color-purple-3: #5e6ad2;
+@color-purple-4: #666be2;
+@color-purple-5: #5c67c7;
+@color-purple-6: #575bc7;
+@color-purple-7: #37466c;
+@color-purple-8: #2a2b51;
 @color-purple-9: #222342;
 
-@color-grey-0: #FFFFFF;
-@color-grey-1: #D9D9D9;
-@color-grey-2: #E0E1EC;
-@color-grey-3: #D2D3E0;
-@color-grey-4: #B0B5C0;
-@color-grey-5: #8D8BA3;
+@color-grey-0: #ffffff;
+@color-grey-1: #d9d9d9;
+@color-grey-2: #e0e1ec;
+@color-grey-3: #d2d3e0;
+@color-grey-4: #b0b5c0;
+@color-grey-5: #8d8ba3;
 @color-grey-6: #858699;
-@color-grey-7: #4C4F6B;
-@color-grey-8: #4D4F69;
+@color-grey-7: #4c4f6b;
+@color-grey-8: #4d4f69;
 @color-grey-9: #444556;
-@color-grey-10: #3C3D53;
-@color-grey-11: #393A4B;
-@color-grey-12: #6B6F76;
+@color-grey-10: #3c3d53;
+@color-grey-11: #393a4b;
+@color-grey-12: #6b6f76;
 @color-grey-13: #313248;
-@color-grey-14: #26293E;
-@color-grey-15: #2C2D42;
-@color-grey-16: #292B41;
-@color-grey-17: #26273B;
-@color-grey-18: #292A35;
-@color-grey-19: #1D1E2B;
-@color-grey-20: #191A23;
+@color-grey-14: #26293e;
+@color-grey-15: #2c2d42;
+@color-grey-16: #292b41;
+@color-grey-17: #26273b;
+@color-grey-18: #292a35;
+@color-grey-19: #1d1e2b;
+@color-grey-20: #191a23;
 
 @yellow: #f2c94c;
 @orange: #f2994a;
@@ -47,6 +47,20 @@
   --color-bg: @color-grey-20;
   --color-body-bg: linear-gradient(@color-grey-18 0%, @color-grey-20 50%);
   --color-frost-bg: blur(10px) saturate(190%) contrast(70%) brightness(80%);
+  // 水平垂直拖拽容器触发颜色
+  --color-dragger: @color-grey-15;
+  // 边框
+  --color-border: @color-grey-10;
+  // 滚动条
+  --width-scrollbar: 12px;
+  --color-scrollbar: @color-grey-13;
+  --color-scrollbar-hover: @color-grey-12;
+  --color-hover: @color-grey-15;
+  // 文字
+  --color-font: @color-grey-3;
+  --color-font-2: @color-grey-6;
+  // 文字选中背景色
+  --color-selection-bg: @color-purple-7;
 
   // button
   --color-button-font: @color-grey-2;
@@ -77,11 +91,11 @@
 
   // dropdown
   --color-dropdown-hover: @color-grey-10;
-  --color-dropdown-bg: fade(@color-grey-15, .9);
+  --color-dropdown-bg: fade(@color-grey-15, 0.9);
   --color-dropdown-border: @color-grey-10;
   --color-dropdown-shadow: @shadow-dark;
 
   // tooltip
-  --color-tooltip-bg: fade(@color-grey-15, .9);
+  --color-tooltip-bg: fade(@color-grey-15, 0.9);
   --color-tooltip-border: @color-grey-10;
 }

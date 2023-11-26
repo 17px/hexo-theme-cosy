@@ -4,10 +4,7 @@
 
 <div class="category">
   <header>
-    <div>
-      <%- partial('breadcrumb') %>
-    </div>
-    <section></section>
+    <%- partial('breadcrumb') %>
   </header>
 
   <!-- 快速操作 -->
@@ -51,7 +48,7 @@
   </div>
 
   <!-- 分类文章列表 -->
-  <ul class="table scrollbar-obtrusive">
+  <ul class="table cosy-scrollbar">
     <% sortedPosts.forEach(function(post){ %>
     <li data-status="<%= post.status %>">
       <a href="<%- url_for(post.path) %>">
