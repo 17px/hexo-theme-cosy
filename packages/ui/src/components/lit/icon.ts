@@ -1,22 +1,40 @@
-import { LitElement, html, css } from "lit";
-import { customElement, property } from "lit/decorators.js";
+import { html, css } from "lit";
+import { property } from "lit/decorators.js";
+import { CosyElement } from "./base";
 
-export class CosyIcon extends LitElement {
-  @property({ type: String }) color: string = "black";
-  @property({ type: String }) hoverColor: string = "#ccc";
-  @property({ type: String }) size: string = "24px";
+const HTML_TAG = `cosy-icon`;
+
+export class CosyIcon extends CosyElement {
+  @property({ type: String }) size: "sm" | "md" | "large" = "md";
+  @property({ type: String }) href: string = "#";
 
   static get styles() {
     return css`
       :host {
-        display: inline-block;
-        width: 16px;
-        height: 16px;
-        color: var(--cosy-icon-color, black);
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+      }
+      a {
+        color: var(--color-icon);
+        text-decoration: none;
+        transition: color 0.3s;
         cursor: pointer;
       }
-      :host(:hover) {
-        color: var(--cosy-icon-hover-color, #ccc);
+      a:hover {
+        color: var(--color-icon-hover);
+      }
+      .size-sm {
+        width: 16px;
+        height: 16px;
+      }
+      .size-md {
+        width: 20px;
+        height: 20px;
+      }
+      .size-lg {
+        width: 24px;
+        height: 24px;
       }
       svg {
         width: 100%;
@@ -28,17 +46,9 @@ export class CosyIcon extends LitElement {
 
   render() {
     return html`
-      <style>
-        :host {
-          --cosy-icon-size: ${this.size};
-          --cosy-icon-color: ${this.color};
-          --cosy-icon-hover-color: ${this.hoverColor};
-        }
-      </style>
-      <slot></slot>
+      <a href="${this.href}" class="size-${this.size}"> <slot></slot></a>
     `;
   }
 }
 
-if (!customElements.get("cosy-icon"))
-  customElements.define("cosy-icon", CosyIcon);
+if (!customElements.get(HTML_TAG)) customElements.define(HTML_TAG, CosyIcon);

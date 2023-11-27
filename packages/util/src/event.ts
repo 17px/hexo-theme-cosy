@@ -1,6 +1,4 @@
-interface HTMLElementEventMap extends GlobalEventHandlersEventMap {
-  // 可以根据需要添加更多自定义事件类型
-}
+interface HTMLElementEventMap extends GlobalEventHandlersEventMap {}
 
 /**
  * addListener - 为指定的 DOM 元素添加事件监听器

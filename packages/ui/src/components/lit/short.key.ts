@@ -1,7 +1,8 @@
-import { LitElement, html, css } from "lit";
+import { html, css } from "lit";
 import { property } from "lit/decorators.js";
+import { CosyElement } from "./base";
 
-export class CosyShortKey extends LitElement {
+export class CosyShortKey extends CosyElement {
   @property({ type: String }) size: "sm" | "md" | "lg" = "md";
 
   static styles = css`

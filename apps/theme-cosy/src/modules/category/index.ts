@@ -1,6 +1,5 @@
-// import { Dropdown, DropdownOption } from "@/util/dropdown";
 import { CosyDropdown, CosyDropdownOption } from "@cosy/ui";
-import { onMounted } from "@cosy/util";
+import { globalEventBus, onMounted, addListener } from "@cosy/util";
 import "./index.less";
 
 onMounted(() => {
@@ -44,5 +43,23 @@ onMounted(() => {
           : liElement.classList.remove("selected");
       });
     },
+  });
+
+  globalEventBus.on("cosy-drag-box:left-aside", (event) => {
+    if (event.detail.inVisible) {
+      const selectorId = `left-aside-show-button`;
+      const showButton = document.getElementById(selectorId);
+      if (showButton) {
+        showButton.style.display = "block";
+        addListener({
+          selector: "#" + selectorId,
+          eventType: "click",
+          handler: () => {
+            globalEventBus.emit("cosy-drag-box:left-aside-show");
+            showButton.style.display = "none";
+          },
+        });
+      }
+    }
   });
 });

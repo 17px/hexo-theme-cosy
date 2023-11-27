@@ -1,7 +1,8 @@
-import { LitElement, html, css } from "lit";
+import { html, css } from "lit";
 import { property } from "lit/decorators.js";
+import { CosyElement } from "./base";
 
-export class CosySwitch extends LitElement {
+export class CosySwitch extends CosyElement {
   @property({ type: Boolean, reflect: true }) checked = false;
   @property({ type: String }) width: string = "48px"; // 默认宽度
   @property({ type: String }) height: string = "24px"; // 默认高度

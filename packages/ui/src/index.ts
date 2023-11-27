@@ -7,7 +7,6 @@ import "./components/lit/search";
 import "./components/lit/switch";
 import "./components/lit/tooltip";
 import "./components/lit/drag.box";
-import "./components/lit/scroll.box";
 
 export {
   Dropdown as CosyDropdown,

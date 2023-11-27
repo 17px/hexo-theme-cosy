@@ -18,12 +18,12 @@
   <link rel="icon" href='<%- theme.favicon %>'>
   <% } %>
   <% } %>
-
   <!-- inject:css -->
+  <%- serialize_i18n() %>
 </head>
 
 <body id="app">
-  <cosy-drag-box dragRight minWidth="220" hideThreshold="180">
+  <cosy-drag-box uid="left-aside" dragRight minWidth="220" hideThreshold="180">
     <aside>
       <div class="header">
         <cosy-search>

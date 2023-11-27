@@ -5,4 +5,4 @@ export {
   addListenerOnce,
   addKeyCombo,
 } from "./event";
-export { eventBus } from "./bus";
+export { globalEventBus, EventBus } from "./event.bus";

@@ -11,6 +11,23 @@
     align-items: center;
     height: 57px;
     border-bottom: 1px solid var(--color-border);
+
+    .left {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+
+      #left-aside-show-button {
+        display: none;
+      }
+    }
+
+    .center {
+      .post-num {
+        font-size: 13px;
+        color: var(--color-font-2)
+      }
+    }
   }
 
   .spotlight {
@@ -20,23 +37,6 @@
     padding: 0 30px;
     height: 36px;
     background: var(--color-bg-2);
-
-    .filter {
-      display: inline-flex;
-      align-items: center;
-      color: var(--color-font-3);
-      cursor: pointer;
-
-      svg {
-        width: 20px;
-        height: 20px;
-      }
-    }
-
-    .post-num {
-      font-size: 13px;
-      color: var(--color-font-2)
-    }
   }
 
   .table {

@@ -1,7 +1,8 @@
-import { LitElement, html, css } from "lit";
+import { html, css } from "lit";
 import { property } from "lit/decorators.js";
+import { CosyElement } from "./base";
 
-export class CosySearch extends LitElement {
+export class CosySearch extends CosyElement {
   @property({ type: String }) placeholder: string = "Search...";
   static styles = css`
     form {

@@ -1,7 +1,8 @@
-import { LitElement, html, css } from "lit";
+import { html, css } from "lit";
 import { property } from "lit/decorators.js";
+import { CosyElement } from "./base";
 
-class CosyTooltip extends LitElement {
+class CosyTooltip extends CosyElement {
   @property({ type: String }) placement = "bottom"; // 默认位置为底部
 
   static get styles() {
@@ -24,7 +25,7 @@ class CosyTooltip extends LitElement {
         z-index: 1;
         font-size: 12px;
         transition: opacity 0.3s ease, visibility 0.3s;
-        min-width: 40px; /* 可选的最小宽度 */
+        min-width: 20px; /* 可选的最小宽度 */
         max-width: 200px; /* 可选的最大宽度 */
         white-space: nowrap; /* 防止文本换行 */
       }

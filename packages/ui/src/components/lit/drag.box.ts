@@ -1,8 +1,10 @@
-import { LitElement, html, css } from "lit";
+import { html, css } from "lit";
 import { property } from "lit/decorators.js";
-import { eventBus } from "@cosy/util";
+import { CosyElement } from "./base";
 
-class CosyDragBox extends LitElement {
+export const HTML_TAG = "cosy-drag-box";
+
+class CosyDragBox extends CosyElement {
   @property({ type: Boolean }) dragLeft = false;
   @property({ type: Boolean }) dragRight = false;
   @property({ type: Number }) minWidth = 100;
@@ -52,21 +54,33 @@ class CosyDragBox extends LitElement {
       this.dragging === "left" ? this.startWidth - dx : this.startWidth + dx;
     if (newSize > this.minWidth) {
       this.style["width"] = `${newSize}px`;
-      this.style["visibility"] = "visible";
+      this.style["transform"] = "scale(1)";
     } else if (newSize < this.minWidth - this.hideThreshold) {
+      this.style["transform"] = "scale(0)";
       this.style["width"] = "0";
-      this.style["visibility"] = "hidden";
-      eventBus.emit('drag')
     }
   };
 
   private stopDrag = () => {
+    this.eventBus.emit(`${HTML_TAG}:${this.uid}`, {
+      uid: this.uid,
+      inVisible: this.style.width === "0px",
+    });
     if (this.dragging) {
       document.removeEventListener("mousemove", this.drag);
       document.removeEventListener("mouseup", this.stopDrag);
       this.dragging = null;
     }
   };
+
+  connectedCallback() {
+    super.connectedCallback();
+    // 添加事件监听器
+    this.eventBus.on("cosy-drag-box:left-aside-show", () => {
+      this.style["width"] = `${this.minWidth}px`;
+      this.style["transform"] = "scale(1)";
+    });
+  }
 
   startDrag = (e: MouseEvent, side: string) => {
     this.dragging = side;
@@ -98,5 +112,4 @@ class CosyDragBox extends LitElement {
   }
 }
 
-if (!customElements.get("cosy-drag-box"))
-  customElements.define("cosy-drag-box", CosyDragBox);
+if (!customElements.get(HTML_TAG)) customElements.define(HTML_TAG, CosyDragBox);

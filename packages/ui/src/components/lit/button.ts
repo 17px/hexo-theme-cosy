@@ -1,7 +1,8 @@
-import { LitElement, html, css } from "lit";
+import { html, css } from "lit";
 import { property } from "lit/decorators.js";
+import { CosyElement } from "./base";
 
-export class CosyButton extends LitElement {
+export class CosyButton extends CosyElement {
   @property({ type: String }) size: "sm" | "md" | "lg" = "md";
   @property({ type: String }) type: "solid" | "dashed" = "solid";
 
@@ -18,35 +19,45 @@ export class CosyButton extends LitElement {
       text-decoration: none;
       border-radius: var(--radius-base, 4px);
       display: inline-flex;
+      gap: 6px;
       align-items: center;
-      font-size: 14px;
       cursor: pointer;
     }
     .size-sm {
       padding: 2px 6px;
+      font-size: 12px;
     }
     .size-md {
-      padding: 5px 10px;
+      padding: 2px 6px;
+      font-size: 14px;
     }
     .size-lg {
-      padding: 8px 14px;
+      padding: 2px 6px;
+      font-size: 16px;
     }
     button:hover {
+      color: var(--color-button-font-hover);
       background-color: var(--color-button-bg-hover);
       border-color: var(--color-button-border-hover);
     }
-    button ::slotted([slot="prefix"]) {
-      margin-right: 4px;
+    .size-sm ::slotted([slot="prefix"]),
+    .size-sm ::slotted([slot="suffix"]) {
+      width: 12px;
+      height: 12px;
+    }
+
+    .size-md ::slotted([slot="prefix"]),
+    .size-md ::slotted([slot="suffix"]) {
+      width: 14px;
+      height: 14px;
+    }
+
+    .size-lg ::slotted([slot="prefix"]),
+    .size-lg ::slotted([slot="suffix"]) {
       width: 16px;
       height: 16px;
-      color: var(--color-button-font);
     }
-    button ::slotted([slot="suffix"]) {
-      margin-left: 4px;
-      width: 16px;
-      height: 16px;
-      color: var(--color-button-font);
-    }
+
   `;
 
   updated(changedProperties) {
@@ -62,7 +73,7 @@ export class CosyButton extends LitElement {
       <!-- prefix图标插槽 -->
       <slot name="prefix"></slot>
       <!-- 文本插槽 -->
-      <slot></slot>
+      <slot name="content"></slot>
       <!-- suffix图标插槽 -->
       <slot name="suffix"></slot>
     </button>`;
