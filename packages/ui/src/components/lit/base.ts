@@ -1,18 +1,20 @@
-import { LitElement, css, CSSResultGroup } from "lit";
+import { LitElement, css, html, CSSResultGroup } from "lit";
 import { property } from "lit/decorators.js";
 import { globalEventBus, EventBus } from "@cosy/util";
 
 export class CosyElement extends LitElement {
   @property({ type: String }) uid;
+  @property({ type: Boolean }) disabled;
   @property({ type: Boolean, reflect: true }) invisible = false;
 
   static styles = css`
     :host([invisible]) {
       display: none;
     }
-    /* :host(:not([invisible])) {
-      display: inherit
-    } */
+    :host([disabled]) {
+      pointer-events: none;
+      opacity: 0.6;
+    }
   ` as CSSResultGroup;
   eventBus: EventBus;
   constructor() {

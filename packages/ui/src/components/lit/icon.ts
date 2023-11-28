@@ -7,6 +7,8 @@ const HTML_TAG = `cosy-icon`;
 export class CosyIcon extends CosyElement {
   @property({ type: String }) size: "sm" | "md" | "large" = "md";
   @property({ type: String }) href: string = "#";
+  @property({ type: Boolean, attribute: "button-style" })
+  buttonStyle: boolean = false;
 
   static get styles() {
     return [
@@ -42,6 +44,15 @@ export class CosyIcon extends CosyElement {
           width: 100%;
           height: 100%;
           fill: currentColor;
+        }
+        :host([button-style]) {
+          background: var(--color-button-bg);
+          border: 1px solid var(--color-button-border);
+          border-radius: var(--raius-base, 4px);
+        }
+        :host([button-style]:hover) {
+          background: var(--color-button-bg-hover);
+          border-color: var(--color-button-border-hover)
         }
       `,
     ];

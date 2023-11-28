@@ -3,7 +3,7 @@
   flex-direction: column;
   height: 100%;
 
-  >header {
+  > header {
     padding-right: 24px;
     padding-left: 30px;
     display: flex;
@@ -19,20 +19,24 @@
     }
 
     .center {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      .pagination {
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        .current em {
+          font-style: normal;
+          color: var(--color-font-2);
+        }
+      }
       .post-num {
         font-size: 13px;
-        color: var(--color-font-2)
+        color: var(--color-font-2);
       }
     }
-  }
-
-  .spotlight {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 30px;
-    height: 36px;
-    background: var(--color-bg-2);
   }
 
   .post-list {
@@ -112,31 +116,31 @@
       border: 1px solid;
 
       &.color-1 {
-        border-color: #FF453A;
+        border-color: #ff453a;
       }
 
       &.color-2 {
-        border-color: #FF9F0A;
+        border-color: #ff9f0a;
       }
 
       &.color-3 {
-        border-color: #FFD60A;
+        border-color: #ffd60a;
       }
 
       &.color-4 {
-        border-color: #32D74B;
+        border-color: #32d74b;
       }
 
       &.color-5 {
-        border-color: #0A84FF;
+        border-color: #0a84ff;
       }
 
       &.color-6 {
-        border-color: #BF5AF2;
+        border-color: #bf5af2;
       }
 
       &.color-7 {
-        border-color: #8E8E93;
+        border-color: #8e8e93;
       }
     }
   }
