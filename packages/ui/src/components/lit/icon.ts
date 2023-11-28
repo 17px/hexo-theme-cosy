@@ -9,39 +9,42 @@ export class CosyIcon extends CosyElement {
   @property({ type: String }) href: string = "#";
 
   static get styles() {
-    return css`
-      :host {
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-      }
-      a {
-        color: var(--color-icon);
-        text-decoration: none;
-        transition: color 0.3s;
-        cursor: pointer;
-      }
-      a:hover {
-        color: var(--color-icon-hover);
-      }
-      .size-sm {
-        width: 16px;
-        height: 16px;
-      }
-      .size-md {
-        width: 20px;
-        height: 20px;
-      }
-      .size-lg {
-        width: 24px;
-        height: 24px;
-      }
-      svg {
-        width: 100%;
-        height: 100%;
-        fill: currentColor;
-      }
-    `;
+    return [
+      CosyElement.styles,
+      css`
+        :host {
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+        }
+        a {
+          color: var(--color-icon);
+          text-decoration: none;
+          transition: color 0.3s;
+          cursor: pointer;
+        }
+        a:hover {
+          color: var(--color-icon-hover);
+        }
+        .size-sm {
+          width: 16px;
+          height: 16px;
+        }
+        .size-md {
+          width: 20px;
+          height: 20px;
+        }
+        .size-lg {
+          width: 24px;
+          height: 24px;
+        }
+        svg {
+          width: 100%;
+          height: 100%;
+          fill: currentColor;
+        }
+      `,
+    ];
   }
 
   render() {

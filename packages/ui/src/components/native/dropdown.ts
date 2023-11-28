@@ -149,6 +149,7 @@ export class Dropdown {
     document.body.appendChild(this.dropdownElement);
 
     const rect = this.element!.getBoundingClientRect();
+    console.log(rect)
     const dropdownWidth = this.dropdownElement.offsetWidth;
     const viewportWidth = document.documentElement.clientWidth;
 

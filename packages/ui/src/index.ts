@@ -14,3 +14,4 @@ export {
 } from "./components/native/dropdown";
 
 export { Popover as CosyPopover } from "./components/native/popover";
+export { CosyElement } from "./components/lit/base";

@@ -7,6 +7,27 @@ import { restoreScrollHeight, saveScrollHeight } from "@/util";
 import { useTextEnhancer } from "./selection";
 import { useCodeHelper } from "./code.helper";
 import { useSplitPanel } from "@/util/split.panel";
+import { onMounted, addListener, globalEventBus } from "@cosy/util";
+import { CosyElement } from "@cosy/ui";
+
+onMounted(() => {
+  globalEventBus.on("cosy-drag-box:toc-box", (e) => {
+    const { invisible } = e.detail;
+    const buttonSelector = "#toc-show-button";
+    const dragBoxSelector = "#toc-drag-box";
+    const showButton = document.querySelector(buttonSelector) as CosyElement;
+    showButton.invisible = !invisible;
+    addListener({
+      selector: buttonSelector,
+      eventType: "click",
+      handler: () => {
+        const dragBox = document.querySelector(dragBoxSelector) as CosyElement;
+        showButton.invisible = true;
+        dragBox.invisible = false;
+      },
+    });
+  });
+});
 
 /**
  * 高亮TOC项

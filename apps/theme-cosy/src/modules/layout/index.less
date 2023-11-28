@@ -2,10 +2,10 @@
 
 #app {
   height: 100%;
-  display: grid;
-  grid-template-columns: auto 1fr;
+  display: flex;
 
-  > main {
+  >main {
+    flex: 1;
     overflow: hidden;
   }
 
@@ -13,9 +13,11 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
+
     .header {
       padding: 12px 13px;
     }
+
     .content {
       display: flex;
       flex-direction: column;

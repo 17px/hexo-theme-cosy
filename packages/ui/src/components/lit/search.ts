@@ -4,34 +4,40 @@ import { CosyElement } from "./base";
 
 export class CosySearch extends CosyElement {
   @property({ type: String }) placeholder: string = "Search...";
-  static styles = css`
-    form {
-      display: flex;
-      align-items: center;
-      padding: 0 6px;
-      height: 32px;
-      border-radius: var(--radius-base, 4px);
-      background: var(--color-search-bg);
-      border: 1px solid var(--color-search-border);
-      transition: all 0.3s;
-      cursor: pointer;
-    }
-    form:hover {
-      border-color: var(--color-search-border-hover);
-    }
-    svg {
-      transition: all 0.3s;
-      color: var(--color-search-font);
-      width: 16px;
-      height: 16px;
-    }
-    span {
-      flex: 1;
-      padding-left: 5px;
-      font-size: 13px;
-      color: var(--color-search-font);
-    }
-  `;
+
+  static get styles() {
+    return [
+      CosyElement.styles,
+      css`
+        form {
+          display: flex;
+          align-items: center;
+          padding: 0 6px;
+          height: 32px;
+          border-radius: var(--radius-base, 4px);
+          background: var(--color-search-bg);
+          border: 1px solid var(--color-search-border);
+          transition: all 0.3s;
+          cursor: pointer;
+        }
+        form:hover {
+          border-color: var(--color-search-border-hover);
+        }
+        svg {
+          transition: all 0.3s;
+          color: var(--color-search-font);
+          width: 16px;
+          height: 16px;
+        }
+        span {
+          flex: 1;
+          padding-left: 5px;
+          font-size: 13px;
+          color: var(--color-search-font);
+        }
+      `,
+    ];
+  }
 
   private handleClick() {
     console.log("search clicked");

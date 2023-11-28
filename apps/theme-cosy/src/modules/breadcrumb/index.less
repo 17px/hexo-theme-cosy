@@ -2,30 +2,32 @@
   display: inline-flex;
   align-items: center;
   font-size: 13px;
+  gap: 24px;
 
-  a {
-    color: var(--color-font-3);
-    text-decoration: none;
-    margin-left: -3px;
-
-    &:hover {
-      color: var(--color-font-2);
-    }
-  }
-
-  em {
+  >section {
     display: inline-flex;
     align-items: center;
-    margin: 0 5px;
-    color: var(--color-font-3);
+    font-size: 13px;
 
-    svg {
-      width: 14px;
-      height: 14px;
+    a {
+      color: var(--color-font);
+      text-decoration: none;
+
+      &:hover {
+        color: var(--color-font-2);
+      }
+    }
+
+    .arrow {
+      margin: 0 6px;
+      color: var(--color-font-2);
+      width: 12px;
+      height: 12px;
+    }
+
+    .ellipsis {
+      max-width: 50vw;
     }
   }
 
-  .ellipsis {
-    max-width: 50vw;
-  }
 }
