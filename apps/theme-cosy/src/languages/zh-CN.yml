@@ -19,8 +19,8 @@ text-move: 移动
 text-esc: 关闭
 text-post-count-prev: 共
 text-post-count-next: 篇
-text-timeline: 时间轴
-text-roadmap: 路线
+text-archives: 归档
+text-cosy-roadmap: 路线
 text-search: 搜索...
 text-category: 分类
 text-author: 作者
@@ -30,7 +30,7 @@ text-license: 许可
 text-post-link: 本文链接
 text-catalog: 目录
 text-today: 今天
-text-resume: 简历
+text-cosy-resume: 简历
 text-skill: 技能
 text-education: 教育经历
 text-workExp: 工作经历

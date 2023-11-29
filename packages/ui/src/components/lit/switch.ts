@@ -4,18 +4,26 @@ import { CosyElement } from "./base";
 
 export class CosySwitch extends CosyElement {
   @property({ type: Boolean, reflect: true }) checked = false;
-  @property({ type: String }) width: string = "48px"; // 默认宽度
-  @property({ type: String }) height: string = "24px"; // 默认高度
-  @property({ type: String }) radius: string = "15px"; // 默认值为15px
+  @property({ type: String }) size: "sm" | "md" | "lg" = "md";
 
   static get styles() {
     return [
       CosyElement.styles,
       css`
-        :host {
+        .switch-sm {
+          --switch-width: 36px; /* 默认宽度 */
+          --switch-height: 18px; /* 默认高度 */
+          --switch-radius: 9px; /* 默认圆角 */
+        }
+        .switch-md {
+          --switch-width: 42px; /* 默认宽度 */
+          --switch-height: 20px; /* 默认高度 */
+          --switch-radius: 10px; /* 默认圆角 */
+        }
+        .switch-lg {
           --switch-width: 48px; /* 默认宽度 */
           --switch-height: 24px; /* 默认高度 */
-          --switch-radius: 15px; /* 默认圆角 */
+          --switch-radius: 12px; /* 默认圆角 */
         }
         .switch {
           width: var(--switch-width);
@@ -41,6 +49,7 @@ export class CosySwitch extends CosyElement {
           align-items: center;
           justify-content: center;
           overflow: hidden;
+          transform: scale(1.05);
           left: 0;
         }
         :host([checked]) .switch {
@@ -76,28 +85,14 @@ export class CosySwitch extends CosyElement {
     ];
   }
 
-  updated(changedProperties) {
-    changedProperties.forEach((oldValue, propName) => {
-      if (["width", "height", "radius"].includes(propName)) {
-        this.style.setProperty(`--switch-${propName}`, this[propName]);
-      }
-    });
-  }
-
   private toggleChecked() {
     this.checked = !this.checked;
-    this.dispatchEvent(new CustomEvent("change", { detail: this.checked }));
   }
 
   render() {
     return html`
-      <div
-        class="switch"
-        style="border-radius: ${this.radius}; width: ${this
-          .width}; height: ${this.height};"
-        @click="${this.toggleChecked}"
-      >
-        <div class="switch-knob" style="border-radius: ${this.radius};">
+      <div class="switch switch-${this.size}" @click="${this.toggleChecked}">
+        <div class="switch-knob">
           <div class="content content-left">
             <slot name="left"></slot>
           </div>

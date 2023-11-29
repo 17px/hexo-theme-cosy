@@ -45,11 +45,9 @@
 :root {
   --color-primary: @color-purple-6;
   --color-bg: @color-grey-20;
-  --color-body-bg: linear-gradient(
-    to bottom right,
-    @color-grey-18 0%,
-    @color-grey-20 50%
-  );
+  --color-body-bg: linear-gradient(to bottom right,
+      @color-grey-18 0%,
+      @color-grey-20 50%);
   --color-frost-bg: blur(10px) saturate(190%) contrast(70%) brightness(80%);
   // 水平垂直拖拽容器触发颜色
   --color-dragger: @color-grey-15;
@@ -60,9 +58,10 @@
   --color-scrollbar: @color-grey-13;
   --color-scrollbar-hover: @color-grey-12;
   --color-hover: @color-grey-15;
-  // 文字
-  --color-font: @color-grey-3;
-  --color-font-2: @color-grey-6;
+  // 文字`
+  --color-font: @color-grey-0;
+  --color-font-1: @color-grey-3;
+  --color-font-2: @color-grey-5;
   // 文字选中背景色
   --color-selection-bg: @color-purple-7;
   // 图标
@@ -94,8 +93,8 @@
   --color-switch-font-checked: @orange;
   --color-switch-border: @color-grey-13;
   --color-switch-border-hover: @color-grey-8;
-  --color-switch-track-bg: @color-grey-17;
-  --color-switch-track-bg-checked: @color-grey-17;
+  --color-switch-track-bg: @color-grey-15;
+  --color-switch-track-bg-checked: @color-purple-5;
 
   // dropdown
   --color-dropdown-hover: @color-grey-10;
@@ -106,4 +105,7 @@
   // tooltip
   --color-tooltip-bg: fade(@color-grey-15, 0.9);
   --color-tooltip-border: @color-grey-10;
+
+  // divider
+  --color-border-divider: @color-grey-10;
 }

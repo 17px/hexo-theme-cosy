@@ -16,6 +16,9 @@
 
     .header {
       padding: 12px 13px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
     }
 
     .content {
@@ -23,6 +26,13 @@
       flex-direction: column;
       flex-grow: 1;
       overflow: hidden;
+
+      .bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 13px;
+      }
     }
   }
 }

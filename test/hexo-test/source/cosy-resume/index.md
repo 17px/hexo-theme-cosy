@@ -1,6 +1,6 @@
 ---
 title: resume
-layout: resume
+layout: cosy-resume
 name: Hi! Mozzie
 role: Full Stack
 email: himozzie@gmail.com

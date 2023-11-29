@@ -13,6 +13,7 @@ class CosyTooltip extends CosyElement {
           position: relative;
           display: inline-block;
           user-select: none;
+          font-size: 0;
         }
         .tooltip-content {
           visibility: hidden;

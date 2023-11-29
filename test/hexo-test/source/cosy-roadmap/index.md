@@ -1,6 +1,6 @@
 ---
 title: roadmap地图
-layout: roadmap
+layout: cosy-roadmap
 initYear: 2023
 years:
   2022:

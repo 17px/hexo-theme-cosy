@@ -1,6 +1,7 @@
+import { onMounted } from "@cosy/util";
 import "./index.less";
 
-document.addEventListener("DOMContentLoaded", () => {
+onMounted(() => {
   // nav-items下的li 默认active
   const liElement = document.querySelectorAll(".nav-items li");
   liElement.forEach((li) => {
