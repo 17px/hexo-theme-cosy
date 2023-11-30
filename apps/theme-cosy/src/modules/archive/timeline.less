@@ -17,10 +17,6 @@
     text-decoration: none;
     color: var(--color-font-2);
 
-    &:hover .timeline-marker:before {
-      background: var(--color-primary);
-    }
-
     .timeline-info {
       padding-top: 2px;
       font-size: 12px;
@@ -72,7 +68,6 @@
     }
 
     .timeline-content {
-
       .timeline-title {
         display: flex;
         align-items: center;
@@ -80,13 +75,12 @@
         margin: 0;
         font-size: 16px;
         font-weight: 400;
-        color: var(--color-font);
+        color: var(--color-font-1);
+        transition: color 0.3s ease-in-out,
+          border 0.3s ease-in-out;
 
-        .icon {
-          margin-right: 8px;
-          width: 16px;
-          height: 16px;
-          color: var(--color-font-3);
+        span {
+          padding-left: 12px;
         }
       }
 
@@ -94,6 +88,26 @@
         margin: 0;
         color: var(--color-font-2);
         font-size: 13px;
+        text-align: justify;
+        transition: color 0.3s ease-in-out,
+          border 0.3s ease-in-out;
+      }
+    }
+
+
+    &:hover {
+      .timeline-marker:before {
+        background: var(--color-primary);
+      }
+
+      .timeline-content {
+        .timeline-title {
+          color: var(--color-font);
+        }
+
+        p {
+          color: var(--color-font-1);
+        }
       }
     }
   }

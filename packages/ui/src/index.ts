@@ -8,6 +8,8 @@ import "./components/lit/switch";
 import "./components/lit/tooltip";
 import "./components/lit/drag.box";
 import "./components/lit/divider";
+import "./components/lit/popup";
+import "./components/lit/label";
 
 export {
   Dropdown as CosyDropdown,

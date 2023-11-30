@@ -13,13 +13,13 @@ export class Dropdown {
   private options: DropdownOption[];
   private element: HTMLElement | null;
   private dropdownElement: HTMLElement | null = null;
-  private onClickItem: ((value: string) => void) | undefined; // 新增的回调函数
+  private onClickItem: ((option: DropdownOption) => void) | undefined; // 新增的回调函数
 
   constructor(
     selector: string,
     options: DropdownOption[],
     event: {
-      onClickItem: ((value: string) => void) | undefined;
+      onClickItem: ((option: DropdownOption) => void) | undefined;
     }
   ) {
     this.selector = selector;
@@ -127,7 +127,7 @@ export class Dropdown {
       item.appendChild(labelText);
 
       item.addEventListener("click", () => {
-        this.onClickItem?.(option.value);
+        this.onClickItem?.(option);
         this.removeDropdown();
       });
 
@@ -149,7 +149,7 @@ export class Dropdown {
     document.body.appendChild(this.dropdownElement);
 
     const rect = this.element!.getBoundingClientRect();
-    console.log(rect)
+    console.log(rect);
     const dropdownWidth = this.dropdownElement.offsetWidth;
     const viewportWidth = document.documentElement.clientWidth;
 

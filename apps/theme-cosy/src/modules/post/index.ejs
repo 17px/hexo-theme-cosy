@@ -45,8 +45,8 @@
       </div>
     </main>
     <!-- toc -->
+    <% if (!!toc(page.content)) { %>
     <cosy-drag-box id="toc-drag-box" trigger="left" min-width="320" uid="toc-box">
-      <% if (!!toc(page.content)) { %>
       <div class="meta-container">
         <div class="toc-wrapper cosy-scrollbar">
           <p class="catalog">
@@ -63,8 +63,8 @@
           <%- toc(page.content,{max_depth:3}) %>
         </div>
       </div>
-      <% } %>
     </cosy-drag-box>
+    <% } %>
   </div>
 
 </div>

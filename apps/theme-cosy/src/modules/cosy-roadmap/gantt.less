@@ -11,10 +11,6 @@
     background: var(--color-border-2);
   }
 
-  // &::-webkit-scrollbar {
-  //   display: none;
-  // }
-
   .timeline-container {
     white-space: nowrap;
     position: relative;
@@ -60,8 +56,6 @@
     }
   }
 
-
-
   .task-container {
     flex: 1;
     position: relative;
@@ -69,26 +63,24 @@
     .task-bar {
       position: relative;
       padding: 0 10px;
-      border-radius: var(--radius);
+      border-radius: var(--radius-base, 4px);
       z-index: 10;
       cursor: pointer;
+      color: var(--color-font);
       transition: all .3s ease-in-out;
 
       &.expired {
         opacity: .6;
-        background: linear-gradient(to right, var(--color-bg-3), var(--color-bg-2));
-        // color: var(--color-font-3);
+        background: linear-gradient(to right, var(--color-grey), var(--color-bg));
       }
 
       &.doing {
-        // color: var(--color-font);
-        background: linear-gradient(to right, var(--color-primary-2), var(--color-primary-3));
+        background: linear-gradient(to right, var(--color-orange), var(--color-red));
       }
 
       &.todo {
         opacity: .6;
-        // color: var(--color-font-2);
-        background: linear-gradient(to right, var(--color-primary-2), var(--color-primary-3));
+        background: linear-gradient(to right, var(--color-teal), var(--color-blue));
       }
     }
   }

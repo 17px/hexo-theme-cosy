@@ -31,28 +31,44 @@
 @color-grey-19: #1d1e2b;
 @color-grey-20: #191a23;
 
+@grey: #95a2b3;
+@teal: #00b2bf;
+@blue: #4ea7fc;
 @yellow: #f2c94c;
 @orange: #f2994a;
 @green: #4cb782;
-@teal: #00b2bf;
-@red: #eb5757;
 @red-light: #fa6563;
-@blue: #4ea7fc;
-@grey: #95a2b3;
+@red: #eb5757;
 
 @shadow-dark: rgba(0, 0, 0, 0.2) 0px 4px 24px;
 
 :root {
   --color-primary: @color-purple-6;
+  --color-primary-2: @color-purple-7;
+  --color-primary-3: @color-purple-8;
+  --color-primary-4: @color-purple-9;
+  
+  --color-yellow: @yellow;
+  --color-orange: @orange;
+  --color-green: @green;
+  --color-teal: @teal;
+  --color-red: @red;
+  --color-blue: @blue;
+  --color-red-light: @red-light;
+  --color-grey: @grey;
+
   --color-bg: @color-grey-20;
   --color-body-bg: linear-gradient(to bottom right,
       @color-grey-18 0%,
       @color-grey-20 50%);
+  --color-bg-hover: fade(@color-grey-13, 50);
   --color-frost-bg: blur(10px) saturate(190%) contrast(70%) brightness(80%);
   // 水平垂直拖拽容器触发颜色
   --color-dragger: @color-grey-15;
   // 边框
   --color-border: @color-grey-10;
+  --color-border-2: fade(@color-grey-10, 50);
+  --color-border-3: fade(@color-grey-10, 30);
   // 滚动条
   --width-scrollbar: 12px;
   --color-scrollbar: @color-grey-13;
@@ -98,14 +114,27 @@
 
   // dropdown
   --color-dropdown-hover: @color-grey-10;
-  --color-dropdown-bg: fade(@color-grey-15, 0.9);
+  --color-dropdown-bg: fade(@color-grey-15, 60);
   --color-dropdown-border: @color-grey-10;
   --color-dropdown-shadow: @shadow-dark;
 
   // tooltip
-  --color-tooltip-bg: fade(@color-grey-15, 0.9);
+  --color-tooltip-bg: fade(@color-grey-15, 90);
   --color-tooltip-border: @color-grey-10;
 
   // divider
   --color-border-divider: @color-grey-10;
+
+  // popup
+  --color-popup-mask-bg: fade(@color-grey-5, 5);
+  --color-popup-bg: fade(@color-grey-19, 80);
+  --color-popup-border: fade(@color-grey-10, 44);
+
+  // label
+  --color-label-font: @color-grey-6;
+  --color-label-font-hover: @color-grey-3;
+  --color-label-bg: @color-grey-15;
+  --color-label-border: @color-grey-10;
+  --color-label-border-hover: @color-grey-8;
+
 }

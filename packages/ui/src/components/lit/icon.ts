@@ -6,8 +6,9 @@ const HTML_TAG = `cosy-icon`;
 
 export class CosyIcon extends CosyElement {
   @property({ type: String }) size: "sm" | "md" | "large" = "md";
-  @property({ type: String }) href: string = "#";
-  @property({ type: Boolean, attribute: "button-style" })
+  @property({ type: String }) href: string;
+  @property({ type: Boolean }) blank = false;
+  @property({ type: Boolean, attribute: "bordered" })
   buttonStyle: boolean = false;
 
   static get styles() {
@@ -45,23 +46,25 @@ export class CosyIcon extends CosyElement {
           height: 100%;
           fill: currentColor;
         }
-        :host([button-style]) {
+        :host([bordered]) {
           background: var(--color-button-bg);
           border: 1px solid var(--color-button-border);
           border-radius: var(--raius-base, 4px);
         }
-        :host([button-style]:hover) {
+        :host([bordered]:hover) {
           background: var(--color-button-bg-hover);
-          border-color: var(--color-button-border-hover)
+          border-color: var(--color-button-border-hover);
         }
       `,
     ];
   }
 
   render() {
-    return html`
-      <a href="${this.href}" class="size-${this.size}"> <slot></slot></a>
-    `;
+    const href = !!this.href ? this.href : "javascript:void(0);";
+    const target = this.blank ? "blank" : "";
+    return html`<a href="${href}" target="${target}" class="size-${this.size}"
+      ><slot></slot
+    ></a>`;
   }
 }
 

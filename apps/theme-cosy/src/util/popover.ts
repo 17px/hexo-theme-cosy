@@ -97,7 +97,7 @@ export class Popover {
   private createPopover(): void {
     this.popoverElement = document.createElement("div");
     const { classNames = [] } = this.options;
-    this.popoverElement.classList.add("popover-content", "scrollbar-obtrusive");
+    this.popoverElement.classList.add("popover-content", "cosy-scrollbar");
     classNames.forEach((className) =>
       this.popoverElement?.classList.add(className)
     );
@@ -127,10 +127,10 @@ export class Popover {
     this.popoverElement.style.zIndex = "20231026";
     this.popoverElement.style.overflow = "auto";
     this.popoverElement.style.padding = `10px`;
-    this.popoverElement.style.borderRadius = "var(--radius)";
-    this.popoverElement.style.backdropFilter = "var(--dropdown-bdf)";
-    this.popoverElement.style.background = "var(--dropdown-bg)";
-    this.popoverElement.style.border = "var(--dropdown-border)";
+    this.popoverElement.style.borderRadius = "var(--radius-base, 4px)";
+    this.popoverElement.style.backdropFilter = "var(--color-frost-bg)";
+    this.popoverElement.style.background = "var(--color-button-bg)";
+    this.popoverElement.style.border = "var(--color-border)";
     this.popoverElement.style.boxShadow = "var(--dropdown-boxShadow)";
 
     this.fadeIn(this.popoverElement, duration);

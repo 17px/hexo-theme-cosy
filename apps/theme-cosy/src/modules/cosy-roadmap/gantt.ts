@@ -1,6 +1,7 @@
 import { Popover } from "@/util/popover";
 import "./gantt.less";
 import dayjs from "dayjs";
+import { CosyElement } from "@cosy/ui";
 
 export interface GanttTask {
   title: string;
@@ -158,20 +159,20 @@ export class GanttChart {
       taskEl.style.top = index * 34 + "px";
       taskEl.textContent = task.title;
       taskDiv.appendChild(taskEl);
-      new Popover(taskEl, {
-        title: `${dayjs(task.start).format("DD/MM/YYYY")} - ${dayjs(
+
+      taskEl.addEventListener("click", () => {
+        const popup = document.createElement("cosy-popup") as CosyElement;
+        const title = `${dayjs(task.start).format("DD/MM/YYYY")} - ${dayjs(
           task.end
-        ).format("DD/MM/YYYY")}`,
-        content: task.content ?? task.title,
-        styles: {
-          maxHeight: "30%",
-          maxWidth: "80%",
-          transform: "translateX(-50%)",
-          bottom: "24px",
-          left: "50%",
-          position: "fixed",
-        },
-        classNames: ["task-bar-popover"],
+        ).format("DD/MM/YYYY")}`;
+        const slotContent = `
+          <div style="max-width: 860px;line-height: 1.5">
+            <p style="margin: 0px 0px 8px; font-size: 12px; color: var(--color-font-2);">${title}</p>
+            <p style="margin: 0px; font-size: 13px">${task.content ?? task.title}</p>
+          </div>
+        `;
+        popup.innerHTML = slotContent;
+        document.body.append(popup);
       });
     });
 

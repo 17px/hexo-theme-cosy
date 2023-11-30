@@ -52,7 +52,7 @@ document.addEventListener("click", function (event) {
   }
 });
 
-useSplitPanel();
+// useSplitPanel();
 
 // 页面初始化
 document.addEventListener("DOMContentLoaded", function () {
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
   useMermaid({ ...mermaid, enable: window.page.use.indexOf("mermaid") > -1 });
   useValine({ ...valine, enable: window.page.use.indexOf("valine") > -1 });
   useCodeHelper();
-  useTextEnhancer();
+  // useTextEnhancer();
 
   // 加载prism样式
   loadPrismThemeStyle();

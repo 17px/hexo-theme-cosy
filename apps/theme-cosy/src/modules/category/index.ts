@@ -32,13 +32,12 @@ onMounted(() => {
   ];
 
   new CosyDropdown("#filter-button", options, {
-    onClickItem: (status) => {
-      [...document.querySelectorAll(".category .table li")].forEach((li) => {
+    onClickItem: (selected: CosyDropdownOption) => {
+      const { value } = selected;
+      document.querySelectorAll(".category .post-list li").forEach((li) => {
         const liElement = li as HTMLLIElement;
-        if (status === "all") return liElement.classList.remove("selected");
-        const statusArray = li.getAttribute("data-status");
-        const isSelected = statusArray?.includes(status);
-        isSelected
+        if (value === "all") return liElement.classList.remove("selected");
+        li.getAttribute("data-status")?.includes(value)
           ? liElement.classList.add("selected")
           : liElement.classList.remove("selected");
       });

@@ -22,7 +22,7 @@
       <div class="pagination">
         <cosy-tooltip>
           <span slot="content">上一页</span>
-          <cosy-icon button-style <% if (page.current <= 1) { %>disabled<% } %> href="<%- url_for(page.prev_link) %>">
+          <cosy-icon bordered <% if (page.current <= 1) { %>disabled<% } %> href="<%- url_for(page.prev_link) %>">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
               <g fill="none">
                 <path d="M4.147 12.353a.5.5 0 0 1-.001-.707L9.61 6.162a.55.55 0 0 1 .779 0l5.465 5.484a.5.5 0 0 1-.708.706L10 7.188l-5.146 5.164a.5.5 0 0 1-.707.001z" fill="currentColor"></path>
@@ -33,7 +33,7 @@
         <span class="current"><%= page.current %> <em>/ <%= page.total %></em></span>
         <cosy-tooltip>
           <span slot="content">下一页</span>
-          <cosy-icon button-style <% if (page.current >= page.total) { %>disabled<% } %> href="<%- url_for(page.next_link) %>">
+          <cosy-icon bordered <% if (page.current >= page.total) { %>disabled<% } %> href="<%- url_for(page.next_link) %>">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
               <g fill="none">
                 <path d="M15.854 7.646a.5.5 0 0 1 .001.707l-5.465 5.484a.55.55 0 0 1-.78 0L4.147 8.353a.5.5 0 1 1 .708-.706L10 12.812l5.147-5.165a.5.5 0 0 1 .707-.001z" fill="currentColor"></path>
@@ -56,17 +56,20 @@
         <% if(post.status !==undefined){ %>
         <%- post_icon(post,'status') %>
         <% } %>
-        <% if(post.top !==undefined){ %>
-        <%- post_icon(post,'top') %>
-        <% } %>
-        <p class="ellipsis">
-          <span><%- post.title %></span>
+        <p>
+          <cosy-tooltip placement="right">
+            <span slot="content"><%- generate_excerpt(post, 60) %></span>
+            <%- post.title %>
+          </cosy-tooltip>
+          <% if(post.top !==undefined){ %>
+          <cosy-label color="red" bordered>置顶</cosy-label>
+          <% } %>
         </p>
         <span class="post-date">
-          <b>
-            <%= post.date.format('MM DD') %>
-          </b>
-          <em>/ <%= post.date.format('YYYY') %></em>
+          <cosy-tooltip placement="left">
+            <span slot="content">创建于: <%- post.date.format('YYYY-MM-DD HH:mm:ss') %></span>
+            <%= post.date.format('MMM DD') %>
+          </cosy-tooltip>
         </span>
       </a>
     </li>

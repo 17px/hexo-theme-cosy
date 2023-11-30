@@ -1,9 +1,9 @@
-import { Dropdown, DropdownOption } from "@/util/dropdown";
-import { SegmentedControl } from "./SegmentedControl";
 import { GanttChart } from "./gantt";
 import dayjs from "dayjs";
 import "./index.less";
-import { Popover } from "@/util/popover";
+import { onMounted } from "@cosy/util";
+import { SegmentedControl } from "./SegmentedControl";
+import { CosyDropdown } from "@cosy/ui";
 
 type YearItem = {
   title: string;
@@ -19,10 +19,8 @@ const processData = (year: string | number, yearDataList: YearItem[]) =>
     end: dayjs(`${year}-${i.end}`).toString(),
   }));
 
-// 使用Gantt组件
-document.addEventListener("DOMContentLoaded", () => {
+onMounted(() => {
   const { roadmapYears = null, initYear } = window;
-
   const todayButton = document.querySelector(
     "#tody-button"
   ) as HTMLButtonElement;
@@ -34,27 +32,27 @@ document.addEventListener("DOMContentLoaded", () => {
       value: String(Number(year)),
       label: Number(year),
     }));
-
-    new Dropdown("#year-dropdown", yearOptions, {
-      onClickItem: (year) => {
-        document.querySelector("#year-dropdown span")!.textContent = year;
+    new CosyDropdown("#year-dropdown", yearOptions, {
+      onClickItem: (selected) => {
+        const { value } = selected;
+        document.querySelector("#year-dropdown span")!.textContent = value;
         todayButton.style.display =
-          year === dayjs().year().toString() ? "inherit" : "none";
-        const yearsData = processData(year, roadmapYears[year]);
-        gantt.updateTasks(yearsData, Number(year));
+          value === dayjs().year().toString() ? "inherit" : "none";
+        const yearsData = processData(value, roadmapYears[value]);
+        gantt.updateTasks(yearsData, Number(value));
       },
     });
-
     const yearsData = processData(initYear, roadmapYears[initYear]);
     const gantt = new GanttChart("#gantt-container", yearsData);
-
     todayButton?.addEventListener("click", () => gantt.centerOnCurrentDay());
   }
+});
 
+// 使用Gantt组件
+document.addEventListener("DOMContentLoaded", () => {
   // const onSelectionChange = (selected: string, index: number) => {
   //   console.log(`Selected: ${selected}, Index: ${index}`);
   // };
-
   // new SegmentedControl(
   //   "segmented-control-container",
   //   ["All", "Active", "Closed"],
