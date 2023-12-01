@@ -2,13 +2,13 @@
   margin: 24px;
   position: relative;
   padding: 16px;
-  border-radius: var(--radius);
+  border-radius: var(--radius-base, 4px);
   background-color: var(--color-bg-2);
   overflow: hidden;
 
   >p {
     margin: 0 0 4px 0;
-    color: var(--color-font);
+    color: var(--color-font-1);
     font-size: 13px;
   }
 
@@ -19,6 +19,8 @@
     text-decoration: none;
     font-size: 13px;
     word-wrap: break-word;
+    transition: color .3s;
+    line-height: 1.5;
 
     svg {
       width: 15px;
@@ -30,7 +32,7 @@
     }
 
     &:hover {
-      color: var(--color-primary);
+      color: var(--color-font);
     }
   }
 
@@ -55,7 +57,7 @@
 
       p {
         font-size: 13px;
-        color: var(--color-font);
+        color: var(--color-font-2);
         margin: 10px 0 0 0;
       }
     }

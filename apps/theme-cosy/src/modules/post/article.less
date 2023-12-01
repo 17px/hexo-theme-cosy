@@ -2,6 +2,35 @@ article {
   padding: 0 2rem;
   height: 100%;
   overflow-y: auto;
+  overflow-x: hidden;
+
+  * {
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar {
+      width: 12px;
+      height: 12px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--color-scrollbar);
+      opacity: 0.2;
+      border-radius: 12px;
+      border: 3px solid transparent;
+      background-clip: content-box;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: var(--color-scrollbar-hover);
+    }
+  }
+
+  .post-title {
+    line-height: 1.5;
+    color: var(--color-font);
+  }
 
   .flag-paragraph {
     position: relative;
@@ -26,23 +55,17 @@ article {
   hr {
     border: none;
     height: 1.5px;
-    background: repeating-linear-gradient(to right,
-        var(--color-border),
-        var(--color-border) 5px,
-        /* 线的长度 */
-        #fff 5px,
-        /* 间隙的起始位置 */
-        #fff 10px
-        /* 间隙的结束位置 */
-      );
+    width: 100%;
+    background: var(--color-border-2);
   }
 
   a {
+    transition: color .3s;
     text-decoration: none;
-    color: var(--color-primary);
+    color: var(--color-primary-1);
 
     &:hover {
-      text-decoration: underline;
+      color: var(--color-primary);
     }
   }
 
@@ -60,23 +83,6 @@ article {
         border-right: 0 !important;
       }
 
-      &::-webkit-scrollbar-track {
-        background: transparent;
-      }
-
-      &::-webkit-scrollbar {
-        width: var(--scrollbar-width);
-        height: var(--scrollbar-width);
-      }
-
-      &::-webkit-scrollbar-thumb {
-        background-color: var(--scrollbar-color);
-        opacity: 0.2;
-        border-radius: var(--scrollbar-width);
-        border: 3px solid transparent;
-        background-clip: content-box;
-      }
-
     }
 
     .btn-wrapper {
@@ -87,11 +93,11 @@ article {
       right: 0;
       left: 0;
       height: 24px;
-      background: var(--color-bg-4);
+      background: var(--color-post-code-title-bg);
       display: flex;
       justify-content: space-between;
       padding: 0 4px 0 6px;
-      border-radius: var(--radius) var(--radius) 0 0;
+      border-radius: var(--radius-base, 4px) var(--radius-base, 4px) 0 0;
     }
 
     .copy-button {
@@ -104,7 +110,7 @@ article {
       cursor: pointer;
 
       &:hover {
-        color: var(--color-font);
+        color: var(--color-font-1);
       }
 
       svg {
@@ -127,12 +133,12 @@ article {
 
   blockquote {
     margin: 10px 0;
-    background: var(--color-primary-4);
+    border-left: 3px solid var(--color-primary);
+    background: linear-gradient(to right, var(--color-primary-3), transparent);
     font-family: var(--font-regular);
-    border-radius: 4px;
     display: block;
-    padding: 1em;
-    color: var(--color-font);
+    padding: 0.5rem;
+    color: var(--color-font-1);
 
     p {
       margin: 0;
@@ -153,11 +159,11 @@ article {
     code {
       padding: 4px 6px;
       font-size: 12.8px;
-      margin-bottom: 1px;
-      background: var(--color-bg-3);
-      color: var(--color-font);
-      border-radius: var(--radius);
-      font-family: var(--font-regular);
+      margin: 0 2px;
+      background: var(--color-primary-3);
+      color: var(--color-font-1);
+      border-radius: var(--radius-base, 4px);
+      font-family: "Fira Code", "Fira Mono", Menlo, Consolas, "DejaVu Sans Mono", monospace;
     }
   }
 
@@ -167,10 +173,26 @@ article {
   h4,
   h5,
   h6 {
-    font-weight: 600;
+    font-weight: 500;
     margin: 2.5rem 0 1rem 0;
-    color: var(--color-font);
+    color: var(--color-font-1);
     padding: .5rem 0;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+
+  h4 {
+    font-size: 14px;
   }
 
   ul,
@@ -180,7 +202,7 @@ article {
 
     li {
       line-height: 24px;
-      color: var(--color-font);
+      color: var(--color-font-1);
 
       &::marker {
         color: var(--color-font-2);
@@ -196,23 +218,23 @@ article {
     width: 100%;
 
     thead tr th {
-      background: var(--color-primary-2);
+      background: var(--color-primary-3);
       text-align: left;
       padding: 12px;
       font-size: 13px;
 
       &:nth-of-type(1) {
-        border-radius: var(--radius) 0 0 0;
+        border-radius: var(--radius-base, 4px) 0 0 0;
       }
 
       &:last-of-type {
-        border-radius: 0 var(--radius) 0 0
+        border-radius: 0 var(--radius-base, 4px) 0 0
       }
     }
 
     tbody tr {
       &:hover {
-        background: var(--color-tiny-hover);
+        background: var(--color-bg-hover);
       }
 
       td {

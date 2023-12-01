@@ -27,6 +27,10 @@
     }
 
     .day {
+      &:not(:first-of-type) {
+        transform: translateX(-50%);
+      }
+
       font-size: 13px;
     }
 
@@ -82,6 +86,11 @@
         opacity: .6;
         background: linear-gradient(to right, var(--color-teal), var(--color-blue));
       }
+
+      &:hover {
+        background: linear-gradient(to right, var(--color-teal), var(--color-bg));
+      }
+
     }
   }
 }

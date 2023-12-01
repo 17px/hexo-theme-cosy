@@ -60,11 +60,17 @@ export class CosyIcon extends CosyElement {
   }
 
   render() {
-    const href = !!this.href ? this.href : "javascript:void(0);";
-    const target = this.blank ? "blank" : "";
-    return html`<a href="${href}" target="${target}" class="size-${this.size}"
-      ><slot></slot
-    ></a>`;
+    if (!this.href) {
+      return html`<a class="size-${this.size}"><slot></slot></a>`;
+    } else {
+      const target = this.blank ? "blank" : "";
+      return html`<a
+        href="${this.href}"
+        target="${target}"
+        class="size-${this.size}"
+        ><slot></slot
+      ></a>`;
+    }
   }
 }
 

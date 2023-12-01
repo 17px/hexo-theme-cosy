@@ -1,0 +1,12 @@
+<!-- inject:css -->
+
+<div class="tags-container">
+  <h1>标签： <%= page.tag %></h1>
+  <ul>
+    <% page.posts.each(function(post) { %>
+    <li><a href="<%- url_for(post.path) %>"><%= post.title %></a></li>
+    <% }); %>
+  </ul>
+</div>
+
+<!-- inject:js -->

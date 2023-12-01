@@ -65,39 +65,24 @@ export const addListenerOnce = ({
 };
 
 /**
- * addKeyCombo - 设置对特定键盘组合的监听，并可选择阻止默认行为
+ * addKeyPress - 设置对键盘的监听，并可选择阻止默认行为
  *
- * @param params - 包含 combo, handler, preventDefault 的参数对象
- *   - combo: 需要监听的按键组合，如 'Ctrl+C' 或 'Cmd+A'
+ * @param params - key combo, handler, preventDefault 的参数对象
+ *   - key: 需要监听的按键
  *   - handler: 事件处理函数
  *   - preventDefault: 是否阻止默认行为（可选，默认为 false）
  */
-export const addKeyCombo = ({
-  combo,
+export const addKeyPress = ({
+  key,
   handler,
   preventDefault = false,
 }: {
-  combo: string;
+  key: string;
   handler: (event: KeyboardEvent) => void;
   preventDefault?: boolean;
 }): (() => void) => {
-  const keyCombination = combo
-    .split("+")
-    .map((key) => key.trim().toLowerCase());
-
   const keydownHandler = (event: KeyboardEvent) => {
-    const key = event.key.toLowerCase();
-    const keyState = {
-      cmd: event.metaKey,
-      ctrl: event.ctrlKey,
-      shift: event.shiftKey,
-      alt: event.altKey,
-    };
-
-    const isComboMatch = keyCombination.every((comboKey) =>
-      keyState[comboKey] !== undefined ? keyState[comboKey] : comboKey === key
-    );
-
+    const isComboMatch = event.key.toLowerCase() === key.toLowerCase();
     if (isComboMatch) {
       if (preventDefault) event.preventDefault();
       handler(event);
@@ -105,6 +90,5 @@ export const addKeyCombo = ({
   };
 
   document.addEventListener("keydown", keydownHandler);
-
   return () => document.removeEventListener("keydown", keydownHandler);
 };

@@ -7,26 +7,53 @@ import { restoreScrollHeight, saveScrollHeight } from "@/util";
 import { useTextEnhancer } from "./selection";
 import { useCodeHelper } from "./code.helper";
 import { useSplitPanel } from "@/util/split.panel";
-import { onMounted, addListener, globalEventBus } from "@cosy/util";
+import {
+  onMounted,
+  addListener,
+  globalEventBus,
+  addKeyPress,
+} from "@cosy/util";
 import { CosyElement } from "@cosy/ui";
 
 onMounted(() => {
-  globalEventBus.on("cosy-drag-box:toc-box", (e) => {
-    const { invisible } = e.detail;
-    const buttonSelector = "#toc-show-button";
-    const dragBoxSelector = "#toc-drag-box";
-    const showButton = document.querySelector(buttonSelector) as CosyElement;
-    showButton.invisible = !invisible;
+  const tocDragBox = document.querySelector("#toc-drag-box") as CosyElement;
+  const button = document.querySelector("#toc-show-button") as CosyElement;
+
+  if (tocDragBox) {
+    globalEventBus.on(
+      "cosy-drag-box:toc-box",
+      (e: { detail: { invisible: any } }) => {
+        const { invisible } = e.detail;
+        button.invisible = !invisible;
+        addListener({
+          selector: "#toc-show-button",
+          eventType: "click",
+          handler: () => {
+            tocDragBox.invisible = false;
+            button.invisible = true;
+          },
+        });
+      }
+    );
+
     addListener({
-      selector: buttonSelector,
+      selector: "#toc-show-button",
       eventType: "click",
       handler: () => {
-        const dragBox = document.querySelector(dragBoxSelector) as CosyElement;
-        showButton.invisible = true;
-        dragBox.invisible = false;
+        tocDragBox.invisible = false;
+        button.invisible = true;
       },
     });
-  });
+
+    addKeyPress({
+      key: "]",
+      preventDefault: true,
+      handler: () => {
+        tocDragBox.invisible = !tocDragBox.invisible;
+        button.invisible = !button.invisible;
+      },
+    });
+  }
 });
 
 /**
@@ -63,9 +90,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // 文章启动插件判断
   const { mermaid, katex, valine } = window;
-  useKatex({ ...katex, enable: window.page.use.indexOf("katex") > -1 });
-  useMermaid({ ...mermaid, enable: window.page.use.indexOf("mermaid") > -1 });
-  useValine({ ...valine, enable: window.page.use.indexOf("valine") > -1 });
+  // useKatex({ ...katex, enable: window.page.use.indexOf("katex") > -1 });
+  // useMermaid({ ...mermaid, enable: window.page.use.indexOf("mermaid") > -1 });
+  // useValine({ ...valine, enable: window.page.use.indexOf("valine") > -1 });
   useCodeHelper();
   // useTextEnhancer();
 

@@ -14,7 +14,7 @@ export const applyThemeVariables = (themeVariables: Record<string, string>) => {
 
 export const getThemeMode = () => {
   const mode = localStorage.getItem(themeKeyInLS) as ThemeModelType;
-  return mode ?? "light";
+  return mode ?? "dark";
 };
 
 export const setThemeMode = (mode: ThemeModelType) =>

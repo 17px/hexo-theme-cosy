@@ -1,5 +1,5 @@
 import "./index.less";
-import { onMounted, addKeyCombo, addListener } from "@cosy/util";
+import { onMounted, addKeyPress, addListener } from "@cosy/util";
 
 onMounted(() => {
   addListener({
@@ -7,8 +7,8 @@ onMounted(() => {
     eventType: "click",
     handler: () => console.log("click wc-btn"),
   });
-  addKeyCombo({
-    combo: "cmd+k",
+  addKeyPress({
+    key: "k",
     handler: () => console.log("press cmd+k"),
     preventDefault: true,
   });

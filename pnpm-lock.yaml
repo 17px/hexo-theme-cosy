@@ -188,11 +188,8 @@ importers:
         specifier: ^2.0.0
         version: 2.0.0
       hexo-renderer-marked:
-        specifier: ^6.0.0
-        version: 6.0.0
-      hexo-renderer-stylus:
-        specifier: ^3.0.0
-        version: 3.0.0
+        specifier: 6.1.1
+        version: 6.1.1
       hexo-server:
         specifier: ^3.0.0
         version: 3.0.0
@@ -201,10 +198,6 @@ importers:
         version: 1.0.0
 
 packages:
-
-  /@adobe/css-tools@4.3.1:
-    resolution: {integrity: sha512-/62yikz7NLScCGAAST5SHdnjaDJQBDq0M2muyRTpf2VQhw6StBg2ALiu73zSJQ4fMVLA+0uBhBHAle7Wg+2kSg==}
-    dev: false
 
   /@algolia/cache-browser-local-storage@4.20.0:
     resolution: {integrity: sha512-uujahcBt4DxduBTvYdwO3sBfHuJvJokiC3BP1+O70fglmE1ShkH8lpXqZBac1rrU3FnNYSUs4pL9lBdTKeRPOQ==}
@@ -2022,6 +2015,7 @@ packages:
 
   /abab@2.0.6:
     resolution: {integrity: sha512-j2afSsaIENvHZN2B8GOpF566vZ5WVk5opAiMTvWgaQT8DkbOqsTfvNAvHoRGU2zzP8cPoqys+xHTRDWW8L+/BA==}
+    deprecated: Use your platform's native atob() and btoa() methods instead
     dev: false
 
   /abbrev@2.0.0:
@@ -3014,6 +3008,7 @@ packages:
   /domexception@4.0.0:
     resolution: {integrity: sha512-A2is4PLG+eeSfoTMA95/s4pvAoSo2mKtiM5jlHkAVewmiO8ISFTFKZjH7UAM1Atli/OT/7JHOrJRJiMKUZKYBw==}
     engines: {node: '>=12'}
+    deprecated: Use your platform's native DOMException instead
     dependencies:
       webidl-conversions: 7.0.0
     dev: false
@@ -3029,10 +3024,6 @@ packages:
     engines: {node: '>= 4'}
     dependencies:
       domelementtype: 2.3.0
-
-  /dompurify@2.4.7:
-    resolution: {integrity: sha512-kxxKlPEDa6Nc5WJi+qRgPbOAbgTpSULL+vI3NUXsZMlkJxTqYI9wg5ZTay2sFrdZRWHPWNi+EdAhcJf81WtoMQ==}
-    dev: false
 
   /dompurify@3.0.6:
     resolution: {integrity: sha512-ilkD8YEnnGh1zJ240uJsW7AzE+2qpbOUYjacomn3AvJ6J4JhKGSZ2nh4wUIXPZrEPppaCLx5jFe8T89Rk8tQ7w==}
@@ -3669,12 +3660,12 @@ packages:
       ejs: 3.1.9
     dev: false
 
-  /hexo-renderer-marked@6.0.0:
-    resolution: {integrity: sha512-/B/ud8q9pNldbipuv6cPyqL+fir973+blV79n6j59M3S8LRz/4hLXwd0TA4RHxcHVrgPakeWUtiH3UWo6B6Pag==}
+  /hexo-renderer-marked@6.1.1:
+    resolution: {integrity: sha512-vllmRFwl9A1NP/llQW2TbDnyvqaQKgktxXw7c+tK7XVQJmfIUnl32dr8M4jRYqYe5m9972eYm09kBXV8rBtA/A==}
     engines: {node: '>=14'}
     dependencies:
-      dompurify: 2.4.7
-      hexo-util: 2.7.0
+      dompurify: 3.0.6
+      hexo-util: 3.1.0
       jsdom: 20.0.3
       marked: 4.3.0
     transitivePeerDependencies:
@@ -3682,16 +3673,6 @@ packages:
       - canvas
       - supports-color
       - utf-8-validate
-    dev: false
-
-  /hexo-renderer-stylus@3.0.0:
-    resolution: {integrity: sha512-wgKOcjUzq1i4Y70luoyYDbh91QeQcDzJO+v1598LgY+IdREFAm+vy1MWtl/TZsVXyPaEtsULNi3Vi22hdsPUSA==}
-    engines: {node: '>=14'}
-    dependencies:
-      nib: 1.2.0(stylus@0.59.0)
-      stylus: 0.59.0
-    transitivePeerDependencies:
-      - supports-color
     dev: false
 
   /hexo-server@3.0.0:
@@ -4594,14 +4575,6 @@ packages:
 
   /neo-async@2.6.2:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
-
-  /nib@1.2.0(stylus@0.59.0):
-    resolution: {integrity: sha512-7HgrnMl/3yOmWykueO8/D0q+0iWwe7Z+CK2Eaq/xQV8w1hK80WN1oReRQkfkrztbAAnp/nTHkUSl5EcVkor6JQ==}
-    peerDependencies:
-      stylus: '*'
-    dependencies:
-      stylus: 0.59.0
-    dev: false
 
   /no-case@3.0.4:
     resolution: {integrity: sha512-fgAN3jGAh+RoxUGZHTSOLJIqUc2wmoBwGR4tbpNAKmmovFoWq0OdRkb0VkldReO2a2iBT/OEulG9XSUc10r3zg==}
@@ -5838,6 +5811,9 @@ packages:
 
   /sax@1.2.4:
     resolution: {integrity: sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw==}
+    requiresBuild: true
+    dev: true
+    optional: true
 
   /saxes@6.0.0:
     resolution: {integrity: sha512-xAg7SOnEhrm5zI3puOOKyy1OMcMlIJZYNJY7xLBwSze0UjhPLnWfj2GF2EpT0jmzaJKIWKHLsaSSajf35bcYnA==}
@@ -6044,11 +6020,6 @@ packages:
     resolution: {integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==}
     engines: {node: '>=0.10.0'}
 
-  /source-map@0.7.4:
-    resolution: {integrity: sha512-l3BikUxvPOcn5E74dZiq5BGsTb5yEwhaTSzccU6t4sDOH8NWJCstKO5QT2CvtFoK6F0saL7p9xHAqHOlCPJygA==}
-    engines: {node: '>= 8'}
-    dev: false
-
   /spdy-transport@3.0.0:
     resolution: {integrity: sha512-hsLVFE5SjA6TCisWeJXFKniGGOpBgMLmerfO2aCyCU5s7nJ/rpAepqmFifv/GCbSbueEeAJJnmSQ2rKC/g8Fcw==}
     dependencies:
@@ -6170,19 +6141,6 @@ packages:
       postcss: 8.4.30
       postcss-selector-parser: 6.0.13
     dev: true
-
-  /stylus@0.59.0:
-    resolution: {integrity: sha512-lQ9w/XIOH5ZHVNuNbWW8D822r+/wBSO/d6XvtyHLF7LW4KaCIDeVbvn5DF8fGCJAUCwVhVi/h6J0NUcnylUEjg==}
-    hasBin: true
-    dependencies:
-      '@adobe/css-tools': 4.3.1
-      debug: 4.3.4
-      glob: 7.1.6
-      sax: 1.2.4
-      source-map: 0.7.4
-    transitivePeerDependencies:
-      - supports-color
-    dev: false
 
   /supports-color@5.5.0:
     resolution: {integrity: sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==}

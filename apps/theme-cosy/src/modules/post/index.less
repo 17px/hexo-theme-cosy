@@ -49,38 +49,17 @@
           flex: 1;
 
           .post-info {
-            padding: 0;
+            display: inline-flex;
+            gap: 12px;
             color: var(--color-font-2);
-            font-size: 13px;
           }
         }
 
-        .tags {
+        .post-tags {
+          margin-top: 1rem;
           display: flex;
-          align-items: center;
-          color: var(--color-font-2);
           flex-wrap: wrap;
-          margin: 0 auto;
-          max-width: 860px;
-          margin: 20px 0;
-          padding: 0;
-
-          li {
-            margin-right: 6px;
-            font-size: 12px;
-            list-style: none;
-            margin-bottom: 8px;
-
-            a {
-              padding: 2px 4px;
-              display: inline-block;
-              border-radius: var(--radius);
-              background: var(--color-primary-2);
-              color: var(--color-font-2);
-              text-decoration: none;
-            }
-
-          }
+          gap: 6px;
         }
       }
 
@@ -114,22 +93,24 @@
       padding: 0 1rem;
       flex: 1;
       margin: 0;
-      // overflow-x: hidden;
-      // overflow-y: auto;
 
-      .catalog {
-        display: flex;
-        align-items: center;
-        color: var(--color-font-3);
+      cosy-tooltip {
+        display: inline-flex;
 
-        svg {
-          width: 16px;
-          height: 16px;
-        }
+        .catalog {
+          display: inline-flex;
+          align-items: center;
+          color: var(--color-font-3);
 
-        span {
-          font-size: 13px;
-          padding-left: 8px;
+          svg {
+            width: 16px;
+            height: 16px;
+          }
+
+          span {
+            font-size: 13px;
+            padding-left: 8px;
+          }
         }
       }
 
@@ -147,11 +128,11 @@
 
         >li {
           &:first-of-type {
-            margin-top: 0.5rem;
+            margin-top: 1.5rem;
           }
 
           &:last-of-type {
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
           }
         }
 
@@ -187,15 +168,15 @@
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
-            border-radius: var(--radius);
+            border-radius: var(--radius-base, 4px);
             font-size: 13px;
 
             &:hover {
-              background: var(--color-tiny-hover);
+              background: var(--color-bg-hover);
             }
 
             &.active {
-              background: var(--color-primary-2);
+              background: var(--color-primary-3);
               color: var(--color-font);
             }
 
@@ -205,7 +186,7 @@
         .toc-level-1 {
           a {
             padding-left: 1rem;
-            color: var(--color-font);
+            color: var(--color-font-1);
           }
         }
 

@@ -11,12 +11,14 @@ export class CosyLabel extends CosyElement {
     | "blue"
     | "grey";
   @property({ type: Boolean }) bordered: false;
+  @property({ type: String }) href: string;
+  @property({ type: Boolean }) blank = false;
 
   static get styles() {
     return [
       CosyElement.styles,
       css`
-        div {
+        a {
           padding: 4px 6px;
           transition: all 0.3s ease;
           background-color: var(--color-label-bg);
@@ -25,11 +27,13 @@ export class CosyLabel extends CosyElement {
           display: inline-flex;
           align-items: center;
           font-size: 12px;
+          text-decoration: none;
+          user-select: none;
         }
         .bordered {
           border: 1px solid var(--color-label-border);
         }
-        div:hover {
+        a:hover {
           border-color: var(--color-label-border-hover);
           background-color: var(--color-label-bg-hover);
           color: var(--color-label-font-hover);
@@ -67,10 +71,17 @@ export class CosyLabel extends CosyElement {
   }
 
   render() {
-    return html`<div class="${this.bordered ? "bordered" : ""}">
-      <span class="${this.color ? "dot " + this.color : ""}"></span>
-      <slot></slot>
-    </div>`;
+    const href = !!this.href ? this.href : "javascript:void(0);";
+    const target = this.blank ? "blank" : "";
+    return html`
+      <a
+        class="${this.bordered ? "bordered" : ""}"
+        href="${href}"
+        target="${target}"
+        ><span class="${this.color ? "dot " + this.color : ""}"></span>
+        <slot></slot
+      ></a>
+    `;
   }
 }
 

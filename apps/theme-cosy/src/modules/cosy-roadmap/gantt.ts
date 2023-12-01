@@ -144,7 +144,7 @@ export class GanttChart {
 
       const now = dayjs();
       const start = dayjs(task.start);
-      const end = dayjs(task.end).add(1, "day");
+      const end = dayjs(task.end);
       const status = end.isBefore(now)
         ? "expired"
         : start.isBefore(now) && end.isAfter(now)
@@ -168,7 +168,9 @@ export class GanttChart {
         const slotContent = `
           <div style="max-width: 860px;line-height: 1.5">
             <p style="margin: 0px 0px 8px; font-size: 12px; color: var(--color-font-2);">${title}</p>
-            <p style="margin: 0px; font-size: 13px">${task.content ?? task.title}</p>
+            <p style="margin: 0px; font-size: 13px">${
+              task.content ?? task.title
+            }</p>
           </div>
         `;
         popup.innerHTML = slotContent;
@@ -277,9 +279,8 @@ export class GanttChart {
         `.day[data-ymd="${start}"]`
       ) as HTMLDivElement;
       const endDay = this.chartContainer.querySelector(
-        `.day[data-ymd="${dayjs(end).add(1, "day").format("YYYY-MM-DD")}"]`
+        `.day[data-ymd="${dayjs(end).format("YYYY-MM-DD")}"]`
       ) as HTMLDListElement;
-
       if (startDay && endDay) {
         const leftOffset = parseInt(startDay.style.left, 10);
         const width = parseInt(endDay.style.left, 10) - leftOffset;
@@ -311,7 +312,7 @@ export class GanttChart {
     todayVerticalLine.style.height = "100%";
     todayVerticalLine.style.width = "0";
     todayVerticalLine.style.borderLeft = "2px dashed var(--color-primary)"; // 可以根据需要更改样式
-    todayVerticalLine.style.left = `${currentLeft}px`;
+    todayVerticalLine.style.left = `${currentLeft - 2 -1}px`;
     // 获取 task-container
     const taskDiv = this.chartContainer.querySelector(
       ".task-container"

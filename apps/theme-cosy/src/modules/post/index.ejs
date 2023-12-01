@@ -21,20 +21,25 @@
   <div class="content">
     <main class="cosy-scrollbar">
       <div class="article-container">
-        <!-- 文章tags -->
-        <% if (page.tags && page.tags.length > 0) { %>
-        <ul class="tags">
-          <% page.tags.each(function(tag){ %>
-          <li>
-            <a># <%- tag.name %></a>
-          </li>
-          <% }) %>
-        </ul>
-        <% } %>
         <!-- 渲染文章内容 -->
         <article>
-          <h1><%- page.title %></h1>
-          <p class="post-info"><%- __('text-updated-time') %>: <%- page.updated.format('YYYY-MM-DD HH:mm:ss') %></p>
+          <!-- 文章tags -->
+          <% if (page.tags && page.tags.length > 0) { %>
+          <div class="post-tags">
+            <% page.tags.each(function(tag){ %>
+            <cosy-label href="<%- url_for(tag.path) %>" size="sm"><%- tag.name %></cosy-label>
+            <% }) %>
+          </div>
+          <% } %>
+          <!-- 文章标题 -->
+          <h1 class="post-title"><%- page.title %></h1>
+          <div class="post-info">
+            <cosy-tooltip placement="right">
+              <span slot="content">上次更新时间: <%- page.updated.format('YYYY-MM-DD HH:mm:ss') %></span>
+              <cosy-label color="orange"><%- page.updated.format('MMM DD / YYYY') %></cosy-label>
+            </cosy-tooltip>
+          </div>
+          <!-- 文章 -->
           <%- page.content %>
         </article>
         <% if(theme.postCopyright !==undefined){ %>
@@ -49,16 +54,23 @@
     <cosy-drag-box id="toc-drag-box" trigger="left" min-width="320" uid="toc-box">
       <div class="meta-container">
         <div class="toc-wrapper cosy-scrollbar">
-          <p class="catalog">
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
-              <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 6h16"></path>
-                <path d="M4 12h16"></path>
-                <path d="M4 18h12"></path>
-              </g>
-            </svg>
-            <span><%- __('text-catalog') %></span>
-          </p>
+          <cosy-tooltip placement="right">
+            <p class="catalog">
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+                <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 6h16"></path>
+                  <path d="M4 12h16"></path>
+                  <path d="M4 18h12"></path>
+                </g>
+              </svg>
+              <span><%- __('text-catalog') %></span>
+            </p>
+            <span slot="content">
+              <span>隐藏目录</span>
+              <cosy-short-key>⌘</cosy-short-key>
+              <cosy-short-key>]</cosy-short-key>
+            </span>
+          </cosy-tooltip>
           <!-- 文章toc -->
           <%- toc(page.content,{max_depth:3}) %>
         </div>

@@ -3,6 +3,6 @@ export {
   addListener,
   removeListener,
   addListenerOnce,
-  addKeyCombo,
+  addKeyPress,
 } from "./event";
 export { globalEventBus, EventBus } from "./event.bus";
