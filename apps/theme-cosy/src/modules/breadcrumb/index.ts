@@ -1,22 +1,46 @@
-import { onMounted, addListener, globalEventBus } from "@cosy/util";
+import {
+  onMounted,
+  addListener,
+  globalEventBus,
+  addKeyPress,
+} from "@cosy/util";
 import "./index.less";
 import { CosyElement } from "@cosy/ui";
 
 onMounted(() => {
-  globalEventBus.on("cosy-drag-box:left-aside", (e) => {
-    const { invisible } = e.detail;
-    const buttonSelector = `#left-aside-show-button`;
-    const dragBoxSelector = "#aside-drag-box";
-    const showButton = document.querySelector(buttonSelector) as CosyElement;
-    showButton.invisible = !invisible;
+  const asideDragBox = document.querySelector("#aside-drag-box") as CosyElement;
+  const button = document.querySelector("#left-aside-button") as CosyElement;
+
+  if (asideDragBox) {
+    globalEventBus.on("cosy-drag-box:left-aside", (e) => {
+      const { invisible } = e.detail;
+      button.invisible = !invisible;
+      addListener({
+        selector: "#left-aside-button",
+        eventType: "click",
+        handler: () => {
+          asideDragBox.invisible = false;
+          button.invisible = true;
+        },
+      });
+    });
+
     addListener({
-      selector: buttonSelector,
+      selector: "#left-aside-button",
       eventType: "click",
       handler: () => {
-        const dragBox = document.querySelector(dragBoxSelector) as CosyElement;
-        dragBox.invisible = false;
-        showButton.invisible = true;
+        asideDragBox.invisible = false;
+        button.invisible = true;
       },
     });
-  });
+
+    addKeyPress({
+      key: "[",
+      preventDefault: true,
+      handler: () => {
+        asideDragBox.invisible = !asideDragBox.invisible;
+        button.invisible = !button.invisible;
+      },
+    });
+  }
 });

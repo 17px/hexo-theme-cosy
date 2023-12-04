@@ -1,5 +1,4 @@
 import typescript from '@rollup/plugin-typescript';
-import { nodeResolve } from '@rollup/plugin-node-resolve';
 import postcss from 'rollup-plugin-postcss';
 import del from 'rollup-plugin-delete';
 
@@ -12,7 +11,7 @@ export default [
       format: 'es',
       sourcemap: true
     },
-    plugins: [del({ targets: 'dist/*' }), nodeResolve(), typescript(), postcss({ extract: true })],
+    plugins: [del({ targets: 'dist/*' }), typescript(), postcss({ extract: true })],
   },
   // {
   //   input: 'src/styles/var.less',

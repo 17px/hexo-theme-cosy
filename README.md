@@ -85,3 +85,10 @@ globalEventBus.on("event", (event) => {
 ```html
 <cosy-drag-box uid="left-aside"><cosy-drag-box/>
 ```
+
+
+# 标签页
+
+```bash
+hexo new page tags
+```

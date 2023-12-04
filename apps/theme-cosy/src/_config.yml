@@ -68,7 +68,12 @@ valine:
 
 # qweather for index weather widget, u must register api first
 # api register: https://id.qweather.com/#/register
+# weather:
+#   enable: true
+#   cityCode: yourWeatherCityCode
+#   appKey: yourWeatherAppKey
+
 weather:
   enable: true
-  cityCode: yourWeatherCityCode
-  appKey: yourWeatherAppKey
+  cityCode: 101190101
+  appKey: 6f89c60ce1714fa58018b5489aa697e5

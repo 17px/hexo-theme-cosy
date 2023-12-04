@@ -37,12 +37,11 @@ export class SearchMask {
       left: "0",
       width: "100%",
       height: "100%",
-      backgroundColor: "rgb(255 255 255 / 10%)",
+      backgroundColor: "var(--color-body-bg)",
       zIndex: "1000",
       display: "none",
-      backdropFilter: "blur(2px) saturate(190%) contrast(50%) brightness(130%)",
-      "-webkit-backdrop-filter":
-        "blur(2px) saturate(190%) contrast(50%) brightness(130%)",
+      backdropFilter: "blur(5px)",
+      "-webkit-backdrop-filter": "blur(5px)",
     });
     this.maskElement.classList.add("blur-behind", "search-mask");
 
@@ -54,11 +53,11 @@ export class SearchMask {
       left: "50%",
       transform: "translateX(-50%)",
       borderRadius: "8px",
-      boxShadow: "var(--shadow-box)",
       width: "50%",
       maxHeight: "60%",
       border: "1px solid var(--color-border)",
       background: "var(--color-bg-2)",
+      boxShadow: "rgba(0, 0, 0, 0.5) 0px 16px 70px",
     }) as HTMLDivElement;
 
     this.searchWrapper = this.createElement("div", {}) as HTMLDivElement;
@@ -91,6 +90,7 @@ export class SearchMask {
     this.bottomKeycapsDiv = this.createElement("div", {
       display: "flex",
       alignItems: "center",
+      gap: "12px",
       padding: "1rem 1.2rem",
     });
 
@@ -113,7 +113,7 @@ export class SearchMask {
       this.createTipElement(window.i18n["text-esc"])
     );
 
-    this.searchResultsDiv.classList.add("scrollbar-obtrusive");
+    this.searchResultsDiv.classList.add("cosy-scrollbar");
     this.searchWrapper.appendChild(this.searchInputElement);
     this.parentDiv.append(
       this.searchWrapper,
@@ -133,12 +133,9 @@ export class SearchMask {
   }
 
   private createKeyElement(text: string) {
-    const kbd = this.createStyledElement("kbd", {});
-    kbd.className = "key-cap";
-    const span = document.createElement("span");
-    span.textContent = text;
-    kbd.appendChild(span);
-    return kbd;
+    const node = document.createElement("cosy-short-key");
+    node.textContent = text;
+    return node;
   }
 
   private createTipElement(text: string) {
@@ -252,7 +249,7 @@ export class SearchMask {
     const titleElement = this.createElement("div", {
       fontFamily: "var(--font-regular)",
       padding: "8px",
-      borderRadius: "var(--radius)",
+      borderRadius: "var(--radius-base,4px)",
       transition: "all .25s ease",
     });
 
@@ -315,7 +312,7 @@ export class SearchMask {
     });
     return clean.replace(
       new RegExp(query, "g"),
-      `<mark style="margin:0 3px;background:transparent;color:var(--color-primary);text-decoration:underline">${query}</mark>`
+      `<mark style="margin:0 3px;background:transparent;color:var(--color-primary);">${query}</mark>`
     );
   }
 
@@ -328,7 +325,7 @@ export class SearchMask {
     this.currentSelectedIndex = newIndex;
     const childDiv = this.resultLinks[this.currentSelectedIndex]
       .children[0] as HTMLDivElement;
-    childDiv.style.backgroundColor = "var(--color-primary-2)";
+    childDiv.style.backgroundColor = "var(--color-bg-hover-1)";
   }
 
   private handleKeydown(event: KeyboardEvent) {
@@ -390,7 +387,7 @@ export class SearchMask {
     );
     const childDiv = this.resultLinks[this.currentSelectedIndex]
       .children[0] as HTMLDivElement;
-    childDiv.style.backgroundColor = "var(--color-primary-2)";
+    childDiv.style.backgroundColor = "var(--color-bg-hover-1)";
     this.ensureActiveLinkVisible();
   }
 }

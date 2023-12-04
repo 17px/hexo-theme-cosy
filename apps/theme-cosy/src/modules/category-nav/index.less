@@ -2,14 +2,14 @@
   flex: 1;
   padding: 0 13px;
 
-  > ul {
+  >ul {
     margin: 0 0 20px 0;
     padding: 0;
 
     li {
       padding: 0px 6px;
       margin-bottom: 1px;
-      border-radius: var(--radius);
+      border-radius: var(--radius-base, 4px);
       list-style: none;
       transition: all 0.25s ease;
 
@@ -33,7 +33,7 @@
           color: var(--color-font-2);
         }
 
-        > div {
+        >div {
           flex: 1;
           padding-left: 10px;
           font-size: 13px;

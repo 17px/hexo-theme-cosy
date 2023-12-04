@@ -1,12 +1,32 @@
 <!-- inject:css -->
 
-<div class="tags-container">
-  <h1>标签： <%= page.tag %></h1>
-  <ul>
-    <% page.posts.each(function(post) { %>
-    <li><a href="<%- url_for(post.path) %>"><%= post.title %></a></li>
-    <% }); %>
-  </ul>
+<div class="tags-container cosy-scrollbar">
+  <div class="content">
+    <h2>
+      <cosy-label color="red"><%= page.tag %></cosy-label>
+    </h2>
+    <ul class="timeline">
+      <% page.posts.each(function(post) { %>
+      <li>
+        <a class="timeline-item" href="<%- url_for(post.path) %>">
+          <div class="timeline-info">
+            <span><%= post.date.format('MM-DD HH:mm:ss') %></span>
+          </div>
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-title">
+              <% if(post.status !==undefined){ %>
+              <%- post_icon(post,'status') %>
+              <% } %>
+              <span><%= post.title %></span>
+            </div>
+            <p><%= generate_excerpt(post, 100) %>...</p>
+          </div>
+        </a>
+      </li>
+      <% }); %>
+    </ul>
+  </div>
 </div>
 
 <!-- inject:js -->

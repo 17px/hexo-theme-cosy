@@ -26,7 +26,6 @@ export class Dropdown {
     this.selector = selector;
     this.options = options;
     this.element = document.querySelector(this.selector);
-    this.rect = document.querySelector(this.selector)?.getBoundingClientRect();
     this.onClickItem = event.onClickItem;
 
     this.init();
@@ -109,7 +108,7 @@ export class Dropdown {
       const item = document.createElement("div");
       item.style.padding = "8px 12px";
       item.style.color = "var(--color-font-2)";
-      item.style.borderRadius = "var(--radius)";
+      item.style.borderRadius = "var(--radius-base, 4px)";
       item.style.fontSize = "13px";
       item.style.cursor = "pointer";
       item.style.display = "flex";
@@ -125,8 +124,9 @@ export class Dropdown {
         item.appendChild(span);
       }
 
-      const labelText = document.createTextNode(String(option.label));
-      item.appendChild(labelText);
+      item.innerHTML = String(option.label);
+      // const labelText = document.createTextNode(String(option.label));
+      // item.appendChild(labelText);
 
       item.addEventListener("click", () => {
         this.onClickItem?.(option);
@@ -154,7 +154,7 @@ export class Dropdown {
     const viewportWidth = document.documentElement.clientWidth;
 
     this.dropdownElement.style.position = "absolute";
-    this.dropdownElement.style.minWidth = `${this.rect.width}px`;
+
     this.dropdownElement.style.padding = `6px 4px`;
     this.dropdownElement.style.borderRadius = "var(--radius-base,4px)";
     // 黑色
@@ -163,25 +163,11 @@ export class Dropdown {
     this.dropdownElement.style.border =
       "1px solid var(--color-dropdown-border)";
     this.dropdownElement.style.boxShadow = "var(--color-dropdown-shadow)";
-    this.dropdownElement.style.position = "absolute";
-    this.dropdownElement.style.top = `${this.rect.top}px`;
 
-    // 判断selector是否偏左
-    if (this.rect.x + this.rect.width / 2 < viewportWidth / 2) {
-      this.dropdownElement.style.left = `${this.rect.left}px`; // 与selector的左边界对齐
-      this.dropdownElement.style.right = "auto";
-    } else {
-      this.dropdownElement.style.right = `${viewportWidth - this.rect.right}px`; // 与selector的右边界对齐
-      this.dropdownElement.style.left = "auto";
-    }
-
-    if (this.rect.x + dropdownWidth > viewportWidth) {
-      this.dropdownElement.style.right = `${viewportWidth - this.rect.right}px`;
-      this.dropdownElement.style.left = "auto";
-    } else {
-      this.dropdownElement.style.left = `${this.rect.x}px`;
-      this.dropdownElement.style.right = "auto";
-    }
+    const rect = document.querySelector(this.selector)?.getBoundingClientRect();
+    this.dropdownElement.style.top = `${rect.top}px`;
+    this.dropdownElement.style.left = `${rect.left}px`; // 与selector的左边界对齐
+    this.dropdownElement.style.minWidth = `${rect.width}px`;
 
     this.fadeIn(this.dropdownElement, duration); // 300ms 淡入
   }

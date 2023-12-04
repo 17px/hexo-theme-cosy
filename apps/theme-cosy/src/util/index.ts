@@ -1,3 +1,4 @@
+import { POST_MEMORY_KEY } from "@/modules/constant";
 import { EventBus } from "./event";
 
 type CDNResource = {
@@ -117,7 +118,7 @@ export const saveScrollHeight = (selector: string) => {
   const element = document.querySelector<HTMLElement>(selector);
   if (element) {
     const scrolledHeight = element.scrollTop;
-    localStorage.setItem("scrolledHeight", String(scrolledHeight));
+    localStorage.setItem(POST_MEMORY_KEY, String(scrolledHeight));
   } else {
     console.warn("Element not found for selector:", selector);
   }
@@ -126,7 +127,7 @@ export const saveScrollHeight = (selector: string) => {
 export const restoreScrollHeight = (selector: string) => {
   const element = document.querySelector<HTMLElement>(selector);
   if (element) {
-    const recordedHeight = localStorage.getItem("scrolledHeight");
+    const recordedHeight = localStorage.getItem(POST_MEMORY_KEY);
     if (recordedHeight) {
       element.scrollTop = Number(recordedHeight);
     }

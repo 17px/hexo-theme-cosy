@@ -1,14 +1,21 @@
 // 全局引入
 import "@cosy/ui";
 import "@cosy/ui/dist/index.css";
-import { addListener, onMounted } from "@cosy/util";
+import {
+  addKeyPress,
+  addListener,
+  globalEventBus,
+  onMounted,
+} from "@cosy/util";
 import "./index.less";
 import { useDefaultTheme } from "@/util/theme";
 import { CosyElement } from "@cosy/ui";
 import { themeIntroduction } from "./theme.intro";
+import { useDefaultSetting } from "./default.setting";
 
 onMounted(() => {
   useDefaultTheme();
+  useDefaultSetting();
 
   addListener({
     selector: "#button-preference",

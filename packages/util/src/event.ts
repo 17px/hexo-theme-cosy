@@ -68,7 +68,7 @@ export const addListenerOnce = ({
  * addKeyPress - 设置对键盘的监听，并可选择阻止默认行为
  *
  * @param params - key combo, handler, preventDefault 的参数对象
- *   - key: 需要监听的按键
+ *   - key: 需要监听的按键、按键control组合(+)链接，windows平台ctrl和mac command键
  *   - handler: 事件处理函数
  *   - preventDefault: 是否阻止默认行为（可选，默认为 false）
  */
@@ -81,8 +81,25 @@ export const addKeyPress = ({
   handler: (event: KeyboardEvent) => void;
   preventDefault?: boolean;
 }): (() => void) => {
+  // 将键值字符串分解为单独的键
+  const keys = key
+    .toLowerCase()
+    .split("+")
+    .map((k) => k.trim());
+
+  // 检查是否是Mac平台
+  const isMac = /Mac|iPod|iPhone|iPad/.test(navigator.platform);
+
   const keydownHandler = (event: KeyboardEvent) => {
-    const isComboMatch = event.key.toLowerCase() === key.toLowerCase();
+    const isComboMatch = keys.every((k) => {
+      // 根据平台自动映射control键
+      if (k === "control") {
+        return isMac ? event.metaKey : event.ctrlKey;
+      }
+      // 对于其他键，直接检查event.key
+      return event.key.toLowerCase() === k;
+    });
+
     if (isComboMatch) {
       if (preventDefault) event.preventDefault();
       handler(event);

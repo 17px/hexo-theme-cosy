@@ -32,6 +32,7 @@ export class CosyButton extends CosyElement {
         }
         ::slotted([slot="content"]) {
           padding-right: 2px;
+          line-height: 1.5;
         }
         .round {
           border-radius: 16px;

@@ -6,3 +6,4 @@ export {
   addKeyPress,
 } from "./event";
 export { globalEventBus, EventBus } from "./event.bus";
+export { setRootVar } from "./misc";
