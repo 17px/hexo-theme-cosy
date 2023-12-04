@@ -58,21 +58,3 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-
-.girdle-box {
-  background: var(--color-gradient-border);
-  position: relative;
-  z-index: 0;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 1px;
-    right: 1px;
-    bottom: 1px;
-    left: 1px;
-    background: var(--color-bg-3);
-    border-radius: inherit;
-    z-index: -1;
-  }
-}

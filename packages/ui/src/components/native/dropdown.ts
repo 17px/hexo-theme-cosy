@@ -124,9 +124,9 @@ export class Dropdown {
         item.appendChild(span);
       }
 
-      item.innerHTML = String(option.label);
-      // const labelText = document.createTextNode(String(option.label));
-      // item.appendChild(labelText);
+      // item.innerHTML = String(option.label);
+      const labelText = document.createTextNode(String(option.label));
+      item.appendChild(labelText);
 
       item.addEventListener("click", () => {
         this.onClickItem?.(option);
@@ -149,9 +149,6 @@ export class Dropdown {
     });
 
     document.body.appendChild(this.dropdownElement);
-
-    const dropdownWidth = this.dropdownElement.offsetWidth;
-    const viewportWidth = document.documentElement.clientWidth;
 
     this.dropdownElement.style.position = "absolute";
 

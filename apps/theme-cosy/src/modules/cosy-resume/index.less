@@ -1,4 +1,4 @@
-@import '../../assets/style/magic-card.less';
+@import "../../assets/style/magic-card.less";
 
 main {
   border: 0 !important;
@@ -44,22 +44,26 @@ main {
       .badge {
         text-align: center;
 
-        >span {
+        > span {
           padding: 0.5rem 1rem;
           color: var(--color-font);
           background: var(--color-bg-3);
-          border-radius: var(--radius);
+          border-radius: var(--radius-base, 4px);
         }
       }
 
       .seperation {
         margin: 2.5rem 0;
         height: 1px;
-        background-image: linear-gradient(to right, transparent, var(--color-border), transparent);
-
+        background-image: linear-gradient(
+          to right,
+          transparent,
+          var(--color-border),
+          transparent
+        );
       }
 
-      >ul {
+      > ul {
         margin: 0;
         padding: 0;
         list-style: none;
@@ -69,14 +73,11 @@ main {
           align-items: center;
           margin-bottom: 2rem;
 
-          .icon {
+          > span {
             padding: 8px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 36px;
-            height: 36px;
-            border-radius: var(--radius);
             color: var(--color-primary);
 
             svg {
@@ -85,7 +86,7 @@ main {
             }
           }
 
-          >div {
+          > div {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -121,9 +122,9 @@ main {
           display: inline-flex;
           width: 32px;
           height: 32px;
-          border-radius: var(--radius);
+          border-radius: var(--radius-base, 4px);
           color: var(--color-font-2);
-          transition: all .3s ease;
+          transition: all 0.3s ease;
 
           &:hover {
             background: var(--color-bg-3);
@@ -138,22 +139,22 @@ main {
     margin: 0 auto;
     padding: 24px 24px 24px 260px;
     border: 1px solid var(--color-border);
-    border-radius: var(--radius);
+    border-radius: var(--radius-base, 4px);
     // background: var(--color-bg-2);
 
-    >h2 {
+    > h2 {
       margin-top: 0;
       margin-bottom: 2rem;
       font-weight: 600;
       font-size: 2rem;
-      font-family: 'linear';
+      font-family: "linear";
 
       span {
         position: relative;
 
         &::before {
           position: absolute;
-          content: '';
+          content: "";
           background: var(--color-primary);
           border-radius: 0.5rem;
           height: 0.3125rem;
@@ -163,8 +164,6 @@ main {
           z-index: 1;
         }
       }
-
-
     }
 
     .portfolio-title {
@@ -177,11 +176,9 @@ main {
           transform: translateX(-50%);
         }
       }
-
     }
 
     .about-me {
-
       p {
         line-height: 1.5;
         font-weight: 400;
@@ -215,7 +212,7 @@ main {
         align-items: center;
         margin-bottom: 2.5rem;
 
-        >span {
+        > span {
           position: relative;
           display: inline-flex;
           justify-content: center;
@@ -223,13 +220,12 @@ main {
           width: 36px;
           height: 36px;
           // background: var(--color-bg-3);
-          border-radius: var(--radius);
+          border-radius: var(--radius-base, 4px);
           z-index: 10;
           color: var(--color-primary);
 
-
           &::after {
-            content: '';
+            content: "";
             position: absolute;
             left: 49%;
             transform: translateX(-47%);
@@ -270,7 +266,7 @@ main {
         }
 
         &::before {
-          content: '';
+          content: "";
           background: var(--color-primary);
           box-shadow: 0 0 0 0.25rem var(--color-primary-4);
           border-radius: 50%;
@@ -285,7 +281,7 @@ main {
           margin: 0;
           font-size: 1rem;
 
-          >label {
+          > label {
             margin-right: 12px;
             vertical-align: middle;
             display: inline-block;
@@ -311,7 +307,7 @@ main {
         .desc {
           margin: 0;
           line-height: 1.5;
-          padding: .5rem 0 1rem 0;
+          padding: 0.5rem 0 1rem 0;
           color: var(--color-font-2);
         }
 
@@ -321,16 +317,16 @@ main {
 
           li {
             line-height: 1.5;
-            margin-bottom: .5rem;
+            margin-bottom: 0.5rem;
           }
         }
       }
     }
 
     .project .name {
-      transform: translateY(-.6rem);
-      padding: .5rem;
-      border-radius: var(--radius) 0 0 var(--radius);
+      transform: translateY(-0.6rem);
+      padding: 0.5rem;
+      border-radius: var(--radius-base, 4px) 0 0 var(--radius-base, 4px);
       background: linear-gradient(45deg, var(--color-primary-2), transparent);
     }
 
@@ -350,14 +346,13 @@ main {
             padding: 12px 12px 0 0;
 
             .card-info {
-              >svg {
+              > svg {
                 width: 24px;
                 height: 24px;
                 color: var(--color-font-2);
               }
 
               .card-info-title {
-
                 h3,
                 h4 {
                   margin: 0;
@@ -369,12 +364,11 @@ main {
 
                 h4 {
                   font-weight: 400;
-                  color: var(--color-font-2)
+                  color: var(--color-font-2);
                 }
               }
             }
           }
-
         }
       }
     }
