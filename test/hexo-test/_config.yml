@@ -122,10 +122,6 @@ algolia:
   # apiKey: yourAlgoliaApiKey
   # adminApiKey: yourAlgoliaAdminApiKey
   # SearchOnlyAPIKey: yourAlgoliaSearchOnlyAPIKey
-  appId: 5DTW808BZ8
-  apiKey: 04971da7118a97baf2fc19989e016ee2
-  adminApiKey: 73fd07d4f278b0e494cf31f771fef43f
-  SearchOnlyAPIKey: 27845b245efc8a2853cc0bdc7366ea26
   chunkSize: 5000
   indexName: hex-blog
   fields:
