@@ -2,14 +2,30 @@
 
 <div class="resume cosy-scrollbar">
   <div class="header">
+    <h3><%- page.name %></h3>
+    <!-- introduction -->
+    <div class="about-me">
+      <% if (page.about) { %>
+      <% page.about.forEach(function(text) { %>
+      <p><%- text %></p>
+      <% }) %>
+      <% } %>
+    </div>
     <figure>
       <img src="<%- page.avatar %>" />
     </figure>
-    <h3><%- page.name %></h3>
-    <div class="badge">
-      <span><%- page.role %></span>
+    <div class="social">
+      <% if (page.social) { %>
+      <% page.social.forEach(function(item) { %>
+      <cosy-tooltip>
+        <span slot="content"><%= item.name %></span>
+        <a href="<%= item.link %>">
+          <%- item.icon %>
+        </a>
+      </cosy-tooltip>
+      <% }) %>
+      <% } %>
     </div>
-    <div class="seperation"></div>
     <ul>
       <li>
         <span class="vague-icon">
@@ -66,29 +82,9 @@
         </div>
       </li>
     </ul>
-    <div class="social">
-      <% if (page.social) { %>
-      <% page.social.forEach(function(item) { %>
-      <cosy-tooltip>
-        <span slot="content"><%= item.name %></span>
-        <a href="<%= item.link %>">
-          <%- item.icon %>
-        </a>
-      </cosy-tooltip>
-      <% }) %>
-      <% } %>
-    </div>
   </div>
+  <div class="seperation"></div>
   <div class="content">
-    <!-- introduction -->
-    <div class="about-me">
-      <% if (page.about) { %>
-      <% page.about.forEach(function(text) { %>
-      <p><%- text %></p>
-      <% }) %>
-      <% } %>
-    </div>
-    <h4><%- __('text-skill') %></h4>
     <ul class="skill">
       <% if (page.skill) { %>
       <% page.skill.forEach(function(text) { %>
