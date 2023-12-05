@@ -2,6 +2,7 @@
 title: resume
 layout: cosy-resume
 name: Hi! Mozzie
+avatar: /img/avatar.png
 role: Full Stack
 email: himozzie@gmail.com
 phone: +86 180-xxxx-xxx
