@@ -21,11 +21,11 @@ export const fontSizeOptions: CosyDropdownOption[] = [
 
 export const themeOptions: CosyDropdownOption[] = [
   {
-    value: "dark",
+    value: "黑暗模式",
     label: "黑暗模式",
   },
   {
-    value: "light",
+    value: "日间模式",
     label: "日间模式",
   },
 ];
