@@ -1,7 +1,5 @@
 @cardBgColor: var(--color-border);
 @cardColor: var(--color-bg-2);
-@cardHeight: 220px;
-@cardWidth: 300px;
 @textColor: var(--color-font);
 @radialGradientStart: rgba(255, 255, 255, .06);
 @radialGradientEnd: transparent 40%;
@@ -12,10 +10,6 @@
 
 
 .magic-cards {
-  display: grid;
-  justify-content: center;
-  grid-template-columns: repeat(auto-fill, @cardWidth);
-  gap: 24px;
 
   &:hover {
     .card::after {
@@ -28,10 +22,8 @@
     border-radius: 10px;
     cursor: pointer;
     display: flex;
-    height: @cardHeight;
     flex-direction: column;
     position: relative;
-    width: @cardWidth;
     color: @textColor;
 
     &:hover::before {
@@ -47,26 +39,12 @@
       .pseudoElementStyles(rgba(255, 255, 255, 0.4), @zIndex1);
     }
 
-    &>.card-content {
+    &>.card-mask {
       background-color: @cardColor;
       border-radius: inherit;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
       inset: 1px;
-      padding: 10px;
       position: absolute;
       z-index: @zIndex2;
-    }
-
-    .card-image {
-      .flexCenter();
-      height: 140px;
-      overflow: hidden;
-    }
-
-    .card-info-wrapper {
-      flex: 1;
     }
   }
 }

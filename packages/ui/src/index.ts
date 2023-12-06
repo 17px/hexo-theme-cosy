@@ -10,6 +10,8 @@ import "./components/lit/drag.box";
 import "./components/lit/divider";
 import "./components/lit/popup";
 import "./components/lit/label";
+import "./components/lit/card";
+import "./components/lit/card.group";
 
 export {
   Dropdown as CosyDropdown,

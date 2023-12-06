@@ -13,6 +13,9 @@
     </div>
     <figure>
       <img src="<%- page.avatar %>" />
+      <div class="aperture"></div>
+      <div class="aperture"></div>
+      <div class="aperture"></div>
     </figure>
     <div class="social">
       <% if (page.social) { %>
@@ -182,27 +185,21 @@
     <h2 class="portfolio-title"><span><%- __('text-portfolio') %></span></h2>
     <!-- portfolio -->
     <div class="portfolio">
-      <div class="magic-cards">
+      <cosy-card-group>
         <% if (page.portfolio) { %>
         <% page.portfolio.forEach(function(item) { %>
-        <a href="<%= item.link %>" class="card">
-          <div class="card-content">
-            <div class="card-image">
-              <h2><%- item.iconSVG %></h2>
+        <cosy-card>
+          <div class="card">
+            <div class="title">
+              <%- item.iconSVG %>
+              <span><%= item.name %></span>
             </div>
-            <div class="card-info-wrapper">
-              <div class="card-info">
-                <div class="card-info-title">
-                  <h3 class="ellipsis"><%= item.name %></h3>
-                  <h4 class="ellipsis"><%= item.desc %></h4>
-                </div>
-              </div>
-            </div>
+            <p class="desc"><%= item.desc %></p>
           </div>
-        </a>
+        </cosy-card>
         <% }) %>
         <% } %>
-      </div>
+      </cosy-card-group>
     </div>
   </div>
 </div>
