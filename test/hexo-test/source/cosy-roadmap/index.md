@@ -27,4 +27,7 @@ years:
     - title: hexo-theme-cosy v2版本
       start: 12-01
       end: 12-31
+    - title: v2.1.0 版本
+      start: 12-11
+      end: 12-31
 ---

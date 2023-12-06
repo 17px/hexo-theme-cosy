@@ -8,13 +8,11 @@ import {
   onMounted,
 } from "@cosy/util";
 import "./index.less";
-import { useDefaultTheme } from "@/util/theme";
 import { CosyElement } from "@cosy/ui";
 import { themeIntroduction } from "./theme.intro";
 import { useDefaultSetting } from "./default.setting";
 
 onMounted(() => {
-  useDefaultTheme();
   useDefaultSetting();
 
   addListener({

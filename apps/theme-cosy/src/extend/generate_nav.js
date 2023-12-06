@@ -5,7 +5,6 @@ hexo.extend.helper.register("generate_nav", function (categories) {
   let result = "<ul>";
   for (let key in nav_meta) {
     const value = nav_meta[key];
-    // 设定为 false 不显示，否则为svg icon 的 path
     if (value !== false) {
       result += `<li data-path="${key}">
         <a href="/${key}">

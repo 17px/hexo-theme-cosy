@@ -61,9 +61,9 @@ onMounted(() => {
 
   // 文章启动插件判断
   const { mermaid, katex, valine } = window;
-  // useKatex({ ...katex, enable: window.page.use.indexOf("katex") > -1 });
-  // useMermaid({ ...mermaid, enable: window.page.use.indexOf("mermaid") > -1 });
-  // useValine({ ...valine, enable: window.page.use.indexOf("valine") > -1 });
+  useKatex({ ...katex, enable: window.page.use.indexOf("katex") > -1 });
+  useMermaid({ ...mermaid, enable: window.page.use.indexOf("mermaid") > -1 });
+  useValine({ ...valine, enable: window.page.use.indexOf("valine") > -1 });
   useCodeHelper();
   // useTextEnhancer();
 

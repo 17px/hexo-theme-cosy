@@ -9,7 +9,8 @@ export class CosyLabel extends CosyElement {
     | "teal"
     | "red"
     | "blue"
-    | "grey";
+    | "grey"
+    | "green";
   @property({ type: Boolean }) bordered: false;
   @property({ type: String }) href: string;
   @property({ type: Boolean }) blank = false;
@@ -35,7 +36,7 @@ export class CosyLabel extends CosyElement {
         }
         a:hover {
           border-color: var(--color-label-border-hover);
-          background-color: var(--color-label-bg-hover);
+          /* background-color: var(--color-label-bg-hover); */
           color: var(--color-label-font-hover);
         }
         .round {
@@ -65,6 +66,9 @@ export class CosyLabel extends CosyElement {
         }
         .grey {
           background: var(--color-grey);
+        }
+        .green {
+          background: var(--color-green);
         }
       `,
     ];

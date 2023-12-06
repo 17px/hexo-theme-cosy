@@ -1,9 +1,16 @@
 <!-- inject:css -->
 <div class="profile">
-  <div class="badge">
-    <span>Hi</span>
-    <span><%- config.author %></span>
-  </div>
+  <cosy-tooltip placement="bottom-left">
+    <div slot="content">
+      <span>回到首页</span>
+      <cosy-short-key>⌘</cosy-short-key>
+      <cosy-short-key>H</cosy-short-key>
+    </div>
+    <a class="badge" href="/">
+      <span>Hi</span>
+      <span><%- config.author %></span>
+    </a>
+  </cosy-tooltip>
   <cosy-tooltip placement="left">
     <span slot="content">切换主题</span>
     <cosy-switch>

@@ -145,6 +145,11 @@ export class GanttChart {
       const now = dayjs();
       const start = dayjs(task.start);
       const end = dayjs(task.end);
+      const labelColor = {
+        expired: "grey",
+        doing: "red",
+        todo: "green",
+      };
       const status = end.isBefore(now)
         ? "expired"
         : start.isBefore(now) && end.isAfter(now)
@@ -154,10 +159,14 @@ export class GanttChart {
       taskEl.setAttribute("data-start", dayjs(task.start).format("YYYY-MM-DD"));
       taskEl.setAttribute("data-end", dayjs(task.end).format("YYYY-MM-DD"));
       taskEl.style.position = "absolute";
-      taskEl.style.height = "30px";
-      taskEl.style.lineHeight = "30px";
+      taskEl.style.padding = "6px";
+      taskEl.style.display = "flex";
+      taskEl.style.alignItems = "center";
+      taskEl.style.lineHeight = "1";
       taskEl.style.top = index * 34 + "px";
-      taskEl.textContent = task.title;
+
+      const diff_day = dayjs(task.end).diff(task.start, "day");
+      taskEl.innerHTML = `<cosy-label color="${labelColor[status]}" hovered>${diff_day} 天</cosy-label><span style="padding-left:12px">${task.title}</span>`;
       taskDiv.appendChild(taskEl);
 
       taskEl.addEventListener("click", () => {
@@ -312,7 +321,7 @@ export class GanttChart {
     todayVerticalLine.style.height = "100%";
     todayVerticalLine.style.width = "0";
     todayVerticalLine.style.borderLeft = "2px dashed var(--color-primary)"; // 可以根据需要更改样式
-    todayVerticalLine.style.left = `${currentLeft - 2 -1}px`;
+    todayVerticalLine.style.left = `${currentLeft - 2 - 1}px`;
     // 获取 task-container
     const taskDiv = this.chartContainer.querySelector(
       ".task-container"

@@ -69,26 +69,25 @@
       padding: 0 10px;
       border-radius: var(--radius-base, 4px);
       z-index: 10;
-      cursor: pointer;
       color: var(--color-font);
-      transition: all .3s ease-in-out;
 
       &.expired {
         opacity: .6;
-        background: linear-gradient(to right, var(--color-grey), var(--color-bg));
+        background: linear-gradient(to right, var(--color-grey), transparent);
       }
 
       &.doing {
-        background: linear-gradient(to right, var(--color-orange), var(--color-red));
+        background: linear-gradient(to right, var(--color-red), transparent);
       }
 
       &.todo {
         opacity: .6;
-        background: linear-gradient(to right, var(--color-teal), var(--color-blue));
+        background: linear-gradient(to right, var(--color-green), transparent);
       }
 
       &:hover {
-        background: linear-gradient(to right, var(--color-teal), var(--color-bg));
+        cursor: pointer;
+        background: linear-gradient(to right, var(--color-teal), transparent);
       }
 
     }
