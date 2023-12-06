@@ -1,19 +1,19 @@
 import { setRootVar } from "@cosy/util";
-import { APPEARANCE } from "../constant";
-
-export type Theme = "黑暗模式" | "日间模式";
-type ThemeColor = Record<Theme, string>;
-
-const themeBaseColorMapping: ThemeColor = {
-  黑暗模式: "#191a23",
-  日间模式: "#ffffff",
-};
+import {
+  APPEARANCE,
+  APPEARANCE_DEFAULT,
+  THEME_COLOR_MAPPING,
+  ThemeType,
+} from "../constant";
 
 export const useDefaultSetting = () => {
-  const fontSize = localStorage.getItem(APPEARANCE.FONT_SIZE) ?? "13px";
+  // 文章字号
+  const fontSize =
+    localStorage.getItem(APPEARANCE.FONT_SIZE) ?? APPEARANCE_DEFAULT.FONT_SIZE;
   setRootVar("--font-size", fontSize);
 
-  const theme = localStorage.getItem(APPEARANCE.THEME) ?? "黑暗模式";
-  console.log(theme)
-  setRootVar("--color-base", themeBaseColorMapping[theme as Theme]);
+  // 主题色
+  const theme =
+    localStorage.getItem(APPEARANCE.THEME) ?? APPEARANCE_DEFAULT.THEME;
+  setRootVar("--color-base", THEME_COLOR_MAPPING[theme as ThemeType]);
 };

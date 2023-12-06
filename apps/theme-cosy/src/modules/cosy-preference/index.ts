@@ -3,21 +3,27 @@ import "./index.less";
 import { CosyDropdown } from "@cosy/ui";
 import { fontSizeOptions, themeOptions } from "./appearance";
 import { DropdownOption } from "@/util/dropdown";
-import { APPEARANCE } from "../constant";
+import { APPEARANCE, APPEARANCE_DEFAULT } from "../constant";
 
 onMounted(() => {
-  const fontSizeSelector = "#dd-button-font-size";
-  const themeSelector = "#dd-button-theme";
+  const [fontSizeSelector, themeSelector] = [
+    "#dd-button-font-size",
+    "#dd-button-theme",
+  ];
+
   const slotFontSize = document.querySelector(
     `${fontSizeSelector} [slot=content]`
   );
   const slotTheme = document.querySelector(`${themeSelector} [slot=content]`);
 
-  if (slotTheme && localStorage.getItem(APPEARANCE.THEME))
-    slotTheme.textContent = localStorage.getItem(APPEARANCE.THEME);
+  if (slotTheme)
+    slotTheme.textContent =
+      localStorage.getItem(APPEARANCE.THEME) ?? APPEARANCE_DEFAULT.THEME;
 
-  if (slotFontSize && localStorage.getItem(APPEARANCE.FONT_SIZE))
-    slotFontSize.textContent = localStorage.getItem(APPEARANCE.FONT_SIZE);
+  if (slotFontSize)
+    slotFontSize.textContent =
+      localStorage.getItem(APPEARANCE.FONT_SIZE) ??
+      APPEARANCE_DEFAULT.FONT_SIZE;
 
   new CosyDropdown(fontSizeSelector, fontSizeOptions, {
     onClickItem: (item: DropdownOption) => {

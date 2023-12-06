@@ -1,79 +1,78 @@
-@color-purple-0: #6c79ff;
-@color-purple-1: #7477f0;
-@color-purple-2: #6e79d6;
-@color-purple-3: #5e6ad2;
-@color-purple-4: #666be2;
-@color-purple-5: #5c67c7;
-@color-purple-6: #575bc7;
-@color-purple-7: #37466c;
-@color-purple-8: #2a2b51;
-@color-purple-9: #222342;
+@color-purple-6: hsl(238, 50%, 56%); // base
 
-@color-grey-0: #ffffff;
-@color-grey-1: #d9d9d9;
-@color-grey-2: #e0e1ec;
-@color-grey-3: #d2d3e0;
-@color-grey-4: #b0b5c0;
-@color-grey-5: #8d8ba3;
-@color-grey-6: #858699;
-@color-grey-7: #4c4f6b;
-@color-grey-8: #4d4f69;
-@color-grey-9: #444556;
-@color-grey-10: #3c3d53;
-@color-grey-11: #393a4b;
-@color-grey-12: #6b6f76;
-@color-grey-13: #313248;
-@color-grey-14: #26293e;
-@color-grey-15: #2c2d42;
-@color-grey-16: #292b41;
-@color-grey-17: #26273b;
-@color-grey-18: #292a35;
-@color-grey-19: #1d1e2b;
-@color-grey-20: #191a23;
-
-@grey: #95a2b3;
-@teal: #00b2bf;
-@blue: #4ea7fc;
-@yellow: #f2c94c;
-@orange: #f2994a;
-@green: #4cb782;
-@red-light: #fa6563;
-@red: #eb5757;
+@color-grey-0: hsl(0, 0%, 100%);
+@color-grey-2: hsl(235, 24%, 90%);
+@color-grey-3: hsl(236, 18%, 85%);
+@color-grey-5: hsl(245, 12%, 59%);
+@color-grey-6: hsl(237, 9%, 56%);
+@color-grey-8: hsl(236, 15%, 36%);
+@color-grey-10: hsl(237, 16%, 28%);
+@color-grey-12: hsl(218, 5%, 44%);
+@color-grey-13: hsl(237, 19%, 24%);
+@color-grey-15: hsl(237, 20%, 22%);
+@color-grey-17: hsl(237, 22%, 19%);
+@color-grey-18: hsl(235, 13%, 18%);
+@color-grey-19: hsl(236, 19%, 14%);
+@color-grey-20: hsl(234, 17%, 12%);
 
 @shadow-dark: rgba(0, 0, 0, 0.2) 0px 4px 24px;
 
-
 :root {
   --font-size: 13px;
+  --base-hue: 238; /* 色相 */
+  --base-saturation: 50%; /* 饱和度 */
+  --base-lightness: 56%; /* 亮度 */
 
-  // color
-  --color-primary: @color-purple-6;
-  --color-primary-1: fade(@color-purple-6, 80);
-  --color-primary-2: @color-purple-7;
-  --color-primary-3: @color-purple-8;
-  --color-primary-4: @color-purple-9;
+  // 主色调
+  --color-primary: hsl(
+    var(--base-hue),
+    var(--base-saturation),
+    var(--base-lightness)
+  );
+  --color-primary-1: hsl(
+    var(--base-hue),
+    var(--base-saturation),
+    calc(var(--base-lightness) * 0.8)
+  );
+  --color-primary-2: hsl(
+    calc(var(--base-hue) - 5),
+    calc(var(--base-saturation) - 17%),
+    calc(var(--base-lightness) - 24%)
+  );
+  --color-primary-3: hsl(
+    calc(var(--base-hue) - 5),
+    calc(var(--base-saturation) - 18%),
+    calc(var(--base-lightness) - 32%)
+  );
+  --color-primary-4: hsl(
+    var(--base-hue),
+    calc(var(--base-saturation) - 18%),
+    calc(var(--base-lightness) - 36%)
+  );
 
+  --color-yellow: hsl(45, 86%, 62%);
+  --color-orange: hsl(28, 87%, 62%);
+  --color-green: hsl(150, 43%, 51%);
+  --color-teal: hsl(184, 100%, 37%);
+  --color-red: hsl(0, 79%, 63%);
+  --color-blue: hsl(209, 97%, 65%);
+  --color-red-light: hsl(1, 94%, 68%);
+  --color-grey: hsl(214, 16%, 64%);
 
-  --color-yellow: @yellow;
-  --color-orange: @orange;
-  --color-green: @green;
-  --color-teal: @teal;
-  --color-red: @red;
-  --color-blue: @blue;
-  --color-red-light: @red-light;
-  --color-grey: @grey;
-
-
-  --font-regular: 'linear', "Inter UI", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --font-regular: "linear", "Inter UI", "SF Pro Display", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    "Open Sans", "Helvetica Neue", sans-serif;
 
   --color-post-code-title-bg: @color-grey-13;
   --color-post-code-bg: fade(@color-grey-20, 100);
 
   --color-bg: @color-grey-20;
   --color-bg-2: @color-grey-18;
-  --color-body-bg: linear-gradient(to bottom right,
-      @color-grey-18 0%,
-      @color-grey-20 50%);
+  --color-body-bg: linear-gradient(
+    to bottom right,
+    @color-grey-18 0%,
+    @color-grey-20 50%
+  );
   --color-bg-hover: fade(@color-grey-13, 70);
   --color-bg-hover-1: fade(@color-grey-13, 80);
   --color-frost-bg: blur(10px) saturate(190%) contrast(70%) brightness(80%);
@@ -93,7 +92,11 @@
   --color-font-1: @color-grey-3;
   --color-font-2: @color-grey-5;
   // 文字选中背景色
-  --color-selection-bg: @color-purple-7;
+  --color-selection-bg: hsl(
+    calc(var(--base-hue) - 5),
+    calc(var(--base-saturation) - 17%),
+    calc(var(--base-lightness) - 20%)
+  );
   // 图标
   --color-icon: @color-grey-6;
   --color-icon-hover: @color-grey-3;
@@ -120,7 +123,7 @@
   // switch
   --color-switch-bg: @color-grey-10;
   --color-switch-bg-checked: @color-grey-10;
-  --color-switch-font-checked: @orange;
+  --color-switch-font-checked: var(--color-orange);
   --color-switch-border: @color-grey-13;
   --color-switch-border-hover: @color-grey-8;
   --color-switch-track-bg: @color-grey-20;
@@ -150,5 +153,4 @@
   --color-label-bg: @color-grey-15;
   --color-label-border: @color-grey-10;
   --color-label-border-hover: @color-grey-8;
-
 }
