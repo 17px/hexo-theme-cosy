@@ -1,0 +1,180 @@
+@shadow-dark: rgba(0, 0, 0, 0.2) 0px 4px 24px;
+
+:root {
+  // 主题色
+  --theme-hue: 238;
+  --theme-saturation: 50%;
+  --theme-lightness: 56%;
+  --theme-alpha: 1;
+
+  // 黑白色
+  --base-gray-hue: 0;
+  --base-gray-saturation: 0%;
+  --base-gray-lightness: 50%;
+
+  // 主题衍生
+  --color-primary: hsl(
+    var(--theme-hue),
+    var(--theme-saturation),
+    var(--theme-lightness)
+  );
+  --color-primary-1: hsl(
+    var(--theme-hue),
+    var(--theme-saturation),
+    calc(var(--theme-lightness) * 0.8)
+  );
+  --color-primary-2: hsl(
+    calc(var(--theme-hue) - 5),
+    calc(var(--theme-saturation) - 17%),
+    calc(var(--theme-lightness) - 24%)
+  );
+  --color-primary-3: hsl(
+    calc(var(--theme-hue) - 5),
+    calc(var(--theme-saturation) - 18%),
+    calc(var(--theme-lightness) - 32%)
+  );
+  --color-primary-4: hsl(
+    var(--theme-hue),
+    calc(var(--theme-saturation) - 18%),
+    calc(var(--theme-lightness) - 36%)
+  );
+  --color-yellow: hsl(45, 86%, 62%);
+  --color-orange: hsl(28, 87%, 62%);
+  --color-green: hsl(150, 43%, 51%);
+  --color-teal: hsl(184, 100%, 37%);
+  --color-red: hsl(0, 79%, 63%);
+  --color-blue: hsl(209, 97%, 65%);
+  --color-red-light: hsl(1, 94%, 68%);
+  --color-grey: hsl(214, 16%, 64%);
+
+  // 字体
+  --font-regular: "linear", "Inter UI", "SF Pro Display", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    "Open Sans", "Helvetica Neue", sans-serif;
+
+  --color-post-code-title-bg: var(--color-gray-13);
+  --color-post-code-bg: var(--color-gray-20);
+
+  --color-bg: var(--color-gray-20);
+  --color-bg-2: var(--color-gray-18);
+  --color-body-bg: linear-gradient(
+    to bottom right,
+    var(--color-gray-18) 0%,
+    var(--color-gray-20) 50%
+  );
+  --color-bg-hover: var(--color-gray-13);
+  --color-bg-hover-1: var(--color-gray-13);
+  --color-frost-bg: blur(10px) saturate(190%) contrast(70%) brightness(80%);
+  // 水平垂直拖拽容器触发颜色
+  --color-dragger: var(--color-gray-15);
+  // 边框
+  --color-border: var(--color-gray-10);
+  --color-border-2: var(--color-gray-10);
+  --color-border-3: var(--color-gray-10);
+  // 滚动条
+  --width-scrollbar: 12px;
+  --color-scrollbar: var(--color-gray-13);
+  --color-scrollbar-hover: var(--color-gray-12);
+
+  // 文字
+  --color-font: var(--color-gray);
+  --color-font-1: var(--color-gray-3);
+  --color-font-2: var(--color-gray-5);
+  // 文字选中背景色
+  --color-selection-bg: hsl(
+    calc(var(--base-hue) - 5),
+    calc(var(--base-saturation) - 17%),
+    calc(var(--base-lightness) - 20%)
+  );
+  // 图标
+  --color-icon: var(--color-gray-6);
+  --color-icon-hover: var(--color-gray-3);
+
+  // button
+  --color-button-font: var(--color-gray-6);
+  --color-button-font-hover: var(--color-gray-3);
+  --color-button-border: var(--color-gray-10);
+  --color-button-border-hover: var(--color-gray-8);
+  --color-button-bg: var(--color-gray-15);
+  --color-button-bg-hover: var(--color-gray-13);
+
+  // short-key
+  --color-short-key-bg: var(--color-gray-10);
+  --color-short-key-font: var(--color-gray-2);
+
+  // search
+  --color-search-bg: var(--color-gray-15);
+  --color-search-bg-hover: var(--color-gray-15);
+  --color-search-font: var(--color-gray-2);
+  --color-search-border: var(--color-gray-13);
+  --color-search-border-hover: var(--color-gray-8);
+
+  // switch
+  --color-switch-bg: var(--color-gray-10);
+  --color-switch-bg-checked: var(--color-gray-10);
+  --color-switch-font-checked: var(--color-orange);
+  --color-switch-border: var(--color-gray-13);
+  --color-switch-border-hover: var(--color-gray-8);
+  --color-switch-track-bg: var(--color-gray-20);
+  --color-switch-track-bg-checked: var(--color-gray-15);
+
+  // dropdown
+  --color-dropdown-hover: var(--color-gray-10);
+  --color-dropdown-bg: hsla(
+    calc(var(--base-gray-hue) + 237),
+    calc(var(--base-gray-saturation) + 20%),
+    calc(var(--base-gray-lightness) - 78%),
+    0.6
+  );
+  --color-dropdown-border: var(--color-gray-10);
+  --color-dropdown-shadow: @shadow-dark;
+
+  // tooltip
+  --color-tooltip-bg: hsla(
+    calc(var(--base-gray-hue) + 237),
+    calc(var(--base-gray-saturation) + 20%),
+    calc(var(--base-gray-lightness) - 78%),
+    0.9
+  );
+  --color-tooltip-border: var(--color-gray-10);
+
+  // divider
+  --color-border-divider: var(--color-gray-10);
+
+  // popup
+  --color-popup-mask-bg: hsla(
+    calc(var(--base-gray-hue) + 245),
+    calc(var(--base-gray-saturation) + 12%),
+    calc(var(--base-gray-lightness) - 41%),
+    0.05
+  );
+  --color-popup-bg: hsla(
+    calc(var(--base-gray-hue) + 236),
+    calc(var(--base-gray-saturation) + 19%),
+    calc(var(--base-gray-lightness) - 86%),
+    0.9
+  );
+  --color-popup-border: hsla(
+    calc(var(--base-gray-hue) + 237),
+    calc(var(--base-gray-saturation) + 16%),
+    calc(var(--base-gray-lightness) - 72%),
+    0.44
+  );
+
+  // label
+  --color-label-font: var(--color-gray-6);
+  --color-label-font-hover: var(--color-gray-3);
+  --color-label-bg: var(--color-gray-15);
+  --color-label-border: var(--color-gray-10);
+  --color-label-border-hover: var(--color-gray-8);
+}
+
+// 白字 + 黑背景
+.cosy-theme-dark {
+  
+}
+
+// 黑字，白背景
+.cosy-theme-light {
+  
+}

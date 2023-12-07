@@ -26,7 +26,7 @@ class CosyPopup extends CosyElement {
         background: var(--color-popup-bg);
         padding: 20px;
         border-radius: var(--radius-base, 4px);
-        box-shadow: rgba(0, 0, 0, 0.5) 0px 16px 70px;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 16px 70px;
         backdrop-filter: blur(20px) saturate(190%) contrast(70%) brightness(80%);
         border: 0.5px solid var(--color-popup-border);
       }

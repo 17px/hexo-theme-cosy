@@ -19,9 +19,9 @@ export const APPEARANCE = {
 
 export type ThemeType = "黑暗模式" | "日间模式";
 
-export const THEME_COLOR_MAPPING = {
-  黑暗模式: "#191a23",
-  日间模式: "#ffffff",
+export const THEME_ROOT_CLASS = {
+  黑暗模式: "cosy-theme-dark",
+  日间模式: "cosy-theme-light",
 };
 
 export const APPEARANCE_DEFAULT = {

@@ -1,22 +1,3 @@
-@color-purple-6: hsl(238, 50%, 56%); // base
-
-@color-grey-0: hsl(0, 0%, 100%);
-@color-grey-2: hsl(235, 24%, 90%);
-@color-grey-3: hsl(236, 18%, 85%);
-@color-grey-5: hsl(245, 12%, 59%);
-@color-grey-6: hsl(237, 9%, 56%);
-@color-grey-8: hsl(236, 15%, 36%);
-@color-grey-10: hsl(237, 16%, 28%);
-@color-grey-12: hsl(218, 5%, 44%);
-@color-grey-13: hsl(237, 19%, 24%);
-@color-grey-15: hsl(237, 20%, 22%);
-@color-grey-17: hsl(237, 22%, 19%);
-@color-grey-18: hsl(235, 13%, 18%);
-@color-grey-19: hsl(236, 19%, 14%);
-@color-grey-20: hsl(234, 17%, 12%);
-
-@shadow-dark: rgba(0, 0, 0, 0.2) 0px 4px 24px;
-
 :root {
   --font-size: 13px;
   --base-hue: 238; /* 色相 */
@@ -62,95 +43,186 @@
   --font-regular: "linear", "Inter UI", "SF Pro Display", -apple-system,
     BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
     "Open Sans", "Helvetica Neue", sans-serif;
+}
 
-  --color-post-code-title-bg: @color-grey-13;
-  --color-post-code-bg: fade(@color-grey-20, 100);
+.cosy-theme-dark {
+  --color-post-code-title-bg: hsl(237, 19%, 24%);
+  --color-post-code-bg: hsla(234, 17%, 12%, 1);
 
-  --color-bg: @color-grey-20;
-  --color-bg-2: @color-grey-18;
+  --color-bg: hsl(234, 17%, 12%);
+  --color-bg-2: hsl(235, 13%, 18%);
+  --color-bg-3: hsl(236, 9%, 19%);
   --color-body-bg: linear-gradient(
     to bottom right,
-    @color-grey-18 0%,
-    @color-grey-20 50%
+    hsl(235, 13%, 18%) 0%,
+    hsl(234, 17%, 12%) 50%
   );
-  --color-bg-hover: fade(@color-grey-13, 70);
-  --color-bg-hover-1: fade(@color-grey-13, 80);
+  --color-bg-hover: hsla(237, 19%, 24%, 0.7);
+  --color-bg-hover-1: hsla(237, 19%, 24%, 0.8);
   --color-frost-bg: blur(10px) saturate(190%) contrast(70%) brightness(80%);
+
   // 水平垂直拖拽容器触发颜色
-  --color-dragger: @color-grey-15;
+  --color-dragger: hsl(237, 20%, 22%);
   // 边框
-  --color-border: @color-grey-10;
-  --color-border-2: fade(@color-grey-10, 50);
-  --color-border-3: fade(@color-grey-10, 30);
+  --color-border: hsl(237, 16%, 28%);
+  --color-border-2: hsla(237, 16%, 28%, 0.5);
+  --color-border-3: hsla(237, 16%, 28%, 0.3);
   // 滚动条
   --width-scrollbar: 12px;
-  --color-scrollbar: @color-grey-13;
-  --color-scrollbar-hover: @color-grey-12;
+  --color-scrollbar: hsl(237, 19%, 24%);
+  --color-scrollbar-hover: hsl(218, 5%, 44%);
 
-  // 文字`
-  --color-font: @color-grey-0;
-  --color-font-1: @color-grey-3;
-  --color-font-2: @color-grey-5;
+  // 文字
+  --color-font: hsl(0, 0%, 100%);
+  --color-font-1: hsl(236, 18%, 85%);
+  --color-font-2: hsl(245, 12%, 59%);
   // 文字选中背景色
-  --color-selection-bg: hsl(
-    calc(var(--base-hue) - 5),
-    calc(var(--base-saturation) - 17%),
-    calc(var(--base-lightness) - 20%)
-  );
+  --color-selection-bg: hsl(calc(238 - 5), calc(50% - 17%), calc(56% - 20%));
   // 图标
-  --color-icon: @color-grey-6;
-  --color-icon-hover: @color-grey-3;
+  --color-icon: hsl(237, 9%, 56%);
+  --color-icon-hover: hsl(236, 18%, 85%);
 
-  // button
-  --color-button-font: @color-grey-6;
-  --color-button-font-hover: @color-grey-3;
-  --color-button-border: @color-grey-10;
-  --color-button-border-hover: @color-grey-8;
-  --color-button-bg: @color-grey-15;
-  --color-button-bg-hover: @color-grey-13;
+  /* button */
+  --color-button-font: hsl(237, 9%, 56%);
+  --color-button-font-hover: hsl(236, 18%, 85%);
+  --color-button-border: hsl(237, 16%, 28%);
+  --color-button-border-hover: hsl(236, 15%, 36%);
+  --color-button-bg: hsl(237, 20%, 22%);
+  --color-button-bg-hover: hsl(237, 19%, 24%);
 
-  // short-key
-  --color-short-key-bg: @color-grey-10;
-  --color-short-key-font: @color-grey-2;
+  /* short-key */
+  --color-short-key-bg: hsl(237, 16%, 28%);
+  --color-short-key-font: hsl(235, 24%, 90%);
 
-  // search
-  --color-search-bg: @color-grey-15; // @color-grey-17
-  --color-search-bg-hover: @color-grey-15;
-  --color-search-font: @color-grey-2;
-  --color-search-border: @color-grey-13;
-  --color-search-border-hover: @color-grey-8;
+  /* search */
+  --color-search-bg: hsl(237, 20%, 22%);
+  --color-search-bg-hover: hsl(237, 20%, 22%);
+  --color-search-font: hsl(235, 24%, 90%);
+  --color-search-border: hsl(237, 19%, 24%);
+  --color-search-border-hover: hsl(236, 15%, 36%);
 
-  // switch
-  --color-switch-bg: @color-grey-10;
-  --color-switch-bg-checked: @color-grey-10;
-  --color-switch-font-checked: var(--color-orange);
-  --color-switch-border: @color-grey-13;
-  --color-switch-border-hover: @color-grey-8;
-  --color-switch-track-bg: @color-grey-20;
-  --color-switch-track-bg-checked: @color-grey-15;
+  /* switch */
+  --color-switch-bg: hsl(237, 16%, 28%);
+  --color-switch-bg-checked: hsl(237, 16%, 28%);
+  --color-switch-font-checked: var(--color-orange); /* Keeping as it is */
+  --color-switch-border: hsl(237, 19%, 24%);
+  --color-switch-border-hover: hsl(236, 15%, 36%);
+  --color-switch-track-bg: hsl(234, 17%, 12%);
+  --color-switch-track-bg-checked: hsl(237, 20%, 22%);
 
-  // dropdown
-  --color-dropdown-hover: @color-grey-10;
-  --color-dropdown-bg: fade(@color-grey-15, 60);
-  --color-dropdown-border: @color-grey-10;
-  --color-dropdown-shadow: @shadow-dark;
+  /* dropdown */
+  --color-dropdown-hover: hsl(237, 16%, 28%);
+  --color-dropdown-bg: hsla(237, 20%, 22%, 0.6);
+  --color-dropdown-border: hsl(237, 16%, 28%);
+  --color-dropdown-shadow: rgba(0, 0, 0, 0.2) 0px 4px 24px; /* Using rgba as is */
 
-  // tooltip
-  --color-tooltip-bg: fade(@color-grey-15, 90);
-  --color-tooltip-border: @color-grey-10;
+  /* tooltip */
+  --color-tooltip-bg: hsla(237, 20%, 22%, 0.9);
+  --color-tooltip-border: hsl(237, 16%, 28%);
 
-  // divider
-  --color-border-divider: @color-grey-10;
+  /* divider */
+  --color-border-divider: hsl(237, 16%, 28%);
 
-  // popup
-  --color-popup-mask-bg: fade(@color-grey-5, 5);
-  --color-popup-bg: fade(@color-grey-19, 80);
-  --color-popup-border: fade(@color-grey-10, 44);
+  /* popup */
+  --color-popup-mask-bg: hsla(245, 12%, 59%, 0.05);
+  --color-popup-bg: hsla(236, 19%, 14%, 0.8);
+  --color-popup-border: hsla(237, 16%, 28%, 0.44);
 
-  // label
-  --color-label-font: @color-grey-6;
-  --color-label-font-hover: @color-grey-3;
-  --color-label-bg: @color-grey-15;
-  --color-label-border: @color-grey-10;
-  --color-label-border-hover: @color-grey-8;
+  /* label */
+  --color-label-font: hsl(237, 9%, 56%);
+  --color-label-font-hover: hsl(236, 18%, 85%);
+  --color-label-bg: hsl(237, 20%, 22%);
+  --color-label-border: hsl(237, 16%, 28%);
+  --color-label-border-hover: hsl(236, 15%, 36%);
+}
+
+.cosy-theme-light {
+  --color-post-code-title-bg: hsl(237, 19%, 24%);
+  --color-post-code-bg: hsla(234, 17%, 12%, 1);
+
+  --color-bg: hsl(0, 0%, 100%);
+  --color-bg-2: hsl(0, 0%, 96%);
+  --color-bg-3: hsl(0, 0%, 92%);
+  --color-body-bg: linear-gradient(
+    to bottom right,
+    hsl(0, 0%, 100%) 0%,
+    hsl(0, 0%, 100%) 10%
+  );
+  --color-bg-hover: hsl(220, 43%, 96%);
+  --color-bg-hover-1: hsl(220, 43%, 66%);
+  --color-frost-bg: blur(10px) saturate(190%) contrast(70%) brightness(80%);
+
+  // 水平垂直拖拽容器触发颜色
+  --color-dragger: rgb(231, 231, 231);
+  // 边框
+  --color-border: rgb(233, 233, 233);
+  --color-border-2: rgba(233, 233, 233, 0.8);
+  --color-border-3: rgba(233, 233, 233, 0.6);
+  // 滚动条
+  --width-scrollbar: 12px;
+  --color-scrollbar: hsla(237, 19%, 24%, 0.2);
+  --color-scrollbar-hover: hsl(218, 5%, 74%);
+
+  // 文字
+  --color-font: hsl(0, 0%, 11%);
+  --color-font-1: hsla(223, 12%, 11%, 0.9);
+  --color-font-2: hsla(223, 12%, 11%, 0.6);
+  // 文字选中背景色
+  --color-selection-bg: hsla(223, 12%, 11%, 0.1);
+  // 图标
+  --color-icon: rgb(107, 111, 118);
+  --color-icon-hover: rgb(60, 65, 73);
+
+  /* button */
+  --color-button-font: var(--color-font-1);
+  --color-button-font-hover: var(--color-font);
+  --color-button-border: var(--color-border-2);
+  --color-button-border-hover: hsla(237, 16%, 28%, 0.24);
+  --color-button-bg: hsla(0, 0%, 100%, 0.9);
+  --color-button-bg-hover: hsla(0, 0%, 100%, 1);
+
+  /* short-key */
+  --color-short-key-bg: hsl(0, 0%, 94%);
+  --color-short-key-font: var(--color-font-2);
+
+  /* search */
+  --color-search-bg: hsla(0, 0%, 100%, 0.9);
+  --color-search-bg-hover: hsla(0, 0%, 100%, 1);
+  --color-search-font: var(--color-font-1);
+  --color-search-border: var(--color-border-3);
+  --color-search-border-hover: hsla(237, 16%, 28%, 0.24);
+
+  /* switch */
+  --color-switch-bg: hsla(0, 0%, 90%, 1);
+  --color-switch-bg-checked: hsl(237, 16%, 28%);
+  --color-switch-font-checked: var(--color-orange); /* Keeping as it is */
+  --color-switch-border: var(--color-border-2);
+  --color-switch-border-hover: hsla(237, 16%, 28%, 0.24);
+  --color-switch-track-bg: hsla(0, 0%, 100%, 0.9);
+  --color-switch-track-bg-checked: hsla(0, 0%, 100%, 0.6);
+
+  /* dropdown */
+  --color-dropdown-bg: hsla(0, 0%, 100%, 0.9);
+  --color-dropdown-hover: hsla(0, 0%, 90%, 1);
+  --color-dropdown-border: var(--color-border);
+  --color-dropdown-shadow: rgba(0, 0, 0, 0.1) 0px 4px 24px;
+
+  /* tooltip */
+  --color-tooltip-bg: hsla(0, 0%, 100%, 0.9);
+  --color-tooltip-border: var(--color-border-3);
+
+  /* divider */
+  --color-border-divider: hsl(237, 16%, 28%);
+
+  /* popup */
+  --color-popup-mask-bg: hsla(0, 0, 100%, 0.5);
+  --color-popup-bg: hsla(0, 0, 100%, 0.9);
+  --color-popup-border: var(--color-border-2);
+
+  /* label */
+  --color-label-font: var(--color-font-2);
+  --color-label-font-hover: var(--color-font);
+  --color-label-bg: hsl(0, 0%, 96%);
+  --color-label-border: var(--color-border-2);
+  --color-label-border-hover: hsla(237, 16%, 28%, 0.24);
 }

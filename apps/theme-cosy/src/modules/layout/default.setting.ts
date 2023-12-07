@@ -2,7 +2,7 @@ import { setRootVar } from "@cosy/util";
 import {
   APPEARANCE,
   APPEARANCE_DEFAULT,
-  THEME_COLOR_MAPPING,
+  THEME_ROOT_CLASS,
   ThemeType,
 } from "../constant";
 
@@ -15,5 +15,6 @@ export const useDefaultSetting = () => {
   // 主题色
   const theme =
     localStorage.getItem(APPEARANCE.THEME) ?? APPEARANCE_DEFAULT.THEME;
-  setRootVar("--color-base", THEME_COLOR_MAPPING[theme as ThemeType]);
+  document.documentElement.className = "";
+  document.documentElement.classList.add(THEME_ROOT_CLASS[theme as ThemeType]);
 };

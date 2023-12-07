@@ -3,7 +3,12 @@ import "./index.less";
 import { CosyDropdown } from "@cosy/ui";
 import { fontSizeOptions, themeOptions } from "./appearance";
 import { DropdownOption } from "@/util/dropdown";
-import { APPEARANCE, APPEARANCE_DEFAULT } from "../constant";
+import {
+  APPEARANCE,
+  APPEARANCE_DEFAULT,
+  THEME_ROOT_CLASS,
+  ThemeType,
+} from "../constant";
 
 onMounted(() => {
   const [fontSizeSelector, themeSelector] = [
@@ -34,8 +39,11 @@ onMounted(() => {
 
   new CosyDropdown(themeSelector, themeOptions, {
     onClickItem: (item: DropdownOption) => {
-      if (slotTheme) slotTheme.textContent = String(item.label);
-      localStorage.setItem(APPEARANCE.THEME, String(item.label));
+      const theme = ("" + item.label) as ThemeType;
+      if (slotTheme) slotTheme.textContent = theme;
+      localStorage.setItem(APPEARANCE.THEME, theme);
+      document.documentElement.className = "";
+      document.documentElement.classList.add(THEME_ROOT_CLASS[theme]);
     },
   });
 });

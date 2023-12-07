@@ -60,7 +60,7 @@ article {
   }
 
   a {
-    transition: color .3s;
+    transition: color 0.3s;
     text-decoration: none;
     color: var(--color-primary-1);
 
@@ -82,7 +82,6 @@ article {
       .line-numbers-rows {
         border-right: 0 !important;
       }
-
     }
 
     .btn-wrapper {
@@ -132,13 +131,28 @@ article {
   }
 
   blockquote {
+    position: relative;
     margin: 10px 0;
-    border-left: 3px solid var(--color-primary);
-    background: linear-gradient(to right, var(--color-primary-3), transparent);
+    background: var(--color-bg-2);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-base, 4px);
     font-family: var(--font-regular);
     display: block;
-    padding: 0.5rem;
-    color: var(--color-font-1);
+    padding: 0.5rem 0.5rem 0.5rem 2rem;
+    color: var(--color-font-2);
+    &::before {
+      position: absolute;
+      content: "";
+      display: block;
+      left: 0;
+      top: 50%;
+      width: 10px;
+      height: 10px;
+      background: var(--color-primary);
+      border-radius: 50%;
+      transform: translateY(-50%);
+      font-size: 14px;
+    }
 
     p {
       margin: 0;
@@ -146,7 +160,7 @@ article {
     }
   }
 
-  >p {
+  > p {
     line-height: 2;
     padding: 1.2rem 0;
     margin: 0;
@@ -157,13 +171,14 @@ article {
     }
 
     code {
-      padding: 4px 6px;
-      font-size: 12.8px;
+      padding: 3px 6px;
+      font-size: 0.9rem;
       margin: 0 2px;
-      background: var(--color-primary-3);
+      background: var(--color-bg-3);
       color: var(--color-font-1);
       border-radius: var(--radius-base, 4px);
-      font-family: "Fira Code", "Fira Mono", Menlo, Consolas, "DejaVu Sans Mono", monospace;
+      font-family: "Fira Code", "Fira Mono", Menlo, Consolas, "DejaVu Sans Mono",
+        monospace;
     }
   }
 
@@ -176,7 +191,7 @@ article {
     font-weight: 500;
     margin: 2.5rem 0 1rem 0;
     color: var(--color-font-1);
-    padding: .5rem 0;
+    padding: 0.5rem 0;
   }
 
   h1 {
@@ -218,7 +233,7 @@ article {
     width: 100%;
 
     thead tr th {
-      background: var(--color-primary-3);
+      background: var(--color-bg-2);
       text-align: left;
       padding: 12px;
       font-size: 13px;
@@ -228,7 +243,7 @@ article {
       }
 
       &:last-of-type {
-        border-radius: 0 var(--radius-base, 4px) 0 0
+        border-radius: 0 var(--radius-base, 4px) 0 0;
       }
     }
 
@@ -245,5 +260,4 @@ article {
       }
     }
   }
-
 }

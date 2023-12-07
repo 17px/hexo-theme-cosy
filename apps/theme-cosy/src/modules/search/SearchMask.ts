@@ -57,7 +57,7 @@ export class SearchMask {
       maxHeight: "60%",
       border: "1px solid var(--color-border)",
       background: "var(--color-bg-2)",
-      boxShadow: "rgba(0, 0, 0, 0.5) 0px 16px 70px",
+      boxShadow: "rgba(0, 0, 0, 0.2) 0px 16px 70px",
     }) as HTMLDivElement;
 
     this.searchWrapper = this.createElement("div", {}) as HTMLDivElement;
