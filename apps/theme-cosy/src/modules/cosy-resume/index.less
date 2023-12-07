@@ -2,15 +2,10 @@
 
 .vague-icon {
   position: relative;
-  border-radius: var(--radius-base, 4px);
   padding: 8px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  box-shadow: rgba(255, 255, 255, 0.25) 0px 1px 1px 0px inset;
-  background: linear-gradient(155.91deg,
-      rgb(24, 25, 28) 21.92%,
-      rgb(33, 34, 37) 77.49%);
 
   &::before {
     content: "";
@@ -21,9 +16,11 @@
     height: 50%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    background: linear-gradient(90deg,
-        var(--color-primary-3) 0.04%,
-        var(--color-primary) 46.04%);
+    background: linear-gradient(
+      90deg,
+      var(--color-primary-3) 0.04%,
+      var(--color-primary) 46.04%
+    );
     pointer-events: none;
     filter: blur(5px);
     opacity: 0.7;
@@ -39,7 +36,7 @@
 
   40%,
   50% {
-    opacity: .2;
+    opacity: 0.2;
     transform: translate(-50%, -50%) scale(1);
   }
 
@@ -68,8 +65,10 @@
       transform: translateX(-50%);
       width: 512px;
       height: 512px;
-      background: linear-gradient(var(--color-primary) 0%,
-          var(--color-primary) 100%);
+      background: linear-gradient(
+        var(--color-primary) 0%,
+        var(--color-primary) 100%
+      );
       border-radius: 50%;
       opacity: 0.2;
       filter: blur(80px);
@@ -79,8 +78,11 @@
       text-align: center;
       font-size: 40px;
       font-weight: bold;
-      background: -webkit-linear-gradient(left, var(--color-primary), var(--color-font));
-      background: linear-gradient(to right, var(--color-primary), var(--color-font));
+      background: linear-gradient(
+        to right,
+        var(--color-primary),
+        var(--color-font)
+      );
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
@@ -102,13 +104,15 @@
       height: 96px;
       margin: 2rem auto;
       border-radius: 50%;
-      background-image: linear-gradient(to right bottom,
-          var(--color-primary),
-          var(--color-primary-4));
+      background-image: linear-gradient(
+        to right bottom,
+        var(--color-primary),
+        var(--color-primary-4)
+      );
 
       .aperture {
         position: absolute;
-        content: '';
+        content: "";
         transform: translate(-50%, -50%);
         border-radius: 50%;
         border: 1px solid;
@@ -146,7 +150,7 @@
       }
     }
 
-    >ul {
+    > ul {
       margin: 0;
       padding: 0;
       display: flex;
@@ -160,13 +164,12 @@
         align-items: center;
         margin-bottom: 2rem;
 
-        >span svg {
+        > span svg {
           width: 20px;
           height: 20px;
-          color: var(--color-font-1);
         }
 
-        >div {
+        > div {
           display: flex;
           flex-direction: column;
           justify-content: space-between;
@@ -214,12 +217,12 @@
     }
   }
 
-  >.content {
+  > .content {
     max-width: 960px;
     margin: 0 auto;
     padding: 24px;
 
-    >h2 {
+    > h2 {
       margin-top: 0;
       margin-bottom: 2rem;
       font-weight: 600;
@@ -280,7 +283,7 @@
         align-items: center;
         margin-bottom: 2.5rem;
 
-        >span {
+        > span {
           z-index: 10;
 
           &::after {
@@ -327,7 +330,7 @@
         &::before {
           content: "";
           background: var(--color-primary);
-          box-shadow: 0 0 0 0.25rem var(--color-primary-4);
+          box-shadow: 0 0 0 0.25rem var(--color-bg-3);
           border-radius: 50%;
           position: absolute;
           top: 0.3rem;
@@ -341,7 +344,7 @@
           font-size: 1rem;
           color: var(--color-font);
 
-          >label {
+          > label {
             margin-right: 12px;
             vertical-align: middle;
             display: inline-block;
@@ -387,11 +390,10 @@
       transform: translateY(-0.6rem);
       padding: 0.5rem;
       border-radius: var(--radius-base, 4px) 0 0 var(--radius-base, 4px);
-      background: linear-gradient(45deg, var(--color-primary-3), transparent);
+      background: linear-gradient(45deg, var(--color-bg-3), transparent);
     }
 
     .portfolio {
-
       .card {
         padding: 24px;
 
@@ -419,8 +421,6 @@
           margin: 0;
         }
       }
-
-
     }
   }
 }

@@ -18,3 +18,9 @@ export const useDefaultSetting = () => {
   document.documentElement.className = "";
   document.documentElement.classList.add(THEME_ROOT_CLASS[theme as ThemeType]);
 };
+
+export const getCurrentTheme = () => {
+  const theme =
+    localStorage.getItem(APPEARANCE.THEME) ?? APPEARANCE_DEFAULT.THEME;
+  return THEME_ROOT_CLASS[theme as ThemeType];
+};

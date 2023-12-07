@@ -32,7 +32,7 @@ export class CosyCard extends CosyElement {
           width: 100%;
           background: radial-gradient(
             800px circle at var(--mouse-x) var(--mouse-y),
-            rgba(255, 255, 255, 0.06),
+            var(--color-radial-before),
             transparent 40%
           );
           z-index: 3;
@@ -41,10 +41,10 @@ export class CosyCard extends CosyElement {
         .card::after {
           background: radial-gradient(
             800px circle at var(--mouse-x) var(--mouse-y),
-            rgba(255, 255, 255, 0.4),
+            var(--color-radial-after),
             transparent 40%
           );
-          opacity: var(--after-opacity);
+          opacity: 1;
           z-index: 1;
         }
 

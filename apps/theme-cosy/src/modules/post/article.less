@@ -73,6 +73,8 @@ article {
     overflow-x: auto;
     position: relative;
     margin-bottom: 2rem;
+    border-radius: var(--radius-base, 4px);
+    border: 1px solid var(--color-border);
 
     pre {
       padding-top: 2rem;
@@ -92,7 +94,7 @@ article {
       right: 0;
       left: 0;
       height: 24px;
-      background: var(--color-post-code-title-bg);
+      background: var(--color-bg-2);
       display: flex;
       justify-content: space-between;
       padding: 0 4px 0 6px;
@@ -138,21 +140,8 @@ article {
     border-radius: var(--radius-base, 4px);
     font-family: var(--font-regular);
     display: block;
-    padding: 0.5rem 0.5rem 0.5rem 2rem;
+    padding: 0.5rem ;
     color: var(--color-font-2);
-    &::before {
-      position: absolute;
-      content: "";
-      display: block;
-      left: 0;
-      top: 50%;
-      width: 10px;
-      height: 10px;
-      background: var(--color-primary);
-      border-radius: 50%;
-      transform: translateY(-50%);
-      font-size: 14px;
-    }
 
     p {
       margin: 0;

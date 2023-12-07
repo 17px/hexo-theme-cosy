@@ -95,6 +95,25 @@ GFM a-tail link [@pandao](https://my.oschina.net/u/3691274)  邮箱地址自动�
 
 执行命令：`npm install marked`
 
+## r代码
+
+```r
+# 使用等号 = 号赋值
+> var.1 = c(0,1,2,3)           
+> print(var.1)
+[1] 0 1 2 3
+
+# 使用左箭头 <-赋值
+> var.2 <- c("learn","R")   
+> print(var.2)
+[1] "learn" "R"
+    
+# 使用右箭头 -> 赋值
+> c(TRUE,1) -> var.3
+> print(var.3)
+[1] 1 1
+```
+
 ## JS代码　
 
 ```javascript

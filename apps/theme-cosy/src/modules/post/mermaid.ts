@@ -1,5 +1,4 @@
 import { loadFromCDN } from "@/util";
-import { getThemeMode } from "@/util/theme";
 
 interface mermaidConfig {
   enable: boolean;

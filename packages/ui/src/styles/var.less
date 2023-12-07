@@ -45,12 +45,10 @@
     "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-.cosy-theme-dark {
-  --color-post-code-title-bg: hsl(237, 19%, 24%);
-  --color-post-code-bg: hsla(234, 17%, 12%, 1);
+.dark {
 
   --color-bg: hsl(234, 17%, 12%);
-  --color-bg-2: hsl(235, 13%, 18%);
+  --color-bg-2: hsl(235, 13%, 22%);
   --color-bg-3: hsl(236, 9%, 19%);
   --color-body-bg: linear-gradient(
     to bottom right,
@@ -134,11 +132,13 @@
   --color-label-bg: hsl(237, 20%, 22%);
   --color-label-border: hsl(237, 16%, 28%);
   --color-label-border-hover: hsl(236, 15%, 36%);
+
+  /* card */
+  --color-radial-before: hsla(255, 255, 255, 0.06);
+  --color-radial-after: hsla(255, 255, 255, 0.4);
 }
 
-.cosy-theme-light {
-  --color-post-code-title-bg: hsl(237, 19%, 24%);
-  --color-post-code-bg: hsla(234, 17%, 12%, 1);
+.light {
 
   --color-bg: hsl(0, 0%, 100%);
   --color-bg-2: hsl(0, 0%, 96%);
@@ -182,7 +182,7 @@
   --color-button-bg-hover: hsla(0, 0%, 100%, 1);
 
   /* short-key */
-  --color-short-key-bg: hsl(0, 0%, 94%);
+  --color-short-key-bg: hsl(0, 0%, 92%);
   --color-short-key-font: var(--color-font-2);
 
   /* search */
@@ -225,4 +225,18 @@
   --color-label-bg: hsl(0, 0%, 96%);
   --color-label-border: var(--color-border-2);
   --color-label-border-hover: hsla(237, 16%, 28%, 0.24);
+
+  /* card */
+  --color-radial-before: hsla(
+    var(--base-hue),
+    var(--base-saturation),
+    var(--base-lightness),
+    0.06
+  );
+  --color-radial-after: hsla(
+    var(--base-hue),
+    var(--base-saturation),
+    var(--base-lightness),
+    0.4
+  );
 }

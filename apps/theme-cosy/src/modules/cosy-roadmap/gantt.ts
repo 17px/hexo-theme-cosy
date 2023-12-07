@@ -1,4 +1,3 @@
-import { Popover } from "@/util/popover";
 import "./gantt.less";
 import dayjs from "dayjs";
 import { CosyElement } from "@cosy/ui";
@@ -177,7 +176,7 @@ export class GanttChart {
         const slotContent = `
           <div style="max-width: 860px;line-height: 1.5">
             <p style="margin: 0px 0px 8px; font-size: 12px; color: var(--color-font-2);">${title}</p>
-            <p style="margin: 0px; font-size: 13px">${
+            <p style="margin: 0px; font-size: 14px">${
               task.content ?? task.title
             }</p>
           </div>

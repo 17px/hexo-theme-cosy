@@ -20,8 +20,8 @@ export const APPEARANCE = {
 export type ThemeType = "黑暗模式" | "日间模式";
 
 export const THEME_ROOT_CLASS = {
-  黑暗模式: "cosy-theme-dark",
-  日间模式: "cosy-theme-light",
+  黑暗模式: "dark",
+  日间模式: "light",
 };
 
 export const APPEARANCE_DEFAULT = {

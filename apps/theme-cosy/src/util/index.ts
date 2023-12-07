@@ -1,13 +1,10 @@
 import { POST_MEMORY_KEY } from "@/modules/constant";
-import { EventBus } from "./event";
 
 type CDNResource = {
   type: "css" | "js";
   url: string;
   id?: string;
 };
-
-export const eventBus = new EventBus();
 
 /**
  * use js load remote resource

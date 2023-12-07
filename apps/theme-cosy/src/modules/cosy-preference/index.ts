@@ -1,8 +1,7 @@
 import { addListener, onMounted } from "@cosy/util";
 import "./index.less";
-import { CosyDropdown } from "@cosy/ui";
+import { CosyDropdown, CosyDropdownOption } from "@cosy/ui";
 import { fontSizeOptions, themeOptions } from "./appearance";
-import { DropdownOption } from "@/util/dropdown";
 import {
   APPEARANCE,
   APPEARANCE_DEFAULT,
@@ -31,14 +30,14 @@ onMounted(() => {
       APPEARANCE_DEFAULT.FONT_SIZE;
 
   new CosyDropdown(fontSizeSelector, fontSizeOptions, {
-    onClickItem: (item: DropdownOption) => {
+    onClickItem: (item: CosyDropdownOption) => {
       if (slotFontSize) slotFontSize.textContent = String(item.label);
       localStorage.setItem(APPEARANCE.FONT_SIZE, String(item.label));
     },
   });
 
   new CosyDropdown(themeSelector, themeOptions, {
-    onClickItem: (item: DropdownOption) => {
+    onClickItem: (item: CosyDropdownOption) => {
       const theme = ("" + item.label) as ThemeType;
       if (slotTheme) slotTheme.textContent = theme;
       localStorage.setItem(APPEARANCE.THEME, theme);

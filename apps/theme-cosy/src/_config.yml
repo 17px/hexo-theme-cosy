@@ -4,9 +4,6 @@ favicon: <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/
 # required = false
 icp: 苏ICP备xxxxxxx号
 
-# home page bottom motto
-motto: true
-
 # search form in left side nav
 search: true
 
