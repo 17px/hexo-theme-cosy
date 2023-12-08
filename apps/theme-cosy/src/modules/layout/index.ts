@@ -11,9 +11,11 @@ import "./index.less";
 import { CosyElement } from "@cosy/ui";
 import { themeIntroduction } from "./theme.intro";
 import { useDefaultSetting } from "./default.setting";
+import { useResponsive } from "./responsive";
 
 onMounted(() => {
   useDefaultSetting();
+  useResponsive();
 
   addListener({
     selector: "#button-preference",
