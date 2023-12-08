@@ -49,8 +49,7 @@
         top: 5.5px;
         left: 50%;
         transform: translateX(-50%);
-        transition: background 0.3s ease-in-out,
-          border 0.3s ease-in-out;
+        transition: background 0.3s ease-in-out, border 0.3s ease-in-out;
       }
 
       &:after {
@@ -76,8 +75,7 @@
         font-size: 16px;
         font-weight: 400;
         color: var(--color-font-1);
-        transition: color 0.3s ease-in-out,
-          border 0.3s ease-in-out;
+        transition: color 0.3s ease-in-out, border 0.3s ease-in-out;
 
         span {
           line-height: 1.5;
@@ -88,13 +86,11 @@
         margin: 0;
         color: var(--color-font-2);
         line-height: 1.5;
-        font-size: 13px;
+        font-size: calc(var(--font-size) * 0.9);
         text-align: justify;
-        transition: color 0.3s ease-in-out,
-          border 0.3s ease-in-out;
+        transition: color 0.3s ease-in-out, border 0.3s ease-in-out;
       }
     }
-
 
     &:hover {
       .timeline-marker:before {

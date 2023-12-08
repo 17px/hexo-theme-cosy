@@ -1,4 +1,4 @@
-import { addListener, onMounted } from "@cosy/util";
+import { addListener, onMounted, setRootVar } from "@cosy/util";
 import "./index.less";
 import { CosyDropdown, CosyDropdownOption, CosyElement } from "@cosy/ui";
 import {
@@ -41,10 +41,11 @@ onMounted(() => {
     themeColorSpanTooltip.textContent = hex;
   }
 
-  if (slotFontSize)
+  if (slotFontSize) {
     slotFontSize.textContent =
       localStorage.getItem(APPEARANCE.FONT_SIZE) ??
       APPEARANCE_DEFAULT.FONT_SIZE;
+  }
 
   if (slotLanguage) {
     const value =
@@ -56,6 +57,7 @@ onMounted(() => {
     onClickItem: (item: CosyDropdownOption) => {
       if (slotFontSize) slotFontSize.textContent = String(item.label);
       localStorage.setItem(APPEARANCE.FONT_SIZE, String(item.label));
+      setRootVar("--font-size", String(item.label));
     },
   });
 

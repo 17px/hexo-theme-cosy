@@ -168,7 +168,7 @@
             text-overflow: ellipsis;
             white-space: nowrap;
             border-radius: var(--radius-base, 4px);
-            font-size: 13px;
+            font-size: calc(var(--font-size) * 0.9);
 
             &:hover {
               background: var(--color-bg-hover);
@@ -176,7 +176,7 @@
 
             &.active {
               background: var(--color-bg-hover);
-              color: var(--color-font);
+              color: var(--color-primary);
             }
           }
         }
@@ -208,5 +208,6 @@
     margin: 4rem 0 0 0;
     text-align: center;
     font-family: "motto";
+    font-size: calc(var(--font-size) * 1.2);
   }
 }

@@ -2,6 +2,14 @@ import { setRootVar } from "@cosy/util";
 import { APPEARANCE, APPEARANCE_DEFAULT } from "../constant";
 import Color from "color";
 
+// --color-yellow: hsl(45, 86%, 62%);
+// --color-orange: hsl(28, 87%, 62%);
+// --color-green: hsl(150, 43%, 51%);
+// --color-teal: hsl(184, 100%, 37%);
+// --color-red: hsl(0, 79%, 63%);
+// --color-blue: hsl(209, 97%, 65%);
+// --color-red-light: hsl(1, 94%, 68%);
+
 export const useDefaultSetting = () => {
   // 文章字号
   const fontSize =

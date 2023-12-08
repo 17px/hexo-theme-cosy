@@ -18,7 +18,7 @@ export const APPEARANCE = {
 };
 
 export const APPEARANCE_DEFAULT = {
-  FONT_SIZE: "13px",
+  FONT_SIZE: "14px",
   THEME: "dark",
   LANGUAGE: "zh-CN",
   THEME_COLOR: "#575ac7",
