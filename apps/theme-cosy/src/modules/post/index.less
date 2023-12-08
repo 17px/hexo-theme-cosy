@@ -1,13 +1,13 @@
 // @import './prism/prism-one-light.less';
-@import './prism/prism-line-number.less';
-@import './article.less';
+@import "./prism/prism-line-number.less";
+@import "./article.less";
 
 .post-container {
   display: flex;
   flex-direction: column;
   height: 100%;
 
-  >header {
+  > header {
     padding-right: 24px;
     padding-left: 30px;
     display: flex;
@@ -29,7 +29,7 @@
     min-width: 0px;
     overflow-y: hidden;
 
-    >main {
+    > main {
       flex: 1;
 
       .article-container {
@@ -43,7 +43,7 @@
         max-width: 860px;
         flex-grow: 1;
 
-        >article {
+        > article {
           display: flex;
           flex-direction: column;
           flex: 1;
@@ -72,14 +72,13 @@
     }
   }
 
-
   .meta-container {
     position: relative;
     display: flex;
     flex-direction: column;
     height: calc(100vh - 57px);
 
-    >header {
+    > header {
       min-height: 57px;
       padding-left: 2rem;
       display: flex;
@@ -126,7 +125,7 @@
         flex: 1;
         margin: 0;
 
-        >li {
+        > li {
           &:first-of-type {
             margin-top: 1.5rem;
           }
@@ -179,7 +178,6 @@
               background: var(--color-bg-hover);
               color: var(--color-font);
             }
-
           }
         }
 
@@ -206,4 +204,9 @@
     }
   }
 
+  .motto {
+    margin: 4rem 0 0 0;
+    text-align: center;
+    font-family: "motto";
+  }
 }

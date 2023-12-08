@@ -21,11 +21,30 @@ export const fontSizeOptions: CosyDropdownOption[] = [
 
 export const themeOptions: CosyDropdownOption[] = [
   {
-    value: "黑暗模式",
+    value: "dark",
     label: "黑暗模式",
   },
   {
-    value: "日间模式",
+    value: "light",
     label: "日间模式",
   },
 ];
+
+export const langOptions: CosyDropdownOption[] = [
+  {
+    value: "zh-CN",
+    label: "简体中文",
+  },
+  {
+    value: "zh-TW",
+    label: "繁体中文",
+  },
+];
+
+export const getLabel = (
+  options: CosyDropdownOption[],
+  value: CosyDropdownOption["value"]
+) => {
+  const item = options.find((i) => i.value === value);
+  return String(item?.label ?? "oops");
+};

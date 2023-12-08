@@ -13,18 +13,13 @@ export const POST_MEMORY_KEY = "cosy-theme:scrolledHeight";
  */
 export const APPEARANCE = {
   FONT_SIZE: "cosy-theme:font-size",
-  FONT_FAMILY: "cosy-theme:font-family",
   THEME: "cosy-theme:theme",
-};
-
-export type ThemeType = "黑暗模式" | "日间模式";
-
-export const THEME_ROOT_CLASS = {
-  黑暗模式: "dark",
-  日间模式: "light",
+  LANGUAGE: "cosy-theme:language",
 };
 
 export const APPEARANCE_DEFAULT = {
   FONT_SIZE: "13px",
-  THEME: "黑暗模式",
+  THEME: "dark",
+  LANGUAGE: "zh-CN",
+  THEME_COLOR: "#575ac7",
 };

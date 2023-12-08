@@ -20,7 +20,7 @@ export class CosyLabel extends CosyElement {
       CosyElement.styles,
       css`
         a {
-          padding: 4px 6px;
+          padding: 4px;
           transition: all 0.3s ease;
           background-color: var(--color-label-bg);
           color: var(--color-label-font);

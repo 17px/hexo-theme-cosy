@@ -9,6 +9,9 @@ interface Window {
   roadmapYears: Record<string, any>;
   initYear: string | number;
   search: any;
+  theme: {
+    color: string;
+  };
   page: {
     use: string[];
   };
