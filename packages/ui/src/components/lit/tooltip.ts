@@ -102,7 +102,7 @@ class CosyTooltip extends CosyElement {
           ? this.textWrapWidth
           : "inherit"}"
       ></slot
-      ><slot></slot>
+      ><slot style="line-height:1.2"></slot>
     </div>`;
   }
 }

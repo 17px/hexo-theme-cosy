@@ -14,6 +14,8 @@ export class CosyCardGroup extends CosyElement {
       css`
         .card-group {
           display: grid;
+          justify-items: center;
+          align-items: center;
           gap: 12px;
         }
       `,
@@ -28,7 +30,7 @@ export class CosyCardGroup extends CosyElement {
   render() {
     return html`<div
       class="card-group"
-      style="grid-template-columns: repeat(${this.row}, 1fr)"
+      style="grid-template-columns: repeat(auto-fill, minmax(250px, 1fr))"
       @mousemove="${this.handleMouseMove}"
     >
       <slot></slot>

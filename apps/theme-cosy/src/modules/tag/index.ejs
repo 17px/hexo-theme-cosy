@@ -10,14 +10,14 @@
       <li>
         <a class="timeline-item" href="<%- url_for(post.path) %>">
           <div class="timeline-info">
+            <% if(post.status !==undefined){ %>
+            <%- post_icon(post,'status') %>
+            <% } %>
             <span><%= post.date.format('MM-DD HH:mm:ss') %></span>
           </div>
           <div class="timeline-marker"></div>
           <div class="timeline-content">
-            <div class="timeline-title">
-              <% if(post.status !==undefined){ %>
-              <%- post_icon(post,'status') %>
-              <% } %>
+            <div class="timeline-title ellipsis">
               <span><%= post.title %></span>
             </div>
             <p><%= generate_excerpt(post, 100) %>...</p>

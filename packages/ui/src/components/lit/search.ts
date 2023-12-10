@@ -3,7 +3,9 @@ import { property } from "lit/decorators.js";
 import { CosyElement } from "./base";
 
 export class CosySearch extends CosyElement {
-  @property({ type: String }) placeholder: string = "Search...";
+  @property({ type: String }) placeholder: string = "搜索";
+  @property({ type: Boolean, attribute: "icon-only" })
+  iconOnly: boolean = false;
 
   static get styles() {
     return [
@@ -20,6 +22,18 @@ export class CosySearch extends CosyElement {
           transition: all 0.3s;
           cursor: pointer;
         }
+        .icon-only{
+          display: inline-flex;
+          justify-content: center;
+          padding: 6px;
+          height: auto;
+        }
+        .icon-only span {
+          display: none;
+        }
+        .icon-only slot {
+          display: none;
+        }
         form:hover {
           border-color: var(--color-search-border-hover);
         }
@@ -31,7 +45,7 @@ export class CosySearch extends CosyElement {
         }
         span {
           flex: 1;
-          padding-left: 5px;
+          padding: 0 6px;
           font-size: 13px;
           color: var(--color-search-font);
         }
@@ -44,7 +58,10 @@ export class CosySearch extends CosyElement {
   }
 
   render() {
-    return html`<form @click="${this.handleClick}">
+    return html`<form
+      @click="${this.handleClick}"
+      class="${this.iconOnly ? "icon-only" : ""}"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"

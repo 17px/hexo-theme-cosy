@@ -15,9 +15,6 @@ import { CosyElement } from "@cosy/ui";
 import { TOC_INVISIBLE_KEY } from "../constant";
 import { getCurrentTheme } from "../layout/default.setting";
 
-// 如果 key 不存在，返回 null，视为 visible
-const isTocInvisible = () => localStorage.getItem(TOC_INVISIBLE_KEY) === "true";
-
 /**
  * 高亮TOC项
  */
@@ -39,8 +36,6 @@ document.addEventListener("click", function (event) {
     if (href) highlightTOCItem(href);
   }
 });
-
-// useSplitPanel();
 
 const loadPrismThemeStyle = () => {
   const link = document.createElement("link");
@@ -65,47 +60,27 @@ onMounted(() => {
   useCodeHelper();
   // useTextEnhancer();
 
-  // loadFromCDN([
-  //   {
-  //     type: "js",
-  //     url: "https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/components/prism-rust.min.js",
-  //   },
-  // ]);
-
   // 加载prism样式
   loadPrismThemeStyle();
 
   const tocDragBox = document.querySelector("#toc-drag-box") as CosyElement;
-  const button = document.querySelector("#toc-show-button") as CosyElement;
 
   if (tocDragBox) {
-    if (isTocInvisible()) {
-      tocDragBox.invisible = true;
-      button.invisible = false;
-    }
+    localStorage.getItem(TOC_INVISIBLE_KEY) === "true"
+      ? tocDragBox.setAttribute("invisible", "")
+      : tocDragBox.removeAttribute("invisible");
 
-    globalEventBus.on(
-      "cosy-drag-box:toc-box",
-      (e: { detail: { invisible: any } }) => {
-        const { invisible } = e.detail;
-        button.invisible = !invisible;
-        addListener({
-          selector: "#toc-show-button",
-          eventType: "click",
-          handler: () => {
-            tocDragBox.invisible = false;
-            button.invisible = true;
-          },
-        });
-      }
-    );
+    globalEventBus.on("cosy-drag-box:toc-box", () => {
+      localStorage.setItem(TOC_INVISIBLE_KEY, "true");
+      tocDragBox.invisible = true;
+    });
 
     addListener({
       selector: "#toc-show-button",
       eventType: "click",
       handler: () => {
-        tocDragBox.invisible = false;
-        button.invisible = true;
+        localStorage.setItem(TOC_INVISIBLE_KEY, "" + !tocDragBox.invisible);
+        tocDragBox.invisible = !tocDragBox.invisible;
       },
     });
 
@@ -113,9 +88,8 @@ onMounted(() => {
       key: "]",
       preventDefault: true,
       handler: () => {
-        localStorage.setItem(TOC_INVISIBLE_KEY, String(!tocDragBox.invisible));
+        localStorage.setItem(TOC_INVISIBLE_KEY, "" + !tocDragBox.invisible);
         tocDragBox.invisible = !tocDragBox.invisible;
-        button.invisible = !button.invisible;
       },
     });
   }

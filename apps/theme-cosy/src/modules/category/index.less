@@ -46,7 +46,7 @@
     flex: 1;
     margin: 0;
     padding: 0;
-    overflow: auto;
+    overflow-y: auto;
 
     li {
       list-style: none;
@@ -69,16 +69,16 @@
         gap: 12px;
 
         p {
-          display: flex;
-          align-items: center;
           padding-right: 20px;
           margin: 0;
           font-size: calc(var(--font-size) * 0.9);
           flex: 1;
-          gap: 12px;
         }
 
         .post-date {
+          display: flex;
+          align-items: center;
+          gap: 12px;
           color: var(--color-font-2);
           font-size: 12px;
 

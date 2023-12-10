@@ -56,16 +56,18 @@
         <% if(post.status !==undefined){ %>
         <%- post_icon(post,'status') %>
         <% } %>
-        <p>
-          <cosy-tooltip placement="bottom-left" max-width="520px">
+        <p class="ellipsis">
+          <span><%- post.title %></span>
+          <!-- <cosy-tooltip placement="bottom-left" max-width="250px">
             <span slot="content"><%- generate_excerpt(post, 60) %></span>
-            <%- post.title %>
-          </cosy-tooltip>
+            <span></span>
+          </cosy-tooltip> -->
+
+        </p>
+        <span class="post-date">
           <% if(post.top !==undefined){ %>
           <cosy-label color="red" bordered>置顶</cosy-label>
           <% } %>
-        </p>
-        <span class="post-date">
           <cosy-tooltip placement="left">
             <span slot="content">创建于: <%- post.date.format('YYYY-MM-DD HH:mm:ss') %></span>
             <%= post.date.format('MMM DD') %>

@@ -4,15 +4,17 @@
   height: 100%;
   display: flex;
 
-  >main {
+  > main {
     flex: 1;
     overflow: hidden;
   }
 
-  cosy-drag-box aside {
+  .left-aside {
     display: flex;
     flex-direction: column;
+    width: 220px;
     height: 100vh;
+    border-right: 1px solid var(--color-border);
 
     .header {
       padding: 12px 13px;
@@ -21,7 +23,7 @@
       gap: 24px;
     }
 
-    .content {
+    .aside-category {
       display: flex;
       flex-direction: column;
       flex-grow: 1;
@@ -32,6 +34,39 @@
         align-items: center;
         justify-content: space-between;
         padding: 12px 13px;
+      }
+    }
+
+    &[thumb-mode] {
+      position: relative;
+      width: 60px;
+
+      .badge,
+      .bottom,
+      #post-search,
+      .category-nav li a div {
+        display: none;
+      }
+      .header {
+        flex-direction: row;
+        justify-content: center;
+        height: 57px;
+      }
+      .category-nav {
+        ul {
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+          li {
+            a {
+              justify-content: center;
+              svg {
+                width: 20px;
+                height: 20px;
+              }
+            }
+          }
+        }
       }
     }
   }

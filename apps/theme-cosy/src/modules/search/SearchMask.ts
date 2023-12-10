@@ -53,7 +53,7 @@ export class SearchMask {
       left: "50%",
       transform: "translateX(-50%)",
       borderRadius: "8px",
-      width: "50%",
+      width: "80%",
       maxHeight: "60%",
       border: "1px solid var(--color-border)",
       background: "var(--color-bg-2)",

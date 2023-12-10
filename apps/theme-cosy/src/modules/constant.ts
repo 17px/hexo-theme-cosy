@@ -4,6 +4,11 @@
 export const TOC_INVISIBLE_KEY = "cosy-theme:toc-invisible";
 
 /**
+ * 左侧导航 状态在 localStorage 存储的key
+ */
+export const ASIDE_INVISIBLE_KEY = "cosy-theme:aside-invisible";
+
+/**
  * 记录文章页面当前滚动高度
  */
 export const POST_MEMORY_KEY = "cosy-theme:scrolledHeight";
