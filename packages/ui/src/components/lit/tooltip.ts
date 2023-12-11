@@ -25,7 +25,7 @@ class CosyTooltip extends CosyElement {
       css`
         .tooltip {
           position: relative;
-          display: flex;
+          display: inline-flex;
           user-select: none;
         }
         .tooltip-content {

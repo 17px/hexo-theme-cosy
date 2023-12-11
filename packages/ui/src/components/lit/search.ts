@@ -22,7 +22,7 @@ export class CosySearch extends CosyElement {
           transition: all 0.3s;
           cursor: pointer;
         }
-        .icon-only{
+        .icon-only {
           display: inline-flex;
           justify-content: center;
           padding: 6px;
@@ -67,9 +67,9 @@ export class CosySearch extends CosyElement {
         xmlns:xlink="http://www.w3.org/1999/xlink"
         viewBox="0 0 20 20"
       >
-        <g fill="currentColor">
+        <g fill="none">
           <path
-            d="M8.5 3a5.5 5.5 0 0 1 4.383 8.823l4.147 4.147a.75.75 0 0 1-.976 1.133l-.084-.073l-4.147-4.147A5.5 5.5 0 1 1 8.5 3zm0 1.5a4 4 0 1 0 0 8a4 4 0 0 0 0-8z"
+            d="M8.5 3a5.5 5.5 0 0 1 4.227 9.02l4.127 4.126a.5.5 0 0 1-.638.765l-.07-.057l-4.126-4.127A5.5 5.5 0 1 1 8.5 3zm0 1a4.5 4.5 0 1 0 0 9a4.5 4.5 0 0 0 0-9z"
             fill="currentColor"
           ></path>
         </g>

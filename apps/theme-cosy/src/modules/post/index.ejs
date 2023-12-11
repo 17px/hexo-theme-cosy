@@ -6,6 +6,7 @@
       <%- partial('breadcrumb') %>
     </div>
     <div class="right">
+      <% if (!!toc(page.content)) { %>
       <cosy-tooltip id="toc-show-button" placement="left">
         <span slot="content">
           <span>显示 / 隐藏 文章目录</span>
@@ -19,6 +20,7 @@
           </svg>
         </cosy-icon>
       </cosy-tooltip>
+      <% } %>
     </div>
   </header>
   <div class="content">
@@ -26,14 +28,6 @@
       <div class="article-container">
         <!-- 渲染文章内容 -->
         <article>
-          <!-- 文章tags -->
-          <% if (page.tags && page.tags.length > 0) { %>
-          <div class="post-tags">
-            <% page.tags.each(function(tag){ %>
-            <cosy-label href="<%- url_for(tag.path) %>" size="sm"><%- tag.name %></cosy-label>
-            <% }) %>
-          </div>
-          <% } %>
           <!-- 文章标题 -->
           <h1 class="post-title"><%- page.title %></h1>
           <div class="post-info">
@@ -44,12 +38,16 @@
           </div>
           <!-- 文章 -->
           <%- page.content %>
+          <div class="post-tags">
+            <!-- 文章tags -->
+            <% if (page.tags && page.tags.length > 0) { %>
+            <% page.tags.each(function(tag){ %>
+            <cosy-label href="<%- url_for(tag.path) %>" size="sm"># <%- tag.name %></cosy-label>
+            <% }) %>
+            <% } %>
+          </div>
+          <p class="motto">重拾纯粹的写作</p>
         </article>
-        <p class="motto">重拾纯粹的写作</p>
-        <% if(theme.postCopyright !==undefined){ %>
-        <cosy-divider></cosy-divider>
-        <%- partial('post-copyright') %>
-        <% } %>
         <!-- 评论 -->
         <div id="vcomments"></div>
       </div>

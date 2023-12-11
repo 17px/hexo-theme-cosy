@@ -17,10 +17,10 @@
     border-right: 1px solid var(--color-border);
 
     .header {
-      padding: 12px 13px;
+      padding: 0 13px 12px 13px;
       display: flex;
       flex-direction: column;
-      gap: 24px;
+      gap: 12px;
     }
 
     .aside-category {
@@ -30,10 +30,7 @@
       overflow: hidden;
 
       .bottom {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 12px 13px;
+        padding: 12px;
       }
     }
 
@@ -42,15 +39,16 @@
       width: 60px;
 
       .badge,
-      .bottom,
-      #post-search,
+      #about-cosy,
       .category-nav li a div {
         display: none;
       }
       .header {
-        flex-direction: row;
+        flex-direction: column;
         justify-content: center;
-        height: 57px;
+        .profile {
+          justify-content: center;
+        }
       }
       .category-nav {
         ul {

@@ -14,7 +14,7 @@ export class CosyLabel extends CosyElement {
   @property({ type: Boolean }) bordered: false;
   @property({ type: String }) href: string;
   @property({ type: Boolean }) blank = false;
-
+  
   static get styles() {
     return [
       CosyElement.styles,

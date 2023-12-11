@@ -48,17 +48,14 @@
           flex: 1;
 
           .post-info {
-            display: inline-flex;
-            gap: 12px;
+            display: flex;
             color: var(--color-font-2);
           }
-        }
-
-        .post-tags {
-          margin-top: 1rem;
-          display: flex;
-          flex-wrap: wrap;
-          gap: 6px;
+          .post-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+          }
         }
       }
 
@@ -204,8 +201,6 @@
   }
 
   .motto {
-    margin: 4rem 0 0 0;
-    text-align: center;
     font-family: "motto";
     font-size: calc(var(--font-size) * 1.2);
   }

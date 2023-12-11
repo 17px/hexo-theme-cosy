@@ -3,7 +3,6 @@
   <main>
     <h1>偏好</h1>
     <p>管理您的首选项</p>
-    <cosy-divider margin="2rem 0"></cosy-divider>
     <h2>外观</h2>
     <section>
       <div>
@@ -19,7 +18,6 @@
         <span slot="content">13px</span>
       </cosy-button>
     </section>
-    <cosy-divider margin="2rem 0"></cosy-divider>
     <section>
       <div>
         <h3>语言</h3>
@@ -34,7 +32,7 @@
         <span slot="content">简体中文</span>
       </cosy-button>
     </section>
-    <cosy-divider margin="2rem 0"></cosy-divider>
+    <cosy-divider ></cosy-divider>
     <h2>主题</h2>
     <section>
       <div>
@@ -50,7 +48,6 @@
         <span slot="content">黑暗模式</span>
       </cosy-button>
     </section>
-    <cosy-divider margin="2rem 0"></cosy-divider>
     <section>
       <div>
         <h3>颜色</h3>
@@ -61,6 +58,25 @@
         <cosy-label bordered>
           <span id="theme-color"></span>
         </cosy-label>
+      </cosy-tooltip>
+    </section>
+    <cosy-divider ></cosy-divider>
+    <h2>社区</h2>
+    <section>
+      <div>
+        <h3>反馈</h3>
+        <p>非常有幸被您发现，如果您对主题有任何建议、反馈，来提 issue。</p>
+      </div>
+      <cosy-tooltip placement="left">
+        <span slot="content">Github Issue</span>
+        <cosy-icon blank href="https://github.com/17px/hexo-theme-cosy/issues">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+            <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="1"></circle>
+              <circle cx="12" cy="12" r="9"></circle>
+            </g>
+          </svg>
+        </cosy-icon>
       </cosy-tooltip>
     </section>
 
