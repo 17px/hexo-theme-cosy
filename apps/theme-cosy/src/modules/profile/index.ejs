@@ -1,17 +1,10 @@
 <!-- inject:css -->
 <div class="profile">
-  <cosy-tooltip placement="right">
-    <div slot="content">
-      <span>首页</span>
-      <cosy-short-key>⌘</cosy-short-key>
-      <cosy-short-key>H</cosy-short-key>
-    </div>
-    <a class="badge" href="/">
-      <span>Hi</span>
-      <span><%- config.author %></span>
-    </a>
-  </cosy-tooltip>
-  <cosy-tooltip id="left-aside-button" placement="left">
+  <a class="badge" href="/">
+    <span>Hi</span>
+    <span><%- config.author %></span>
+  </a>
+  <cosy-tooltip id="left-aside-button" placement="right">
     <span slot="content">
       <span>显示 / 隐藏 左侧导航</span>
       <cosy-short-key>[</cosy-short-key>

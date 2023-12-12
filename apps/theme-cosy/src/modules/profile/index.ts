@@ -7,4 +7,10 @@ onMounted(() => {
     preventDefault: true,
     handler: () => (location.href = "/"),
   });
+
+  addKeyPress({
+    key: "control+p",
+    preventDefault: true,
+    handler: () => (location.href = "/cosy-preference"),
+  });
 });

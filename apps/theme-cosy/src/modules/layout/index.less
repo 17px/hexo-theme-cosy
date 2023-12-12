@@ -17,7 +17,7 @@
     border-right: 1px solid var(--color-border);
 
     .header {
-      padding: 0 13px 12px 13px;
+      padding: 0 12px 12px 13px;
       display: flex;
       flex-direction: column;
       gap: 12px;
@@ -28,10 +28,11 @@
       flex-direction: column;
       flex-grow: 1;
       overflow: hidden;
+    }
 
-      .bottom {
-        padding: 12px;
-      }
+    .bottom {
+      display: flex;
+      padding: 12px;
     }
 
     &[thumb-mode] {
@@ -45,6 +46,7 @@
       }
       .header {
         flex-direction: column;
+        align-items: center;
         justify-content: center;
         .profile {
           justify-content: center;
@@ -52,6 +54,7 @@
       }
       .category-nav {
         ul {
+          padding: 0;
           display: flex;
           flex-direction: column;
           gap: 4px;
@@ -65,6 +68,9 @@
             }
           }
         }
+      }
+      .bottom {
+        justify-content: center;
       }
     }
   }
