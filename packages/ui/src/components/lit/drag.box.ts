@@ -112,7 +112,7 @@ class CosyDragBox extends CosyElement {
   };
 
   render() {
-    const styles = `min-width: ${this.minWidth}px;border-${this.trigger}:1px solid var(--color-border)`;
+    const styles = `min-width: ${this.minWidth}px;border-${this.trigger}:1px solid var(--color-border);height:100%`;
     return html`
       <div style="${styles}">
         ${this.renderDragger()}

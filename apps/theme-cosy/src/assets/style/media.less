@@ -2,6 +2,9 @@
 }
 
 @media only screen and (max-width: 768px) {
+  :root {
+    --color-dropdown-bg: hsla(237, 20%, 22%, 1) !important;
+  }
   .resume {
     .header {
       > ul {
@@ -15,10 +18,61 @@
     display: none;
   }
 
+  .post-container {
+    .meta-container {
+      max-width: 220px !important;
+    }
+  }
+
   .breadcrumb {
     .ellipsis,
     .arrow {
       display: none;
+    }
+  }
+
+  .archive,
+  .tags-container {
+    .timeline-item {
+      padding-left: 0 !important;
+    }
+    .timeline-marker {
+      &::before,
+      &::after {
+        content: none !important;
+      }
+    }
+  }
+
+  .resume {
+    .header::before {
+      display: none;
+    }
+    .skill {
+      padding-left: 0 !important;
+    }
+    ul {
+      list-style: none !important;
+
+      .item {
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+        border-left: 0 !important;
+        &::before {
+          display: none !important;
+        }
+        .list {
+          padding-left: 0 !important;
+        }
+      }
+      .title {
+        > span::after {
+          content: none !important;
+        }
+        &::before {
+          content: none !important;
+        }
+      }
     }
   }
 }

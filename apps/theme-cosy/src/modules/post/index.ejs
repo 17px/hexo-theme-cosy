@@ -30,11 +30,8 @@
         <article>
           <!-- 文章标题 -->
           <h1 class="post-title"><%- page.title %></h1>
-          <div class="post-info">
-            <cosy-tooltip placement="right">
-              <span slot="content">上次更新时间: <%- page.updated.format('YYYY-MM-DD HH:mm:ss') %></span>
-              <cosy-label color="orange"><%- page.updated.format('MMM DD / YYYY') %></cosy-label>
-            </cosy-tooltip>
+          <div class="last-updated">
+            上次更新时间: <%- page.updated.format('YYYY-MM-DD HH:mm:ss') %>
           </div>
           <!-- 文章 -->
           <%- page.content %>
@@ -54,7 +51,7 @@
     </main>
     <!-- toc -->
     <% if (!!toc(page.content)) { %>
-    <cosy-drag-box id="toc-drag-box" trigger="left" min-width="320" uid="toc-box">
+    <cosy-drag-box id="toc-drag-box" trigger="left" min-width="220" uid="toc-box">
       <div class="meta-container">
         <div class="toc-wrapper cosy-scrollbar">
           <cosy-tooltip placement="right">

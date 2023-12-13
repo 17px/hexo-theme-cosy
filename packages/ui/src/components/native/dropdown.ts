@@ -155,12 +155,11 @@ export class Dropdown {
     this.dropdownElement.style.padding = `6px 4px`;
     this.dropdownElement.style.borderRadius = "var(--radius-base,4px)";
     // 黑色
-    this.dropdownElement.style.backdropFilter = "var(--color-frost-bg)";
     this.dropdownElement.style.background = "var(--color-dropdown-bg)";
+    this.dropdownElement.style.backdropFilter = "var(--color-frost-bg)";
     this.dropdownElement.style.border =
       "1px solid var(--color-dropdown-border)";
     this.dropdownElement.style.boxShadow = "var(--color-dropdown-shadow)";
-
     const rect = document.querySelector(this.selector)?.getBoundingClientRect();
     this.dropdownElement.style.top = `${rect.top}px`;
     this.dropdownElement.style.left = `${rect.left}px`; // 与selector的左边界对齐
