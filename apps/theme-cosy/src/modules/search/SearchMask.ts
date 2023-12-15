@@ -325,7 +325,7 @@ export class SearchMask {
     this.currentSelectedIndex = newIndex;
     const childDiv = this.resultLinks[this.currentSelectedIndex]
       .children[0] as HTMLDivElement;
-    childDiv.style.backgroundColor = "var(--color-bg-hover-1)";
+    childDiv.style.backgroundColor = "var(--color-bg-3)";
   }
 
   private handleKeydown(event: KeyboardEvent) {
@@ -387,7 +387,7 @@ export class SearchMask {
     );
     const childDiv = this.resultLinks[this.currentSelectedIndex]
       .children[0] as HTMLDivElement;
-    childDiv.style.backgroundColor = "var(--color-bg-hover-1)";
+    childDiv.style.backgroundColor = "var(--color-bg-3)";
     this.ensureActiveLinkVisible();
   }
 }

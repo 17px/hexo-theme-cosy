@@ -87,6 +87,11 @@ export class WeatherWidget {
     this.root.style.borderRadius = "20px";
     this.root.style.zIndex = "10";
     this.root.style.minWidth = "420px";
+    this.root.style.backdropFilter = "blur(30px)";
+    this.root.style.background =
+      "linear-gradient(180deg,hsla(0,0%,100%,.28),hsla(0,0%,100%,0))";
+    this.root.style.boxShadow =
+      "inset 0 0.5px 0 1px hsla(0,0%,100%,.23), inset 0 1px 0 0 hsla(0,0%,100%,.66), 0 4px 16px rgba(0,0,0,.12)";
 
     this.now.style.flex = "1";
     this.now.style.display = "flex";
@@ -124,8 +129,6 @@ export class WeatherWidget {
       const today = new Date().getDate() === new Date(fxDate).getDate();
       const today_dot =
         '<span style="margin-top:6px;width:8px;height:8px;border-radius:50%;background: var(--color-primary);"></span>';
-
-      // <span style="color: var(--color-font); font-size: 12px; line-height: 1.5;">${textDay}</span>
       const liContent = `
         <li style="display: flex; flex-direction: column; align-items: center;">
           <span style="color: var(--color-font); font-size: 12px; line-height: 1.5;">${new Date(
