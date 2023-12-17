@@ -1,5 +1,5 @@
 article {
-  padding: 0 2rem;
+  padding: 0 12px;
   height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
@@ -28,6 +28,7 @@ article {
   }
 
   .post-title {
+    margin: 12px 0;
     line-height: 1.5;
     color: var(--color-font);
   }
@@ -166,8 +167,7 @@ article {
       background: var(--color-bg-3);
       color: var(--color-font-1);
       border-radius: var(--radius-base, 4px);
-      font-family: "Fira Code", "Fira Mono", Menlo, Consolas, "DejaVu Sans Mono",
-        monospace;
+      font-family: "Fira Code", var(--font-regular);
     }
   }
 
