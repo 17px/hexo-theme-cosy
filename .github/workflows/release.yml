@@ -11,18 +11,24 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v3
-    
+
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
-          registry-url: 'https://registry.npmjs.org'
+          node-version: "16"
+          registry-url: "https://registry.npmjs.org"
 
       - name: Install Pnpm
         run: npm install -g pnpm
 
       - name: Install Dependencies
         run: pnpm i
+
+      - name: Build:Utility
+        run: pnpm run build:util
+
+      - name: Build:ui
+        run: pnpm run build:ui
 
       - name: Build
         run: pnpm run build
@@ -35,4 +41,3 @@ jobs:
         working-directory: release/hexo-theme-cosy
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
