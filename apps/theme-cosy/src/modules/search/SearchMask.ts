@@ -74,12 +74,7 @@ export class SearchMask {
       fontFamily: "var(--font-regular)",
       padding: "1.2rem",
       type: "text",
-      placeholder: "搜索关键词",
     }) as HTMLInputElement;
-    this.searchInputElement.setAttribute(
-      "placeholder",
-      window.i18n["text-search"]
-    );
 
     this.searchResultsDiv = this.createElement("div", {
       flex: "1",

@@ -22,22 +22,11 @@ export const fontSizeOptions: CosyDropdownOption[] = [
 export const themeOptions: CosyDropdownOption[] = [
   {
     value: "dark",
-    label: "黑暗模式",
+    label: "Dark",
   },
   {
     value: "light",
-    label: "日间模式",
-  },
-];
-
-export const langOptions: CosyDropdownOption[] = [
-  {
-    value: "zh-CN",
-    label: "简体中文",
-  },
-  {
-    value: "zh-TW",
-    label: "繁体中文",
+    label: "Light",
   },
 ];
 

@@ -13,7 +13,7 @@
             <path d="M7.5 13h5a.5.5 0 0 1 .09.992L12.5 14h-5a.5.5 0 0 1-.09-.992L7.5 13h5h-5zm-2-4h9a.5.5 0 0 1 .09.992L14.5 10h-9a.5.5 0 0 1-.09-.992L5.5 9h9h-9zm-2-4h13a.5.5 0 0 1 .09.992L16.5 6h-13a.5.5 0 0 1-.09-.992L3.5 5h13h-13z" fill="currentColor"></path>
           </g>
         </svg>
-        <span slot="content">筛选</span>
+        <span slot="content"><%- __('text-filter') %></span>
       </cosy-button>
     </div>
     <div class="center">
@@ -21,7 +21,7 @@
       <% if (page.total > 1) { %>
       <div class="pagination">
         <cosy-tooltip>
-          <span slot="content">上一页</span>
+          <span slot="content"><%- __('text-post-count-prev') %></span>
           <cosy-icon bordered <% if (page.current <= 1) { %>disabled<% } %> href="<%- url_for(page.prev_link) %>">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
               <g fill="none">
@@ -32,7 +32,7 @@
         </cosy-tooltip>
         <span class="current"><%= page.current %> <em>/ <%= page.total %></em></span>
         <cosy-tooltip>
-          <span slot="content">下一页</span>
+          <span slot="content"><%- __('text-post-count-next') %></span>
           <cosy-icon bordered <% if (page.current >= page.total) { %>disabled<% } %> href="<%- url_for(page.next_link) %>">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
               <g fill="none">
@@ -43,8 +43,6 @@
         </cosy-tooltip>
       </div>
       <% } %>
-      <!-- 当前文章数量 -->
-      <%- post_counter(page) %>
     </div>
   </header>
 
@@ -66,10 +64,10 @@
         </p>
         <span class="post-date">
           <% if(post.top !==undefined){ %>
-          <cosy-label color="red" bordered>置顶</cosy-label>
+          <cosy-label color="red" bordered><%- __('text-post-top') %></cosy-label>
           <% } %>
           <cosy-tooltip placement="left">
-            <span slot="content">创建于: <%- post.date.format('YYYY-MM-DD HH:mm:ss') %></span>
+            <span slot="content"><%- __('text-post-create') %>: <%- post.date.format('YYYY-MM-DD HH:mm:ss') %></span>
             <%= post.date.format('MMM DD') %>
           </cosy-tooltip>
         </span>

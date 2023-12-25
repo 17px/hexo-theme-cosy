@@ -4,17 +4,15 @@ import { CosyDropdown, CosyDropdownOption, CosyElement } from "@cosy/ui";
 import {
   fontSizeOptions,
   getLabel,
-  langOptions,
   themeOptions,
 } from "./appearance";
 import { APPEARANCE, APPEARANCE_DEFAULT } from "../constant";
 import { getThemeColor } from "../layout/default.setting";
 
 onMounted(() => {
-  const [fontSizeSelector, themeSelector, langSelector] = [
+  const [fontSizeSelector, themeSelector] = [
     "#dd-button-font-size",
-    "#dd-button-theme",
-    "#dd-button-language",
+    "#dd-button-theme"
   ];
   const themeColorSpan = document.querySelector(
     "#theme-color"
@@ -27,7 +25,6 @@ onMounted(() => {
     `${fontSizeSelector} [slot=content]`
   );
   const slotTheme = document.querySelector(`${themeSelector} [slot=content]`);
-  const slotLanguage = document.querySelector(`${langSelector} [slot=content]`);
 
   if (slotTheme) {
     const value =
@@ -47,12 +44,6 @@ onMounted(() => {
       APPEARANCE_DEFAULT.FONT_SIZE;
   }
 
-  if (slotLanguage) {
-    const value =
-      localStorage.getItem(APPEARANCE.LANGUAGE) ?? APPEARANCE_DEFAULT.LANGUAGE;
-    slotLanguage.textContent = getLabel(langOptions, value);
-  }
-
   new CosyDropdown(fontSizeSelector, fontSizeOptions, {
     onClickItem: (item: CosyDropdownOption) => {
       if (slotFontSize) slotFontSize.textContent = String(item.label);
@@ -67,13 +58,6 @@ onMounted(() => {
       localStorage.setItem(APPEARANCE.THEME, item.value);
       document.documentElement.className = "";
       document.documentElement.classList.add(`cosy-theme-${item.value}`);
-    },
-  });
-
-  new CosyDropdown(langSelector, langOptions, {
-    onClickItem: (item: CosyDropdownOption) => {
-      if (slotLanguage) slotLanguage.textContent = String(item.label);
-      localStorage.setItem(APPEARANCE.LANGUAGE, String(item.value));
     },
   });
 });

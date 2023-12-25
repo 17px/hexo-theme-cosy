@@ -2,11 +2,27 @@
   flex: 1;
 
   ul {
-    margin-top: 0;
-    padding: 0 12px;
+    padding-left: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    &:first-of-type {
+      padding-bottom: 20px;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 10px;
+        height: 1px;
+        background: var(--color-border-2);
+        width: 100%;
+      }
+    }
 
     li {
-      margin: 0 auto;
+      margin: 0 13px;
       padding: 0px 6px;
       margin-bottom: 1px;
       border-radius: var(--radius-base, 4px);
@@ -33,11 +49,13 @@
         height: 27px;
         display: flex;
         align-items: center;
+        justify-content: center;
         color: var(--color-font-1);
         text-decoration: none;
 
         svg {
-          width: 16px;
+          width: 20px;
+          height: 20px;
           color: var(--color-font-2);
         }
 
@@ -49,12 +67,6 @@
         }
       }
     }
-  }
-
-  p {
-    font-size: 0.75rem;
-    color: var(--color-font-2);
-    padding-left: 18px;
   }
 
   .nav-items li a div {

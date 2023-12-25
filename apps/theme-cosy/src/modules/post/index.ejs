@@ -9,7 +9,7 @@
       <% if (!!toc(page.content)) { %>
       <cosy-tooltip id="toc-show-button" placement="left">
         <span slot="content">
-          <span>显示 / 隐藏 文章目录</span>
+          <span><%- __('tip-catalog-visible') %></span>
           <cosy-short-key>]</cosy-short-key>
         </span>
         <cosy-icon>
@@ -31,7 +31,7 @@
           <!-- 文章标题 -->
           <h1 class="post-title"><%- page.title %></h1>
           <div class="last-updated">
-            上次更新时间: <%- page.updated.format('YYYY-MM-DD HH:mm:ss') %>
+            <%- __('text-post-last-update') %>: <%- page.updated.format('YYYY-MM-DD HH:mm:ss') %>
           </div>
           <!-- 文章 -->
           <%- page.content %>
@@ -66,7 +66,7 @@
               <span><%- __('text-catalog') %></span>
             </p>
             <span slot="content">
-              <span>隐藏目录</span>
+              <span><%- __('tip-hide-catelog') %></span>
               <cosy-short-key>]</cosy-short-key>
             </span>
           </cosy-tooltip>

@@ -1,14 +1,8 @@
 // 全局引入
 import "@cosy/ui";
 import "@cosy/ui/dist/index.css";
-import {
-  addKeyPress,
-  addListener,
-  globalEventBus,
-  onMounted,
-} from "@cosy/util";
+import { addKeyPress, addListener, onMounted } from "@cosy/util";
 import "./index.less";
-import { CosyElement } from "@cosy/ui";
 import { useDefaultSetting } from "./default.setting";
 import { ASIDE_INVISIBLE_KEY } from "../constant";
 

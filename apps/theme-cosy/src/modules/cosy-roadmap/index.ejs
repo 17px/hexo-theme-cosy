@@ -3,7 +3,7 @@
 <div class="roadmap">
   <div class="bar">
     <cosy-tooltip placement="left">
-      <span slot="content">选择年份</span>
+      <span slot="content"><%- __('tip-select-year') %></span>
       <cosy-button id="year-dropdown">
         <svg slot="prefix" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
           <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -23,7 +23,7 @@
     </cosy-tooltip>
     <cosy-tooltip placement="right">
       <div slot="content">
-        <span>定位到今天</span>
+        <span><%- __('tip-move-today') %></span>
         <cosy-short-key>D</cosy-short-key>
       </div>
       <cosy-icon id="tody-button" bordered>
