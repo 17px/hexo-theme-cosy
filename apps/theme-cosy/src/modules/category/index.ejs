@@ -20,7 +20,7 @@
       <!-- 分页代码 -->
       <% if (page.total > 1) { %>
       <div class="pagination">
-        <cosy-tooltip>
+        <cosy-tooltip placement="bottom-right">
           <span slot="content"><%- __('text-post-count-prev') %></span>
           <cosy-icon bordered <% if (page.current <= 1) { %>disabled<% } %> href="<%- url_for(page.prev_link) %>">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
@@ -31,7 +31,7 @@
           </cosy-icon>
         </cosy-tooltip>
         <span class="current"><%= page.current %> <em>/ <%= page.total %></em></span>
-        <cosy-tooltip>
+        <cosy-tooltip placement="bottom-right">
           <span slot="content"><%- __('text-post-count-next') %></span>
           <cosy-icon bordered <% if (page.current >= page.total) { %>disabled<% } %> href="<%- url_for(page.next_link) %>">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">

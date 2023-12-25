@@ -43,6 +43,9 @@ text-preference-11: parameters are used to control the global theme color
 text-preference-12: Community
 text-preference-13: Feedback
 text-preference-14: I am very fortunate to have been discovered by you. If you have any suggestions or feedback on the topic, please feel free to raise an issue.
+text-select: Select
+text-move: Move
+text-esc: Exit
 
 January: January
 February: February

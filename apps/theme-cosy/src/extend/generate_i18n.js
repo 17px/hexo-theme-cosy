@@ -5,7 +5,9 @@ hexo.extend.helper.register('serialize_i18n', function () {
     "tip-status-todo": this.__('tip-status-todo'),
     "tip-status-doing": this.__('tip-status-doing'),
     "tip-status-other": this.__('tip-status-other'),
-
+    "text-select": this.__('text-select'),
+    "text-move": this.__('text-move'),
+    "text-esc": this.__('text-esc'),
     "January": this.__('January'),
     "February": this.__('February'),
     "March": this.__('March'),

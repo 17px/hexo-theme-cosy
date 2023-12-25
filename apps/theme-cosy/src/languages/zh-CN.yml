@@ -43,6 +43,9 @@ text-preference-11: 参数用于控制全局主题颜色
 text-preference-12: 社区
 text-preference-13: 反馈
 text-preference-14: 非常有幸被您发现，如果您对主题有任何建议、反馈，来提 issue。
+text-select: 选择
+text-move: 移动
+text-esc: 退出
 
 
 January: 一月
