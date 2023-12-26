@@ -1,0 +1,82 @@
+<!-- inject:css -->
+<div class="preference cosy-scrollbar">
+  <main>
+    <h1><%- __('text-preference') %></h1>
+    <p><%- __('text-preference-1') %></p>
+    <h2><%- __('text-preference-2') %></h2>
+    <section>
+      <div>
+        <h3><%- __('text-preference-3') %></h3>
+        <p><%- __('text-preference-4') %></p>
+      </div>
+      <cosy-button id="dd-button-font-size">
+        <svg slot="suffix" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+          <g fill="none">
+            <path d="M15.854 7.646a.5.5 0 0 1 .001.707l-5.465 5.484a.55.55 0 0 1-.78 0L4.147 8.353a.5.5 0 1 1 .708-.706L10 12.812l5.147-5.165a.5.5 0 0 1 .707-.001z" fill="currentColor"></path>
+          </g>
+        </svg>
+        <span slot="content">13px</span>
+      </cosy-button>
+    </section>
+    <section>
+      <div>
+        <h3><%- __('text-preference-5') %></h3>
+        <p><%- __('text-preference-6') %></p>
+      </div>
+      <cosy-label size="large" color="green" bordered>
+        <span><%- blog_language() %></span>
+      </cosy-label>
+    </section>
+    <cosy-divider></cosy-divider>
+    <h2><%- __('text-preference-7') %></h2>
+    <section>
+      <div>
+        <h3><%- __('text-preference-8') %></h3>
+        <p><%- __('text-preference-9') %></p>
+      </div>
+      <cosy-button id="dd-button-theme">
+        <svg slot="suffix" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+          <g fill="none">
+            <path d="M15.854 7.646a.5.5 0 0 1 .001.707l-5.465 5.484a.55.55 0 0 1-.78 0L4.147 8.353a.5.5 0 1 1 .708-.706L10 12.812l5.147-5.165a.5.5 0 0 1 .707-.001z" fill="currentColor"></path>
+          </g>
+        </svg>
+        <span slot="content">Dark</span>
+      </cosy-button>
+    </section>
+    <section>
+      <div>
+        <h3><%- __('text-preference-10') %></h3>
+        <p>
+          <cosy-label color="red">_config.yml->color</cosy-label> <%- __('text-preference-11') %>
+        </p>
+      </div>
+      <cosy-tooltip placement="left" id="theme-color-tip">
+        <span slot="content"></span>
+        <cosy-label bordered>
+          <span id="theme-color"></span>
+        </cosy-label>
+      </cosy-tooltip>
+    </section>
+    <cosy-divider></cosy-divider>
+    <h2><%- __('text-preference-12') %></h2>
+    <section>
+      <div>
+        <h3><%- __('text-preference-13') %></h3>
+        <p><%- __('text-preference-14') %></p>
+      </div>
+      <cosy-tooltip placement="left">
+        <span slot="content">Github Issue</span>
+        <cosy-icon blank href="https://github.com/17px/hexo-theme-cosy/issues">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+            <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="1"></circle>
+              <circle cx="12" cy="12" r="9"></circle>
+            </g>
+          </svg>
+        </cosy-icon>
+      </cosy-tooltip>
+    </section>
+
+  </main>
+</div>
+<!-- inject:js -->

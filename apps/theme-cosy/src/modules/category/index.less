@@ -1,0 +1,131 @@
+.category {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  > header {
+    padding: 0 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 57px;
+    border-bottom: 1px solid var(--color-border);
+
+    .left {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .center {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+
+      .pagination {
+        font-size: calc(var(--font-size) * 0.9);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        .current em {
+          font-style: normal;
+          color: var(--color-font-2);
+        }
+      }
+
+      .post-num {
+        font-size: calc(var(--font-size) * 0.8);
+        color: var(--color-font-2);
+      }
+    }
+  }
+
+  .post-list {
+    flex: 1;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+
+    li {
+      list-style: none;
+      border-bottom: 1px solid var(--color-border-3);
+
+      &:hover {
+        background: var(--color-bg-hover);
+      }
+
+      &.selected {
+        background: var(--color-bg-hover);
+      }
+
+      a {
+        padding: 12px;
+        display: flex;
+        align-items: center;
+        color: var(--color-font);
+        text-decoration: none;
+        gap: 12px;
+
+        p {
+          padding-right: 20px;
+          margin: 0;
+          font-size: calc(var(--font-size) * 0.9);
+          flex: 1;
+        }
+
+        .post-date {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          color: var(--color-font-2);
+          font-size: 12px;
+
+          b {
+            font-weight: 500;
+          }
+
+          em {
+            font-style: normal;
+          }
+        }
+      }
+    }
+
+    .color-circle {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: 1px solid;
+
+      &.color-1 {
+        border-color: #ff453a;
+      }
+
+      &.color-2 {
+        border-color: #ff9f0a;
+      }
+
+      &.color-3 {
+        border-color: #ffd60a;
+      }
+
+      &.color-4 {
+        border-color: #32d74b;
+      }
+
+      &.color-5 {
+        border-color: #0a84ff;
+      }
+
+      &.color-6 {
+        border-color: #bf5af2;
+      }
+
+      &.color-7 {
+        border-color: #8e8e93;
+      }
+    }
+  }
+}

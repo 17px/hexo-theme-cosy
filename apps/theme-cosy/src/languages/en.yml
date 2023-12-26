@@ -1,0 +1,61 @@
+# tip
+tip-left-aside-visible: Show / Hide Left Navigation
+tip-status-done: Done
+tip-status-default: All
+tip-status-todo: Todo
+tip-status-doing: Doing
+tip-status-other: Other
+tip-move-today: Move to today
+tip-select-year: Select yyyy
+tip-home: Home
+tip-hide-catelog: Hide Table of Contents
+tip-catalog-visible: Show / Hide Table of Contents
+
+# text
+text-preference: Preference
+text-archives: Archives
+text-cosy-roadmap: Roadmap
+text-cosy-resume: Resume
+text-category: Category
+text-search-placeholder: Search
+text-education: Education
+text-workExp: Experience
+text-project: Project
+text-portfolio: Portfolio
+text-filter: Filter
+text-post-count-prev: Prev Page
+text-post-count-next: Next Page
+text-post-top: Top
+text-post-create: Created
+text-post-last-update: Last updated
+text-catalog: Catalog
+text-preference-1: Manage your preferences
+text-preference-2: Appearance
+text-preference-3: Font Size
+text-preference-4: Global font size
+text-preference-5: Language
+text-preference-6: Global interface display language
+text-preference-7: Theme
+text-preference-8: Theme Style
+text-preference-9: Choose the style of the website theme
+text-preference-10: Theme color
+text-preference-11: parameters are used to control the global theme color
+text-preference-12: Community
+text-preference-13: Feedback
+text-preference-14: I am very fortunate to have been discovered by you. If you have any suggestions or feedback on the topic, please feel free to raise an issue.
+text-select: Select
+text-move: Move
+text-esc: Exit
+
+January: January
+February: February
+March: March
+April: April
+May: May
+June: June
+July: July
+August: August
+September: September
+October: October
+November: November
+December: December

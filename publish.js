@@ -4,7 +4,7 @@ const { version } = require('./package.json')
 
 async function main() {
 
-  const sourceDir = path.join(__dirname, 'apps/dockyard/build/hexo-theme-cosy');
+  const sourceDir = path.join(__dirname, 'apps/theme-cosy/build/hexo-theme-cosy');
   const targetDir = path.join(__dirname, 'release/hexo-theme-cosy');
 
   // 复制文件

@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "outDir": "dist", // 指定输出目录
+    "target": "es2015",
+    "module": "ESNext",
+    "lib": [
+      "dom",
+      "es2015",
+      "es2017",
+      "esnext"
+    ],
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "moduleResolution": "node"
+  },
+  "include": [
+    "src/**/*"
+  ]
+}

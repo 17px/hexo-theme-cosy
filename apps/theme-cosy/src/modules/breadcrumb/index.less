@@ -1,0 +1,28 @@
+.breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  font-size: calc(var(--font-size) * 0.9);
+  gap: 24px;
+
+  > section {
+    display: inline-flex;
+    align-items: center;
+    font-size: calc(var(--font-size) * 0.9);
+
+    a {
+      color: var(--color-font-2);
+      text-decoration: none;
+
+      &:hover {
+        color: var(--color-font);
+      }
+    }
+
+    .arrow {
+      margin: 0 6px;
+      color: var(--color-font-2);
+      width: 12px;
+      height: 12px;
+    }
+  }
+}

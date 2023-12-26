@@ -1,0 +1,81 @@
+<!-- inject:css -->
+
+<% var sortedPosts=sort_posts_by_top(page.posts.toArray()); %>
+
+<div class="category">
+  <header>
+    <div class="left">
+      <%- partial('breadcrumb') %>
+      <!-- 筛选 -->
+      <cosy-button type="dashed" id="filter-button">
+        <svg slot="prefix" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+          <g fill="none">
+            <path d="M7.5 13h5a.5.5 0 0 1 .09.992L12.5 14h-5a.5.5 0 0 1-.09-.992L7.5 13h5h-5zm-2-4h9a.5.5 0 0 1 .09.992L14.5 10h-9a.5.5 0 0 1-.09-.992L5.5 9h9h-9zm-2-4h13a.5.5 0 0 1 .09.992L16.5 6h-13a.5.5 0 0 1-.09-.992L3.5 5h13h-13z" fill="currentColor"></path>
+          </g>
+        </svg>
+        <span slot="content"><%- __('text-filter') %></span>
+      </cosy-button>
+    </div>
+    <div class="center">
+      <!-- 分页代码 -->
+      <% if (page.total > 1) { %>
+      <div class="pagination">
+        <cosy-tooltip placement="bottom-right">
+          <span slot="content"><%- __('text-post-count-prev') %></span>
+          <cosy-icon bordered <% if (page.current <= 1) { %>disabled<% } %> href="<%- url_for(page.prev_link) %>">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+              <g fill="none">
+                <path d="M4.147 12.353a.5.5 0 0 1-.001-.707L9.61 6.162a.55.55 0 0 1 .779 0l5.465 5.484a.5.5 0 0 1-.708.706L10 7.188l-5.146 5.164a.5.5 0 0 1-.707.001z" fill="currentColor"></path>
+              </g>
+            </svg>
+          </cosy-icon>
+        </cosy-tooltip>
+        <span class="current"><%= page.current %> <em>/ <%= page.total %></em></span>
+        <cosy-tooltip placement="bottom-right">
+          <span slot="content"><%- __('text-post-count-next') %></span>
+          <cosy-icon bordered <% if (page.current >= page.total) { %>disabled<% } %> href="<%- url_for(page.next_link) %>">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+              <g fill="none">
+                <path d="M15.854 7.646a.5.5 0 0 1 .001.707l-5.465 5.484a.55.55 0 0 1-.78 0L4.147 8.353a.5.5 0 1 1 .708-.706L10 12.812l5.147-5.165a.5.5 0 0 1 .707-.001z" fill="currentColor"></path>
+              </g>
+            </svg>
+          </cosy-icon>
+        </cosy-tooltip>
+      </div>
+      <% } %>
+    </div>
+  </header>
+
+  <!-- 分类文章列表 -->
+  <ul class="post-list cosy-scrollbar">
+    <% sortedPosts.forEach(function(post){ %>
+    <li data-status="<%= post.status %>">
+      <a href="<%- url_for(post.path) %>">
+        <% if(post.status !==undefined){ %>
+        <%- post_icon(post,'status') %>
+        <% } %>
+        <p class="ellipsis">
+          <span><%- post.title %></span>
+          <!-- <cosy-tooltip placement="bottom-left" max-width="250px">
+            <span slot="content"><%- generate_excerpt(post.content, 60) %></span>
+            <span></span>
+          </cosy-tooltip> -->
+
+        </p>
+        <span class="post-date">
+          <% if(post.top !==undefined){ %>
+          <cosy-label color="red" bordered><%- __('text-post-top') %></cosy-label>
+          <% } %>
+          <cosy-tooltip placement="left">
+            <span slot="content"><%- __('text-post-create') %>: <%- post.date.format('YYYY-MM-DD HH:mm:ss') %></span>
+            <%= post.date.format('MMM DD') %>
+          </cosy-tooltip>
+        </span>
+      </a>
+    </li>
+    <% }) %>
+  </ul>
+
+</div>
+
+<!-- inject:js -->

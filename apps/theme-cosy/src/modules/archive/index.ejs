@@ -1,0 +1,42 @@
+<!-- inject:css -->
+
+<% var archive = {}; %>
+<% site.posts.sort('-date').forEach(function(post){
+   var year = post.date.year();
+   if (!archive[year]) archive[year] = []
+   archive[year].push(post);
+}); %>
+
+<div class="archive cosy-scrollbar">
+  <ul>
+    <% for(var key in archive) { %>
+    <li>
+      <h2><%= key %></h2>
+      <ul class="timeline">
+        <% archive[key].forEach(function(post){ %>
+        <li>
+          <a class="timeline-item" href="<%- url_for(post.path) %>">
+            <div class="timeline-info">
+              <% if(post.status !==undefined){ %>
+              <%- post_icon(post,'status') %>
+              <% } %>
+              <span><%= post.date.format('MM-DD HH:mm:ss') %></span>
+            </div>
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-title ellipsis">
+
+                <span><%= post.title %></span>
+              </div>
+              <p><%= generate_excerpt(post.content, 100) %>...</p>
+            </div>
+          </a>
+        </li>
+        <% }) %>
+      </ul>
+    </li>
+    <% } %>
+  </ul>
+</div>
+
+<!-- inject:js -->

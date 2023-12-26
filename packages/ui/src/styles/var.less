@@ -1,0 +1,242 @@
+:root {
+  --color-yellow: hsl(45, 86%, 62%);
+  --color-orange: hsl(28, 87%, 62%);
+  --color-green: hsl(150, 43%, 51%);
+  --color-teal: hsl(184, 100%, 37%);
+  --color-red: hsl(0, 79%, 63%);
+  --color-blue: hsl(209, 97%, 65%);
+  --color-red-light: hsl(1, 94%, 68%);
+  --color-grey: hsl(214, 16%, 64%);
+
+  --font-regular: "linear", "Inter UI", "SF Pro Display", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    "Open Sans", "Helvetica Neue", sans-serif;
+
+  --font-size: 13px;
+  --base-hue: 238; /* 色相 */
+  --base-saturation: 50%; /* 饱和度 */
+  --base-lightness: 56%; /* 亮度 */
+
+  // 主色调
+  --color-primary: hsl(
+    var(--base-hue),
+    var(--base-saturation),
+    var(--base-lightness)
+  );
+  --color-primary-1: hsl(
+    var(--base-hue),
+    var(--base-saturation),
+    calc(var(--base-lightness) * 0.8)
+  );
+  --color-primary-2: hsl(
+    calc(var(--base-hue) - 5),
+    calc(var(--base-saturation) - 17%),
+    calc(var(--base-lightness) - 24%)
+  );
+  --color-primary-3: hsl(
+    calc(var(--base-hue) - 5),
+    calc(var(--base-saturation) - 18%),
+    calc(var(--base-lightness) - 32%)
+  );
+  --color-primary-4: hsl(
+    var(--base-hue),
+    calc(var(--base-saturation) - 18%),
+    calc(var(--base-lightness) - 36%)
+  );
+}
+
+.cosy-theme-dark {
+  --color-bg: hsl(234, 17%, 12%);
+  --color-bg-2: hsl(235, 13%, 22%);
+  --color-bg-3: hsl(236, 9%, 19%);
+  --color-body-bg: linear-gradient(
+    to bottom right,
+    hsl(235, 13%, 18%) 0%,
+    hsl(234, 17%, 12%) 50%
+  );
+  --color-bg-hover: hsla(237, 19%, 24%, 0.7);
+  --color-bg-hover-1: hsla(237, 19%, 24%, 0.8);
+  --color-frost-bg: blur(10px) saturate(190%) contrast(70%) brightness(80%);
+
+  // 水平垂直拖拽容器触发颜色
+  --color-dragger: hsl(237, 20%, 22%);
+  // 边框
+  --color-border: hsl(237, 16%, 28%);
+  --color-border-2: hsla(237, 16%, 28%, 0.5);
+  --color-border-3: hsla(237, 16%, 28%, 0.3);
+  // 滚动条
+  --width-scrollbar: 12px;
+  --color-scrollbar: hsl(237, 19%, 24%);
+  --color-scrollbar-hover: hsl(218, 5%, 44%);
+
+  // 文字
+  --color-font: hsl(0, 0%, 100%);
+  --color-font-1: hsl(236, 18%, 85%);
+  --color-font-2: hsl(245, 12%, 59%);
+  // 文字选中背景色
+  --color-selection-bg: hsl(calc(238 - 5), calc(50% - 17%), calc(56% - 20%));
+  // 图标
+  --color-icon: hsl(237, 9%, 56%);
+  --color-icon-hover: hsl(236, 18%, 85%);
+
+  /* button */
+  --color-button-font: hsl(237, 9%, 56%);
+  --color-button-font-hover: hsl(236, 18%, 85%);
+  --color-button-border: hsl(237, 16%, 28%);
+  --color-button-border-hover: hsl(236, 15%, 36%);
+  --color-button-bg: hsl(237, 20%, 22%);
+  --color-button-bg-hover: hsl(237, 19%, 24%);
+
+  /* short-key */
+  --color-short-key-bg: hsl(237, 16%, 28%);
+  --color-short-key-font: hsl(235, 24%, 90%);
+
+  /* search */
+  --color-search-bg: hsl(237, 20%, 22%);
+  --color-search-bg-hover: hsl(237, 20%, 22%);
+  --color-search-font: hsl(235, 24%, 90%);
+  --color-search-border: hsl(237, 19%, 24%);
+  --color-search-border-hover: hsl(236, 15%, 36%);
+
+  /* switch */
+  --color-switch-bg: hsl(237, 16%, 28%);
+  --color-switch-bg-checked: hsl(237, 16%, 28%);
+  --color-switch-font-checked: var(--color-orange); /* Keeping as it is */
+  --color-switch-border: hsl(237, 19%, 24%);
+  --color-switch-border-hover: hsl(236, 15%, 36%);
+  --color-switch-track-bg: hsl(234, 17%, 12%);
+  --color-switch-track-bg-checked: hsl(237, 20%, 22%);
+
+  /* dropdown */
+  --color-dropdown-hover: hsl(237, 16%, 28%);
+  --color-dropdown-bg: hsla(237, 20%, 22%, 0.6);
+  --color-dropdown-border: hsl(237, 16%, 28%);
+  --color-dropdown-shadow: rgba(0, 0, 0, 0.2) 0px 4px 24px; /* Using rgba as is */
+
+  /* tooltip */
+  --color-tooltip-bg: hsla(237, 20%, 22%, 0.9);
+  --color-tooltip-border: hsl(237, 16%, 28%);
+
+  /* divider */
+  --color-border-divider: hsl(237, 16%, 28%);
+
+  /* popup */
+  --color-popup-mask-bg: hsla(245, 12%, 59%, 0.05);
+  --color-popup-bg: hsla(236, 19%, 14%, 0.8);
+  --color-popup-border: hsla(237, 16%, 28%, 0.44);
+
+  /* label */
+  --color-label-font: hsl(237, 9%, 56%);
+  --color-label-font-hover: hsl(236, 18%, 85%);
+  --color-label-bg: hsl(237, 20%, 22%);
+  --color-label-border: hsl(237, 16%, 28%);
+  --color-label-border-hover: hsl(236, 15%, 36%);
+
+  /* card */
+  --color-radial-before: hsla(255, 255, 255, 0.06);
+  --color-radial-after: hsla(255, 255, 255, 0.4);
+
+}
+
+.cosy-theme-light {
+  --color-bg: hsl(0, 0%, 100%);
+  --color-bg-2: hsl(0, 0%, 96%);
+  --color-bg-3: hsl(0, 0%, 92%);
+  --color-body-bg: linear-gradient(
+    to bottom right,
+    hsl(0, 0%, 100%) 0%,
+    hsl(0, 0%, 100%) 10%
+  );
+  --color-bg-hover: hsl(220, 43%, 96%);
+  --color-bg-hover-1: hsl(220, 43%, 66%);
+  --color-frost-bg: blur(10px) saturate(190%) contrast(70%) brightness(80%);
+
+  // 水平垂直拖拽容器触发颜色
+  --color-dragger: rgb(231, 231, 231);
+  // 边框
+  --color-border: rgb(233, 233, 233);
+  --color-border-2: rgba(233, 233, 233, 0.8);
+  --color-border-3: rgba(233, 233, 233, 0.6);
+  // 滚动条
+  --width-scrollbar: 12px;
+  --color-scrollbar: hsla(237, 19%, 24%, 0.2);
+  --color-scrollbar-hover: hsl(218, 5%, 74%);
+
+  // 文字
+  --color-font: hsl(0, 0%, 11%);
+  --color-font-1: hsla(223, 12%, 11%, 0.9);
+  --color-font-2: hsla(223, 12%, 11%, 0.6);
+  // 文字选中背景色
+  --color-selection-bg: hsla(223, 12%, 11%, 0.1);
+  // 图标
+  --color-icon: rgb(107, 111, 118);
+  --color-icon-hover: rgb(60, 65, 73);
+
+  /* button */
+  --color-button-font: var(--color-font-1);
+  --color-button-font-hover: var(--color-font);
+  --color-button-border: var(--color-border-2);
+  --color-button-border-hover: hsla(237, 16%, 28%, 0.24);
+  --color-button-bg: hsla(0, 0%, 100%, 0.9);
+  --color-button-bg-hover: hsla(0, 0%, 100%, 1);
+
+  /* short-key */
+  --color-short-key-bg: hsl(0, 0%, 92%);
+  --color-short-key-font: var(--color-font-2);
+
+  /* search */
+  --color-search-bg: hsla(0, 0%, 100%, 0.9);
+  --color-search-bg-hover: hsla(0, 0%, 100%, 1);
+  --color-search-font: var(--color-font-1);
+  --color-search-border: var(--color-border-3);
+  --color-search-border-hover: hsla(237, 16%, 28%, 0.24);
+
+  /* switch */
+  --color-switch-bg: hsla(0, 0%, 90%, 1);
+  --color-switch-bg-checked: hsl(237, 16%, 28%);
+  --color-switch-font-checked: var(--color-orange); /* Keeping as it is */
+  --color-switch-border: var(--color-border-2);
+  --color-switch-border-hover: hsla(237, 16%, 28%, 0.24);
+  --color-switch-track-bg: hsla(0, 0%, 100%, 0.9);
+  --color-switch-track-bg-checked: hsla(0, 0%, 100%, 0.6);
+
+  /* dropdown */
+  --color-dropdown-bg: hsla(0, 0%, 100%, 0.9);
+  --color-dropdown-hover: hsla(0, 0%, 90%, 1);
+  --color-dropdown-border: var(--color-border);
+  --color-dropdown-shadow: rgba(0, 0, 0, 0.1) 0px 4px 24px;
+
+  /* tooltip */
+  --color-tooltip-bg: hsla(0, 0%, 100%, 0.9);
+  --color-tooltip-border: var(--color-border);
+
+  /* divider */
+  --color-border-divider: hsl(237, 16%, 28%);
+
+  /* popup */
+  --color-popup-mask-bg: hsla(0, 0, 100%, 0.5);
+  --color-popup-bg: hsla(0, 0, 100%, 0.9);
+  --color-popup-border: var(--color-border-2);
+
+  /* label */
+  --color-label-font: var(--color-font-2);
+  --color-label-font-hover: var(--color-font);
+  --color-label-bg: hsl(0, 0%, 96%);
+  --color-label-border: var(--color-border-2);
+  --color-label-border-hover: hsla(237, 16%, 28%, 0.24);
+
+  /* card */
+  --color-radial-before: hsla(
+    var(--base-hue),
+    var(--base-saturation),
+    var(--base-lightness),
+    0.06
+  );
+  --color-radial-after: hsla(
+    var(--base-hue),
+    var(--base-saturation),
+    var(--base-lightness),
+    0.4
+  );
+
+}

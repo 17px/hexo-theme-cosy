@@ -1,0 +1,29 @@
+{
+  "name": "@cosy/ui",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "types": "dist/index.d.ts",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "rollup -c -w",
+    "build": "rollup -c"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@cosy/util": "workspace:*"
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^11.1.5",
+    "lit": "^3.1.0",
+    "rollup": "^4.5.1",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-scss": "^4.0.0",
+    "typescript": "^5.2.2",
+    "rollup-plugin-delete": "2.0.0",
+    "tslib": "2.6.2",
+    "@types/node": "20.10.3"
+  }
+}

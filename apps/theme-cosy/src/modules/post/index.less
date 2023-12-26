@@ -1,0 +1,199 @@
+// @import './prism/prism-one-light.less';
+@import "./prism/prism-line-number.less";
+@import "./article.less";
+
+.post-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  > header {
+    padding: 0 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 57px;
+    border-bottom: 1px solid var(--color-border);
+
+    .left {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+  }
+
+  .content {
+    position: relative;
+    flex: 1;
+    display: flex;
+    min-width: 0px;
+    overflow-y: hidden;
+
+    > main {
+      flex: 1;
+
+      .article-container {
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 860px;
+        flex-grow: 1;
+
+        > article {
+          display: flex;
+          flex-direction: column;
+          flex: 1;
+
+          .last-updated {
+            padding-bottom: 24px;
+            font-size: calc(var(--font-size) * 0.9);
+            color: var(--color-font-2);
+          }
+          .post-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+          }
+        }
+      }
+
+      .vwrap,
+      .vbtn,
+      .vinput {
+        border-color: var(--color-border);
+        border-bottom-color: var(--color-border);
+      }
+    }
+  }
+
+  #toc-drag-box {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--color-bg);
+    z-index: 10;
+    overflow: hidden;
+
+    .meta-container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+
+      > header {
+        min-height: 57px;
+        padding-left: 2rem;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid var(--color-border-2);
+      }
+
+      .toc-wrapper {
+        display: flex;
+        flex-direction: column;
+        padding: 0 1rem;
+        flex: 1;
+        margin: 0;
+
+        cosy-tooltip {
+          display: inline-flex;
+
+          .catalog {
+            display: inline-flex;
+            align-items: center;
+            color: var(--color-font-3);
+
+            svg {
+              width: 16px;
+              height: 16px;
+            }
+
+            span {
+              font-size: 13px;
+              padding-left: 8px;
+            }
+          }
+        }
+
+        ol {
+          margin: 0;
+          padding-left: 0;
+          list-style: none;
+        }
+
+        .toc {
+          position: relative;
+          overflow-y: auto;
+          flex: 1;
+          margin: 0;
+
+          > li {
+            &:first-of-type {
+              margin-top: 1.5rem;
+            }
+
+            &:last-of-type {
+              margin-bottom: 1.5rem;
+            }
+          }
+
+          &::-webkit-scrollbar {
+            display: none;
+          }
+
+          .toc-item {
+            a {
+              position: relative;
+              display: block;
+              line-height: 2rem;
+              text-decoration: none;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              border-radius: var(--radius-base, 4px);
+              font-size: calc(var(--font-size) * 0.9);
+
+              &:hover {
+                background: var(--color-bg-hover);
+              }
+
+              &.active {
+                background: var(--color-bg-hover);
+                color: var(--color-primary);
+              }
+            }
+          }
+
+          .toc-level-1 {
+            a {
+              padding-left: 1rem;
+              color: var(--color-font-1);
+            }
+          }
+
+          .toc-level-2 {
+            a {
+              padding-left: 2rem;
+              color: var(--color-font-2);
+            }
+          }
+
+          .toc-level-3 {
+            a {
+              padding-left: 3rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .motto {
+    font-family: "motto";
+    font-size: calc(var(--font-size) * 1.2);
+  }
+}

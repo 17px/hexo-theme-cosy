@@ -1,0 +1,31 @@
+.profile {
+  height: 57px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .badge {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 8px;
+
+    span {
+      font-size: 13px;
+      color: var(--color-font);
+
+      &:first-of-type {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        padding: 2px;
+        border-radius: var(--radius-base, 4px);
+        width: 20px;
+        height: 20px;
+        background: var(--color-primary);
+        font-size: 12px;
+      }
+    }
+  }
+}

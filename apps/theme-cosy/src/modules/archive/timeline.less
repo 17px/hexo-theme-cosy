@@ -1,0 +1,109 @@
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+
+  li:last-of-type .timeline-item {
+    padding-bottom: 0;
+  }
+
+  .timeline-item {
+    display: block;
+    padding-left: 40px;
+    padding-bottom: 40px;
+    position: relative;
+    text-decoration: none;
+    color: var(--color-font-2);
+
+    .timeline-info {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      padding-top: 2px;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .timeline-marker {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 15px;
+
+      &:last-child {
+        &:after {
+          content: none;
+        }
+      }
+
+      &:before {
+        background: transparent;
+        border: 2px solid var(--color-primary);
+        border-radius: 100%;
+        content: "";
+        display: block;
+        height: 8px;
+        width: 8px;
+        position: absolute;
+        top: 5.5px;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: background 0.3s ease-in-out, border 0.3s ease-in-out;
+      }
+
+      &:after {
+        content: "";
+        width: 1px;
+        background: var(--color-border);
+        display: block;
+        position: absolute;
+        top: 24px;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    .timeline-content {
+      .timeline-title {
+        padding: 12px 0;
+        margin: 0;
+        font-size: 16px;
+        font-weight: 400;
+        color: var(--color-font-1);
+        transition: color 0.3s ease-in-out, border 0.3s ease-in-out;
+
+        span {
+          line-height: 1.5;
+        }
+      }
+
+      p {
+        margin: 0;
+        color: var(--color-font-2);
+        line-height: 1.5;
+        font-size: calc(var(--font-size) * 0.9);
+        text-align: justify;
+        transition: color 0.3s ease-in-out, border 0.3s ease-in-out;
+      }
+    }
+
+    &:hover {
+      .timeline-marker:before {
+        background: var(--color-primary);
+      }
+
+      .timeline-content {
+        .timeline-title {
+          color: var(--color-font);
+        }
+
+        p {
+          color: var(--color-font-1);
+        }
+      }
+    }
+  }
+}

@@ -43,19 +43,29 @@ render_drafts: false
 post_asset_folder: false
 relative_link: false
 future: true
-highlight:
-  enable: false
-  line_number: true
-  auto_detect: false
-  tab_replace: ""
-  wrap: true
-  hljs: false
+
+# v7.0.0
+syntax_highlighter: prismjs
 prismjs:
-  enable: true
   preprocess: true
   line_number: true
   line_threshold: 0
-  tab_replace: ""
+  tab_replace: ''
+
+# v6.3.0
+# highlight:
+#   enable: false
+#   line_number: true
+#   auto_detect: false
+#   tab_replace: ""
+#   wrap: true
+#   hljs: false
+# prismjs:
+#   enable: true
+#   preprocess: true
+#   line_number: true
+#   line_threshold: 0
+#   tab_replace: ""
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
@@ -108,10 +118,10 @@ deploy:
 
 # search service
 algolia:
-  appId: yourAlgoliaAppId
-  apiKey: yourAlgoliaApiKey
-  adminApiKey: yourAlgoliaAdminApiKey
-  SearchOnlyAPIKey: yourAlgoliaSearchOnlyAPIKey
+  # appId: yourAlgoliaAppId
+  # apiKey: yourAlgoliaApiKey
+  # adminApiKey: yourAlgoliaAdminApiKey
+  # SearchOnlyAPIKey: yourAlgoliaSearchOnlyAPIKey
   chunkSize: 5000
   indexName: hex-blog
   fields:

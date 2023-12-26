@@ -1,0 +1,95 @@
+#gantt-container {
+  cursor: grab;
+
+  &::before {
+    content: '';
+    position: sticky;
+    left: 0;
+    right: 0;
+    top: 60px;
+    height: 1px;
+    background: var(--color-border-2);
+  }
+
+  .timeline-container {
+    white-space: nowrap;
+    position: relative;
+    user-select: none;
+
+    .months-row,
+    .days-row {
+      position: relative;
+      height: 30px;
+    }
+
+    .month {
+      font-size: 12px;
+    }
+
+    .day {
+      &:not(:first-of-type) {
+        transform: translateX(-50%);
+      }
+
+      font-size: 13px;
+    }
+
+    .month,
+    .day {
+      position: absolute;
+      text-align: center;
+      height: 30px;
+      line-height: 30px;
+      color: var(--color-font-2);
+
+      &.today {
+        position: relative;
+
+        &::before {
+          position: absolute;
+          content: '';
+          left: 50%;
+          transform: translateX(-50%);
+          width: 8px;
+          height: 8px;
+          top: -4px;
+          border-radius: 50%;
+          background-color: var(--color-primary); // 你想要的颜色
+        }
+      }
+    }
+  }
+
+  .task-container {
+    flex: 1;
+    position: relative;
+
+    .task-bar {
+      position: relative;
+      padding: 0 10px;
+      border-radius: var(--radius-base, 4px);
+      z-index: 10;
+      color: var(--color-font);
+
+      &.expired {
+        opacity: .6;
+        background: linear-gradient(to right, var(--color-grey), transparent);
+      }
+
+      &.doing {
+        background: linear-gradient(to right, var(--color-red), transparent);
+      }
+
+      &.todo {
+        opacity: .6;
+        background: linear-gradient(to right, var(--color-green), transparent);
+      }
+
+      &:hover {
+        cursor: pointer;
+        background: linear-gradient(to right, var(--color-teal), transparent);
+      }
+
+    }
+  }
+}

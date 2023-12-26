@@ -1,0 +1,32 @@
+<!-- inject:css -->
+
+<div class="tags-container cosy-scrollbar">
+  <div class="content">
+    <h2>
+      <cosy-label color="red"><%= page.tag %></cosy-label>
+    </h2>
+    <ul class="timeline">
+      <% page.posts.each(function(post) { %>
+      <li>
+        <a class="timeline-item" href="<%- url_for(post.path) %>">
+          <div class="timeline-info">
+            <% if(post.status !==undefined){ %>
+            <%- post_icon(post,'status') %>
+            <% } %>
+            <span><%= post.date.format('MM-DD HH:mm:ss') %></span>
+          </div>
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-title ellipsis">
+              <span><%= post.title %></span>
+            </div>
+            <p><%= generate_excerpt(post.content, 100) %>...</p>
+          </div>
+        </a>
+      </li>
+      <% }); %>
+    </ul>
+  </div>
+</div>
+
+<!-- inject:js -->

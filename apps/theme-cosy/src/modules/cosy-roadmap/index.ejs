@@ -1,0 +1,48 @@
+<!-- inject:css -->
+
+<div class="roadmap">
+  <div class="bar">
+    <cosy-tooltip placement="left">
+      <span slot="content"><%- __('tip-select-year') %></span>
+      <cosy-button id="year-dropdown">
+        <svg slot="prefix" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+          <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11.795 21H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"></path>
+            <circle cx="18" cy="18" r="4"></circle>
+            <path d="M15 3v4"></path>
+            <path d="M7 3v4"></path>
+            <path d="M3 11h16"></path>
+            <path d="M18 16.496V18l1 1"></path>
+          </g>
+        </svg>
+        <span slot="content"><%= page.initYear %></span>
+        <svg slot="suffix" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+          <path d="M6 9l6 6l6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </cosy-button>
+    </cosy-tooltip>
+    <cosy-tooltip placement="right">
+      <div slot="content">
+        <span><%- __('tip-move-today') %></span>
+        <cosy-short-key>D</cosy-short-key>
+      </div>
+      <cosy-icon id="tody-button" bordered>
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+          <g fill="none">
+            <path d="M14.5 3A2.5 2.5 0 0 1 17 5.5v9a2.5 2.5 0 0 1-2.5 2.5h-3v-1h3a1.5 1.5 0 0 0 1.5-1.5V7H4v7.5A1.5 1.5 0 0 0 5.5 16h3v1h-3A2.5 2.5 0 0 1 3 14.5v-9A2.5 2.5 0 0 1 5.5 3h9zm0 1h-9A1.5 1.5 0 0 0 4 5.5V6h12v-.5A1.5 1.5 0 0 0 14.5 4zM11 9a1 1 0 1 1-2 0a1 1 0 0 1 2 0zm.884 5.07a.5.5 0 0 1-.704.064l-.68-.566V17.5a.5.5 0 1 1-1 0v-3.932l-.68.566a.5.5 0 0 1-.64-.768l1.5-1.25a.5.5 0 0 1 .64 0l1.5 1.25a.5.5 0 0 1 .064.704z" fill="currentColor"></path>
+          </g>
+        </svg>
+      </cosy-icon>
+    </cosy-tooltip>
+  </div>
+  <div id="gantt-container" class="cosy-scrollbar"></div>
+</div>
+
+
+<script>
+  window.roadmapYears = JSON.parse('<%- road_to_json(page.years) %>')
+  window.initYear = '<%= page.initYear %>'
+</script>
+
+
+<!-- inject:js -->

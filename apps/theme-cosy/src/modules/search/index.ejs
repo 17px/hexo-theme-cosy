@@ -1,0 +1,19 @@
+<!-- inject:css -->
+
+<% if(theme.search){ %>
+<cosy-search id="post-search" placeholder="<%- __('text-search-placeholder')%>">
+  <div slot="short-key">
+    <cosy-short-key>⌘</cosy-short-key>
+    <cosy-short-key>K</cosy-short-key>
+  </div>
+</cosy-search>
+<% } %>
+
+<script>
+  window.algolia = {
+    appId: "<%- config.algolia.appId %>",
+    SearchOnlyAPIKey: "<%- config.algolia.SearchOnlyAPIKey %>"
+  }
+</script>
+
+<!-- inject:js -->
