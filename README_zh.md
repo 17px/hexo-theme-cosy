@@ -15,7 +15,7 @@
 
 [English](README.md)
 
-关于主题使用或安装，有关更多配置信息，请参阅 "[Cosy 入门](https://mozzie.cn/2023/11/17/clpaes9390003zdvadsjub0k3/)"。
+关于主题使用或安装，有关更多配置信息，请参阅 "[Cosy 入门](https://mozzie.cn/posts/59577/)"。
 
 ## 预览
 
