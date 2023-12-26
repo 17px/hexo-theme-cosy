@@ -99,23 +99,19 @@
         flex: 1;
         margin: 0;
 
-        cosy-tooltip {
+        .catalog {
           display: inline-flex;
+          align-items: center;
+          color: var(--color-font-3);
 
-          .catalog {
-            display: inline-flex;
-            align-items: center;
-            color: var(--color-font-3);
+          svg {
+            width: 16px;
+            height: 16px;
+          }
 
-            svg {
-              width: 16px;
-              height: 16px;
-            }
-
-            span {
-              font-size: 13px;
-              padding-left: 8px;
-            }
+          span {
+            font-size: 13px;
+            padding-left: 8px;
           }
         }
 
@@ -131,14 +127,8 @@
           flex: 1;
           margin: 0;
 
-          > li {
-            &:first-of-type {
-              margin-top: 1.5rem;
-            }
-
-            &:last-of-type {
-              margin-bottom: 1.5rem;
-            }
+          > li:last-of-type {
+            margin-bottom: 1.5rem;
           }
 
           &::-webkit-scrollbar {

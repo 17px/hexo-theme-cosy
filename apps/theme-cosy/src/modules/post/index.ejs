@@ -54,22 +54,16 @@
     <cosy-drag-box id="toc-drag-box" trigger="left" min-width="220" uid="toc-box">
       <div class="meta-container">
         <div class="toc-wrapper cosy-scrollbar">
-          <cosy-tooltip placement="right">
-            <p class="catalog">
-              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
-                <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M4 6h16"></path>
-                  <path d="M4 12h16"></path>
-                  <path d="M4 18h12"></path>
-                </g>
-              </svg>
-              <span><%- __('text-catalog') %></span>
-            </p>
-            <span slot="content">
-              <span><%- __('tip-hide-catelog') %></span>
-              <cosy-short-key>]</cosy-short-key>
-            </span>
-          </cosy-tooltip>
+          <p class="catalog">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+              <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 6h16"></path>
+                <path d="M4 12h16"></path>
+                <path d="M4 18h12"></path>
+              </g>
+            </svg>
+            <span><%- __('text-catalog') %></span>
+          </p>
           <!-- 文章toc -->
           <%- toc(page.content,{max_depth:3}) %>
         </div>
