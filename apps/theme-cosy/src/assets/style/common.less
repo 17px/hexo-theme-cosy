@@ -1,4 +1,4 @@
-@import './media.less';
+@import "./media.less";
 
 * {
   box-sizing: border-box;
@@ -25,4 +25,27 @@ body {
   overflow: hidden;
   height: 100%;
   background: var(--color-body-bg);
+}
+
+a {
+  color: var(--color-font);
+}
+
+#aside-box,
+.post-container {
+  animation: fadeIn 250ms ease-out forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.99);
+  }
+  9% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }

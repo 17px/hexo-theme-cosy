@@ -1,4 +1,5 @@
 import { POST_MEMORY_KEY } from "@/modules/constant";
+import { CosyElement } from "@cosy/ui";
 
 type CDNResource = {
   type: "css" | "js";

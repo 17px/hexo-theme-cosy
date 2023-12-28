@@ -14,6 +14,7 @@ export interface Weather7dItem {
   iconDay: string;
   fxDate: string;
   textDay: string;
+  textNight: string;
 }
 
 export interface Weather7dData {
@@ -115,8 +116,19 @@ export class WeatherWidget {
   updateNowWeather(data: NowWeatherData): void {
     const { icon, text, temp, obsTime, windDir, humidity, pressure } = data;
 
-    this.obsTime.innerHTML = `${new Date(obsTime).toLocaleTimeString()}`;
-    this.nowIcon.innerHTML = `<img style="width:48px;height:48px" src="/img/qweather-color-icon/${icon}.png" />`;
+    this.obsTime.innerHTML = `
+      <cosy-tooltip placement="right">
+        <span slot="content">观测时间</span>
+        ${new Date(obsTime).toLocaleTimeString()}
+      </cosy-tooltip>
+    `;
+    const tooltipText = `${text} ${windDir}`
+    this.nowIcon.innerHTML = `
+      <cosy-tooltip placement="left">
+        <span slot="content">${tooltipText}</span>
+        <img style="width:48px;height:48px" src="/img/qweather-color-icon/${icon}.png" alt=${text} />
+      </cosy-tooltip>
+    `;
     this.nowWeather.innerHTML = `P:${pressure} H:${humidity}`;
     this.nowTemp.innerHTML = `${temp}°`;
   }
@@ -125,22 +137,23 @@ export class WeatherWidget {
     const { daily } = data;
 
     daily.forEach((item: Weather7dItem) => {
-      const { tempMin, tempMax, iconDay, fxDate, textDay } = item;
-      const today = new Date().getDate() === new Date(fxDate).getDate();
-      const today_dot =
-        '<span style="margin-top:6px;width:8px;height:8px;border-radius:50%;background: var(--color-primary);"></span>';
-      const liContent = `
-        <li style="display: flex; flex-direction: column; align-items: center;">
-          <span style="color: var(--color-font); font-size: 12px; line-height: 1.5;">${new Date(
-            fxDate
-          ).getDate()}</span>
-          <img src="/img/qweather-color-icon/${iconDay}.png" style="width: 22px; height: 22px;">
-          <span style="color: var(--color-font); font-size: 12px; line-height: 1.5;">${tempMin}-${tempMax}°</span>
-          ${today ? today_dot : ""}
+      const { tempMin, tempMax, iconDay, fxDate, textDay, textNight } = item;
+      const tooltipText = `${textDay} -> ${textNight}`;
+      const itemHTML = `
+          <cosy-tooltip>
+            <span slot="content">${tooltipText}</span>
+            <li style="display: flex; flex-direction: column; align-items: center;">
+              <span style="color: var(--color-font); font-size: 12px; line-height: 1.5;">${new Date(
+                fxDate
+              ).getDate()}</span>
+              <img src="/img/qweather-color-icon/${iconDay}.png" style="width: 22px; height: 22px;">
+              <span style="color: var(--color-font); font-size: 12px; line-height: 1.5;">${tempMin}-${tempMax}°</span>
+            </li>
+          </cosy-tooltip>
         </li>
       `;
 
-      this.ul.insertAdjacentHTML("beforeend", liContent);
+      this.ul.insertAdjacentHTML("beforeend", itemHTML);
     });
   }
 }
