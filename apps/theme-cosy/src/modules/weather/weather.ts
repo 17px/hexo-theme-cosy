@@ -35,6 +35,7 @@ export const useWeather = (config: weatherConfig) => {
             iconDay: item.iconDay,
             fxDate: item.fxDate,
             textDay: item.textDay,
+            textNight: item.textNight,
           }));
           weatherWidget.update7DayForecast({ daily: dailyData });
         }

@@ -7,6 +7,7 @@ import { useDefaultSetting } from "./default.setting";
 import { ASIDE_INVISIBLE_KEY } from "../constant";
 
 onMounted(() => {
+  document.querySelector(".loading-mask")?.remove();
   useDefaultSetting();
 
   /**

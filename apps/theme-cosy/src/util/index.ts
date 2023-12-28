@@ -1,4 +1,5 @@
 import { POST_MEMORY_KEY } from "@/modules/constant";
+import { CosyElement } from "@cosy/ui";
 
 type CDNResource = {
   type: "css" | "js";
@@ -131,19 +132,4 @@ export const restoreScrollHeight = (selector: string) => {
   } else {
     console.warn("Element not found for selector:", selector);
   }
-};
-
-export const copyToClipboard = (text: string) => {
-  // 创建一个 textarea 元素
-  const textarea = document.createElement("textarea");
-  // 设置其值为当前 URL
-  textarea.value = text;
-  // 将它添加到文档中（注意：这里并没有将它显示出来）
-  document.body.appendChild(textarea);
-  // 选择 textarea 的内容
-  textarea.select();
-  // 执行复制操作
-  document.execCommand("copy");
-  // 从文档中移除 textarea
-  document.body.removeChild(textarea);
 };
