@@ -189,13 +189,13 @@
         <% if (page.portfolio) { %>
         <% page.portfolio.forEach(function(item) { %>
         <cosy-card>
-          <div class="card">
+          <a class="card" href="<%- item.link %>">
             <div class="title">
               <%- item.iconSVG %>
               <span><%= item.name %></span>
             </div>
             <p class="desc"><%= item.desc %></p>
-          </div>
+          </a>
         </cosy-card>
         <% }) %>
         <% } %>

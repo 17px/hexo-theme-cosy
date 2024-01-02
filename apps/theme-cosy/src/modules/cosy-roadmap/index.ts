@@ -43,7 +43,11 @@ onMounted(() => {
       },
     });
     const yearsData = processData(initYear, roadmapYears[initYear]);
-    const gantt = new GanttChart("#gantt-container", yearsData);
+    const gantt = new GanttChart(
+      "#gantt-container",
+      yearsData,
+      Number(initYear)
+    );
     todayButton?.addEventListener("click", () => gantt.centerOnCurrentDay());
     addKeyPress({
       key: "d",
