@@ -15,7 +15,7 @@ The hexo theme of document oriented and pursuing ultimate loading speed, with a 
 
 [中文文档](README_zh.md)
 
-For more configuration information on theme usage or installation, please refer to the "[Cosy Starter Guide](https://mozzie.cn/posts/59577/)"
+For more configuration information on theme usage or installation, please refer to the "[Cosy Starter Guide](https://maxshader.com/posts/59577/)"
 
 # Preview
 

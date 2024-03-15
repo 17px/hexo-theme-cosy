@@ -15,7 +15,7 @@
 
 [English](README.md)
 
-关于主题使用或安装，有关更多配置信息，请参阅 "[Cosy 入门](https://mozzie.cn/posts/59577/)"。
+关于主题使用或安装，有关更多配置信息，请参阅 "[Cosy 入门](https://maxshader.com/posts/59577/)"。
 
 ## 预览
 
