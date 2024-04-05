@@ -4,6 +4,7 @@ interface Window {
   katex: any;
   valine: any;
   Valine: any;
+  twikoo: any;
   weather: any;
   algolia: Record<string, string>;
   roadmapYears: Record<string, any>;

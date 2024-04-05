@@ -35,6 +35,7 @@ For more configuration information on theme usage or installation, please refer 
 | Katex Formulae                   | ✅              |
 | Mermaid Flowcharts               | ✅              |
 | Valine Comments                  | ✅              |
+| Twikoo Comments                  | ✅              |
 
 # DIY 主题
 

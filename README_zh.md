@@ -35,6 +35,7 @@
 | katex公式      | ✅      |
 | mermaid流程图  | ✅      |
 | valine评论     | ✅      |
+| Twikoo评论     | ✅      |
 
 # DIY 主题
 

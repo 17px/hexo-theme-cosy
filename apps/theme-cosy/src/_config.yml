@@ -54,3 +54,8 @@ weather:
   enable: true
   cityCode: 101190101
   appKey: 6f89c60ce1714fa58018b5489aa697e5
+
+twikoo:
+  envId: yourTwikooEnvId
+  cdn: https://cdn.staticfile.org/twikoo/1.6.32/twikoo.all.min.js
+  lang: zh-CN
