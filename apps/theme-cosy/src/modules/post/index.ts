@@ -2,7 +2,7 @@ import "./index.less";
 import { useKatex } from "./katex";
 import { useMermaid } from "./mermaid";
 import { useValine } from "./valine";
-import { loadFromCDN, restoreScrollHeight, saveScrollHeight } from "@/util";
+import { restoreScrollHeight, saveScrollHeight } from "@/util";
 import { useCodeHelper } from "./code.helper";
 
 import {
@@ -14,6 +14,7 @@ import {
 import { CosyElement } from "@cosy/ui";
 import { TOC_INVISIBLE_KEY } from "../constant";
 import { getCurrentTheme } from "../layout/default.setting";
+import { useTwikoo } from "./twikoo";
 
 /**
  * 高亮TOC项
@@ -53,10 +54,11 @@ onMounted(() => {
   window.location.hash && highlightTOCItem(window.location.hash);
 
   // 文章启动插件判断
-  const { mermaid, katex, valine } = window;
+  const { mermaid, katex, valine, twikoo } = window;
   useKatex({ ...katex, enable: window.page.use.indexOf("katex") > -1 });
   useMermaid({ ...mermaid, enable: window.page.use.indexOf("mermaid") > -1 });
   useValine({ ...valine, enable: window.page.use.indexOf("valine") > -1 });
+  useTwikoo({ ...twikoo, enable: window.page.use.indexOf("twikoo") > -1 });
   useCodeHelper();
   // useTextEnhancer();
 

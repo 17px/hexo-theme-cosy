@@ -7,20 +7,22 @@
     </div>
     <div class="right">
       <% if (!!toc(page.content)) { %>
-      <cosy-tooltip id="toc-show-button" placement="left">
-        <span slot="content">
-          <span><%- __('tip-catalog-visible') %></span>
-          <cosy-short-key>]</cosy-short-key>
-        </span>
-        <cosy-icon>
-          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
-            <g fill="none">
-              <path d="M4 4c-1.104-.019-2 .896-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H4zM3 6a1 1 0 0 1 1-1h2.995v10H4a1 1 0 0 1-1-1V6zm4.995 9V5h8.004a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H7.995z" fill="currentColor"></path>
-            </g>
-          </svg>
-        </cosy-icon>
-      </cosy-tooltip>
-      <% } %>
+        <cosy-tooltip id="toc-show-button" placement="left">
+          <span slot="content">
+            <span><%- __('tip-catalog-visible') %></span>
+            <cosy-short-key>]</cosy-short-key>
+          </span>
+          <cosy-icon>
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+              <g fill="none">
+                <path
+                  d="M4 4c-1.104-.019-2 .896-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H4zM3 6a1 1 0 0 1 1-1h2.995v10H4a1 1 0 0 1-1-1V6zm4.995 9V5h8.004a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H7.995z"
+                  fill="currentColor"></path>
+              </g>
+            </svg>
+          </cosy-icon>
+        </cosy-tooltip>
+        <% } %>
     </div>
   </header>
   <div class="content">
@@ -35,47 +37,48 @@
           </div>
           <!-- 文章 -->
           <%- page.content %>
-          <div class="post-tags">
-            <!-- 文章tags -->
-            <% if (page.tags && page.tags.length > 0) { %>
-            <% page.tags.each(function(tag){ %>
-            <cosy-label href="<%- url_for(tag.path) %>" size="sm"># <%- tag.name %></cosy-label>
-            <% }) %>
-            <% } %>
-          </div>
-          <p class="motto">重拾纯粹的写作</p>
+            <div class="post-tags">
+              <!-- 文章tags -->
+              <% if (page.tags && page.tags.length> 0) { %>
+                <% page.tags.each(function(tag){ %>
+                  <cosy-label href="<%- url_for(tag.path) %>" size="sm"># <%- tag.name %></cosy-label>
+                  <% }) %>
+                    <% } %>
+            </div>
+            <p class="motto">重拾纯粹的写作</p>
         </article>
         <!-- 评论 -->
         <div id="vcomments"></div>
+        <div id="tcomment"></div>
       </div>
     </main>
     <!-- toc -->
     <% if (!!toc(page.content)) { %>
-    <cosy-drag-box id="toc-drag-box" trigger="left" min-width="220" uid="toc-box">
-      <div class="meta-container">
-        <div class="toc-wrapper cosy-scrollbar">
-          <cosy-tooltip placement="right">
-            <p class="catalog">
-              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
-                <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M4 6h16"></path>
-                  <path d="M4 12h16"></path>
-                  <path d="M4 18h12"></path>
-                </g>
-              </svg>
-              <span><%- __('text-catalog') %></span>
-            </p>
-            <span slot="content">
-              <span><%- __('tip-hide-catelog') %></span>
-              <cosy-short-key>]</cosy-short-key>
-            </span>
-          </cosy-tooltip>
-          <!-- 文章toc -->
-          <%- toc(page.content,{max_depth:3}) %>
+      <cosy-drag-box id="toc-drag-box" trigger="left" min-width="220" uid="toc-box">
+        <div class="meta-container">
+          <div class="toc-wrapper cosy-scrollbar">
+            <cosy-tooltip placement="right">
+              <p class="catalog">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+                  <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 6h16"></path>
+                    <path d="M4 12h16"></path>
+                    <path d="M4 18h12"></path>
+                  </g>
+                </svg>
+                <span><%- __('text-catalog') %></span>
+              </p>
+              <span slot="content">
+                <span><%- __('tip-hide-catelog') %></span>
+                <cosy-short-key>]</cosy-short-key>
+              </span>
+            </cosy-tooltip>
+            <!-- 文章toc -->
+            <%- toc(page.content,{max_depth:3}) %>
+          </div>
         </div>
-      </div>
-    </cosy-drag-box>
-    <% } %>
+      </cosy-drag-box>
+      <% } %>
   </div>
 
 </div>
@@ -102,6 +105,12 @@
     cdn: '<%= theme.valine.cdn %>',
     serverURLs: '<%= theme.valine.serverURLs %>'
   };
+  window.twikoo = {
+    enable: "<%= theme.twikoo.enable %>",
+    envId: "<%= theme.twikoo.envId %>",
+    cdn: '<%= theme.twikoo.cdn %>',
+    lang: '<%= theme.twikoo.lang || page.language || "zh-CN" %>',
+  }
 </script>
 
 <!-- inject:js -->
