@@ -22,7 +22,7 @@ jobs:
         run: npm install -g pnpm
 
       - name: Install Dependencies
-        run: pnpm i
+        run: pnpm i --no-frozen-lockfile
 
       - name: Build:Utility
         run: pnpm run build:util
