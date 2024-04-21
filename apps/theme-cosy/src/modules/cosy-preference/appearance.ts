@@ -17,6 +17,14 @@ export const fontSizeOptions: CosyDropdownOption[] = [
     value: "16px",
     label: "16px",
   },
+  {
+    value: "17px",
+    label: "17px",
+  },
+  {
+    value: "18px",
+    label: "18px",
+  }
 ];
 
 export const themeOptions: CosyDropdownOption[] = [
